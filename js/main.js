@@ -67,7 +67,7 @@ function initHeroSlider() {
     
     // Auto play
     function startAutoPlay() {
-        slideInterval = setInterval(nextSlide, 5000);
+        slideInterval = setInterval(nextSlide, 8000); // Changed from 5000ms (5s) to 8000ms (8s)
     }
     
     function stopAutoPlay() {

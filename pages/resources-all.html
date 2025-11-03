@@ -1,0 +1,1673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Comprehensive professional development resources for ACU COBA students - resumes, cover letters, LinkedIn, interviews, and more">
+    <meta name="keywords" content="ACU, COBA, career resources, resume guide, cover letter, LinkedIn, interview prep, job search">
+    <meta name="author" content="ACU COBA">
+    <title>Professional Development Resources | COBA | ACU</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../assets/images/favicon.png">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="../css/main.css">
+    
+    <style>
+        /* Additional styles for resources page */
+        .resources-hero {
+            background: linear-gradient(135deg, #4B2E83 0%, #6B46A8 100%);
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+        }
+
+        .resources-hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        .resources-hero p {
+            font-size: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.95;
+        }
+
+        .resources-nav {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 70px;
+            z-index: 100;
+            padding: 20px 0;
+        }
+
+        .resources-nav__list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .resources-nav__link {
+            padding: 10px 20px;
+            background: #f5f5f5;
+            color: #4B2E83;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 14px;
+        }
+
+        .resources-nav__link:hover {
+            background: #4B2E83;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .resource-section {
+            padding: 80px 0;
+        }
+
+        .resource-section:nth-child(even) {
+            background: #f9f9f9;
+        }
+
+        .resource-section__header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .resource-section__title {
+            font-size: 42px;
+            color: #4B2E83;
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+
+        .resource-section__subtitle {
+            font-size: 20px;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .resource-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .resource-card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .resource-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(75, 46, 131, 0.15);
+            border-color: #4B2E83;
+        }
+
+        .resource-card__icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .resource-card__title {
+            font-size: 24px;
+            color: #4B2E83;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .resource-card__description {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .resource-card__link {
+            display: inline-block;
+            padding: 10px 25px;
+            background: #4B2E83;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .resource-card__link:hover {
+            background: #6B46A8;
+            transform: translateX(5px);
+        }
+
+        .content-box {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            margin: 30px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .content-box h3 {
+            color: #4B2E83;
+            font-size: 28px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .content-box h4 {
+            color: #6B46A8;
+            font-size: 22px;
+            margin: 25px 0 15px;
+            font-weight: 600;
+        }
+
+        .content-box ul, .content-box ol {
+            line-height: 1.8;
+            color: #555;
+            margin: 15px 0;
+            padding-left: 25px;
+        }
+
+        .content-box li {
+            margin-bottom: 10px;
+        }
+
+        .highlight-box {
+            background: #f0ebf8;
+            border-left: 4px solid #4B2E83;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .highlight-box strong {
+            color: #4B2E83;
+        }
+
+        .example-box {
+            background: #fff8e6;
+            border: 2px solid #FFB81C;
+            border-radius: 8px;
+            padding: 25px;
+            margin: 25px 0;
+        }
+
+        .example-box h5 {
+            color: #FFB81C;
+            font-size: 18px;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 30px 0;
+        }
+
+        .checklist {
+            list-style: none;
+            padding: 0;
+        }
+
+        .checklist li {
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+            position: relative;
+            padding-left: 35px;
+        }
+
+        .checklist li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #4B2E83;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #4B2E83;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 24px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 1000;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+        }
+
+        .back-to-top:hover {
+            background: #6B46A8;
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 768px) {
+            .resources-hero h1 {
+                font-size: 36px;
+            }
+
+            .resource-section__title {
+                font-size: 32px;
+            }
+
+            .two-column {
+                grid-template-columns: 1fr;
+            }
+
+            .resources-nav__list {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .content-box {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Skip to Main Content (Accessibility) -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Header & Navigation -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header__content">
+                <!-- Logo -->
+                <div class="header__logo">
+                    <a href="../index.html">
+                        <span class="header__logo-text">COBA</span>
+                        <span class="header__logo-subtitle">Professional Development</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Toggle -->
+                <button class="header__menu-toggle" aria-label="Toggle menu" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <!-- Navigation -->
+                <nav class="header__nav" id="mainNav">
+                    <ul class="nav-list">
+                        <li><a href="../index.html#home" class="nav-list__link">Home</a></li>
+                        <li><a href="../index.html#about" class="nav-list__link">About</a></li>
+                        <li class="nav-list__item--dropdown">
+                            <a href="#" class="nav-list__link">Majors <span class="dropdown-arrow">▾</span></a>
+                            <ul class="nav-dropdown">
+                                <li><a href="../index.html#finance">Finance</a></li>
+                                <li><a href="../index.html#accounting">Accounting</a></li>
+                                <li><a href="../index.html#marketing">Marketing</a></li>
+                                <li><a href="../index.html#management">Management</a></li>
+                                <li><a href="../index.html#information-systems">Information Systems</a></li>
+                                <li><a href="../index.html#computer-science">Computer Science</a></li>
+                                <li><a href="../index.html#digital-entertainment">Digital Entertainment Tech</a></li>
+                                <li><a href="../index.html#data-analytics">Data Analytics</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="../index.html#international" class="nav-list__link">International Students</a></li>
+                        <li><a href="resources-all.html" class="nav-list__link active">Resources</a></li>
+                        <li><a href="../index.html#contact" class="nav-list__link nav-list__link--cta">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        
+        <!-- Hero Section -->
+        <section class="resources-hero">
+            <div class="container">
+                <h1>Professional Development Resources</h1>
+                <p>Everything you need to succeed in your career journey - from building your resume to landing your dream job</p>
+            </div>
+        </section>
+
+        <!-- Quick Navigation -->
+        <nav class="resources-nav">
+            <div class="container">
+                <ul class="resources-nav__list">
+                    <li><a href="#experiential" class="resources-nav__link">Experiential Learning</a></li>
+                    <li><a href="#resume" class="resources-nav__link">Resume Guide</a></li>
+                    <li><a href="#cover-letter" class="resources-nav__link">Cover Letters</a></li>
+                    <li><a href="#linkedin" class="resources-nav__link">LinkedIn</a></li>
+                    <li><a href="#email-templates" class="resources-nav__link">Email Templates</a></li>
+                    <li><a href="#interviews" class="resources-nav__link">Interviews</a></li>
+                    <li><a href="#job-platforms" class="resources-nav__link">Job Platforms</a></li>
+                    <li><a href="#dress" class="resources-nav__link">Professional Dress</a></li>
+                    <li><a href="#elevator-pitch" class="resources-nav__link">Elevator Pitch</a></li>
+                    <li><a href="#skills" class="resources-nav__link">Skills by Major</a></li>
+                    <li><a href="#social-media" class="resources-nav__link">Social Media</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Section 1: Experiential Learning Opportunities -->
+        <section id="experiential" class="resource-section">
+            <div class="container">
+                <div class="resource-section__header">
+                    <h2 class="resource-section__title">🌟 Experiential Learning Opportunities</h2>
+                    <p class="resource-section__subtitle">Hands-on experiences to build your skills and network</p>
+                </div>
+
+                <div class="resource-cards">
+                    <!-- ENACTUS -->
+                    <div class="resource-card">
+                        <span class="resource-card__icon">💼</span>
+                        <h3 class="resource-card__title">ENACTUS</h3>
+                        <p class="resource-card__description">
+                            <strong>What it is:</strong> A global organization that connects student, academic, and business leaders through entrepreneurial-based projects that empower people to transform opportunities into real-world success.
+                        </p>
+                        <p class="resource-card__description">
+                            <strong>Time Commitment:</strong> Moderate (5-8 hours/week during active projects)<br>
+                            <strong>Best For:</strong> Freshmen, Sophomores, Juniors<br>
+                            <strong>Skills You'll Gain:</strong> Entrepreneurship, Project Management, Social Impact, Teamwork
+                        </p>
+                        <a href="https://enactus.org/" target="_blank" class="resource-card__link">Learn More →</a>
+                    </div>
+
+                    <!-- SHRM Student Chapter -->
+                    <div class="resource-card">
+                        <span class="resource-card__icon">👥</span>
+                        <h3 class="resource-card__title">SHRM Student Chapter</h3>
+                        <p class="resource-card__description">
+                            <strong>What it is:</strong> The Society for Human Resource Management (SHRM) student chapter provides opportunities for students interested in HR to network, learn from professionals, and gain practical experience in human resources.
+                        </p>
+                        <p class="resource-card__description">
+                            <strong>Time Commitment:</strong> Light (2-4 hours/month)<br>
+                            <strong>Best For:</strong> All years (especially Management majors)<br>
+                            <strong>Skills You'll Gain:</strong> HR Knowledge, Professional Networking, Leadership, Organizational Behavior
+                        </p>
+                        <a href="https://www.shrm.org/students" target="_blank" class="resource-card__link">Learn More →</a>
+                    </div>
+
+                    <!-- Investment Fund -->
+                    <div class="resource-card">
+                        <span class="resource-card__icon">📈</span>
+                        <h3 class="resource-card__title">ACU Investment Fund</h3>
+                        <p class="resource-card__description">
+                            <strong>What it is:</strong> Students manage a real investment portfolio with actual money, gaining hands-on experience in financial analysis, portfolio management, and investment decision-making.
+                        </p>
+                        <p class="resource-card__description">
+                            <strong>Time Commitment:</strong> Moderate to Heavy (6-10 hours/week)<br>
+                            <strong>Best For:</strong> Sophomores, Juniors, Seniors (Finance majors)<br>
+                            <strong>Skills You'll Gain:</strong> Financial Analysis, Portfolio Management, Market Research, Investment Strategy
+                        </p>
+                        <p class="resource-card__description">
+                            <em>Note: Competitive application process. Strong analytical skills and finance coursework required.</em>
+                        </p>
+                    </div>
+
+                    <!-- Business Lab Tutoring -->
+                    <div class="resource-card">
+                        <span class="resource-card__icon">📚</span>
+                        <h3 class="resource-card__title">Business Lab Tutoring</h3>
+                        <p class="resource-card__description">
+                            <strong>What it is:</strong> Peer tutoring program where advanced students help fellow COBA students with coursework in accounting, finance, statistics, and other business subjects.
+                        </p>
+                        <p class="resource-card__description">
+                            <strong>Time Commitment:</strong> Flexible (4-8 hours/week)<br>
+                            <strong>Best For:</strong> Juniors, Seniors with strong GPAs<br>
+                            <strong>Skills You'll Gain:</strong> Communication, Leadership, Subject Mastery, Teaching, Patience
+                        </p>
+                        <p class="resource-card__description">
+                            <strong>Benefits:</strong> Paid position, strengthens your own knowledge, looks great on resumes, develops soft skills
+                        </p>
+                    </div>
+
+                    <!-- Financial Planning Club -->
+                    <div class="resource-card">
+                        <span class="resource-card__icon">💰</span>
+                        <h3 class="resource-card__title">Financial Planning Club</h3>
+                        <p class="resource-card__description">
+                            <strong>What it is:</strong> Student organization focused on personal financial planning, wealth management, and preparing students for careers in financial advising and planning.
+                        </p>
+                        <p class="resource-card__description">
+                            <strong>Time Commitment:</strong> Light (2-3 hours/month)<br>
+                            <strong>Best For:</strong> All years (especially Finance majors)<br>
+                            <strong>Skills You'll Gain:</strong> Financial Planning, Client Communication, CFP Exam Preparation, Investment Knowledge
+                        </p>
+                        <p class="resource-card__description">
+                            <strong>Opportunities:</strong> Guest speakers from the industry, CFP exam prep, networking with financial planners, case competitions
+                        </p>
+                    </div>
+
+                    <!-- Case Competitions -->
+                    <div class="resource-card">
+                        <span class="resource-card__icon">🏆</span>
+                        <h3 class="resource-card__title">Case Competitions</h3>
+                        <p class="resource-card__description">
+                            <strong>What it is:</strong> Team-based competitions where students solve real business problems presented by companies. Competitions can be local, regional, national, or international.
+                        </p>
+                        <p class="resource-card__description">
+                            <strong>Time Commitment:</strong> Intensive but short-term (1-2 weeks of preparation)<br>
+                            <strong>Best For:</strong> All years, all majors<br>
+                            <strong>Skills You'll Gain:</strong> Problem Solving, Presentation, Analytical Thinking, Teamwork, Time Management
+                        </p>
+                        <p class="resource-card__description">
+                            <strong>Why Participate:</strong> Resume builder, networking opportunities, potential prize money, real-world problem-solving experience, impressive to employers
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- NOTE: Due to file size, I'm creating this with primary structure -->
+        <!-- The full content for sections 2-11 from the master document should be inserted here -->
+        
+        <!-- Section 2: Resume Building Guide -->
+        <section id="resume" class="resource-section">
+            <div class="container">
+                <div class="resource-section__header">
+                    <h2 class="resource-section__title">📄 Complete Resume Building Guide</h2>
+                    <p class="resource-section__subtitle">Everything you need to create a standout resume</p>
+                </div>
+
+                <div class="content-box">
+                    <h3>Why Your Resume Matters</h3>
+                    <p>Your resume is often the first impression you make on a potential employer. It's your marketing document—a snapshot of your skills, experiences, and accomplishments that shows why you're the right fit for the job.</p>
+                    
+                    <div class="highlight-box">
+                        <strong>Key Statistic:</strong> Recruiters spend an average of 6-7 seconds reviewing a resume. Make every second count!
+                    </div>
+
+                    <h3>Resume Fundamentals</h3>
+                    
+                    <h4>Format & Structure</h4>
+                    <ul>
+                        <li><strong>Length:</strong> One page for undergraduates and early-career professionals</li>
+                        <li><strong>Font:</strong> Professional fonts like Calibri, Arial, or Times New Roman (10-12pt)</li>
+                        <li><strong>Margins:</strong> 0.5" to 1" on all sides</li>
+                        <li><strong>File Format:</strong> Always save and send as PDF to preserve formatting</li>
+                        <li><strong>File Name:</strong> FirstName_LastName_Resume.pdf</li>
+                    </ul>
+
+                    <h4>Essential Sections (In Order)</h4>
+                    <ol>
+                        <li><strong>Contact Information</strong></li>
+                        <li><strong>Education</strong></li>
+                        <li><strong>Experience</strong></li>
+                        <li><strong>Skills</strong></li>
+                        <li><strong>Leadership & Activities</strong> (Optional but recommended)</li>
+                    </ol>
+
+                    <h3>Writing Powerful Experience Bullets</h3>
+                    <h4>The Formula: Action Verb + Task + Result (Quantified When Possible)</h4>
+                    
+                    <div class="two-column">
+                        <div>
+                            <h5 style="color: #d32f2f;">❌ Weak Examples:</h5>
+                            <ul>
+                                <li>Responsible for customer service</li>
+                                <li>Helped with social media</li>
+                                <li>Worked on team projects</li>
+                                <li>Did data entry</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h5 style="color: #4B2E83;">✅ Strong Examples:</h5>
+                            <ul>
+                                <li>Resolved 50+ customer inquiries daily, maintaining 98% satisfaction rating</li>
+                                <li>Grew Instagram following by 200% through targeted content strategy</li>
+                                <li>Led team of 5 to complete $50K project 2 weeks ahead of schedule</li>
+                                <li>Processed 1,000+ records weekly with 99.9% accuracy using Excel and Salesforce</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h4>Power Action Verbs by Category</h4>
+                    <div class="two-column">
+                        <div>
+                            <h5>Leadership</h5>
+                            <p>Directed, Coordinated, Managed, Supervised, Led, Organized, Delegated, Mentored</p>
+                            
+                            <h5>Analysis</h5>
+                            <p>Analyzed, Evaluated, Assessed, Researched, Investigated, Examined, Forecasted, Calculated</p>
+                            
+                            <h5>Communication</h5>
+                            <p>Presented, Negotiated, Collaborated, Facilitated, Communicated, Persuaded, Advocated</p>
+                        </div>
+                        <div>
+                            <h5>Achievement</h5>
+                            <p>Achieved, Exceeded, Improved, Increased, Reduced, Optimized, Streamlined, Enhanced</p>
+                            
+                            <h5>Creation</h5>
+                            <p>Developed, Designed, Created, Built, Launched, Established, Implemented, Initiated</p>
+                            
+                            <h5>Technical</h5>
+                            <p>Programmed, Configured, Engineered, Automated, Integrated, Deployed, Maintained</p>
+                        </div>
+                    </div>
+
+                    <h3>Resume Examples by Major</h3>
+
+                    <div class="example-box">
+                        <h5>Finance Major Resume Example</h5>
+                        <p><strong>EDUCATION</strong></p>
+                        <p><strong>Abilene Christian University</strong> - Abilene, TX<br>
+                        Bachelor of Business Administration in Finance | Expected Graduation: May 2025<br>
+                        GPA: 3.7/4.0 | Dean's List</p>
+                        
+                        <p><strong>EXPERIENCE</strong></p>
+                        <p><strong>Financial Analyst Intern</strong> | Merrill Lynch - Dallas, TX | Summer 2024</p>
+                        <ul>
+                            <li>Analyzed 50+ investment portfolios totaling $25M, identifying optimization opportunities that increased returns by 12%</li>
+                            <li>Built financial models in Excel to forecast quarterly revenue for 10 clients with 95% accuracy</li>
+                            <li>Prepared weekly market research reports for senior advisors covering equity, bond, and commodity markets</li>
+                            <li>Collaborated with 5-person team to develop client presentations resulting in $2M in new assets under management</li>
+                        </ul>
+                        
+                        <p><strong>ACU Investment Fund</strong> | Abilene, TX | August 2023 - Present</p>
+                        <ul>
+                            <li>Manage $100K real-money student investment portfolio, conducting fundamental analysis on 20+ securities</li>
+                            <li>Present quarterly stock pitches to investment committee, achieving 8% return vs. 5% S&P 500 benchmark</li>
+                        </ul>
+                        
+                        <p><strong>SKILLS</strong></p>
+                        <p>Excel (Pivot Tables, VLOOKUP, Financial Modeling) | Bloomberg Terminal | Capital IQ | Financial Statement Analysis | Python | SQL | Tableau</p>
+                    </div>
+
+                    <div class="example-box">
+                        <h5>Marketing Major Resume Example</h5>
+                        <p><strong>EXPERIENCE</strong></p>
+                        <p><strong>Digital Marketing Intern</strong> | TechStart Solutions - Austin, TX | Summer 2024</p>
+                        <ul>
+                            <li>Managed social media accounts across 4 platforms, growing combined following from 5K to 15K in 3 months</li>
+                            <li>Created 50+ pieces of content using Canva, Adobe Creative Suite, and WordPress</li>
+                            <li>Increased email open rates by 35% through A/B testing of subject lines</li>
+                            <li>Analyzed campaign performance using Google Analytics, presenting weekly reports to marketing team</li>
+                        </ul>
+                        
+                        <p><strong>SKILLS</strong></p>
+                        <p>Google Analytics | Google Ads | SEO/SEM | Hootsuite | HubSpot | Canva | Adobe Creative Suite | WordPress | Content Strategy</p>
+                    </div>
+
+                    <h3>Common Resume Mistakes to Avoid</h3>
+                    <div class="two-column">
+                        <div>
+                            <h5 style="color: #d32f2f;">❌ Don't Do This:</h5>
+                            <ul>
+                                <li>Typos and grammatical errors</li>
+                                <li>Using "I," "me," or "my"</li>
+                                <li>Including objective statements</li>
+                                <li>Listing responsibilities instead of accomplishments</li>
+                                <li>Using unprofessional email addresses</li>
+                                <li>Going over one page</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h5 style="color: #4B2E83;">✅ Do This Instead:</h5>
+                            <ul>
+                                <li>Proofread 3+ times, have others review</li>
+                                <li>Start bullets with action verbs</li>
+                                <li>Jump straight into education and experience</li>
+                                <li>Focus on achievements with numbers/metrics</li>
+                                <li>Use firstname.lastname@email.com format</li>
+                                <li>Be concise and selective with content</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h3>ATS (Applicant Tracking Systems) Optimization</h3>
+                    <p>Many companies use ATS software to scan resumes. To ensure yours makes it through:</p>
+                    <ul>
+                        <li>Use standard section headings (Education, Experience, Skills)</li>
+                        <li>Avoid headers, footers, tables, and text boxes</li>
+                        <li>Use standard fonts and avoid graphics/logos</li>
+                        <li>Save as PDF to preserve formatting</li>
+                        <li>Include exact keyword phrases from job description</li>
+                        <li>Spell out acronyms first time used</li>
+                    </ul>
+
+                    <h3>Final Checklist Before Submitting</h3>
+                    <ul class="checklist">
+                        <li>Contact information is correct and professional</li>
+                        <li>No typos, grammatical errors, or formatting inconsistencies</li>
+                        <li>Every bullet point starts with an action verb</li>
+                        <li>Accomplishments are quantified with numbers/metrics where possible</li>
+                        <li>Content is tailored to the specific job/company</li>
+                        <li>File is saved as PDF with proper naming convention</li>
+                        <li>Resume is exactly one page</li>
+                        <li>Someone else has reviewed it for feedback</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Cover Letter Guide -->
+        <section id="cover-letter" class="resource-section">
+            <div class="container">
+                <div class="resource-section__header">
+                    <h2 class="resource-section__title">✉️ Cover Letter Writing Guide</h2>
+                    <p class="resource-section__subtitle">Make a compelling case for why you're the perfect fit</p>
+                </div>
+
+                <div class="content-box">
+                    <h3>Why Cover Letters Still Matter</h3>
+                    <p>While many think cover letters are outdated, they remain crucial for:</p>
+                    <ul>
+                        <li>Showing genuine interest in the specific role and company</li>
+                        <li>Explaining career transitions or gaps in your resume</li>
+                        <li>Demonstrating your communication skills and personality</li>
+                        <li>Providing context for your experiences and accomplishments</li>
+                        <li>Standing out when employers receive hundreds of similar resumes</li>
+                    </ul>
+
+                    <div class="highlight-box">
+                        <strong>Key Insight:</strong> A great cover letter doesn't repeat your resume—it tells the story behind your resume and explains why this specific opportunity excites you.
+                    </div>
+
+                    <h3>Cover Letter Structure</h3>
+
+                    <h4>1. Header (Your Contact Information)</h4>
+                    <p>Match your resume header exactly for consistency</p>
+
+                    <h4>2. Salutation</h4>
+                    <p><strong>Best:</strong> "Dear [Hiring Manager Name]," (when you know their name)</p>
+                    <p><strong>Good:</strong> "Dear Hiring Manager," or "Dear [Department] Team,"</p>
+                    <p><strong>Avoid:</strong> "To Whom It May Concern"</p>
+
+                    <h4>3. Opening Paragraph: The Hook</h4>
+                    <p><strong>Include:</strong></p>
+                    <ul>
+                        <li>The specific position you're applying for</li>
+                        <li>How you found the opportunity</li>
+                        <li>An engaging opening that shows enthusiasm</li>
+                        <li>A brief statement on why you're a strong fit</li>
+                    </ul>
+
+                    <div class="example-box">
+                        <h5>Example Opening (Finance)</h5>
+                        <p>"When I saw the Financial Analyst position at Goldman Sachs posted on your careers page, I immediately knew this was the opportunity I've been preparing for throughout my time at ACU. As a Finance major who has managed real money in the ACU Investment Fund and completed a summer internship at Merrill Lynch, I'm excited about the prospect of bringing my analytical skills and passion for capital markets to your team."</p>
+                    </div>
+
+                    <h4>4. Body Paragraphs (1-2 paragraphs)</h4>
+                    <p><strong>Paragraph 1: Why You're Qualified</strong></p>
+                    <ul>
+                        <li>Highlight 2-3 relevant experiences or accomplishments</li>
+                        <li>Provide specific examples with results/metrics</li>
+                        <li>Connect your background to job requirements</li>
+                    </ul>
+
+                    <p><strong>Paragraph 2: Why This Company</strong></p>
+                    <ul>
+                        <li>Demonstrate you've researched the company</li>
+                        <li>Explain why you're excited about THIS specific company</li>
+                        <li>Reference recent company news, initiatives, or culture</li>
+                    </ul>
+
+                    <h4>5. Closing Paragraph</h4>
+                    <ul>
+                        <li>Express enthusiasm about the opportunity</li>
+                        <li>Mention that you're available for an interview</li>
+                        <li>Thank them for their consideration</li>
+                    </ul>
+
+                    <h3>Complete Cover Letter Example</h3>
+
+                    <div class="example-box">
+                        <h5>Finance Position Cover Letter</h5>
+                        <div style="background: white; padding: 20px; border: 1px solid #ddd;">
+                            <p><strong>Michael Chen</strong><br>
+                            Fort Worth, TX 76129 | (555) 234-5678 | michael.chen@email.com</p>
+                            
+                            <p>October 15, 2024</p>
+                            
+                            <p>Ms. Jennifer Roberts<br>
+                            Senior Recruiter<br>
+                            JP Morgan Chase</p>
+                            
+                            <p>Dear Ms. Roberts,</p>
+                            
+                            <p>When I saw the Investment Banking Analyst position at JP Morgan Chase, I immediately knew this was the opportunity I've been preparing for. As a Finance major who has managed real money in the ACU Investment Fund and completed a summer internship at Merrill Lynch, I'm excited about bringing my analytical skills to your team.</p>
+                            
+                            <p>During my internship at Merrill Lynch, I analyzed 50+ investment portfolios totaling $25M and built financial models that forecasted quarterly revenue with 95% accuracy. Additionally, my role managing $100K in the ACU Investment Fund has given me hands-on experience conducting fundamental analysis and making data-driven investment decisions.</p>
+                            
+                            <p>What excites me most about JP Morgan is your reputation for developing young talent and your leading position in M&A advisory. Having earned my Bloomberg Market Concepts certification and currently studying for the CFA Level 1 exam, I'm committed to continuous learning—values I see reflected in JP Morgan's culture.</p>
+                            
+                            <p>I would welcome the opportunity to discuss how my analytical skills and passion for finance can contribute to your team's success. Thank you for considering my application.</p>
+                            
+                            <p>Sincerely,<br>
+                            Michael Chen</p>
+                        </div>
+                    </div>
+
+                    <h3>Cover Letter Dos and Don'ts</h3>
+
+                    <div class="two-column">
+                        <div>
+                            <h5 style="color: #4B2E83;">✅ DO:</h5>
+                            <ul>
+                                <li>Keep it to one page (3-4 paragraphs)</li>
+                                <li>Customize every letter for each application</li>
+                                <li>Use specific examples with numbers/results</li>
+                                <li>Show personality while remaining professional</li>
+                                <li>Research the company and mention specific details</li>
+                                <li>Proofread multiple times</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h5 style="color: #d32f2f;">❌ DON'T:</h5>
+                            <ul>
+                                <li>Simply repeat what's on your resume</li>
+                                <li>Use generic templates without customization</li>
+                                <li>Make it about what YOU want to gain</li>
+                                <li>Include salary expectations (unless requested)</li>
+                                <li>Use clichés ("I'm a team player")</li>
+                                <li>Go over one page</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h3>When to Send a Cover Letter</h3>
+                    <div class="highlight-box">
+                        <p><strong>Always send when:</strong></p>
+                        <ul>
+                            <li>The job posting specifically requests one</li>
+                            <li>You're applying to a smaller company or startup</li>
+                            <li>You have a connection to the company or employee referral</li>
+                            <li>You need to explain career transitions or gaps</li>
+                        </ul>
+                        <p><em>When in doubt, send one! It shows initiative and can only help you.</em></p>
+                    </div>
+
+                    <h3>Cover Letter Checklist</h3>
+                    <ul class="checklist">
+                        <li>Header matches your resume exactly</li>
+                        <li>Letter is addressed to specific person (when possible)</li>
+                        <li>Opening paragraph grabs attention and states position</li>
+                        <li>Body paragraphs provide specific examples with results</li>
+                        <li>You've explained why THIS company excites you</li>
+                        <li>Closing paragraph includes call to action</li>
+                        <li>Letter is exactly one page</li>
+                        <li>No typos or grammatical errors</li>
+                        <li>Letter is customized (not generic template)</li>
+                        <li>Saved as PDF with proper naming</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+                <!-- Section 4: LinkedIn Optimization -->
+        <section id="linkedin" class="resource-section">
+            <div class="container">
+                <div class="resource-section__header">
+                    <h2 class="resource-section__title">💼 LinkedIn Profile Optimization</h2>
+                    <p class="resource-section__subtitle">Build your professional brand and get noticed by recruiters</p>
+                </div>
+
+                <div class="content-box">
+                    <h3>Why LinkedIn Matters</h3>
+                    <p>LinkedIn is more than just an online resume—it's your professional brand, networking platform, and job search tool all in one.</p>
+                    
+                    <div class="highlight-box">
+                        <strong>Key Statistics:</strong>
+                        <ul>
+                            <li>87% of recruiters use LinkedIn to find candidates</li>
+                            <li>Profiles with photos receive 21x more views</li>
+                            <li>Users with 5+ skills are contacted up to 33x more by recruiters</li>
+                        </ul>
+                    </div>
+
+                    <h3>8 Essential Profile Elements</h3>
+
+                    <h4>1. Professional Photo</h4>
+                    <div class="two-column">
+                        <div>
+                            <h5 style="color: #4B2E83;">✅ Do:</h5>
+                            <ul>
+                                <li>Use high-quality, clear headshot</li>
+                                <li>Dress professionally</li>
+                                <li>Smile naturally</li>
+                                <li>Good lighting</li>
+                                <li>Plain background</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h5 style="color: #d32f2f;">❌ Don't:</h5>
+                            <ul>
+                                <li>Use selfies</li>
+                                <li>Include other people</li>
+                                <li>Wear sunglasses</li>
+                                <li>Use vacation photos</li>
+                                <li>Leave blank</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h4>2. Headline (120 Characters)</h4>
+                    <p><strong>Formula:</strong> Major/Position + School + Key Skills + Career Interest</p>
+                    
+                    <div class="example-box">
+                        <h5>Strong Headline Examples:</h5>
+                        <ul>
+                            <li>"Finance Major at ACU | Investment Fund Analyst | CFA Level 1 Candidate | Passionate About Sustainable Investing"</li>
+                            <li>"Marketing Student at ACU | Digital Strategy Intern @TechStart | Google Analytics Certified"</li>
+                            <li>"Computer Science Major at ACU | Software Engineering Intern @Microsoft | Full-Stack Developer"</li>
+                        </ul>
+                    </div>
+
+                    <h4>3. About Section</h4>
+                    <p><strong>Structure:</strong></p>
+                    <ol>
+                        <li><strong>Hook:</strong> Start with something memorable</li>
+                        <li><strong>Who you are:</strong> Current status, interests</li>
+                        <li><strong>What you've done:</strong> Key accomplishments</li>
+                        <li><strong>What you're looking for:</strong> Career goals</li>
+                        <li><strong>Call to action:</strong> Invite connections</li>
+                    </ol>
+
+                    <h4>4. Experience Section</h4>
+                    <ul>
+                        <li>3-5 bullet points per position</li>
+                        <li>Use action verbs and metrics</li>
+                        <li>Add media (presentations, projects)</li>
+                        <li>Tag companies</li>
+                    </ul>
+
+                    <h4>5. Education Section</h4>
+                    <ul>
+                        <li>Include GPA (if 3.0+)</li>
+                        <li>List relevant coursework</li>
+                        <li>Add honors and awards</li>
+                        <li>Include activities and organizations</li>
+                    </ul>
+
+                    <h4>6. Skills & Endorsements</h4>
+                    <p>Add 20-50 skills, prioritize top 3</p>
+                    <div class="example-box">
+                        <p><strong>Finance Example:</strong></p>
+                        <p><strong>Top 3:</strong> Financial Analysis, Financial Modeling, Excel</p>
+                        <p><strong>Additional:</strong> Bloomberg Terminal, Python, SQL, Tableau</p>
+                    </div>
+
+                    <h4>7. Recommendations</h4>
+                    <p>Aim for 3-5 recommendations from:</p>
+                    <ul>
+                        <li>Professors</li>
+                        <li>Internship supervisors</li>
+                        <li>Colleagues from projects</li>
+                        <li>Club advisors</li>
+                    </ul>
+
+                    <h4>8. Engagement</h4>
+                    <p><strong>Post 1-2 times per week:</strong></p>
+                    <ul>
+                        <li>Professional accomplishments</li>
+                        <li>Industry insights</li>
+                        <li>Learning experiences</li>
+                        <li>Project showcases</li>
+                    </ul>
+
+                    <h3>LinkedIn Profile Checklist</h3>
+                    <ul class="checklist">
+                        <li>Professional headshot photo uploaded</li>
+                        <li>Custom background banner added</li>
+                        <li>Compelling headline (not just "Student")</li>
+                        <li>About section tells your story</li>
+                        <li>All experiences listed with accomplishments</li>
+                        <li>Education section fully completed</li>
+                        <li>At least 20 relevant skills added</li>
+                        <li>At least 3 recommendations</li>
+                        <li>Custom LinkedIn URL created</li>
+                        <li>"Open to Work" turned on (if job searching)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Job Search Email Templates -->
+        <section id="email-templates" class="resource-section">
+            <div class="container">
+                <div class="resource-section__header">
+                    <h2 class="resource-section__title">📧 Professional Email Templates</h2>
+                    <p class="resource-section__subtitle">Communicate effectively with recruiters and hiring managers</p>
+                </div>
+
+                <div class="content-box">
+                    <h3>Email Best Practices</h3>
+                    <ul>
+                        <li><strong>Subject Line:</strong> Clear, specific, professional</li>
+                        <li><strong>Body:</strong> Keep concise (under 200 words when possible)</li>
+                        <li><strong>Closing:</strong> Professional sign-off with full contact info</li>
+                        <li><strong>Proofread:</strong> Read aloud before sending</li>
+                    </ul>
+
+                    <h3>Template 1: Cold Outreach / Informational Interview</h3>
+                    <div class="example-box">
+                        <h5>Subject: ACU Alum Seeking Career Advice</h5>
+                        <p>Dear [Name],</p>
+                        <p>My name is [Your Name], and I'm a [Year] [Major] major at Abilene Christian University. I came across your profile on LinkedIn and was impressed by your career path from ACU to [Their Company].</p>
+                        <p>I'm particularly interested in [specific area], and would greatly appreciate 15-20 minutes of your time for a phone call to learn from your experience.</p>
+                        <p>Thank you for considering my request!</p>
+                        <p>Best regards,<br>[Your Name]</p>
+                    </div>
+
+                    <h3>Template 2: Following Up After Career Fair</h3>
+                    <div class="example-box">
+                        <h5>Subject: Following Up - [Your Name] from ACU Career Fair</h5>
+                        <p>Dear [Recruiter Name],</p>
+                        <p>It was a pleasure meeting you at the ACU Career Fair yesterday. I enjoyed learning more about [Company]'s [specific program], and our conversation reinforced my strong interest in joining your team.</p>
+                        <p>I've attached my resume for your reference. Please let me know if there's any additional information I can provide.</p>
+                        <p>Thank you again for your time!</p>
+                        <p>Best regards,<br>[Your Name]</p>
+                    </div>
+
+                    <h3>Template 3: Thank You After Interview</h3>
+                    <div class="example-box">
+                        <h5>Subject: Thank You - [Position Name] Interview</h5>
+                        <p>Dear [Interviewer Name],</p>
+                        <p>Thank you for taking the time to speak with me today about the [Position] role. I truly enjoyed our conversation about [specific topic discussed].</p>
+                        <p>Our discussion about [specific project] particularly resonated with me because [explain connection]. I'm confident my experience with [relevant skill] would enable me to contribute to your team's success.</p>
+                        <p>I'm very excited about the possibility of joining [Company]. Please don't hesitate to reach out if you need any additional information.</p>
+                        <p>Best regards,<br>[Your Name]</p>
+                    </div>
+
+                    <h3>Template 4: Following Up on Application</h3>
+                    <div class="example-box">
+                        <h5>Subject: Following Up - [Position Name] Application</h5>
+                        <p>Dear [Hiring Manager Name],</p>
+                        <p>I wanted to follow up on my application for the [Position] role that I submitted on [Date]. I remain very interested in this opportunity.</p>
+                        <p>Since submitting my application, [mention any relevant updates]. I believe my [skills/experience] would enable me to make meaningful contributions to your team.</p>
+                        <p>Thank you for your consideration.</p>
+                        <p>Best regards,<br>[Your Name]</p>
+                    </div>
+
+                    <h3>Email Checklist</h3>
+                    <ul class="checklist">
+                        <li>Subject line is clear and professional</li>
+                        <li>Recipient's name spelled correctly</li>
+                        <li>No typos or grammatical errors</li>
+                        <li>Tone is professional but friendly</li>
+                        <li>Email is under 200 words</li>
+                        <li>Contact information in signature</li>
+                        <li>Attachments are actually attached</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 6: Interview Preparation -->
+        <section id="interviews" class="resource-section">
+            <div class="container">
+                <div class="resource-section__header">
+                    <h2 class="resource-section__title">🎤 Interview Preparation Guide</h2>
+                    <p class="resource-section__subtitle">Master the art of interviewing</p>
+                </div>
+
+                <div class="content-box">
+                    <h3>The STAR Method</h3>
+                    <p>The most effective framework for answering behavioral interview questions</p>
+                    
+                    <div class="highlight-box">
+                        <strong>STAR stands for:</strong>
+                        <ul>
+                            <li><strong>S</strong>ituation: Set the scene</li>
+                            <li><strong>T</strong>ask: Describe the challenge</li>
+                            <li><strong>A</strong>ction: Explain what YOU did</li>
+                            <li><strong>R</strong>esult: Share the outcome (quantify!)</li>
+                        </ul>
+                    </div>
+
+                    <h3>Common Interview Questions</h3>
+
+                    <h4>"Tell me about yourself"</h4>
+                    <p><strong>Structure:</strong> Present (current status) → Past (experience) → Future (why this role)</p>
+                    <div class="example-box">
+                        <p>"I'm currently a senior Finance major at ACU where I've focused on investment analysis. Over the past year, I've been managing $100K in the ACU Investment Fund. Last summer, I interned at Merrill Lynch analyzing portfolios totaling $25M. What excites me about this Financial Analyst position is the opportunity to work with institutional clients."</p>
+                    </div>
+
+                    <h4>"Why do you want to work here?"</h4>
+                    <ul>
+                        <li>Show you've researched the company</li>
+                        <li>Connect their mission to your interests</li>
+                        <li>Reference specific programs or initiatives</li>
+                    </ul>
+
+                    <h4>"What's your greatest weakness?"</h4>
+                    <ul>
+                        <li>Choose a real weakness</li>
+                        <li>Explain how you're working to improve</li>
+                        <li>Show progress you've made</li>
+                    </ul>
+
+                    <h4>"Tell me about a time you failed"</h4>
+                    <ul>
+                        <li>Choose a real failure</li>
+                        <li>Take ownership</li>
+                        <li>Focus on what you learned</li>
+                    </ul>
+
+                    <h3>Questions YOU Should Ask</h3>
+                    <h4>About the Role:</h4>
+                    <ul>
+                        <li>"What does a typical day look like?"</li>
+                        <li>"What are the biggest priorities in the first 90 days?"</li>
+                        <li>"How do you measure success in this position?"</li>
+                    </ul>
+
+                    <h4>About the Team:</h4>
+                    <ul>
+                        <li>"Can you tell me about the team I'd work with?"</li>
+                        <li>"What's your management style?"</li>
+                        <li>"What do you enjoy most about working here?"</li>
+                    </ul>
+
+                    <h3>Interview Preparation Timeline</h3>
+                    <h4>1 Week Before:</h4>
+                    <ul>
+                        <li>Research company thoroughly</li>
+                        <li>Review job description</li>
+                        <li>Prepare STAR stories</li>
+                        <li>Choose interview outfit</li>
+                    </ul>
+
+                    <h4>Day Of:</h4>
+                    <ul>
+                        <li>Arrive 10-15 minutes early</li>
+                        <li>Turn off phone</li>
+                        <li>Bring extra resumes</li>
+                        <li>Take deep breaths</li>
+                    </ul>
+
+                    <h4>After:</h4>
+                    <ul>
+                        <li>Send thank you email within 24 hours</li>
+                        <li>Note what went well</li>
+                        <li>Continue applying elsewhere</li>
+                    </ul>
+
+                    <h3>Virtual Interview Best Practices</h3>
+                    <ul>
+                        <li>Test video/audio 30 minutes before</li>
+                        <li>Use plain background</li>
+                        <li>Good lighting (face camera)</li>
+                        <li>Look at camera when speaking</li>
+                        <li>Dress professionally head-to-toe</li>
+                    </ul>
+
+                    <h3>Interview Checklist</h3>
+                    <ul class="checklist">
+                        <li>Professional outfit ready</li>
+                        <li>Extra resumes printed</li>
+                        <li>Questions to ask prepared</li>
+                        <li>Directions confirmed</li>
+                        <li>Phone silenced</li>
+                        <li>Confident mindset</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 7: Job Search Platforms -->
+        <section id="job-platforms" class="resource-section">
+            <div class="container">
+                <div class="resource-section__header">
+                    <h2 class="resource-section__title">🔍 Top Job Search Platforms</h2>
+                    <p class="resource-section__subtitle">40+ platforms organized by category</p>
+                </div>
+
+                <div class="content-box">
+                    <h3>General Job Boards</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; margin: 30px 0;">
+                        <div style="background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+                            <a href="https://www.linkedin.com/jobs/" target="_blank" style="color: #4B2E83; font-weight: 600;">LinkedIn Jobs</a>
+                            <p style="font-size: 14px; color: #666; margin-top: 8px;">Most used by recruiters</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+                            <a href="https://www.indeed.com/" target="_blank" style="color: #4B2E83; font-weight: 600;">Indeed</a>
+                            <p style="font-size: 14px; color: #666; margin-top: 8px;">Largest job board</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+                            <a href="https://www.glassdoor.com/" target="_blank" style="color: #4B2E83; font-weight: 600;">Glassdoor</a>
+                            <p style="font-size: 14px; color: #666; margin-top: 8px;">Jobs + salary info</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+                            <a href="https://www.ziprecruiter.com/" target="_blank" style="color: #4B2E83; font-weight: 600;">ZipRecruiter</a>
+                            <p style="font-size: 14px; color: #666; margin-top: 8px;">AI-powered matching</p>
+                        </div>
+                    </div>
+
+                    <h3>College Student Focused</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; margin: 30px 0;">
+                        <div style="background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+                            <a href="https://www.handshake.com/" target="_blank" style="color: #4B2E83; font-weight: 600;">Handshake</a>
+                            <p style="font-size: 14px; color: #666; margin-top: 8px;">THE platform for college recruiting</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+                            <a href="https://www.wayup.com/" target="_blank" style="color: #4B2E83; font-weight: 600;">WayUp</a>
+                            <p style="font-size: 14px; color: #666; margin-top: 8px;">Internships & entry-level</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+                            <a href="https://www.collegegrad.com/" target="_blank" style="color: #4B2E83; font-weight: 600;">CollegeGrad</a>
+                            <p style="font-size: 14px; color: #666; margin-top: 8px;">Entry-level positions</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+                            <a href="https://www.internships.com/" target="_blank" style="color: #4B2E83; font-weight: 600;">Internships.com</a>
+                            <p style="font-size: 14px; color: #666; margin-top: 8px;">Internship database</p>
+                        </div>
+                    </div>
+
+                    <h3>Finance & Accounting</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; margin: 30px 0;">
+                        <div style="background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+                            <a href="https://www.efinancialcareers.com/" target="_blank" style="color: #4B2E83; font-weight: 600;">eFinancialCareers</a>
+                            <p style="font-size: 14px; color: #666; margin-top: 8px;">Finance jobs globally</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+                            <a href="https://www.wallstreetoasis.com/" target="_blank" style="color: #4B2E83; font-weight: 600;">Wall Street Oasis</a>
+                            <p style="font-size: 14px; color: #666; margin-top: 8px;">Finance jobs + forums</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+                            <a href="https://www.accountingfly.com/" target="_blank" style="color: #4B2E83; font-weight: 600;">AccountingFly</a>
+                            <p style="font-size: 14px; color: #666; margin-top: 8px;">Accounting-specific</p>
+                        </div>
+                    </div>
+
+                    <h3>Technology</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; margin: 30px 0;">
+                        <div style="background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+                            <a href="https://www.dice.com/" target="_blank" style="color: #4B2E83; font-weight: 600;">Dice</a>
+                            <p style="font-size: 14px; color: #666; margin-top: 8px;">Tech & engineering</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+                            <a href="https://www.wellfound.com/" target="_blank" style="color: #4B2E83; font-weight: 600;">Wellfound</a>
+                            <p style="font-size: 14px; color: #666; margin-top: 8px;">Startup jobs</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+                            <a href="https://www.github.com/jobs" target="_blank" style="color: #4B2E83; font-weight: 600;">GitHub Jobs</a>
+                            <p style="font-size: 14px; color: #666; margin-top: 8px;">For developers</p>
+                        </div>
+                    </div>
+
+                    <h3>Remote Work</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; margin: 30px 0;">
+                        <div style="background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+                            <a href="https://www.flexjobs.com/" target="_blank" style="color: #4B2E83; font-weight: 600;">FlexJobs</a>
+                            <p style="font-size: 14px; color: #666; margin-top: 8px;">Vetted remote jobs</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+                            <a href="https://www.weworkremotely.com/" target="_blank" style="color: #4B2E83; font-weight: 600;">We Work Remotely</a>
+                            <p style="font-size: 14px; color: #666; margin-top: 8px;">Remote tech jobs</p>
+                        </div>
+                        <div style="background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+                            <a href="https://www.remoteok.com/" target="_blank" style="color: #4B2E83; font-weight: 600;">RemoteOK</a>
+                            <p style="font-size: 14px; color: #666; margin-top: 8px;">Remote job aggregator</p>
+                        </div>
+                    </div>
+
+                    <h3>Job Search Strategy</h3>
+                    <div class="highlight-box">
+                        <p><strong>Daily Actions (30-60 min):</strong></p>
+                        <ul>
+                            <li>Check top 3 platforms for new postings</li>
+                            <li>Apply to 2-3 positions with customized materials</li>
+                            <li>Connect with 5 new people on LinkedIn</li>
+                            <li>Follow up on applications from 1-2 weeks ago</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 8: Professional Dress Guide -->
+        <section id="dress" class="resource-section">
+            <div class="container">
+                <div class="resource-section__header">
+                    <h2 class="resource-section__title">👔 Professional Dress Guide</h2>
+                    <p class="resource-section__subtitle">Dress for success in any professional setting</p>
+                </div>
+
+                <div class="content-box">
+                    <h3>Why Professional Dress Matters</h3>
+                    <p>Your appearance affects how others perceive your professionalism, competence, and attention to detail. Dressing appropriately shows respect for the company culture.</p>
+
+                    <div class="highlight-box">
+                        <strong>General Rule:</strong> When in doubt, dress one level more formal than the company's typical attire. Better to be slightly overdressed than underdressed.
+                    </div>
+
+                    <h3>Business Professional</h3>
+                    <p><strong>When to Wear:</strong> Interviews (especially finance, law, consulting), formal business meetings, conservative company career fairs</p>
+
+                    <div class="two-column">
+                        <div>
+                            <h4>For Men:</h4>
+                            <ul>
+                                <li><strong>Suit:</strong> Dark colored (navy, charcoal, black), well-fitted</li>
+                                <li><strong>Shirt:</strong> Long-sleeve, solid or subtle pattern</li>
+                                <li><strong>Tie:</strong> Conservative pattern</li>
+                                <li><strong>Shoes:</strong> Black or brown leather, polished</li>
+                                <li><strong>Belt:</strong> Matches shoes</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4>For Women:</h4>
+                            <ul>
+                                <li><strong>Options:</strong> Pantsuit, skirt suit, or dress with blazer</li>
+                                <li><strong>Colors:</strong> Navy, black, gray, dark colors</li>
+                                <li><strong>Blouse:</strong> Conservative neckline</li>
+                                <li><strong>Shoes:</strong> Closed-toe pumps or flats</li>
+                                <li><strong>Accessories:</strong> Minimal jewelry</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h3>Business Casual</h3>
+                    <p><strong>When to Wear:</strong> Most office environments, networking events, some career fairs</p>
+
+                    <div class="two-column">
+                        <div>
+                            <h4>For Men:</h4>
+                            <ul>
+                                <li><strong>Pants:</strong> Dress slacks or chinos</li>
+                                <li><strong>Shirt:</strong> Button-down or polo</li>
+                                <li><strong>Tie:</strong> Optional (usually not worn)</li>
+                                <li><strong>Shoes:</strong> Leather dress shoes or loafers</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4>For Women:</h4>
+                            <ul>
+                                <li><strong>Bottoms:</strong> Dress pants, khakis, or knee-length skirt</li>
+                                <li><strong>Tops:</strong> Blouse, knit top, or sweater</li>
+                                <li><strong>Shoes:</strong> Closed-toe pumps, flats, or low-heeled boots</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h3>Smart Casual</h3>
+                    <p><strong>When to Wear:</strong> Tech company interviews, creative industry offices, startup environments</p>
+
+                    <ul>
+                        <li>Nice jeans or dress pants</li>
+                        <li>Button-down shirt, polo, or nice sweater</li>
+                        <li>Clean, minimal sneakers or dress shoes</li>
+                        <li>Optional blazer or cardigan</li>
+                    </ul>
+
+                    <h3>Industry Guidelines</h3>
+                    <div class="two-column">
+                        <div>
+                            <h4>Conservative Industries</h4>
+                            <p><strong>(Finance, Law, Consulting)</strong></p>
+                            <ul>
+                                <li>Always business professional for interviews</li>
+                                <li>Traditional colors (navy, gray, black)</li>
+                                <li>Minimal accessories</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4>Creative Industries</h4>
+                            <p><strong>(Tech, Marketing, Media)</strong></p>
+                            <ul>
+                                <li>Business casual to smart casual</li>
+                                <li>More room for personal style</li>
+                                <li>Colors and patterns acceptable</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h3>Virtual Interview Attire</h3>
+                    <ul>
+                        <li>Dress as you would for in-person (full outfit!)</li>
+                        <li>Solid colors work best on camera</li>
+                        <li>Avoid all white or all black</li>
+                        <li>Ensure clothing contrasts with background</li>
+                        <li>Check how you look on camera beforehand</li>
+                    </ul>
+
+                    <h3>Final Appearance Checklist</h3>
+                    <ul class="checklist">
+                        <li>Clothing is clean, pressed, and stain-free</li>
+                        <li>Clothes fit properly</li>
+                        <li>Shoes are clean and polished</li>
+                        <li>Hair is neat and styled</li>
+                        <li>Nails are clean and trimmed</li>
+                        <li>Minimal fragrance</li>
+                        <li>Overall appearance is polished</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 9: Elevator Pitch Guide -->
+        <section id="elevator-pitch" class="resource-section">
+            <div class="container">
+                <div class="resource-section__header">
+                    <h2 class="resource-section__title">🎯 Elevator Pitch Guide</h2>
+                    <p class="resource-section__subtitle">Perfect your 30-second introduction</p>
+                </div>
+
+                <div class="content-box">
+                    <h3>What is an Elevator Pitch?</h3>
+                    <p>A brief (30-60 second) self-introduction that explains who you are, what you do, and what you're looking for.</p>
+
+                    <div class="highlight-box">
+                        <strong>When to Use:</strong>
+                        <ul>
+                            <li>Career fairs when meeting recruiters</li>
+                            <li>Networking events</li>
+                            <li>Beginning of interviews ("Tell me about yourself")</li>
+                            <li>Meeting professionals in your field</li>
+                        </ul>
+                    </div>
+
+                    <h3>The 4-Part Formula</h3>
+                    <div class="content-box" style="background: #f0ebf8;">
+                        <h4>1. Who You Are (5-10 seconds)</h4>
+                        <p>Name, year, major, school</p>
+
+                        <h4>2. What You've Done (15-20 seconds)</h4>
+                        <p>1-2 key experiences with results</p>
+
+                        <h4>3. What You're Looking For (5-10 seconds)</h4>
+                        <p>Career interests and opportunities seeking</p>
+
+                        <h4>4. Call to Action (5 seconds)</h4>
+                        <p>Question or statement to continue conversation</p>
+                    </div>
+
+                    <h3>Complete Examples</h3>
+
+                    <div class="example-box">
+                        <h5>Finance Major:</h5>
+                        <p>"Hi, I'm Michael Chen, a senior Finance major at ACU. Over the past year, I've been managing $100K in our student investment fund, and last summer I interned at Merrill Lynch analyzing portfolios totaling $25M. I'm passionate about investment banking and looking for full-time analyst positions starting next June. I'd love to learn more about your firm's training program."</p>
+                    </div>
+
+                    <div class="example-box">
+                        <h5>Marketing Major:</h5>
+                        <p>"Hi, I'm Emily Rodriguez, a senior Marketing major at ACU. This past summer, I interned at a tech startup where I grew their Instagram following from 5K to 15K in three months. I'm really passionate about digital marketing and looking for positions where I can combine data analytics with creative content. What marketing challenges is your team currently working on?"</p>
+                    </div>
+
+                    <h3>Using ChatGPT to Create Your Pitch</h3>
+                    <div class="example-box">
+                        <h5>Example Prompt for ChatGPT:</h5>
+                        <p>"I need help creating an elevator pitch for career fairs. Here's my information:</p>
+                        <ul>
+                            <li>Name: [Your Name]</li>
+                            <li>Major: Finance, senior at ACU</li>
+                            <li>Experience: ACU Investment Fund, Merrill Lynch intern</li>
+                            <li>Looking for: Investment banking positions</li>
+                        </ul>
+                        <p>Can you help me create a 30-second elevator pitch?"</p>
+                    </div>
+
+                    <h4>Follow-up Prompts:</h4>
+                    <ul>
+                        <li>"Can you make it more concise?"</li>
+                        <li>"Can you emphasize my internship experience more?"</li>
+                        <li>"Can you make it sound more conversational?"</li>
+                        <li>"Can you create 3 different versions?"</li>
+                    </ul>
+
+                    <h3>Practice Tips</h3>
+                    <ul>
+                        <li>Record yourself and watch it back</li>
+                        <li>Practice in front of mirror</li>
+                        <li>Present to friends/family for feedback</li>
+                        <li>Time yourself (30-60 seconds)</li>
+                        <li>Memorize structure, not word-for-word</li>
+                    </ul>
+
+                    <h3>Elevator Pitch Checklist</h3>
+                    <ul class="checklist">
+                        <li>Clearly states who you are and major</li>
+                        <li>Includes 1-2 accomplishments with specifics</li>
+                        <li>Explains what you're looking for</li>
+                        <li>Ends with engaging question</li>
+                        <li>Takes 30-60 seconds to deliver</li>
+                        <li>Sounds natural and conversational</li>
+                        <li>Demonstrates enthusiasm</li>
+                        <li>Practiced enough to deliver smoothly</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 10: Skills by Major -->
+        <section id="skills" class="resource-section">
+            <div class="container">
+                <div class="resource-section__header">
+                    <h2 class="resource-section__title">🛠️ Resume Skills by Major</h2>
+                    <p class="resource-section__subtitle">Essential skills to highlight</p>
+                </div>
+
+                <div class="content-box">
+                    <h3>How to Build Skills Section</h3>
+                    <div class="highlight-box">
+                        <strong>Key Principles:</strong>
+                        <ul>
+                            <li><strong>Be honest:</strong> Only list skills you actually have</li>
+                            <li><strong>Be specific:</strong> "Excel" → "Excel (Pivot Tables, VLOOKUP, Macros)"</li>
+                            <li><strong>Prioritize:</strong> List most relevant skills first</li>
+                            <li><strong>Use keywords:</strong> Match job description</li>
+                        </ul>
+                    </div>
+
+                    <h3>Finance Major Skills</h3>
+                    <div class="example-box">
+                        <p><strong>Technical:</strong> Excel (Financial Modeling, Pivot Tables), Bloomberg Terminal, Python, SQL, Tableau</p>
+                        <p><strong>Analysis:</strong> Financial Statement Analysis, DCF Valuation, Portfolio Management</p>
+                        <p><strong>Certifications:</strong> Bloomberg Market Concepts, CFA Level 1 Candidate</p>
+                    </div>
+
+                    <h3>Accounting Major Skills</h3>
+                    <div class="example-box">
+                        <p><strong>Software:</strong> QuickBooks, SAP, CCH Axcess, Excel (Advanced)</p>
+                        <p><strong>Knowledge:</strong> GAAP & IFRS, Tax Preparation, Audit Procedures</p>
+                        <p><strong>Certifications:</strong> CPA Exam (sections passed), VITA Certified</p>
+                    </div>
+
+                    <h3>Marketing Major Skills</h3>
+                    <div class="example-box">
+                        <p><strong>Digital Marketing:</strong> Google Analytics, Google Ads, SEO/SEM, Social Media Management</p>
+                        <p><strong>Creative Tools:</strong> Adobe Creative Suite, Canva, WordPress</p>
+                        <p><strong>Skills:</strong> Content Strategy, Copywriting, Campaign Management</p>
+                    </div>
+
+                    <h3>Computer Science Major Skills</h3>
+                    <div class="example-box">
+                        <p><strong>Languages:</strong> Python, Java, JavaScript, C++, SQL</p>
+                        <p><strong>Frameworks:</strong> React, Node.js, Django, TensorFlow</p>
+                        <p><strong>Tools:</strong> Git, AWS, Docker, PostgreSQL</p>
+                    </div>
+
+                    <h3>Management Major Skills</h3>
+                    <div class="example-box">
+                        <p><strong>Tools:</strong> Salesforce, Excel, Power BI, Microsoft Project</p>
+                        <p><strong>Skills:</strong> Team Leadership, Project Management, Process Improvement</p>
+                        <p><strong>Certifications:</strong> Lean Six Sigma, SHRM Member</p>
+                    </div>
+
+                    <h3>Information Systems Major Skills</h3>
+                    <div class="example-box">
+                        <p><strong>Technical:</strong> Python, SQL, SAP, Salesforce, AWS</p>
+                        <p><strong>Business:</strong> Systems Analysis, Project Management, Data Analysis</p>
+                        <p><strong>Certifications:</strong> CompTIA Security+, AWS Certified</p>
+                    </div>
+
+                    <h3>Common Mistakes to Avoid</h3>
+                    <ul>
+                        <li>❌ Listing "Microsoft Office" without specifics</li>
+                        <li>❌ Including outdated skills</li>
+                        <li>❌ Rating yourself with stars</li>
+                        <li>❌ Listing every skill you've touched</li>
+                        <li>❌ Using vague terms like "computer skills"</li>
+                        <li>❌ Lying about skills</li>
+                    </ul>
+
+                    <div class="highlight-box">
+                        <strong>Remember:</strong> Tailor your skills section to each job application. Include keywords from the job description!
+                    </div>
+                </div>
+            </div>
+        </section>
+
+<!-- Section 11: Social Media -->
+        <section id="social-media" class="resource-section">
+            <div class="container">
+                <div class="resource-section__header">
+                    <h2 class="resource-section__title">📱 Follow @advicewitherin</h2>
+                    <p class="resource-section__subtitle">Stay connected for career advice, tips, and resources</p>
+                </div>
+
+                <div class="content-box" style="text-align: center;">
+                    <h3>Get Daily Career Advice & Tips</h3>
+                    <p style="font-size: 18px; margin: 30px 0;">Follow @advicewitherin on social media for:</p>
+                    
+                    <div class="resource-cards">
+                        <div class="resource-card">
+                            <span class="resource-card__icon">💡</span>
+                            <h4 class="resource-card__title">Career Tips</h4>
+                            <p class="resource-card__description">Daily advice on resumes, interviews, networking, and professional development</p>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="resource-card__icon">📰</span>
+                            <h4 class="resource-card__title">Industry News</h4>
+                            <p class="resource-card__description">Stay updated on trends in business, finance, technology, and marketing</p>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="resource-card__icon">🎯</span>
+                            <h4 class="resource-card__title">Job Search Strategies</h4>
+                            <p class="resource-card__description">Proven tactics for finding opportunities and standing out to employers</p>
+                        </div>
+
+                        <div class="resource-card">
+                            <span class="resource-card__icon">✨</span>
+                            <h4 class="resource-card__title">Success Stories</h4>
+                            <p class="resource-card__description">Learn from students who landed their dream jobs and internships</p>
+                        </div>
+                    </div>
+
+                    <div style="margin: 60px 0;">
+                        <h3 style="color: #4B2E83; margin-bottom: 30px;">Connect on Your Favorite Platform</h3>
+                        
+                        <div style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin: 40px 0;">
+                            <div style="text-align: center;">
+                                <a href="https://www.instagram.com/advicewitherin" target="_blank" style="display: inline-block; padding: 20px 40px; background: linear-gradient(135deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D); color: white; text-decoration: none; border-radius: 12px; font-weight: 700; font-size: 20px; transition: transform 0.3s ease;">
+                                    📸 Instagram
+                                </a>
+                                <p style="margin-top: 15px; color: #666;">@advicewitherin</p>
+                            </div>
+
+                            <div style="text-align: center;">
+                                <a href="https://www.tiktok.com/@advicewitherin" target="_blank" style="display: inline-block; padding: 20px 40px; background: #000000; color: white; text-decoration: none; border-radius: 12px; font-weight: 700; font-size: 20px; transition: transform 0.3s ease;">
+                                    🎵 TikTok
+                                </a>
+                                <p style="margin-top: 15px; color: #666;">@advicewitherin</p>
+                            </div>
+
+                            <div style="text-align: center;">
+                                <a href="https://www.linkedin.com/in/erin" target="_blank" style="display: inline-block; padding: 20px 40px; background: #0077B5; color: white; text-decoration: none; border-radius: 12px; font-weight: 700; font-size: 20px; transition: transform 0.3s ease;">
+                                    💼 LinkedIn
+                                </a>
+                                <p style="margin-top: 15px; color: #666;">Connect on LinkedIn</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="margin: 60px 0; padding: 40px; background: linear-gradient(135deg, #4B2E83 0%, #6B46A8 100%); border-radius: 12px; color: white;">
+                        <h3 style="color: white; margin-bottom: 20px;">Stay Connected with COBA</h3>
+                        <p style="font-size: 18px; margin-bottom: 30px;">Join our community of driven business students and professionals</p>
+                        <p style="font-size: 16px;">Follow @advicewitherin for daily inspiration, practical advice, and resources to accelerate your career journey!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__section">
+                    <h4>COBA Professional Development</h4>
+                    <p>Empowering ACU business students to achieve their career goals</p>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; 2024 Abilene Christian University - College of Business Administration. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#main-content" class="back-to-top" id="backToTop">↑</a>
+
+    <!-- JavaScript -->
+    <script src="../js/main.js"></script>
+    <script>
+        // Back to Top Button
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
+            }
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerOffset = 100;
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
