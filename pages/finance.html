@@ -1,0 +1,1204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Finance major resources at ACU COBA - career paths, internships, certifications, and professional development">
+    <meta name="keywords" content="ACU, COBA, Finance major, investment banking, financial careers, CFA, internships">
+    <meta name="author" content="ACU COBA">
+    <title>Finance Major Resources | COBA | ACU</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../assets/images/favicon.png">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="../css/main.css">
+    
+    <style>
+        /* Finance Page Specific Styles */
+        .finance-hero {
+            background: linear-gradient(135deg, #4B2E83 0%, #6B46A8 100%);
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .finance-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"><path d="M0,0 L1200,0 L1200,60 Q900,100 600,60 T0,60 Z" fill="rgba(255,255,255,0.05)"/></svg>') repeat-x bottom;
+            opacity: 0.1;
+        }
+
+        .finance-hero h1 {
+            font-size: 56px;
+            margin-bottom: 20px;
+            font-weight: 800;
+            position: relative;
+            z-index: 1;
+        }
+
+        .finance-hero p {
+            font-size: 22px;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            opacity: 0.95;
+            position: relative;
+            z-index: 1;
+        }
+
+        .finance-hero__icon {
+            font-size: 80px;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .section-nav {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 70px;
+            z-index: 100;
+            padding: 20px 0;
+        }
+
+        .section-nav__list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .section-nav__link {
+            padding: 10px 20px;
+            background: #f5f5f5;
+            color: #4B2E83;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 14px;
+        }
+
+        .section-nav__link:hover {
+            background: #4B2E83;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .finance-section {
+            padding: 80px 0;
+        }
+
+        .finance-section:nth-child(even) {
+            background: #f9f9f9;
+        }
+
+        .finance-section__header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .finance-section__title {
+            font-size: 42px;
+            color: #4B2E83;
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+
+        .finance-section__subtitle {
+            font-size: 20px;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .career-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .career-card {
+            background: white;
+            border-radius: 12px;
+            padding: 35px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .career-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #4B2E83, #6B46A8);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .career-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .career-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(75, 46, 131, 0.2);
+            border-color: #4B2E83;
+        }
+
+        .career-card__icon {
+            font-size: 56px;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .career-card__title {
+            font-size: 26px;
+            color: #4B2E83;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .career-card__label {
+            font-weight: 700;
+            color: #4B2E83;
+            margin-top: 15px;
+            display: block;
+        }
+
+        .career-card__text {
+            color: #666;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        .cert-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .cert-card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cert-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(75, 46, 131, 0.15);
+        }
+
+        .cert-card__icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .cert-card__title {
+            font-size: 22px;
+            color: #4B2E83;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .cert-card__description {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .cert-card__link {
+            display: inline-block;
+            padding: 12px 28px;
+            background: #4B2E83;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .cert-card__link:hover {
+            background: #6B46A8;
+            transform: translateX(5px);
+        }
+
+        .timeline {
+            max-width: 900px;
+            margin: 50px auto;
+            position: relative;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, #4B2E83, #6B46A8);
+        }
+
+        .timeline-item {
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(odd) {
+            padding-right: 50%;
+            text-align: right;
+        }
+
+        .timeline-item:nth-child(even) {
+            padding-left: 50%;
+            text-align: left;
+        }
+
+        .timeline-content {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            position: relative;
+        }
+
+        .timeline-year {
+            font-size: 24px;
+            font-weight: 800;
+            color: #4B2E83;
+            margin-bottom: 15px;
+        }
+
+        .timeline-semester {
+            font-size: 18px;
+            font-weight: 700;
+            color: #6B46A8;
+            margin-bottom: 10px;
+        }
+
+        .timeline-details {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .timeline-marker {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 20px;
+            background: #FFB81C;
+            border: 4px solid white;
+            border-radius: 50%;
+            box-shadow: 0 0 0 4px #4B2E83;
+            z-index: 2;
+        }
+
+        .video-container {
+            max-width: 800px;
+            margin: 40px auto;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .content-box {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            margin: 30px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .content-box h3 {
+            color: #4B2E83;
+            font-size: 28px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .content-box ul {
+            line-height: 1.8;
+            color: #555;
+            margin: 15px 0;
+            padding-left: 25px;
+        }
+
+        .content-box li {
+            margin-bottom: 12px;
+        }
+
+        .highlight-box {
+            background: #f0ebf8;
+            border-left: 4px solid #4B2E83;
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 4px;
+        }
+
+        .highlight-box strong {
+            color: #4B2E83;
+            display: block;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #4B2E83 0%, #6B46A8 100%);
+            color: white;
+            padding: 60px 40px;
+            border-radius: 12px;
+            text-align: center;
+            margin: 60px 0;
+        }
+
+        .cta-section h3 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .cta-section p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 40px;
+            background: #FFB81C;
+            color: #4B2E83;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .btn:hover {
+            background: white;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #4B2E83;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 24px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 1000;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+        }
+
+        .back-to-top:hover {
+            background: #6B46A8;
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 768px) {
+            .finance-hero h1 {
+                font-size: 36px;
+            }
+
+            .finance-section__title {
+                font-size: 32px;
+            }
+
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-item:nth-child(odd),
+            .timeline-item:nth-child(even) {
+                padding-left: 60px;
+                padding-right: 0;
+                text-align: left;
+            }
+
+            .timeline-marker {
+                left: 20px;
+                transform: none;
+            }
+
+            .career-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Skip to Main Content -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Header & Navigation -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header__content">
+                <!-- Logo -->
+                <div class="header__logo">
+                    <a href="../index.html">
+                        <span class="header__logo-text">COBA</span>
+                        <span class="header__logo-subtitle">Professional Development</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Toggle -->
+                <button class="header__menu-toggle" aria-label="Toggle menu" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <!-- Navigation -->
+                <nav class="header__nav" id="mainNav">
+                    <ul class="nav-list">
+                        <li><a href="../index.html#home" class="nav-list__link">Home</a></li>
+                        <li><a href="../index.html#about" class="nav-list__link">About</a></li>
+                        <li class="nav-list__item--dropdown">
+                            <a href="#" class="nav-list__link">Majors <span class="dropdown-arrow">▾</span></a>
+                            <ul class="nav-dropdown">
+                                <li><a href="finance.html" class="active">Finance</a></li>
+                                <li><a href="../index.html#accounting">Accounting</a></li>
+                                <li><a href="../index.html#marketing">Marketing</a></li>
+                                <li><a href="../index.html#management">Management</a></li>
+                                <li><a href="../index.html#information-systems">Information Systems</a></li>
+                                <li><a href="../index.html#computer-science">Computer Science</a></li>
+                                <li><a href="../index.html#digital-entertainment">Digital Entertainment Tech</a></li>
+                                <li><a href="../index.html#data-analytics">Data Analytics</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="../index.html#international" class="nav-list__link">International Students</a></li>
+                        <li><a href="resources-all.html" class="nav-list__link">Resources</a></li>
+                        <li><a href="../index.html#contact" class="nav-list__link nav-list__link--cta">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        
+        <!-- Hero Section -->
+        <section class="finance-hero">
+            <div class="container">
+                <span class="finance-hero__icon">💰</span>
+                <h1>Finance Major Resources</h1>
+                <p>Explore comprehensive resources including career paths, internship opportunities, professional certifications, and industry insights to launch your finance career</p>
+            </div>
+        </section>
+
+        <!-- Section Navigation -->
+        <nav class="section-nav">
+            <div class="container">
+                <ul class="section-nav__list">
+                    <li><a href="#video" class="section-nav__link">Overview Video</a></li>
+                    <li><a href="#careers" class="section-nav__link">Career Paths</a></li>
+                    <li><a href="#internships" class="section-nav__link">Internships</a></li>
+                    <li><a href="#certifications" class="section-nav__link">Certifications</a></li>
+                    <li><a href="#reading" class="section-nav__link">Recommended Reading</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Video Section -->
+        <section id="video" class="finance-section">
+            <div class="container">
+                <div class="finance-section__header">
+                    <h2 class="finance-section__title">What Can You Do With a Finance Degree?</h2>
+                    <p class="finance-section__subtitle">Discover the diverse career opportunities available to Finance majors</p>
+                </div>
+
+                <div class="video-container">
+                    <div class="video-wrapper">
+                        <iframe 
+                            src="https://www.youtube.com/embed/EcPZ_uWGWoc" 
+                            title="What can you do with a Finance degree?"
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+
+                <div class="content-box" style="margin-top: 40px;">
+                    <h3>Why Finance?</h3>
+                    <p>A degree in Finance opens doors to exciting career opportunities across multiple industries. Finance professionals are in high demand, with competitive salaries and strong career growth potential. Whether you're interested in investment banking, corporate finance, wealth management, or fintech, a Finance degree from ACU COBA provides the analytical skills, industry knowledge, and professional network you need to succeed.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Career Paths Section -->
+        <section id="careers" class="finance-section">
+            <div class="container">
+                <div class="finance-section__header">
+                    <h2 class="finance-section__title">Career Paths to Explore</h2>
+                    <p class="finance-section__subtitle">Discover what Finance professionals do, their work environments, and compensation</p>
+                </div>
+
+                <div class="career-cards">
+                    <!-- Investment Banking -->
+                    <div class="career-card">
+                        <span class="career-card__icon">💼</span>
+                        <h3 class="career-card__title">Investment Banking</h3>
+                        
+                        <span class="career-card__label">Culture:</span>
+                        <p class="career-card__text">Fast-paced, competitive, and demanding. Emphasis on teamwork and deal execution. Long hours but intellectually stimulating work environment.</p>
+                        
+                        <span class="career-card__label">Work-Life Balance:</span>
+                        <p class="career-card__text">Typically long hours, especially during deal closings. Limited work-life balance, particularly in analyst and associate roles.</p>
+                        
+                        <span class="career-card__label">Compensation:</span>
+                        <p class="career-card__text">High base salaries and substantial bonuses. Bonuses often make up a significant portion of total compensation. First-year analysts typically earn $100K-$150K+ including bonus.</p>
+                        
+                        <span class="career-card__label">Career Path:</span>
+                        <p class="career-card__text">Analyst → Associate → Vice President → Director → Managing Director</p>
+                    </div>
+
+                    <!-- Hedge Funds -->
+                    <div class="career-card">
+                        <span class="career-card__icon">📈</span>
+                        <h3 class="career-card__title">Hedge Funds</h3>
+                        
+                        <span class="career-card__label">Culture:</span>
+                        <p class="career-card__text">Varied, depending on the fund's strategy. Can range from highly collaborative to individual performance-driven. Often smaller teams than investment banks.</p>
+                        
+                        <span class="career-card__label">Work-Life Balance:</span>
+                        <p class="career-card__text">Can be demanding, especially during market fluctuations. Some funds offer more flexibility than investment banks, but hours are still typically long.</p>
+                        
+                        <span class="career-card__label">Compensation:</span>
+                        <p class="career-card__text">Highly variable. Performance-based compensation is a significant factor. Top performers can earn significantly more than traditional finance roles.</p>
+                        
+                        <span class="career-card__label">Entry Requirements:</span>
+                        <p class="career-card__text">Often requires 2-3 years of investment banking or similar experience. Extremely competitive to break into directly from undergrad.</p>
+                    </div>
+
+                    <!-- Asset Management -->
+                    <div class="career-card">
+                        <span class="career-card__icon">📊</span>
+                        <h3 class="career-card__title">Asset Management</h3>
+                        
+                        <span class="career-card__label">Culture:</span>
+                        <p class="career-card__text">Diverse, depending on the type of asset management (mutual funds, pension funds, etc.). Can be more stable compared to hedge funds. Focus on long-term investment performance.</p>
+                        
+                        <span class="career-card__label">Work-Life Balance:</span>
+                        <p class="career-card__text">Generally better than investment banking or hedge funds, but still depends on the specific role and company. More predictable hours.</p>
+                        
+                        <span class="career-card__label">Compensation:</span>
+                        <p class="career-card__text">Competitive, with bonuses tied to performance. More stable than hedge funds. Base salaries for analysts start at $70K-$90K with potential for significant bonuses.</p>
+                        
+                        <span class="career-card__label">Roles:</span>
+                        <p class="career-card__text">Portfolio Manager, Research Analyst, Trader, Risk Manager, Client Relations</p>
+                    </div>
+
+                    <!-- Corporate Finance -->
+                    <div class="career-card">
+                        <span class="career-card__icon">🏢</span>
+                        <h3 class="career-card__title">Corporate Finance</h3>
+                        
+                        <span class="career-card__label">Culture:</span>
+                        <p class="career-card__text">Varies widely based on the industry and company. Generally more stable and less intense than investment banking. Collaborative team environment.</p>
+                        
+                        <span class="career-card__label">Work-Life Balance:</span>
+                        <p class="career-card__text">Generally better work-life balance compared to investment banking or private equity. More predictable hours, though may increase during quarterly closes or major projects.</p>
+                        
+                        <span class="career-card__label">Compensation:</span>
+                        <p class="career-card__text">Competitive base salaries with potential for performance-based bonuses. Entry-level financial analysts earn $55K-$75K. More stable than investment banking but generally lower total comp.</p>
+                        
+                        <span class="career-card__label">Key Functions:</span>
+                        <p class="career-card__text">Financial Planning & Analysis (FP&A), Treasury, Corporate Development, Investor Relations</p>
+                    </div>
+
+                    <!-- Insurance -->
+                    <div class="career-card">
+                        <span class="career-card__icon">🛡️</span>
+                        <h3 class="career-card__title">Insurance & Risk Management</h3>
+                        
+                        <span class="career-card__label">Culture:</span>
+                        <p class="career-card__text">Tends to be more risk-averse and stable. Emphasis on actuarial and risk management. Professional and structured work environment.</p>
+                        
+                        <span class="career-card__label">Work-Life Balance:</span>
+                        <p class="career-card__text">Can vary but is often more predictable and stable compared to some other finance sectors. Generally good work-life balance.</p>
+                        
+                        <span class="career-card__label">Compensation:</span>
+                        <p class="career-card__text">Competitive, with variations depending on roles such as underwriting, actuarial, or management. Actuaries can earn $60K-$80K starting, with significant growth potential.</p>
+                        
+                        <span class="career-card__label">Career Paths:</span>
+                        <p class="career-card__text">Underwriter, Actuary, Risk Analyst, Claims Manager, Insurance Broker</p>
+                    </div>
+                </div>
+
+                <div class="highlight-box" style="margin-top: 50px;">
+                    <strong>💡 Pro Tip:</strong>
+                    <p>Research multiple career paths before committing. Consider internships in different areas to discover what truly interests you. Your first job doesn't lock you into one path—many finance professionals transition between these fields throughout their careers.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Internships Section -->
+        <section id="internships" class="finance-section">
+            <div class="container">
+                <div class="finance-section__header">
+                    <h2 class="finance-section__title">Internships: How to Find Them & When to Apply</h2>
+                    <p class="finance-section__subtitle">Your roadmap to landing a finance internship</p>
+                </div>
+
+                <div class="content-box">
+                    <h3>What is an Internship?</h3>
+                    <p>An internship is a short-term work experience offered by companies and other organizations for people—usually students—to get some entry-level exposure to a particular industry or field.</p>
+
+                    <h3>Benefits of Finance Internships</h3>
+                    <ul>
+                        <li><strong>Real-world experience:</strong> Apply classroom concepts to actual financial analysis, modeling, and decision-making</li>
+                        <li><strong>Skill development:</strong> Gain proficiency in Excel, Bloomberg Terminal, financial software, and presentation skills</li>
+                        <li><strong>Career exploration:</strong> Confirm whether investment banking, wealth management, or corporate finance is right for you</li>
+                        <li><strong>Professional network:</strong> Build relationships with mentors and colleagues who can help your career</li>
+                        <li><strong>Job offers:</strong> Many internships convert to full-time offers—some firms hire 50-80% of their interns</li>
+                        <li><strong>Resume builder:</strong> Internship experience makes you significantly more competitive for post-graduation roles</li>
+                    </ul>
+                </div>
+
+                <div class="finance-section__header" style="margin-top: 60px;">
+                    <h3 class="finance-section__title" style="font-size: 36px;">Your Internship Timeline</h3>
+                    <p class="finance-section__subtitle">Plan your path from freshman year to your dream internship</p>
+                </div>
+
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-year">Freshman Year</div>
+                            <div class="timeline-semester">Fall Semester</div>
+                            <div class="timeline-details">
+                                <p><strong>Focus:</strong> Build foundation</p>
+                                <ul>
+                                    <li>Complete 16 credit hours</li>
+                                    <li>Join Finance or Investment Club</li>
+                                    <li>Attend COBA career events</li>
+                                    <li>Start building LinkedIn profile</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-year">Freshman Year</div>
+                            <div class="timeline-semester">Spring Semester</div>
+                            <div class="timeline-details">
+                                <p><strong>Focus:</strong> Develop skills</p>
+                                <ul>
+                                    <li>Complete 16 credit hours</li>
+                                    <li>Get Bloomberg Market Concepts (BMC) certified</li>
+                                    <li>Attend career fair (practice for next year)</li>
+                                    <li>Build Excel skills</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-year">Freshman Year</div>
+                            <div class="timeline-semester">Summer</div>
+                            <div class="timeline-details">
+                                <p><strong>Focus:</strong> Gain experience</p>
+                                <ul>
+                                    <li>Work any job (shows work ethic)</li>
+                                    <li>Take online finance courses</li>
+                                    <li>Read finance books/news</li>
+                                    <li>Network with family/friends in finance</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-year">Sophomore Year</div>
+                            <div class="timeline-semester">Fall Semester</div>
+                            <div class="timeline-details">
+                                <p><strong>Focus:</strong> Prepare for recruiting</p>
+                                <ul>
+                                    <li>Complete 16 credit hours</li>
+                                    <li>Apply for ACU Investment Fund</li>
+                                    <li>Perfect your resume</li>
+                                    <li>Start researching companies</li>
+                                    <li>Practice interview skills</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-year">Sophomore Year</div>
+                            <div class="timeline-semester">Spring Semester</div>
+                            <div class="timeline-details">
+                                <p><strong>Focus:</strong> Apply aggressively</p>
+                                <ul>
+                                    <li>Complete 16 credit hours</li>
+                                    <li>Attend career fair - apply to 20+ companies</li>
+                                    <li>Apply online to 50+ internships</li>
+                                    <li>Network with alumni on LinkedIn</li>
+                                    <li>Practice interviews constantly</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-year">Sophomore Year</div>
+                            <div class="timeline-semester">Summer</div>
+                            <div class="timeline-details">
+                                <p><strong>🎯 INTERNSHIP GOAL!</strong></p>
+                                <ul>
+                                    <li>Complete finance internship</li>
+                                    <li>Excel in your role</li>
+                                    <li>Build professional network</li>
+                                    <li>Secure strong recommendation</li>
+                                    <li>Position for return offer</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-year">Junior Year</div>
+                            <div class="timeline-semester">Fall Semester</div>
+                            <div class="timeline-details">
+                                <p><strong>Focus:</strong> Junior year recruiting</p>
+                                <ul>
+                                    <li>Complete 16 credit hours</li>
+                                    <li>Leadership Summit participation</li>
+                                    <li>Apply for JUNIOR summer internships (for full-time recruiting)</li>
+                                    <li>Start studying for CFA Level 1</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-year">Junior Year</div>
+                            <div class="timeline-semester">Spring Semester</div>
+                            <div class="timeline-details">
+                                <p><strong>Focus:</strong> Secure junior internship</p>
+                                <ul>
+                                    <li>Complete 16 credit hours</li>
+                                    <li>Accept junior year internship offer</li>
+                                    <li>Continue CFA preparation</li>
+                                    <li>Build advanced Excel/modeling skills</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-year">Junior Year</div>
+                            <div class="timeline-semester">Summer</div>
+                            <div class="timeline-details">
+                                <p><strong>🎯 CRITICAL INTERNSHIP!</strong></p>
+                                <ul>
+                                    <li>Excel in junior year internship</li>
+                                    <li>This often converts to full-time offer</li>
+                                    <li>Build relationships for references</li>
+                                    <li>Learn as much as possible</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-year">Senior Year</div>
+                            <div class="timeline-semester">Fall & Spring</div>
+                            <div class="timeline-details">
+                                <p><strong>Focus:</strong> Finish strong</p>
+                                <ul>
+                                    <li>Complete remaining 32 credit hours</li>
+                                    <li>Accept full-time offer</li>
+                                    <li>Complete CFA Level 1 (optional but valuable)</li>
+                                    <li>Prepare for career start</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-year">Post-Graduation</div>
+                            <div class="timeline-semester">Career Launch!</div>
+                            <div class="timeline-details">
+                                <p><strong>🎉 Start your finance career!</strong></p>
+                                <ul>
+                                    <li>Begin full-time role</li>
+                                    <li>Continue learning and growing</li>
+                                    <li>Give back to future ACU students</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="highlight-box" style="margin-top: 50px;">
+                    <strong>Important Note:</strong>
+                    <p>Although you can have as many internship experiences as you'd like, many students will choose to pursue their internship the summer before their senior year (junior year summer). However, the more internships you complete, the more competitive you'll be. Many top students complete 2-3 internships before graduation.</p>
+                </div>
+
+                <div class="cta-section">
+                    <h3>Hear From a Finance Intern</h3>
+                    <p>Learn about a real Finance student's internship experience and how it launched their career</p>
+                    <a href="https://blogs.acu.edu/coba/2023/09/25/internship-highlight-will-fargason/" target="_blank" class="btn">
+                        Read Will's Story →
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section id="certifications" class="finance-section">
+            <div class="container">
+                <div class="finance-section__header">
+                    <h2 class="finance-section__title">Certifications & Resources</h2>
+                    <p class="finance-section__subtitle">Professional credentials and learning resources to advance your finance career</p>
+                </div>
+
+                <div class="cert-cards">
+                    <!-- Business and Financial Modeling -->
+                    <div class="cert-card">
+                        <span class="cert-card__icon">📊</span>
+                        <h3 class="cert-card__title">Business and Financial Modeling (Wharton)</h3>
+                        <p class="cert-card__description">Wharton's Business and Financial Modeling Specialization is designed to help you make informed business and financial decisions. These foundational courses will introduce you to spreadsheet models, modeling techniques, and common applications for investment analysis, company valuation, forecasting, and more. When you complete the Specialization, you'll be ready to use your own data to describe realities, build scenarios, and predict performance.</p>
+                        <a href="https://www.coursera.org/specializations/wharton-business-financial-modeling" target="_blank" class="cert-card__link">Learn More →</a>
+                    </div>
+
+                    <!-- Bloomberg Professional Certificate -->
+                    <div class="cert-card">
+                        <span class="cert-card__icon">📈</span>
+                        <h3 class="cert-card__title">Bloomberg Professional Certificate</h3>
+                        <p class="cert-card__description">The Bloomberg Terminal located in Swinney Financial Lab on the first floor of COBA offers students a resource that provides them with insight into investments and other financial opportunities. BMC consists of 8 different courses including economic indicators, currency, fixed income, equities, terminal basics, commodities, stock options, and portfolio management. This certification is highly valued by employers and demonstrates proficiency with industry-standard tools.</p>
+                        <a href="https://www.bloomberg.com/professional/product/certificate-courses/" target="_blank" class="cert-card__link">Get Certified →</a>
+                    </div>
+
+                    <!-- LinkedIn Learning -->
+                    <div class="cert-card">
+                        <span class="cert-card__icon">💼</span>
+                        <h3 class="cert-card__title">LinkedIn Learning</h3>
+                        <p class="cert-card__description">LinkedIn Learning is an American online learning platform. It provides video courses taught by industry experts in software, creative, and business skills. It is a subsidiary of LinkedIn. All the courses on LinkedIn fall into four categories: Business, Creative, Technology, and Certifications. Courses include Excel for Finance, Financial Modeling, Investment Banking, and many more relevant topics.</p>
+                        <a href="https://learning.linkedin.com/" target="_blank" class="cert-card__link">Start Learning →</a>
+                    </div>
+
+                    <!-- The Wall Street Journal -->
+                    <div class="cert-card">
+                        <span class="cert-card__icon">📰</span>
+                        <h3 class="cert-card__title">The Wall Street Journal</h3>
+                        <p class="cert-card__description">Online coverage of breaking news, and current headlines from around the world including finance, real estate, personal finance, and the economy. Essential reading for anyone in finance. Staying informed about market trends, economic indicators, and financial news is crucial for success in the industry. Many finance professionals start their day reading the WSJ.</p>
+                        <a href="https://www.wsj.com/" target="_blank" class="cert-card__link">Subscribe →</a>
+                    </div>
+
+                    <!-- Value Line -->
+                    <div class="cert-card">
+                        <span class="cert-card__icon">📉</span>
+                        <h3 class="cert-card__title">Value Line</h3>
+                        <p class="cert-card__description">Provides investment education and trends in stocks to help users be ahead of the investment curve. Specific insight for Finance majors include stock market data, investment education, insider information, and stock/bond ratings. Value Line's research reports are used by investment professionals worldwide and provide detailed financial analysis and projections.</p>
+                        <a href="https://www.valueline.com/" target="_blank" class="cert-card__link">Explore →</a>
+                    </div>
+
+                    <!-- SIE Exam -->
+                    <div class="cert-card">
+                        <span class="cert-card__icon">📋</span>
+                        <h3 class="cert-card__title">SIE Exam Information</h3>
+                        <p class="cert-card__description">The SIE exam was designed to provide a head start into a financial services career — showing job seekers' interest and aptitude in the field, as well as helping them stand out to potential employers. This introductory-level exam covers fundamental concepts for working in the industry and is required and administered by the Financial Industry Regulatory Authority (FINRA). Topics include: types of products and their risks; structure of securities markets; regulatory agencies and their functions; prohibited practices.</p>
+                        <a href="https://www.passperfect.com/sie/sie-exam-overview" target="_blank" class="cert-card__link">Learn More →</a>
+                    </div>
+
+                    <!-- Series 7 -->
+                    <div class="cert-card">
+                        <span class="cert-card__icon">🎓</span>
+                        <h3 class="cert-card__title">Series 7 Certification Exam</h3>
+                        <p class="cert-card__description">The Series 7 exam assesses the competency of an entry-level registered representative to perform their job as a general securities representative. This exam is required for anyone who wants to sell securities products. The exam covers a wide range of topics including equities, options, bonds, mutual funds, and more. Passing the Series 7 is essential for careers in investment banking, wealth management, and sales & trading.</p>
+                        <a href="https://www.finra.org/registration-exams-ce/qualification-exams/series7" target="_blank" class="cert-card__link">Get Info →</a>
+                    </div>
+                </div>
+
+                <div class="content-box" style="margin-top: 60px;">
+                    <h3>CFA (Chartered Financial Analyst) Program</h3>
+                    <p>The CFA charter is one of the most respected and recognized investment credentials in the world. The CFA Program provides a strong foundation of advanced investment analysis and real-world portfolio management skills.</p>
+                    
+                    <h4>Why Pursue CFA?</h4>
+                    <ul>
+                        <li><strong>Industry recognition:</strong> Gold standard in investment management</li>
+                        <li><strong>Career advancement:</strong> Opens doors to senior positions</li>
+                        <li><strong>Salary boost:</strong> CFA charterholders earn significantly more on average</li>
+                        <li><strong>Comprehensive knowledge:</strong> Covers ethics, portfolio management, equity, fixed income, derivatives, and more</li>
+                    </ul>
+
+                    <h4>The Three Levels:</h4>
+                    <ul>
+                        <li><strong>Level 1:</strong> Can be taken in final year of undergrad. Focus on basic knowledge and comprehension</li>
+                        <li><strong>Level 2:</strong> Asset valuation and application of investment tools</li>
+                        <li><strong>Level 3:</strong> Portfolio management and wealth planning</li>
+                    </ul>
+
+                    <div class="highlight-box">
+                        <strong>ACU Student Advantage:</strong>
+                        <p>ACU COBA provides CFA Level 1 preparation resources and support. Many Finance students begin studying for Level 1 during their junior or senior year. The exam is offered in February, May, August, and November, giving you flexibility in scheduling.</p>
+                    </div>
+
+                    <a href="https://www.cfainstitute.org/" target="_blank" class="btn" style="margin-top: 20px;">Learn About CFA Program →</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recommended Reading Section -->
+        <section id="reading" class="finance-section">
+            <div class="container">
+                <div class="finance-section__header">
+                    <h2 class="finance-section__title">Recommended Reading</h2>
+                    <p class="finance-section__subtitle">Essential books and resources to expand your finance knowledge</p>
+                </div>
+
+                <div class="content-box">
+                    <h3>Must-Read Finance Books</h3>
+                    
+                    <h4>For Beginners:</h4>
+                    <ul>
+                        <li><strong>"The Intelligent Investor" by Benjamin Graham</strong> - The definitive book on value investing</li>
+                        <li><strong>"A Random Walk Down Wall Street" by Burton Malkiel</strong> - Understanding markets and investment strategies</li>
+                        <li><strong>"The Little Book of Common Sense Investing" by John Bogle</strong> - Index fund investing philosophy</li>
+                        <li><strong>"Rich Dad Poor Dad" by Robert Kiyosaki</strong> - Financial literacy fundamentals</li>
+                    </ul>
+
+                    <h4>For Investment Banking / Corporate Finance:</h4>
+                    <ul>
+                        <li><strong>"Investment Banking: Valuation, Leveraged Buyouts, and Mergers & Acquisitions" by Joshua Rosenbaum & Joshua Pearl</strong> - Industry standard textbook</li>
+                        <li><strong>"Financial Modeling" by Simon Benninga</strong> - Excel modeling techniques</li>
+                        <li><strong>"Monkey Business: Swinging Through the Wall Street Jungle" by John Rolfe & Peter Troob</strong> - Inside look at investment banking culture</li>
+                        <li><strong>"Barbarians at the Gate" by Bryan Burrough & John Helyar</strong> - Classic LBO case study</li>
+                    </ul>
+
+                    <h4>For Markets & Trading:</h4>
+                    <ul>
+                        <li><strong>"Market Wizards" by Jack D. Schwager</strong> - Interviews with top traders</li>
+                        <li><strong>"Reminiscences of a Stock Operator" by Edwin Lefèvre</strong> - Classic trading memoir</li>
+                        <li><strong>"Flash Boys" by Michael Lewis</strong> - High-frequency trading exposé</li>
+                        <li><strong>"The Big Short" by Michael Lewis</strong> - 2008 financial crisis explained</li>
+                    </ul>
+
+                    <h4>For Wealth Management / Financial Planning:</h4>
+                    <ul>
+                        <li><strong>"The Millionaire Next Door" by Thomas J. Stanley</strong> - Wealth-building principles</li>
+                        <li><strong>"Your Money or Your Life" by Vicki Robin & Joe Dominguez</strong> - Financial independence philosophy</li>
+                        <li><strong>"The Four Pillars of Investing" by William J. Bernstein</strong> - Investment theory and history</li>
+                    </ul>
+
+                    <h3>Financial News & Publications</h3>
+                    <ul>
+                        <li><strong>The Wall Street Journal</strong> - Daily must-read for finance professionals</li>
+                        <li><strong>Financial Times</strong> - International business and financial news</li>
+                        <li><strong>Bloomberg</strong> - Real-time financial market data and news</li>
+                        <li><strong>The Economist</strong> - Weekly analysis of global business and politics</li>
+                        <li><strong>Barron's</strong> - Weekly investment magazine</li>
+                        <li><strong>Forbes</strong> - Business news and insights</li>
+                    </ul>
+
+                    <h3>Podcasts</h3>
+                    <ul>
+                        <li><strong>Planet Money (NPR)</strong> - Economics made entertaining</li>
+                        <li><strong>The Indicator from Planet Money</strong> - Daily economic news explained</li>
+                        <li><strong>Bloomberg Surveillance</strong> - Morning market analysis</li>
+                        <li><strong>Invest Like the Best</strong> - Interviews with investors and entrepreneurs</li>
+                        <li><strong>We Study Billionaires</strong> - Investment strategies of the wealthy</li>
+                    </ul>
+
+                    <h3>Online Resources</h3>
+                    <ul>
+                        <li><strong>Investopedia</strong> - Financial dictionary and educational content</li>
+                        <li><strong>Seeking Alpha</strong> - Stock market analysis and opinions</li>
+                        <li><strong>Yahoo Finance</strong> - Free stock quotes and financial news</li>
+                        <li><strong>CNBC</strong> - Financial news and market data</li>
+                        <li><strong>CFA Institute Blog</strong> - Investment insights and research</li>
+                    </ul>
+                </div>
+
+                <div class="cta-section">
+                    <h3>Ready to Launch Your Finance Career?</h3>
+                    <p>Explore all our resources including resume guides, interview prep, and job search strategies</p>
+                    <a href="resources-all.html" class="btn">View All Resources →</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__section">
+                    <h4>COBA Professional Development</h4>
+                    <p>Empowering ACU business students to achieve their career goals</p>
+                </div>
+                <div class="footer__section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../index.html#about">About COBA</a></li>
+                        <li><a href="finance.html">Finance Major</a></li>
+                        <li><a href="resources-all.html">Resources</a></li>
+                        <li><a href="../index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer__section">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="https://www.instagram.com/advicewitherin" target="_blank">Instagram: @advicewitherin</a></li>
+                        <li><a href="https://www.tiktok.com/@advicewitherin" target="_blank">TikTok: @advicewitherin</a></li>
+                        <li><a href="https://www.acu.edu/coba" target="_blank">ACU COBA Website</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; 2024 Abilene Christian University - College of Business Administration. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#main-content" class="back-to-top" id="backToTop">↑</a>
+
+    <!-- JavaScript -->
+    <script src="../js/main.js"></script>
+    <script>
+        // Back to Top Button
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
+            }
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerOffset = 140;
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Active section highlighting
+        const sections = document.querySelectorAll('.finance-section');
+        const navLinks = document.querySelectorAll('.section-nav__link');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.pageYOffset >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.style.background = '#4B2E83';
+                    link.style.color = 'white';
+                } else {
+                    link.style.background = '#f5f5f5';
+                    link.style.color = '#4B2E83';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
