@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional development resources for ACU College of Business Administration students">
+    <meta name="keywords" content="ACU, COBA, career development, internships, certifications, business resources">
+    <meta name="author" content="ACU COBA">
+    <title>COBA Professional Development | Abilene Christian University</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <!-- Skip to Main Content (Accessibility) -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Header & Navigation -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header__content">
+                <!-- Logo -->
+                <div class="header__logo">
+                    <a href="index.html">
+                        <span class="header__logo-text">COBA</span>
+                        <span class="header__logo-subtitle">Professional Development</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Toggle -->
+                <button class="header__menu-toggle" aria-label="Toggle menu" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <!-- Navigation -->
+                <nav class="header__nav" id="mainNav">
+                    <ul class="nav-list">
+                        <li><a href="#home" class="nav-list__link">Home</a></li>
+                        <li><a href="#about" class="nav-list__link">About</a></li>
+                        <li class="nav-list__item--dropdown">
+                            <a href="#" class="nav-list__link">Majors <span class="dropdown-arrow">▾</span></a>
+                            <ul class="nav-dropdown">
+                                <li><a href="#finance">Finance</a></li>
+                                <li><a href="#accounting">Accounting</a></li>
+                                <li><a href="#marketing">Marketing</a></li>
+                                <li><a href="#management">Management</a></li>
+                                <li><a href="#information-systems">Information Systems</a></li>
+                                <li><a href="#computer-science">Computer Science</a></li>
+                                <li><a href="#digital-entertainment">Digital Entertainment Tech</a></li>
+                                <li><a href="#data-analytics">Data Analytics</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#international" class="nav-list__link">International Students</a></li>
+                        <li><a href="#resources" class="nav-list__link">Resources</a></li>
+                        <li><a href="#contact" class="nav-list__link nav-list__link--cta">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        
+        <!-- Hero Slider Section -->
+        <section class="hero-slider" id="home">
+            <div class="hero-slider__container">
+                
+                <!-- Slide 1 -->
+                <div class="hero-slider__slide hero-slider__slide--active">
+                    <div class="hero-slider__overlay"></div>
+                    <div class="hero-slider__content">
+                        <h1 class="hero-slider__title">Welcome to COBA Professional Development</h1>
+                        <p class="hero-slider__text">Your hub for career growth, leadership development, and lifelong success in business.</p>
+                        <a href="#resources" class="btn btn--primary btn--large">Explore Opportunities</a>
+                    </div>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="hero-slider__slide">
+                    <div class="hero-slider__overlay"></div>
+                    <div class="hero-slider__content">
+                        <h1 class="hero-slider__title">Build Your Career with Purpose</h1>
+                        <p class="hero-slider__text">Access exclusive internships, certifications, and employer connections designed to launch your future.</p>
+                        <a href="#majors" class="btn btn--primary btn--large">Start Building</a>
+                    </div>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="hero-slider__slide">
+                    <div class="hero-slider__overlay"></div>
+                    <div class="hero-slider__content">
+                        <h1 class="hero-slider__title">Learn the Skills That Get You Hired</h1>
+                        <p class="hero-slider__text">From Excel to AI, Finance to Analytics — master real-world tools that employers want today.</p>
+                        <a href="#resources" class="btn btn--primary btn--large">Start Learning</a>
+                    </div>
+                </div>
+
+                <!-- Slide 4 -->
+                <div class="hero-slider__slide">
+                    <div class="hero-slider__overlay"></div>
+                    <div class="hero-slider__content">
+                        <h1 class="hero-slider__title">Connect. Collaborate. Grow.</h1>
+                        <p class="hero-slider__text">Join a network of students, alumni, and mentors who share your drive for excellence and impact.</p>
+                        <a href="#contact" class="btn btn--primary btn--large">Join the Network</a>
+                    </div>
+                </div>
+
+                <!-- Slider Controls -->
+                <div class="hero-slider__controls">
+                    <button class="hero-slider__arrow hero-slider__arrow--prev" aria-label="Previous slide">‹</button>
+                    <button class="hero-slider__arrow hero-slider__arrow--next" aria-label="Next slide">›</button>
+                </div>
+
+                <!-- Slider Dots -->
+                <div class="hero-slider__dots">
+                    <button class="hero-slider__dot hero-slider__dot--active" data-slide="0" aria-label="Go to slide 1"></button>
+                    <button class="hero-slider__dot" data-slide="1" aria-label="Go to slide 2"></button>
+                    <button class="hero-slider__dot" data-slide="2" aria-label="Go to slide 3"></button>
+                    <button class="hero-slider__dot" data-slide="3" aria-label="Go to slide 4"></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Links Section -->
+        <section class="quick-links">
+            <div class="container">
+                <div class="quick-links__grid">
+                    <a href="#internships" class="quick-link-card">
+                        <div class="quick-link-card__icon">💼</div>
+                        <h3 class="quick-link-card__title">Internships</h3>
+                        <p class="quick-link-card__text">Find opportunities to gain real-world experience</p>
+                    </a>
+                    <a href="#certifications" class="quick-link-card">
+                        <div class="quick-link-card__icon">🎓</div>
+                        <h3 class="quick-link-card__title">Certifications</h3>
+                        <p class="quick-link-card__text">Boost your credentials with professional certifications</p>
+                    </a>
+                    <a href="#career-paths" class="quick-link-card">
+                        <div class="quick-link-card__icon">🚀</div>
+                        <h3 class="quick-link-card__title">Career Paths</h3>
+                        <p class="quick-link-card__text">Explore job opportunities in your field</p>
+                    </a>
+                    <a href="#resources" class="quick-link-card">
+                        <div class="quick-link-card__icon">📚</div>
+                        <h3 class="quick-link-card__title">Learning Resources</h3>
+                        <p class="quick-link-card__text">Access guides, templates, and tools</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About COBA Section -->
+        <section class="about" id="about">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-header__title">About COBA</h2>
+                    <div class="section-header__line"></div>
+                </div>
+                <div class="about__content">
+                    <div class="about__text">
+                        <p class="about__paragraph">
+                            The Abilene Christian University College of Business Administration is committed to developing Christian business leaders who make a positive impact in their organizations and communities. Our professional development resources support this mission by providing students with the tools and knowledge needed for success.
+                        </p>
+                        <p class="about__paragraph">
+                            Whether you're exploring career paths, seeking internships, or preparing for certifications, we're here to guide you every step of the way.
+                        </p>
+                    </div>
+                    <div class="about__stats">
+                        <div class="stat-card">
+                            <div class="stat-card__number">100+</div>
+                            <div class="stat-card__label">Resources</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-card__number">50+</div>
+                            <div class="stat-card__label">Certifications</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-card__number">9</div>
+                            <div class="stat-card__label">Major Areas</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Majors Section -->
+        <section class="majors" id="majors">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-header__title">Explore Your Major</h2>
+                    <div class="section-header__line"></div>
+                    <p class="section-header__subtitle">Find resources tailored to your field of study</p>
+                </div>
+
+                <div class="majors__grid">
+                    <!-- Finance -->
+                    <div class="major-card" data-category="finance">
+                        <div class="major-card__icon">💰</div>
+                        <h3 class="major-card__title">Finance</h3>
+                        <p class="major-card__description">Career paths, CFA prep, investment resources</p>
+                        <ul class="major-card__features">
+                            <li>Investment Banking</li>
+                            <li>Financial Analysis</li>
+                            <li>7 Certifications</li>
+                        </ul>
+                        <a href="pages/finance.html" class="major-card__link">Explore Finance →</a>
+                    </div>
+
+                    <!-- Accounting -->
+                    <div class="major-card" data-category="accounting">
+                        <div class="major-card__icon">📊</div>
+                        <h3 class="major-card__title">Accounting</h3>
+                        <p class="major-card__description">CPA exam prep, MAcc program, Big 4 resources</p>
+                        <ul class="major-card__features">
+                            <li>CPA Preparation</li>
+                            <li>Big 4 Careers</li>
+                            <li>MAcc Program</li>
+                        </ul>
+                        <a href="pages/accounting.html" class="major-card__link">Explore Accounting →</a>
+                    </div>
+
+                    <!-- Marketing -->
+                    <div class="major-card" data-category="marketing">
+                        <div class="major-card__icon">📱</div>
+                        <h3 class="major-card__title">Marketing</h3>
+                        <p class="major-card__description">Digital marketing, SEO, social media certifications</p>
+                        <ul class="major-card__features">
+                            <li>Google Analytics</li>
+                            <li>Social Media Marketing</li>
+                            <li>7 Certifications</li>
+                        </ul>
+                        <a href="pages/marketing.html" class="major-card__link">Explore Marketing →</a>
+                    </div>
+
+                    <!-- Management -->
+                    <div class="major-card" data-category="management">
+                        <div class="major-card__icon">💼</div>
+                        <h3 class="major-card__title">Management</h3>
+                        <p class="major-card__description">Leadership skills, project management, HR resources</p>
+                        <ul class="major-card__features">
+                            <li>Project Management</li>
+                            <li>HR Management</li>
+                            <li>8 Certifications</li>
+                        </ul>
+                        <a href="pages/management.html" class="major-card__link">Explore Management →</a>
+                    </div>
+
+                    <!-- Information Systems -->
+                    <div class="major-card" data-category="information-systems">
+                        <div class="major-card__icon">💻</div>
+                        <h3 class="major-card__title">Information Systems</h3>
+                        <p class="major-card__description">IT certifications, network security, database management</p>
+                        <ul class="major-card__features">
+                            <li>CompTIA A+</li>
+                            <li>CCNA</li>
+                            <li>10 Certifications</li>
+                        </ul>
+                        <a href="pages/information-systems.html" class="major-card__link">Explore IS →</a>
+                    </div>
+
+                    <!-- Computer Science -->
+                    <div class="major-card" data-category="computer-science">
+                        <div class="major-card__icon">🖥️</div>
+                        <h3 class="major-card__title">Computer Science</h3>
+                        <p class="major-card__description">Coding interviews, internships, tech career paths</p>
+                        <ul class="major-card__features">
+                            <li>LeetCode Practice</li>
+                            <li>Tech Internships</li>
+                            <li>35+ Job Markets</li>
+                        </ul>
+                        <a href="pages/computer-science.html" class="major-card__link">Explore CS →</a>
+                    </div>
+
+                    <!-- Digital Entertainment Technology -->
+                    <div class="major-card" data-category="digital-entertainment">
+                        <div class="major-card__icon">🎮</div>
+                        <h3 class="major-card__title">Digital Entertainment Tech</h3>
+                        <p class="major-card__description">Game development, Unity, Unreal Engine, 3D design</p>
+                        <ul class="major-card__features">
+                            <li>Unity Certified</li>
+                            <li>Game Design</li>
+                            <li>12 Certifications</li>
+                        </ul>
+                        <a href="pages/digital-entertainment.html" class="major-card__link">Explore DET →</a>
+                    </div>
+
+                    <!-- Data Analytics -->
+                    <div class="major-card" data-category="data-analytics">
+                        <div class="major-card__icon">📈</div>
+                        <h3 class="major-card__title">Data Analytics</h3>
+                        <p class="major-card__description">SQL, Python, Tableau, data visualization</p>
+                        <ul class="major-card__features">
+                            <li>8 Career Paths</li>
+                            <li>Data Visualization</li>
+                            <li>5 Certifications</li>
+                        </ul>
+                        <a href="pages/data-analytics.html" class="major-card__link">Explore Analytics →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- International Students Section -->
+        <section class="international" id="international">
+            <div class="container">
+                <div class="international__content">
+                    <div class="international__text">
+                        <h2 class="international__title">Resources for International Students</h2>
+                        <p class="international__description">
+                            Navigate your career journey in the U.S. with specialized resources for H-1B sponsorship, work authorization, and companies that hire international students.
+                        </p>
+                        <ul class="international__features">
+                            <li>H-1B Sponsorship Information</li>
+                            <li>Companies Hiring International Students</li>
+                            <li>Work Authorization Guidance</li>
+                            <li>Networking Resources</li>
+                        </ul>
+                        <a href="pages/international-students.html" class="btn btn--primary">Explore Resources →</a>
+                    </div>
+                    <div class="international__visual">
+                        <div class="stat-card stat-card--large">
+                            <div class="stat-card__icon">🌍</div>
+                            <div class="stat-card__number">1000+</div>
+                            <div class="stat-card__label">Companies Sponsoring H-1B</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Resources Section -->
+        <section class="featured-resources" id="resources">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-header__title">Featured Resources</h2>
+                    <div class="section-header__line"></div>
+                    <p class="section-header__subtitle">Essential tools for every business and technology student</p>
+                </div>
+
+                <div class="resources__grid">
+                    <!-- Resume Building -->
+                    <div class="resource-card resource-card--featured">
+                        <div class="resource-card__header">
+                            <span class="resource-card__icon">📝</span>
+                            <span class="resource-card__badge">Popular</span>
+                        </div>
+                        <h3 class="resource-card__title">Resume & Cover Letter Guide</h3>
+                        <p class="resource-card__description">
+                            Complete guide to creating professional resumes, cover letters, and LinkedIn profiles. Includes templates and examples.
+                        </p>
+                        <a href="pages/resources-all.html#resume" class="resource-card__link">Start Building →</a>
+                    </div>
+
+                    <!-- Interview Prep -->
+                    <div class="resource-card">
+                        <div class="resource-card__header">
+                            <span class="resource-card__icon">🎤</span>
+                        </div>
+                        <h3 class="resource-card__title">Interview Preparation</h3>
+                        <p class="resource-card__description">
+                            Practice tools, common questions, and strategies to ace your interviews.
+                        </p>
+                        <a href="pages/resources-all.html#interviews" class="resource-card__link">Prepare Now →</a>
+                    </div>
+
+                    <!-- Job Search -->
+                    <div class="resource-card">
+                        <div class="resource-card__header">
+                            <span class="resource-card__icon">🔍</span>
+                        </div>
+                        <h3 class="resource-card__title">Job Search Platforms</h3>
+                        <p class="resource-card__description">
+                            40+ platforms to find internships, jobs, and career opportunities.
+                        </p>
+                        <a href="pages/resources-all.html#job-tools" class="resource-card__link">Explore Tools →</a>
+                    </div>
+
+                    <!-- Professional Dress -->
+                    <div class="resource-card">
+                        <div class="resource-card__header">
+                            <span class="resource-card__icon">👔</span>
+                        </div>
+                        <h3 class="resource-card__title">Professional Dress Guide</h3>
+                        <p class="resource-card__description">
+                            Learn what to wear for interviews and professional settings.
+                        </p>
+                        <a href="pages/resources-all.html#dress" class="resource-card__link">View Guide →</a>
+                    </div>
+
+                    <!-- Experiential Learning -->
+                    <div class="resource-card resource-card--wide">
+                        <div class="resource-card__header">
+                            <span class="resource-card__icon">🌟</span>
+                        </div>
+                        <h3 class="resource-card__title">Experiential Learning Opportunities</h3>
+                        <p class="resource-card__description">
+                            Study abroad, leadership summit, STAR program, internships, and more hands-on experiences.
+                        </p>
+                        <a href="pages/resources-all.html#experiential" class="resource-card__link">Discover Opportunities →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta">
+            <div class="container">
+                <div class="cta__content">
+                    <h2 class="cta__title">Ready to Launch Your Career?</h2>
+                    <p class="cta__text">
+                        Connect with our professional development team for personalized guidance and support.
+                    </p>
+                    <div class="cta__buttons">
+                        <a href="#contact" class="btn btn--primary btn--large">Schedule a Meeting</a>
+                        <a href="pages/resources-all.html" class="btn btn--secondary btn--large">Browse All Resources</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer__content">
+                <!-- Contact Info -->
+                <div class="footer__section">
+                    <h3 class="footer__title">Contact Us</h3>
+                    <p class="footer__text">
+                        <strong>COBA Professional Development</strong><br>
+                        Mabee Business Building, Room 132<br>
+                        Abilene Christian University<br>
+                        Abilene, TX 79699
+                    </p>
+                    <p class="footer__text">
+                        <strong>Email:</strong> coba.profdev@acu.edu<br>
+                        <strong>Phone:</strong> (325) 674-2427
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer__section">
+                    <h3 class="footer__title">Quick Links</h3>
+                    <ul class="footer__links">
+                        <li><a href="#about">About COBA</a></li>
+                        <li><a href="#majors">Majors</a></li>
+                        <li><a href="#resources">Resources</a></li>
+                        <li><a href="#international">International Students</a></li>
+                        <li><a href="https://acu.edu/coba" target="_blank">COBA Website</a></li>
+                    </ul>
+                </div>
+
+                <!-- Resources -->
+                <div class="footer__section">
+                    <h3 class="footer__title">Popular Resources</h3>
+                    <ul class="footer__links">
+                        <li><a href="pages/resources-all.html#resume">Resume Builder</a></li>
+                        <li><a href="pages/resources-all.html#interviews">Interview Prep</a></li>
+                        <li><a href="pages/resources-all.html#job-tools">Job Search Tools</a></li>
+                        <li><a href="pages/resources-all.html#experiential">Experiential Learning</a></li>
+                    </ul>
+                </div>
+
+                <!-- Social & Additional -->
+                <div class="footer__section">
+                    <h3 class="footer__title">Stay Connected</h3>
+                    <div class="footer__social">
+                        <a href="https://www.instagram.com/advicewitherin" target="_blank" class="footer__social-link" aria-label="Instagram">📱</a>
+                    </div>
+                    <p class="footer__text footer__text--small">
+                        Follow helpful career advice accounts for daily tips and inspiration.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer__bottom">
+                <p class="footer__copyright">
+                    &copy; 2024 Abilene Christian University - College of Business Administration. All rights reserved.
+                </p>
+                <p class="footer__tagline">
+                    Empowering Christian business leaders 💜
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>
