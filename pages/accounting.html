@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Accounting major resources at ACU COBA - CPA exam info, certifications, MAcc program, and career paths">
+    <meta name="keywords" content="ACU, COBA, Accounting major, CPA, MAcc, auditing, tax, accounting careers">
+    <meta name="author" content="ACU COBA">
+    <title>Accounting Major Resources | COBA | ACU</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../assets/images/favicon.png">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="../css/main.css">
+    
+    <style>
+        /* Accounting Page Specific Styles */
+        .accounting-hero {
+            background: linear-gradient(135deg, #4B2E83 0%, #6B46A8 100%);
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .accounting-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"><path d="M0,0 L1200,0 L1200,60 Q900,100 600,60 T0,60 Z" fill="rgba(255,255,255,0.05)"/></svg>') repeat-x bottom;
+            opacity: 0.1;
+        }
+
+        .accounting-hero h1 {
+            font-size: 56px;
+            margin-bottom: 20px;
+            font-weight: 800;
+            position: relative;
+            z-index: 1;
+            color: #2c2c2c;
+        }
+
+        .accounting-hero p {
+            font-size: 22px;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            opacity: 0.95;
+            position: relative;
+            z-index: 1;
+            color: white;
+        }
+
+        .accounting-hero__icon {
+            font-size: 80px;
+            margin-bottom: 20px;
+            display: block;
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            color: white;
+        }
+
+        .section-nav {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 70px;
+            z-index: 100;
+            padding: 20px 0;
+        }
+
+        .section-nav__list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .section-nav__link {
+            padding: 10px 20px;
+            background: #f5f5f5;
+            color: #4B2E83;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 14px;
+        }
+
+        .section-nav__link:hover {
+            background: #4B2E83;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .accounting-section {
+            padding: 80px 0;
+        }
+
+        .accounting-section:nth-child(even) {
+            background: #f9f9f9;
+        }
+
+        .accounting-section__header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .accounting-section__title {
+            font-size: 42px;
+            color: #4B2E83;
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+
+        .accounting-section__subtitle {
+            font-size: 20px;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .career-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .career-card {
+            background: white;
+            border-radius: 12px;
+            padding: 35px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .career-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #4B2E83, #6B46A8);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .career-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .career-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(75, 46, 131, 0.2);
+            border-color: #4B2E83;
+        }
+
+        .career-card__title {
+            font-size: 26px;
+            color: #4B2E83;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .career-card__label {
+            font-weight: 700;
+            color: #4B2E83;
+            margin-top: 15px;
+            display: block;
+        }
+
+        .career-card__text {
+            color: #666;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        .cert-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .cert-card {
+            background: white;
+            border-radius: 12px;
+            padding: 35px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .cert-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(75, 46, 131, 0.15);
+            border-color: #FFB81C;
+        }
+
+        .cert-card__title {
+            font-size: 24px;
+            color: #4B2E83;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .cert-card__description {
+            color: #666;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .cert-card__btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: #4B2E83;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .cert-card__btn:hover {
+            background: #6B46A8;
+            transform: scale(1.05);
+        }
+
+        .big4-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .big4-card {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            text-align: center;
+            border: 2px solid transparent;
+        }
+
+        .big4-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(75, 46, 131, 0.2);
+            border-color: #4B2E83;
+        }
+
+        .big4-card__title {
+            font-size: 32px;
+            color: #4B2E83;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        .big4-card__btn {
+            display: inline-block;
+            padding: 12px 35px;
+            background: #FFB81C;
+            color: #4B2E83;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 700;
+            transition: all 0.3s ease;
+        }
+
+        .big4-card__btn:hover {
+            background: #ffc940;
+            transform: scale(1.05);
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            max-width: 900px;
+            margin: 40px auto;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 12px;
+        }
+
+        .content-box {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            margin-top: 40px;
+        }
+
+        .content-box h3 {
+            color: #4B2E83;
+            font-size: 28px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .content-box h4 {
+            color: #6B46A8;
+            font-size: 22px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .content-box ul {
+            margin-left: 25px;
+            line-height: 1.9;
+        }
+
+        .content-box ul li {
+            margin-bottom: 12px;
+            color: #666;
+        }
+
+        .content-box ul li strong {
+            color: #4B2E83;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #f8f4ff 0%, #fff9e6 100%);
+            border-left: 5px solid #FFB81C;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 25px 0;
+        }
+
+        .highlight-box strong {
+            color: #4B2E83;
+            font-size: 18px;
+        }
+
+        .highlight-box p {
+            color: #666;
+            line-height: 1.7;
+            margin-top: 10px;
+        }
+
+        .macc-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .macc-detail {
+            background: #f9f9f9;
+            padding: 25px;
+            border-radius: 8px;
+            text-align: center;
+            border-left: 4px solid #FFB81C;
+        }
+
+        .macc-detail__label {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .macc-detail__value {
+            font-size: 28px;
+            color: #4B2E83;
+            font-weight: 800;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 40px auto;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background: #4B2E83;
+        }
+
+        .timeline-item {
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .timeline-item__content {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            width: calc(50% - 30px);
+            position: relative;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-item__content {
+            margin-left: auto;
+        }
+
+        .timeline-item__title {
+            color: #4B2E83;
+            font-weight: 700;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .timeline-item__text {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #4B2E83 0%, #6B46A8 100%);
+            color: white;
+            padding: 60px;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .cta-section h3 {
+            font-size: 36px;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .cta-section p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 40px;
+            background: #FFB81C;
+            color: #4B2E83;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .btn:hover {
+            background: #ffc940;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: #4B2E83;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 24px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: #6B46A8;
+            transform: translateY(-5px);
+        }
+
+        @media (max-width: 1200px) {
+            .big4-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .accounting-hero h1 {
+                font-size: 38px;
+            }
+
+            .accounting-hero p {
+                font-size: 18px;
+            }
+
+            .accounting-section__title {
+                font-size: 32px;
+            }
+
+            .career-cards,
+            .cert-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .section-nav {
+                top: 60px;
+            }
+
+            .section-nav__list {
+                gap: 10px;
+            }
+
+            .cta-section {
+                padding: 40px 20px;
+            }
+
+            .cta-section h3 {
+                font-size: 28px;
+            }
+
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-item__content {
+                width: calc(100% - 60px);
+                margin-left: 60px !important;
+            }
+
+            .macc-details {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Skip to Main Content -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Header & Navigation -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header__content">
+                <!-- Logo -->
+                <div class="header__logo">
+                    <a href="../index.html">
+                        <span class="header__logo-text">COBA</span>
+                        <span class="header__logo-subtitle">Professional Development</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Toggle -->
+                <button class="header__menu-toggle" aria-label="Toggle menu" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <!-- Navigation -->
+                <nav class="header__nav" id="mainNav">
+                    <ul class="nav-list">
+                        <li><a href="../index.html#home" class="nav-list__link">Home</a></li>
+                        <li><a href="../index.html#about" class="nav-list__link">About</a></li>
+                        <li class="nav-list__item--dropdown">
+                            <a href="#" class="nav-list__link">Majors <span class="dropdown-arrow">▾</span></a>
+                            <ul class="nav-dropdown">
+                                <li><a href="finance.html">Finance</a></li>
+                                <li><a href="accounting.html">Accounting</a></li>
+                                <li><a href="marketing.html">Marketing</a></li>
+                                <li><a href="management.html">Management</a></li>
+                                <li><a href="computer-science.html">Computer Science</a></li>
+                                <li><a href="data-analytics.html">Data Analytics</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="../index.html#international" class="nav-list__link">International Students</a></li>
+                        <li><a href="resources-all.html" class="nav-list__link">Resources</a></li>
+                        <li><a href="../index.html#contact" class="nav-list__link nav-list__link--cta">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="accounting-hero">
+            <div class="container">
+                <div class="accounting-hero__icon">$</div>
+                <h1>Accounting Major</h1>
+                <p>Resources for Accounting majors including CPA information, Master's program details, certifications, and career guidance. GO WILDCATS!</p>
+            </div>
+        </section>
+
+        <!-- Section Navigation -->
+        <nav class="section-nav">
+            <div class="container">
+                <ul class="section-nav__list">
+                    <li><a href="#overview" class="section-nav__link">Overview</a></li>
+                    <li><a href="#certifications" class="section-nav__link">Certifications</a></li>
+                    <li><a href="#big4" class="section-nav__link">The Big 4</a></li>
+                    <li><a href="#macc" class="section-nav__link">MAcc Program</a></li>
+                    <li><a href="#cpa-exam" class="section-nav__link">CPA Exam</a></li>
+                    <li><a href="#career-paths" class="section-nav__link">Career Paths</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Overview Section with Video -->
+        <section id="overview" class="accounting-section">
+            <div class="container">
+                <div class="accounting-section__header">
+                    <h2 class="accounting-section__title">The Accounting Profession at ACU</h2>
+                    <p class="accounting-section__subtitle">Discover what makes ACU's accounting program exceptional</p>
+                </div>
+
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/amRG7pHzeC4" title="Ignite | Accounting | Abilene Christian University" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+
+                <div class="content-box">
+                    <h3>Accounting at ACU</h3>
+                    <p style="color: #666; line-height: 1.8; margin-bottom: 20px;">
+                        The Accounting program at ACU provides you with the tools required to employ important real-life concepts and develop critical thinking skills that will be fundamental in the workforce. Whether you're interested in public accounting, private industry, or government work, our program prepares you for success.
+                    </p>
+
+                    <h4>Program Highlights</h4>
+                    <ul>
+                        <li><strong>Experienced Faculty:</strong> Learn from CPAs and professionals with real-world experience</li>
+                        <li><strong>Small Class Sizes:</strong> Personalized attention and mentorship opportunities</li>
+                        <li><strong>Strong Placement Rate:</strong> ACU accounting graduates are highly sought after by employers</li>
+                        <li><strong>MAcc Program:</strong> Seamless transition to graduate studies for CPA preparation</li>
+                        <li><strong>Big 4 Connections:</strong> Regular recruiting visits and networking opportunities</li>
+                    </ul>
+                </div>
+
+                <div class="highlight-box">
+                    <strong>Student Internship Experience</strong>
+                    <p>Hear about an Accounting student's internship experience and how it launched their career! <a href="https://blogs.acu.edu/coba/2022/05/" target="_blank" style="color: #4B2E83; font-weight: 600;">Read their story →</a></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section id="certifications" class="accounting-section">
+            <div class="container">
+                <div class="accounting-section__header">
+                    <h2 class="accounting-section__title">Professional Certifications</h2>
+                    <p class="accounting-section__subtitle">Enhance your credentials with these industry-recognized certifications</p>
+                </div>
+
+                <div class="cert-cards">
+                    <!-- CPA -->
+                    <div class="cert-card">
+                        <h3 class="cert-card__title">Certified Public Accountant (CPA)</h3>
+                        <p class="cert-card__description">
+                            The CPA is the most recognized accreditation for any accountant. Certified public accountants help individuals and organizations plan and work toward financial goals. They can also act as advisors around financial concerns like accounting and taxes. This is a great path to consider if you're interested in building your credibility as an accountant.
+                        </p>
+                        <a href="https://www.aicpa-cima.com/resources/toolkit/cpa-exam" target="_blank" class="cert-card__btn">Learn More About CPA →</a>
+                    </div>
+
+                    <!-- CMA -->
+                    <div class="cert-card">
+                        <h3 class="cert-card__title">Certified Management Accountant (CMA)</h3>
+                        <p class="cert-card__description">
+                            Unlike the CPA, this certification focuses on areas of management within accounting and covers the topic of finance as well. Offered through the Institute of Management Accountants, a CMA concentrates on management skills, corporate finance and professional ethics.
+                        </p>
+                        <a href="https://www.imanet.org/IMA-Certifications/CMA-Certification" target="_blank" class="cert-card__btn">Learn More About CMA →</a>
+                    </div>
+
+                    <!-- CIA -->
+                    <div class="cert-card">
+                        <h3 class="cert-card__title">Certified Internal Auditor (CIA)</h3>
+                        <p class="cert-card__description">
+                            A Certified Internal Auditor (CIA) is a certification offered to accountants who conduct internal audits. The CIA designation is conferred by the Institute of Internal Auditors and is the only such credential that is accepted worldwide. If you plan on working in the audit practice, you may consider obtaining this certification to enhance your credentials.
+                        </p>
+                        <a href="https://www.theiia.org/en/certifications/cia" target="_blank" class="cert-card__btn">Learn More About CIA →</a>
+                    </div>
+                </div>
+
+                <div class="highlight-box" style="margin-top: 50px;">
+                    <strong>Choosing the Right Certification</strong>
+                    <p>Most accounting students pursue the CPA as their primary certification. However, depending on your career path, the CMA (management/corporate) or CIA (internal audit) may be valuable additions. Consult with your academic advisor to determine which certifications align with your career goals.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Big 4 Section -->
+        <section id="big4" class="accounting-section">
+            <div class="container">
+                <div class="accounting-section__header">
+                    <h2 class="accounting-section__title">The Big 4 Accounting Firms</h2>
+                    <p class="accounting-section__subtitle">Explore career opportunities at the world's leading accounting firms</p>
+                </div>
+
+                <div class="big4-grid">
+                    <div class="big4-card">
+                        <h3 class="big4-card__title">Deloitte</h3>
+                        <p style="color: #666; margin-bottom: 25px;">The largest of the Big 4, offering audit, consulting, tax, and advisory services worldwide.</p>
+                        <a href="https://www.deloitte.com/us/en/careers/careers.html" target="_blank" class="big4-card__btn">Explore Careers →</a>
+                    </div>
+
+                    <div class="big4-card">
+                        <h3 class="big4-card__title">PwC</h3>
+                        <p style="color: #666; margin-bottom: 25px;">PricewaterhouseCoopers provides assurance, tax, and advisory services to build trust and solve important problems.</p>
+                        <a href="https://www.pwc.com/us/en/careers.html" target="_blank" class="big4-card__btn">Explore Careers →</a>
+                    </div>
+
+                    <div class="big4-card">
+                        <h3 class="big4-card__title">EY</h3>
+                        <p style="color: #666; margin-bottom: 25px;">Ernst & Young is a global leader in assurance, tax, transaction, and advisory services.</p>
+                        <a href="https://usearlycareers.ey.com/" target="_blank" class="big4-card__btn">Explore Careers →</a>
+                    </div>
+
+                    <div class="big4-card">
+                        <h3 class="big4-card__title">KPMG</h3>
+                        <p style="color: #666; margin-bottom: 25px;">KPMG delivers audit, tax, and advisory services with a focus on quality and integrity.</p>
+                        <a href="https://www.kpmguscareers.com/early-career/" target="_blank" class="big4-card__btn">Explore Careers →</a>
+                    </div>
+                </div>
+
+                <div class="content-box" style="margin-top: 50px;">
+                    <h3>GPA Requirements</h3>
+                    <div class="macc-details">
+                        <div class="macc-detail">
+                            <div class="macc-detail__label">Big 4 Firms</div>
+                            <div class="macc-detail__value">3.5+</div>
+                        </div>
+                        <div class="macc-detail">
+                            <div class="macc-detail__label">Other Firms</div>
+                            <div class="macc-detail__value">3.2+</div>
+                        </div>
+                        <div class="macc-detail">
+                            <div class="macc-detail__label">Your GPA</div>
+                            <div class="macc-detail__value">??</div>
+                        </div>
+                    </div>
+                    <p style="color: #666; line-height: 1.8; margin-top: 20px;">
+                        While GPA is important, it's not the only factor. Strong internship experience, leadership activities, and networking can help you stand out. Start building your resume early!
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- MAcc Program Section -->
+        <section id="macc" class="accounting-section">
+            <div class="container">
+                <div class="accounting-section__header">
+                    <h2 class="accounting-section__title">Master of Accountancy (MAcc)</h2>
+                    <p class="accounting-section__subtitle">Enhance your education and prepare for the CPA exam</p>
+                </div>
+
+                <div class="content-box">
+                    <p style="color: #666; line-height: 1.8; margin-bottom: 30px;">
+                        The Master's Degree of Accountancy (MAcc) is a graduate program that the College of Business Administration offers for students wishing to enhance their education in the world of accounting. This program is designed to provide students with more in-depth concepts in accounting. Students wishing to obtain their CPA license are usually interested in obtaining their Master's Degree in Accountancy.
+                    </p>
+
+                    <h3>Program Details</h3>
+                    <div class="macc-details">
+                        <div class="macc-detail">
+                            <div class="macc-detail__label">Program Length</div>
+                            <div class="macc-detail__value">12 mo</div>
+                        </div>
+                        <div class="macc-detail">
+                            <div class="macc-detail__label">Credit Hours</div>
+                            <div class="macc-detail__value">30</div>
+                        </div>
+                        <div class="macc-detail">
+                            <div class="macc-detail__label">Tuition/Credit</div>
+                            <div class="macc-detail__value">$1,432</div>
+                        </div>
+                    </div>
+
+                    <h4>Example Coursework</h4>
+                    <ul>
+                        <li><strong>Accounting Research:</strong> Advanced research methodologies and professional standards</li>
+                        <li><strong>Ethics and the Accounting Profession:</strong> Professional responsibility and ethical decision-making</li>
+                        <li><strong>Advanced Auditing:</strong> Complex audit procedures and professional skepticism</li>
+                        <li><strong>Financial Statement Analysis:</strong> In-depth analysis techniques for complex financial reporting</li>
+                    </ul>
+
+                    <a href="https://acu.edu/academics/graduate/master-of-accountancy" target="_blank" class="btn" style="margin-top: 30px;">Learn More About MAcc Program →</a>
+                </div>
+
+                <div class="highlight-box" style="margin-top: 40px;">
+                    <strong>Why Pursue a MAcc?</strong>
+                    <p>The MAcc program helps you meet the 150-hour requirement for CPA licensure, deepens your accounting knowledge, and gives you a competitive edge in the job market. Many students complete their MAcc while working part-time or interning.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CPA Exam Section -->
+        <section id="cpa-exam" class="accounting-section">
+            <div class="container">
+                <div class="accounting-section__header">
+                    <h2 class="accounting-section__title">The CPA Exam</h2>
+                    <p class="accounting-section__subtitle">Your pathway to becoming a Certified Public Accountant</p>
+                </div>
+
+                <div class="content-box">
+                    <h3>Do you wish to become a Certified Public Accountant?</h3>
+                    <p style="color: #666; line-height: 1.8; margin-bottom: 25px;">
+                        The CPA license is a certification available for those who wish to work as independent accountants. The following are some of the requirements to obtain the CPA in Texas:
+                    </p>
+
+                    <h4>Texas CPA Requirements</h4>
+                    <ul>
+                        <li><strong>Background Check:</strong> Complete the electronic fingerprint process for a background check of the criminal history files of the Texas Department of Public Safety (DPS) and the Federal Bureau of Investigation (FBI)</li>
+                        <li><strong>Degree Requirement:</strong> Hold a baccalaureate or higher degree from a board-recognized United States college or university, or an equivalent degree from an institution in another country</li>
+                        <li><strong>Credit Hours:</strong> Complete 150 semester hours of college credit (this is why many pursue a MAcc)</li>
+                        <li><strong>Accounting Courses:</strong> Complete 21 semester hours of upper level accounting courses from a board-recognized college or university</li>
+                        <li><strong>Business Courses:</strong> Complete 24 semester hours of upper level related business courses, including 2 semester hours of accounting or business communication</li>
+                    </ul>
+
+                    <h4>The Four CPA Exam Sections</h4>
+                    <ul>
+                        <li><strong>Auditing and Attestation (AUD):</strong> Audit procedures, ethics, and professional responsibilities</li>
+                        <li><strong>Business Environment and Concepts (BEC):</strong> Corporate governance, economics, financial management, and IT</li>
+                        <li><strong>Financial Accounting and Reporting (FAR):</strong> Financial statements, governmental accounting, and nonprofit accounting</li>
+                        <li><strong>Regulation (REG):</strong> Federal taxation, ethics, business law, and professional responsibilities</li>
+                    </ul>
+
+                    <a href="https://www.accounting.com/resources/cpa-exam-guide/" target="_blank" class="btn" style="margin-top: 30px;">Complete CPA Exam Guide →</a>
+                </div>
+
+                <div class="highlight-box" style="margin-top: 40px;">
+                    <strong>CPA Exam Preparation</strong>
+                    <p>Most students begin studying for the CPA exam during their senior year or while completing their MAcc. ACU provides resources and support to help you prepare. Consider review courses like Becker, Wiley, or Roger CPA Review. Allow 300-400 hours of study time for all four sections.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Career Paths Section -->
+        <section id="career-paths" class="accounting-section">
+            <div class="container">
+                <div class="accounting-section__header">
+                    <h2 class="accounting-section__title">Career Paths in Accounting</h2>
+                    <p class="accounting-section__subtitle">Explore the diverse opportunities available to accounting professionals</p>
+                </div>
+
+                <div class="career-cards">
+                    <!-- Public Accounting - Audit -->
+                    <div class="career-card">
+                        <h3 class="career-card__title">Public Accounting - Audit</h3>
+                        <p class="career-card__text">
+                            As an auditor in public accounting, you'll examine financial statements to ensure accuracy and compliance with accounting standards. You'll work with various clients across different industries.
+                        </p>
+                        <span class="career-card__label">Key Responsibilities:</span>
+                        <ul class="career-card__text">
+                            <li>Examining financial records and statements</li>
+                            <li>Testing internal controls</li>
+                            <li>Assessing risk and compliance</li>
+                            <li>Preparing audit reports</li>
+                            <li>Client communication and relationship management</li>
+                        </ul>
+                    </div>
+
+                    <!-- Public Accounting - Tax -->
+                    <div class="career-card">
+                        <h3 class="career-card__title">Public Accounting - Tax</h3>
+                        <p class="career-card__text">
+                            Tax accountants help clients navigate complex tax laws and minimize tax liabilities. You'll prepare tax returns, provide tax planning advice, and represent clients before tax authorities.
+                        </p>
+                        <span class="career-card__label">Key Responsibilities:</span>
+                        <ul class="career-card__text">
+                            <li>Preparing corporate and individual tax returns</li>
+                            <li>Tax planning and strategy</li>
+                            <li>Researching tax issues</li>
+                            <li>Advising on tax implications of business decisions</li>
+                        </ul>
+                    </div>
+
+                    <!-- Corporate Accounting -->
+                    <div class="career-card">
+                        <h3 class="career-card__title">Corporate Accounting (Industry)</h3>
+                        <p class="career-card__text">
+                            Corporate accountants work for a single company, handling their internal accounting needs. This path offers better work-life balance and the opportunity to become an expert in one industry.
+                        </p>
+                        <span class="career-card__label">Key Responsibilities:</span>
+                        <ul class="career-card__text">
+                            <li>Financial reporting and analysis</li>
+                            <li>Budgeting and forecasting</li>
+                            <li>Internal controls and compliance</li>
+                            <li>Working with external auditors</li>
+                        </ul>
+                    </div>
+
+                    <!-- Forensic Accounting -->
+                    <div class="career-card">
+                        <h3 class="career-card__title">Forensic Accounting</h3>
+                        <p class="career-card__text">
+                            Forensic accountants investigate financial crimes, fraud, and disputes. You'll use accounting, auditing, and investigative skills to uncover financial misconduct.
+                        </p>
+                        <span class="career-card__label">Key Responsibilities:</span>
+                        <ul class="career-card__text">
+                            <li>Investigating fraud and embezzlement</li>
+                            <li>Analyzing financial records for litigation</li>
+                            <li>Expert witness testimony</li>
+                            <li>Business valuation for disputes</li>
+                        </ul>
+                    </div>
+
+                    <!-- Government Accounting -->
+                    <div class="career-card">
+                        <h3 class="career-card__title">Government Accounting</h3>
+                        <p class="career-card__text">
+                            Government accountants ensure public funds are spent properly and in compliance with regulations. Work for federal, state, or local government agencies.
+                        </p>
+                        <span class="career-card__label">Benefits:</span>
+                        <ul class="career-card__text">
+                            <li>Job security</li>
+                            <li>Excellent benefits and pension plans</li>
+                            <li>Work-life balance</li>
+                        </ul>
+                    </div>
+
+                    <!-- Financial Advisory -->
+                    <div class="career-card">
+                        <h3 class="career-card__title">Financial Advisory</h3>
+                        <p class="career-card__text">
+                            Advisory consultants help businesses solve complex financial problems, improve operations, and navigate transactions like mergers and acquisitions.
+                        </p>
+                        <span class="career-card__label">Key Responsibilities:</span>
+                        <ul class="career-card__text">
+                            <li>Business valuation</li>
+                            <li>Mergers & acquisitions support</li>
+                            <li>Financial due diligence</li>
+                            <li>Restructuring services</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="content-box" style="margin-top: 50px;">
+                    <h3>Internship Timeline for Accounting Students</h3>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-item__content">
+                                <h4 class="timeline-item__title">Junior Year</h4>
+                                <p class="timeline-item__text">Begin internship applications in Fall semester. Target at least one internship between Junior and Senior year.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-item__content">
+                                <h4 class="timeline-item__title">Fall of Senior Year</h4>
+                                <p class="timeline-item__text">Complete your internship and leverage it for full-time offers. Many firms extend offers to successful interns.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-item__content">
+                                <h4 class="timeline-item__title">Spring of Senior Year</h4>
+                                <p class="timeline-item__text">Many employers look for spring semester interns! Consider a second internship in a different area.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-item__content">
+                                <h4 class="timeline-item__title">Post-Graduation</h4>
+                                <p class="timeline-item__text">Decide your path: Start full-time work, pursue MAcc, or prepare for CPA exam.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cta-section">
+                    <h3>Ready to Launch Your Accounting Career?</h3>
+                    <p>Explore all our resources including resume guides, interview prep, and job search strategies</p>
+                    <a href="resources-all.html" class="btn">View All Resources →</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__section">
+                    <h4>COBA Professional Development</h4>
+                    <p>Empowering ACU business students to achieve their career goals</p>
+                </div>
+                <div class="footer__section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../index.html#about">About COBA</a></li>
+                        <li><a href="accounting.html">Accounting Major</a></li>
+                        <li><a href="resources-all.html">Resources</a></li>
+                        <li><a href="../index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer__section">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="https://www.instagram.com/advicewitherin" target="_blank">Instagram: @advicewitherin</a></li>
+                        <li><a href="https://www.tiktok.com/@advicewitherin" target="_blank">TikTok: @advicewitherin</a></li>
+                        <li><a href="https://www.acu.edu/coba" target="_blank">ACU COBA Website</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; 2024 Abilene Christian University - College of Business Administration. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#main-content" class="back-to-top" id="backToTop">↑</a>
+
+    <!-- JavaScript -->
+    <script src="../js/main.js"></script>
+    <script>
+        // Back to Top Button
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
+            }
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerOffset = 160;
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Active section highlighting
+        const sections = document.querySelectorAll('.accounting-section');
+        const navLinks = document.querySelectorAll('.section-nav__link');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.pageYOffset >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.style.background = '#4B2E83';
+                    link.style.color = 'white';
+                } else {
+                    link.style.background = '#f5f5f5';
+                    link.style.color = '#4B2E83';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
