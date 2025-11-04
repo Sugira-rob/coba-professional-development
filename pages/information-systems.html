@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Information Systems major resources at ACU COBA - IT certifications, technical skills, and IS career paths">
+    <meta name="keywords" content="ACU, COBA, Information Systems, IT, technology, business systems, IS careers">
+    <meta name="author" content="ACU COBA">
+    <title>Information Systems Major Resources | COBA | ACU</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../assets/images/favicon.png">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="../css/main.css">
+    
+    <style>
+        /* Information Systems Page Specific Styles */
+        .is-hero {
+            background: linear-gradient(135deg, #4B2E83 0%, #6B46A8 100%);
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .is-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"><path d="M0,0 L1200,0 L1200,60 Q900,100 600,60 T0,60 Z" fill="rgba(255,255,255,0.05)"/></svg>') repeat-x bottom;
+            opacity: 0.1;
+        }
+
+        .is-hero h1 {
+            font-size: 56px;
+            margin-bottom: 20px;
+            font-weight: 800;
+            position: relative;
+            z-index: 1;
+            color: #2c2c2c;
+        }
+
+        .is-hero p {
+            font-size: 22px;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            opacity: 0.95;
+            position: relative;
+            z-index: 1;
+            color: white;
+        }
+
+        .is-hero__icon {
+            font-size: 80px;
+            margin-bottom: 20px;
+            display: block;
+            color: white;
+        }
+
+        .section-nav {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 70px;
+            z-index: 100;
+            padding: 20px 0;
+        }
+
+        .section-nav__list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .section-nav__link {
+            padding: 10px 20px;
+            background: #f5f5f5;
+            color: #4B2E83;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 14px;
+        }
+
+        .section-nav__link:hover {
+            background: #4B2E83;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .is-section {
+            padding: 80px 0;
+        }
+
+        .is-section:nth-child(even) {
+            background: #f9f9f9;
+        }
+
+        .is-section__header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .is-section__title {
+            font-size: 42px;
+            color: #4B2E83;
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+
+        .is-section__subtitle {
+            font-size: 20px;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cert-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .cert-card {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            text-align: center;
+            border: 2px solid transparent;
+        }
+
+        .cert-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(75, 46, 131, 0.15);
+            border-color: #FFB81C;
+        }
+
+        .cert-card__title {
+            font-size: 20px;
+            color: #4B2E83;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .cert-card__btn {
+            display: inline-block;
+            padding: 10px 25px;
+            background: #4B2E83;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-top: 15px;
+        }
+
+        .cert-card__btn:hover {
+            background: #6B46A8;
+            transform: scale(1.05);
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #f8f4ff 0%, #fff9e6 100%);
+            border-left: 5px solid #FFB81C;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 25px 0;
+        }
+
+        .highlight-box strong {
+            color: #4B2E83;
+            font-size: 18px;
+        }
+
+        .highlight-box p {
+            color: #666;
+            line-height: 1.7;
+            margin-top: 10px;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #4B2E83 0%, #6B46A8 100%);
+            color: white;
+            padding: 60px;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .cta-section h3 {
+            font-size: 36px;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .cta-section p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 40px;
+            background: #FFB81C;
+            color: #4B2E83;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .btn:hover {
+            background: #ffc940;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: #4B2E83;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 24px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: #6B46A8;
+            transform: translateY(-5px);
+        }
+
+        @media (max-width: 768px) {
+            .is-hero h1 {
+                font-size: 38px;
+            }
+
+            .is-hero p {
+                font-size: 18px;
+            }
+
+            .is-section__title {
+                font-size: 32px;
+            }
+
+            .cert-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .section-nav {
+                top: 60px;
+            }
+
+            .cta-section {
+                padding: 40px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Skip to Main Content -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Header & Navigation -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header__content">
+                <div class="header__logo">
+                    <a href="../index.html">
+                        <span class="header__logo-text">COBA</span>
+                        <span class="header__logo-subtitle">Professional Development</span>
+                    </a>
+                </div>
+
+                <button class="header__menu-toggle" aria-label="Toggle menu" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <nav class="header__nav" id="mainNav">
+                    <ul class="nav-list">
+                        <li><a href="../index.html#home" class="nav-list__link">Home</a></li>
+                        <li><a href="../index.html#about" class="nav-list__link">About</a></li>
+                        <li class="nav-list__item--dropdown">
+                            <a href="#" class="nav-list__link">Majors <span class="dropdown-arrow">▾</span></a>
+                            <ul class="nav-dropdown">
+                                <li><a href="finance.html">Finance</a></li>
+                                <li><a href="accounting.html">Accounting</a></li>
+                                <li><a href="marketing.html">Marketing</a></li>
+                                <li><a href="management.html">Management</a></li>
+                                <li><a href="computer-science.html">Computer Science</a></li>
+                                <li><a href="information-systems.html">Information Systems</a></li>
+                                <li><a href="digital-entertainment.html">Digital Entertainment Tech</a></li>
+                                <li><a href="data-analytics.html">Data Analytics</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="../index.html#international" class="nav-list__link">International Students</a></li>
+                        <li><a href="resources-all.html" class="nav-list__link">Resources</a></li>
+                        <li><a href="../index.html#contact" class="nav-list__link nav-list__link--cta">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="is-hero">
+            <div class="container">
+                <div class="is-hero__icon">{ }</div>
+                <h1>Information Systems Major</h1>
+                <p>Explore job titles in information systems, learn about skills and certifications that make ACU students competitive in a professional workplace, and discover internship opportunities. GO WILDCATS!</p>
+            </div>
+        </section>
+
+        <!-- Section Navigation -->
+        <nav class="section-nav">
+            <div class="container">
+                <ul class="section-nav__list">
+                    <li><a href="#overview" class="section-nav__link">Overview</a></li>
+                    <li><a href="#certifications" class="section-nav__link">Certifications</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Overview Section -->
+        <section id="overview" class="is-section">
+            <div class="container">
+                <div class="is-section__header">
+                    <h2 class="is-section__title">Information Systems at ACU</h2>
+                    <p class="is-section__subtitle">Bridge the gap between business and technology</p>
+                </div>
+
+                <div class="highlight-box">
+                    <strong>Information Systems Program</strong>
+                    <p>Information Systems majors learn to leverage technology to solve business problems, manage data systems, and drive digital transformation. Our program combines technical skills with business acumen to prepare you for roles in IT management, systems analysis, business intelligence, and more.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section id="certifications" class="is-section">
+            <div class="container">
+                <div class="is-section__header">
+                    <h2 class="is-section__title">Information Systems Certifications</h2>
+                    <p class="is-section__subtitle">Build your technical credentials with industry-recognized certifications</p>
+                </div>
+
+                <div class="cert-cards">
+                    <div class="cert-card">
+                        <h3 class="cert-card__title">Coursera IS Courses</h3>
+                        <a href="https://www.coursera.org/courses?query=information+systems" target="_blank" class="cert-card__btn">Explore Courses →</a>
+                    </div>
+
+                    <div class="cert-card">
+                        <h3 class="cert-card__title">Codepath Technical Interview Prep</h3>
+                        <a href="https://www.codepath.org/courses/tech-interview-prep" target="_blank" class="cert-card__btn">Get Certified →</a>
+                    </div>
+
+                    <div class="cert-card">
+                        <h3 class="cert-card__title">W3Schools Certifications</h3>
+                        <a href="https://campus.w3schools.com/collections/certifications" target="_blank" class="cert-card__btn">Get Certified →</a>
+                    </div>
+
+                    <div class="cert-card">
+                        <h3 class="cert-card__title">Udemy IT/Programming</h3>
+                        <a href="https://www.udemy.com/" target="_blank" class="cert-card__btn">Browse Courses →</a>
+                    </div>
+
+                    <div class="cert-card">
+                        <h3 class="cert-card__title">TestOut IT Training</h3>
+                        <a href="https://www.testout.com/" target="_blank" class="cert-card__btn">Get Certified →</a>
+                    </div>
+
+                    <div class="cert-card">
+                        <h3 class="cert-card__title">Google IT Support</h3>
+                        <a href="https://www.coursera.org/google-certificates/it-support-professional-certificate" target="_blank" class="cert-card__btn">Get Certified →</a>
+                    </div>
+
+                    <div class="cert-card">
+                        <h3 class="cert-card__title">CCNA (Cisco)</h3>
+                        <a href="https://www.cisco.com/c/en/us/training-events/training-certifications/certifications/associate/ccna.html" target="_blank" class="cert-card__btn">Get Certified →</a>
+                    </div>
+
+                    <div class="cert-card">
+                        <h3 class="cert-card__title">CompTIA IT Fundamentals</h3>
+                        <a href="https://www.comptia.org/certifications/it-fundamentals" target="_blank" class="cert-card__btn">Get Certified →</a>
+                    </div>
+
+                    <div class="cert-card">
+                        <h3 class="cert-card__title">Certified Ethical Hacker</h3>
+                        <a href="https://www.eccouncil.org/train-certify/certified-ethical-hacker-ceh/" target="_blank" class="cert-card__btn">Get Certified →</a>
+                    </div>
+
+                    <div class="cert-card">
+                        <h3 class="cert-card__title">CompTIA A+</h3>
+                        <a href="https://www.comptia.org/certifications/a" target="_blank" class="cert-card__btn">Get Certified →</a>
+                    </div>
+                </div>
+
+                <div class="highlight-box" style="margin-top: 50px;">
+                    <strong>Certification Path Recommendations</strong>
+                    <p>Start with foundational certifications like CompTIA IT Fundamentals or Google IT Support. Then progress to specialized areas based on your interests: networking (CCNA), security (CEH), or development (W3Schools, Codepath). Many employers value multiple certifications that demonstrate breadth and depth of knowledge.</p>
+                </div>
+
+                <div class="cta-section">
+                    <h3>Ready to Launch Your IS Career?</h3>
+                    <p>Explore all our resources including resume guides, interview prep, and technical skills development</p>
+                    <a href="resources-all.html" class="btn">View All Resources →</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__section">
+                    <h4>COBA Professional Development</h4>
+                    <p>Empowering ACU business students to achieve their career goals</p>
+                </div>
+                <div class="footer__section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../index.html#about">About COBA</a></li>
+                        <li><a href="information-systems.html">Information Systems Major</a></li>
+                        <li><a href="resources-all.html">Resources</a></li>
+                        <li><a href="../index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer__section">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="https://www.instagram.com/advicewitherin" target="_blank">Instagram: @advicewitherin</a></li>
+                        <li><a href="https://www.tiktok.com/@advicewitherin" target="_blank">TikTok: @advicewitherin</a></li>
+                        <li><a href="https://www.acu.edu/coba" target="_blank">ACU COBA Website</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; 2024 Abilene Christian University - College of Business Administration. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#main-content" class="back-to-top" id="backToTop">↑</a>
+
+    <!-- JavaScript -->
+    <script src="../js/main.js"></script>
+    <script>
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
+            }
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerOffset = 160;
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        const sections = document.querySelectorAll('.is-section');
+        const navLinks = document.querySelectorAll('.section-nav__link');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (window.pageYOffset >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.style.background = '#4B2E83';
+                    link.style.color = 'white';
+                } else {
+                    link.style.background = '#f5f5f5';
+                    link.style.color = '#4B2E83';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

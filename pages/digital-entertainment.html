@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Digital Entertainment Technology major resources at ACU COBA - game development, Unity, Unreal Engine certifications">
+    <meta name="keywords" content="ACU, COBA, Digital Entertainment Tech, DET, game development, Unity, Unreal Engine, gaming careers">
+    <meta name="author" content="ACU COBA">
+    <title>Digital Entertainment Tech Major Resources | COBA | ACU</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../assets/images/favicon.png">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="../css/main.css">
+    
+    <style>
+        /* DET Page Specific Styles */
+        .det-hero {
+            background: linear-gradient(135deg, #4B2E83 0%, #6B46A8 100%);
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .det-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"><path d="M0,0 L1200,0 L1200,60 Q900,100 600,60 T0,60 Z" fill="rgba(255,255,255,0.05)"/></svg>') repeat-x bottom;
+            opacity: 0.1;
+        }
+
+        .det-hero h1 {
+            font-size: 56px;
+            margin-bottom: 20px;
+            font-weight: 800;
+            position: relative;
+            z-index: 1;
+            color: #2c2c2c;
+        }
+
+        .det-hero p {
+            font-size: 22px;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            opacity: 0.95;
+            position: relative;
+            z-index: 1;
+            color: white;
+        }
+
+        .det-hero__icon {
+            font-size: 80px;
+            margin-bottom: 20px;
+            display: block;
+            color: white;
+        }
+
+        .section-nav {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 70px;
+            z-index: 100;
+            padding: 20px 0;
+        }
+
+        .section-nav__list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .section-nav__link {
+            padding: 10px 20px;
+            background: #f5f5f5;
+            color: #4B2E83;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 14px;
+        }
+
+        .section-nav__link:hover {
+            background: #4B2E83;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .det-section {
+            padding: 80px 0;
+        }
+
+        .det-section:nth-child(even) {
+            background: #f9f9f9;
+        }
+
+        .det-section__header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .det-section__title {
+            font-size: 42px;
+            color: #4B2E83;
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+
+        .det-section__subtitle {
+            font-size: 20px;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .stat-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .stat-card {
+            background: white;
+            border-radius: 12px;
+            padding: 35px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            text-align: center;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(75, 46, 131, 0.2);
+            border-color: #FFB81C;
+        }
+
+        .stat-card__title {
+            font-size: 24px;
+            color: #4B2E83;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .stat-card__value {
+            font-size: 42px;
+            color: #FFB81C;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .stat-card__description {
+            color: #666;
+            line-height: 1.7;
+        }
+
+        .salary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .salary-card {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border-left: 4px solid #FFB81C;
+        }
+
+        .salary-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(75, 46, 131, 0.15);
+        }
+
+        .salary-card__title {
+            font-size: 20px;
+            color: #4B2E83;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .salary-card__amount {
+            font-size: 28px;
+            color: #FFB81C;
+            font-weight: 800;
+        }
+
+        .cert-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .cert-card {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            text-align: center;
+            border: 2px solid transparent;
+        }
+
+        .cert-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(75, 46, 131, 0.15);
+            border-color: #FFB81C;
+        }
+
+        .cert-card__title {
+            font-size: 20px;
+            color: #4B2E83;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .spreadsheet-embed {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            margin: 30px 0;
+        }
+
+        .spreadsheet-embed h3 {
+            color: #4B2E83;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        .spreadsheet-embed iframe {
+            width: 100%;
+            height: 500px;
+            border: none;
+            border-radius: 8px;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #f8f4ff 0%, #fff9e6 100%);
+            border-left: 5px solid #FFB81C;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 25px 0;
+        }
+
+        .highlight-box strong {
+            color: #4B2E83;
+            font-size: 18px;
+        }
+
+        .highlight-box p {
+            color: #666;
+            line-height: 1.7;
+            margin-top: 10px;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #4B2E83 0%, #6B46A8 100%);
+            color: white;
+            padding: 60px;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .cta-section h3 {
+            font-size: 36px;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .cta-section p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 40px;
+            background: #FFB81C;
+            color: #4B2E83;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .btn:hover {
+            background: #ffc940;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: #4B2E83;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 24px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: #6B46A8;
+            transform: translateY(-5px);
+        }
+
+        @media (max-width: 768px) {
+            .det-hero h1 {
+                font-size: 38px;
+            }
+
+            .det-hero p {
+                font-size: 18px;
+            }
+
+            .det-section__title {
+                font-size: 32px;
+            }
+
+            .stat-cards,
+            .salary-grid,
+            .cert-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .section-nav {
+                top: 60px;
+            }
+
+            .cta-section {
+                padding: 40px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Skip to Main Content -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Header & Navigation -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header__content">
+                <div class="header__logo">
+                    <a href="../index.html">
+                        <span class="header__logo-text">COBA</span>
+                        <span class="header__logo-subtitle">Professional Development</span>
+                    </a>
+                </div>
+
+                <button class="header__menu-toggle" aria-label="Toggle menu" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <nav class="header__nav" id="mainNav">
+                    <ul class="nav-list">
+                        <li><a href="../index.html#home" class="nav-list__link">Home</a></li>
+                        <li><a href="../index.html#about" class="nav-list__link">About</a></li>
+                        <li class="nav-list__item--dropdown">
+                            <a href="#" class="nav-list__link">Majors <span class="dropdown-arrow">▾</span></a>
+                            <ul class="nav-dropdown">
+                                <li><a href="finance.html">Finance</a></li>
+                                <li><a href="accounting.html">Accounting</a></li>
+                                <li><a href="marketing.html">Marketing</a></li>
+                                <li><a href="management.html">Management</a></li>
+                                <li><a href="computer-science.html">Computer Science</a></li>
+                                <li><a href="information-systems.html">Information Systems</a></li>
+                                <li><a href="digital-entertainment.html">Digital Entertainment Tech</a></li>
+                                <li><a href="data-analytics.html">Data Analytics</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="../index.html#international" class="nav-list__link">International Students</a></li>
+                        <li><a href="resources-all.html" class="nav-list__link">Resources</a></li>
+                        <li><a href="../index.html#contact" class="nav-list__link nav-list__link--cta">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="det-hero">
+            <div class="container">
+                <div class="det-hero__icon">{ }</div>
+                <h1>Digital Entertainment Technology</h1>
+                <p>Explore job titles in DET, learn about skills and certifications for game development, and discover internship opportunities in the gaming industry. GO WILDCATS!</p>
+            </div>
+        </section>
+
+        <!-- Section Navigation -->
+        <nav class="section-nav">
+            <div class="container">
+                <ul class="section-nav__list">
+                    <li><a href="#industry-stats" class="section-nav__link">Industry Stats</a></li>
+                    <li><a href="#salaries" class="section-nav__link">Salaries</a></li>
+                    <li><a href="#certifications" class="section-nav__link">Certifications</a></li>
+                    <li><a href="#jobs-internships" class="section-nav__link">Jobs & Internships</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Industry Stats Section -->
+        <section id="industry-stats" class="det-section">
+            <div class="container">
+                <div class="det-section__header">
+                    <h2 class="det-section__title">Gaming Industry Insights</h2>
+                    <p class="det-section__subtitle">The global games market is booming with unprecedented growth</p>
+                </div>
+
+                <div class="stat-cards">
+                    <div class="stat-card">
+                        <h3 class="stat-card__title">Global Games Market</h3>
+                        <div class="stat-card__value">$225.7B</div>
+                        <p class="stat-card__description">Projected market value for 2025, growing from $192.7B in 2021</p>
+                        <p style="color: #999; font-size: 14px; margin-top: 10px;">Source: Newzoo (2022)</p>
+                    </div>
+
+                    <div class="stat-card">
+                        <h3 class="stat-card__title">Unity Dominance</h3>
+                        <div class="stat-card__value">50%+</div>
+                        <p class="stat-card__description">Of all games available were made with Unity engine</p>
+                        <p style="color: #999; font-size: 14px; margin-top: 10px;">Source: Unity (2022)</p>
+                    </div>
+
+                    <div class="stat-card">
+                        <h3 class="stat-card__title">Monthly Downloads</h3>
+                        <div class="stat-card__value">5B</div>
+                        <p class="stat-card__description">Unity-created apps downloaded each month worldwide</p>
+                        <p style="color: #999; font-size: 14px; margin-top: 10px;">Source: Unity (2022)</p>
+                    </div>
+
+                    <div class="stat-card">
+                        <h3 class="stat-card__title">Platform Support</h3>
+                        <div class="stat-card__value">20+</div>
+                        <p class="stat-card__description">Platforms that can run Unity creations, reaching 190+ countries</p>
+                        <p style="color: #999; font-size: 14px; margin-top: 10px;">Source: Unity (2022)</p>
+                    </div>
+                </div>
+
+                <div class="highlight-box" style="margin-top: 50px;">
+                    <strong>Steam Game Engine Popularity</strong>
+                    <p><strong>Unity: 46%</strong> (Most Popular!) | In-House: 26% | Other: 16% | Unreal: 12%</p>
+                    <p style="margin-top: 10px; font-size: 14px;">Source: Rounthall Investments (2022)</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Salaries Section -->
+        <section id="salaries" class="det-section">
+            <div class="container">
+                <div class="det-section__header">
+                    <h2 class="det-section__title">Game Development Salaries</h2>
+                    <p class="det-section__subtitle">Average compensation for game development roles</p>
+                </div>
+
+                <div class="salary-grid">
+                    <div class="salary-card">
+                        <h3 class="salary-card__title">Game Developer</h3>
+                        <div class="salary-card__amount">$118,967</div>
+                    </div>
+
+                    <div class="salary-card">
+                        <h3 class="salary-card__title">Game Designer</h3>
+                        <div class="salary-card__amount">$118,084</div>
+                    </div>
+
+                    <div class="salary-card">
+                        <h3 class="salary-card__title">Game Programmer</h3>
+                        <div class="salary-card__amount">$108,059</div>
+                    </div>
+
+                    <div class="salary-card">
+                        <h3 class="salary-card__title">Game Artist</h3>
+                        <div class="salary-card__amount">$91,875</div>
+                    </div>
+                </div>
+
+                <p style="text-align: center; color: #666; margin-top: 30px; font-size: 14px;">Source: Glassdoor (2022)</p>
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section id="certifications" class="det-section">
+            <div class="container">
+                <div class="det-section__header">
+                    <h2 class="det-section__title">Game Development Certifications</h2>
+                    <p class="det-section__subtitle">Build your skills with industry-recognized credentials</p>
+                </div>
+
+                <div class="cert-cards">
+                    <div class="cert-card">
+                        <h3 class="cert-card__title">Adobe Suite Certification</h3>
+                    </div>
+
+                    <div class="cert-card">
+                        <h3 class="cert-card__title">Game Design with Unity</h3>
+                    </div>
+
+                    <div class="cert-card">
+                        <h3 class="cert-card__title">C# for Unity</h3>
+                    </div>
+
+                    <div class="cert-card">
+                        <h3 class="cert-card__title">C++ for Unreal Engine</h3>
+                    </div>
+
+                    <div class="cert-card">
+                        <h3 class="cert-card__title">Introduction to Game Design</h3>
+                    </div>
+
+                    <div class="cert-card">
+                        <h3 class="cert-card__title">Game Dev with Scratch</h3>
+                    </div>
+
+                    <div class="cert-card">
+                        <h3 class="cert-card__title">Game Theory</h3>
+                    </div>
+
+                    <div class="cert-card">
+                        <h3 class="cert-card__title">Advanced Scratch</h3>
+                    </div>
+
+                    <div class="cert-card">
+                        <h3 class="cert-card__title">Unity Certified Associate</h3>
+                    </div>
+
+                    <div class="cert-card">
+                        <h3 class="cert-card__title">Unity 2D Development</h3>
+                    </div>
+
+                    <div class="cert-card">
+                        <h3 class="cert-card__title">Unreal Engine</h3>
+                    </div>
+
+                    <div class="cert-card">
+                        <h3 class="cert-card__title">Unity Certified Professional</h3>
+                    </div>
+                </div>
+
+                <div class="highlight-box" style="margin-top: 50px;">
+                    <strong>Certification Path for DET Students</strong>
+                    <p>Start with foundational courses like Introduction to Game Design and Scratch. Progress to Unity Certified Associate, then specialize in either Unity (C#) or Unreal Engine (C++). The Unity Certified Professional is the ultimate credential for serious game developers.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Jobs & Internships Section -->
+        <section id="jobs-internships" class="det-section">
+            <div class="container">
+                <div class="det-section__header">
+                    <h2 class="det-section__title">DET Jobs & Internships</h2>
+                    <p class="det-section__subtitle">Find opportunities in the gaming industry</p>
+                </div>
+
+                <!-- DET Jobs Spreadsheet -->
+                <div class="spreadsheet-embed">
+                    <h3>DET Jobs</h3>
+                    <p style="color: #666; margin-bottom: 20px;">Job opportunities for Digital Entertainment Technology majors</p>
+                    <iframe src="https://docs.google.com/spreadsheets/d/16WWzbGOfMrl3pXGVZUCqvomEaHdFLh087ydxGuQkBKU/edit?usp=sharing&widget=true&headers=false"></iframe>
+                    <a href="https://docs.google.com/spreadsheets/d/16WWzbGOfMrl3pXGVZUCqvomEaHdFLh087ydxGuQkBKU/" target="_blank" class="btn" style="margin-top: 20px;">Open Full Spreadsheet →</a>
+                </div>
+
+                <!-- DET Internships Spreadsheet -->
+                <div class="spreadsheet-embed">
+                    <h3>DET Internships</h3>
+                    <p style="color: #666; margin-bottom: 20px;">Internship opportunities for Digital Entertainment Technology majors</p>
+                    <iframe src="https://docs.google.com/spreadsheets/d/1tlH2N7oJhm-qPDEVs0SiF7-mVUl0uTVP7PPxfeboih0/edit?usp=sharing&widget=true&headers=false"></iframe>
+                    <a href="https://docs.google.com/spreadsheets/d/1tlH2N7oJhm-qPDEVs0SiF7-mVUl0uTVP7PPxfeboih0/" target="_blank" class="btn" style="margin-top: 20px;">Open Full Spreadsheet →</a>
+                </div>
+
+                <div class="cta-section">
+                    <h3>Ready to Launch Your Game Dev Career?</h3>
+                    <p>Explore all our resources including resume guides, portfolio tips, and networking strategies</p>
+                    <a href="resources-all.html" class="btn">View All Resources →</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__section">
+                    <h4>COBA Professional Development</h4>
+                    <p>Empowering ACU business students to achieve their career goals</p>
+                </div>
+                <div class="footer__section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../index.html#about">About COBA</a></li>
+                        <li><a href="digital-entertainment.html">Digital Entertainment Tech</a></li>
+                        <li><a href="resources-all.html">Resources</a></li>
+                        <li><a href="../index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer__section">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="https://www.instagram.com/advicewitherin" target="_blank">Instagram: @advicewitherin</a></li>
+                        <li><a href="https://www.tiktok.com/@advicewitherin" target="_blank">TikTok: @advicewitherin</a></li>
+                        <li><a href="https://www.acu.edu/coba" target="_blank">ACU COBA Website</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; 2024 Abilene Christian University - College of Business Administration. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#main-content" class="back-to-top" id="backToTop">↑</a>
+
+    <!-- JavaScript -->
+    <script src="../js/main.js"></script>
+    <script>
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
+            }
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerOffset = 160;
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        const sections = document.querySelectorAll('.det-section');
+        const navLinks = document.querySelectorAll('.section-nav__link');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (window.pageYOffset >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.style.background = '#4B2E83';
+                    link.style.color = 'white';
+                } else {
+                    link.style.background = '#f5f5f5';
+                    link.style.color = '#4B2E83';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

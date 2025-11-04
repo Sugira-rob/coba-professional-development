@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Data Analytics major resources at ACU COBA - career paths, certifications, and analytics skills development">
+    <meta name="keywords" content="ACU, COBA, Data Analytics major, business intelligence, data science, SQL, Python, analytics careers">
+    <meta name="author" content="ACU COBA">
+    <title>Data Analytics Major Resources | COBA | ACU</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../assets/images/favicon.png">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="../css/main.css">
+    
+    <style>
+        /* Data Analytics Page Specific Styles */
+        .analytics-hero {
+            background: linear-gradient(135deg, #4B2E83 0%, #6B46A8 100%);
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .analytics-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"><path d="M0,0 L1200,0 L1200,60 Q900,100 600,60 T0,60 Z" fill="rgba(255,255,255,0.05)"/></svg>') repeat-x bottom;
+            opacity: 0.1;
+        }
+
+        .analytics-hero h1 {
+            font-size: 56px;
+            margin-bottom: 20px;
+            font-weight: 800;
+            position: relative;
+            z-index: 1;
+            color: #2c2c2c;
+        }
+
+        .analytics-hero p {
+            font-size: 22px;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            opacity: 0.95;
+            position: relative;
+            z-index: 1;
+            color: white;
+        }
+
+        .analytics-hero__icon {
+            font-size: 80px;
+            margin-bottom: 20px;
+            display: block;
+            color: white;
+        }
+
+        .section-nav {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 70px;
+            z-index: 100;
+            padding: 20px 0;
+        }
+
+        .section-nav__list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .section-nav__link {
+            padding: 10px 20px;
+            background: #f5f5f5;
+            color: #4B2E83;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 14px;
+        }
+
+        .section-nav__link:hover {
+            background: #4B2E83;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .analytics-section {
+            padding: 80px 0;
+        }
+
+        .analytics-section:nth-child(even) {
+            background: #f9f9f9;
+        }
+
+        .analytics-section__header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .analytics-section__title {
+            font-size: 42px;
+            color: #4B2E83;
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+
+        .analytics-section__subtitle {
+            font-size: 20px;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .career-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .career-card {
+            background: white;
+            border-radius: 12px;
+            padding: 35px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .career-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #4B2E83, #6B46A8);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .career-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .career-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(75, 46, 131, 0.2);
+            border-color: #4B2E83;
+        }
+
+        .career-card__title {
+            font-size: 26px;
+            color: #4B2E83;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .career-card__label {
+            font-weight: 700;
+            color: #4B2E83;
+            margin-top: 15px;
+            display: block;
+        }
+
+        .career-card__text {
+            color: #666;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        .cert-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .cert-card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .cert-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(75, 46, 131, 0.15);
+            border-color: #FFB81C;
+        }
+
+        .cert-card__title {
+            font-size: 22px;
+            color: #4B2E83;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .cert-card__description {
+            color: #666;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .cert-card__btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: #4B2E83;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .cert-card__btn:hover {
+            background: #6B46A8;
+            transform: scale(1.05);
+        }
+
+        .content-box {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            margin-top: 40px;
+        }
+
+        .content-box h3 {
+            color: #4B2E83;
+            font-size: 28px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .content-box p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #f8f4ff 0%, #fff9e6 100%);
+            border-left: 5px solid #FFB81C;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 25px 0;
+        }
+
+        .highlight-box strong {
+            color: #4B2E83;
+            font-size: 18px;
+        }
+
+        .highlight-box p {
+            color: #666;
+            line-height: 1.7;
+            margin-top: 10px;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #4B2E83 0%, #6B46A8 100%);
+            color: white;
+            padding: 60px;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .cta-section h3 {
+            font-size: 36px;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .cta-section p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 40px;
+            background: #FFB81C;
+            color: #4B2E83;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .btn:hover {
+            background: #ffc940;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: #4B2E83;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 24px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: #6B46A8;
+            transform: translateY(-5px);
+        }
+
+        @media (max-width: 768px) {
+            .analytics-hero h1 {
+                font-size: 38px;
+            }
+
+            .analytics-hero p {
+                font-size: 18px;
+            }
+
+            .analytics-section__title {
+                font-size: 32px;
+            }
+
+            .career-cards,
+            .cert-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .section-nav {
+                top: 60px;
+            }
+
+            .cta-section {
+                padding: 40px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Skip to Main Content -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Header & Navigation -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header__content">
+                <div class="header__logo">
+                    <a href="../index.html">
+                        <span class="header__logo-text">COBA</span>
+                        <span class="header__logo-subtitle">Professional Development</span>
+                    </a>
+                </div>
+
+                <button class="header__menu-toggle" aria-label="Toggle menu" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <nav class="header__nav" id="mainNav">
+                    <ul class="nav-list">
+                        <li><a href="../index.html#home" class="nav-list__link">Home</a></li>
+                        <li><a href="../index.html#about" class="nav-list__link">About</a></li>
+                        <li class="nav-list__item--dropdown">
+                            <a href="#" class="nav-list__link">Majors <span class="dropdown-arrow">▾</span></a>
+                            <ul class="nav-dropdown">
+                                <li><a href="finance.html">Finance</a></li>
+                                <li><a href="accounting.html">Accounting</a></li>
+                                <li><a href="marketing.html">Marketing</a></li>
+                                <li><a href="management.html">Management</a></li>
+                                <li><a href="computer-science.html">Computer Science</a></li>
+                                <li><a href="data-analytics.html">Data Analytics</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="../index.html#international" class="nav-list__link">International Students</a></li>
+                        <li><a href="resources-all.html" class="nav-list__link">Resources</a></li>
+                        <li><a href="../index.html#contact" class="nav-list__link nav-list__link--cta">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="analytics-hero">
+            <div class="container">
+                <div class="analytics-hero__icon">📈</div>
+                <h1>Data Analytics Major</h1>
+                <p>Explore analytics job titles, certifications, and professional development opportunities. Build data-driven decision-making skills for the business world.</p>
+            </div>
+        </section>
+
+        <!-- Section Navigation -->
+        <nav class="section-nav">
+            <div class="container">
+                <ul class="section-nav__list">
+                    <li><a href="#overview" class="section-nav__link">Overview</a></li>
+                    <li><a href="#careers" class="section-nav__link">Career Paths</a></li>
+                    <li><a href="#certifications" class="section-nav__link">Certifications</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Overview Section -->
+        <section id="overview" class="analytics-section">
+            <div class="container">
+                <div class="analytics-section__header">
+                    <h2 class="analytics-section__title">What is Data Analytics?</h2>
+                    <p class="analytics-section__subtitle">Transform data into actionable business insights</p>
+                </div>
+
+                <div class="content-box">
+                    <h3>Data Analytics Defined</h3>
+                    <p style="font-size: 20px; color: #4B2E83; font-weight: 600;">
+                        The collection, organization, and visualization of data to make conclusions about strategic business decisions.
+                    </p>
+
+                    <h3 style="margin-top: 40px;">How Can I Become a Data Analyst?</h3>
+                    <p>
+                        The College of Business Administration offers a concentration in Fintech and Data Analytics. This concentration requires Scripting, Analytics 3, Data Mining, Analytics, and an Upper Level Finance class. There are also multiple post-graduate degree programs at ACU and elsewhere to further your analytics education.
+                    </p>
+                </div>
+
+                <div class="highlight-box">
+                    <strong>ACU Data Analytics Program</strong>
+                    <p>Build technical skills in SQL, Python, R, Tableau, and Excel while developing business acumen to translate data insights into strategic decisions. Our program prepares you for high-demand roles in business intelligence, financial analysis, and data science.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Career Paths Section -->
+        <section id="careers" class="analytics-section">
+            <div class="container">
+                <div class="analytics-section__header">
+                    <h2 class="analytics-section__title">Data Analytics Career Paths</h2>
+                    <p class="analytics-section__subtitle">Discover high-demand roles in the data-driven business world</p>
+                </div>
+
+                <div class="career-cards">
+                    <!-- Financial Analyst -->
+                    <div class="career-card">
+                        <h3 class="career-card__title">Financial Analyst</h3>
+                        <span class="career-card__label">Purpose:</span>
+                        <p class="career-card__text">Review data to generate finance and market reports. Make recommendations for business growth in complex global economy. Highlight trends and patterns impacting business strategies.</p>
+                        <span class="career-card__label">Skills:</span>
+                        <p class="career-card__text">Recommended degree in statistics, computer science, business administration, or related field. Understand data mining, analysis, processing, and visualization. Utilizes marketing and predictive analytics.</p>
+                    </div>
+
+                    <!-- Business Intelligence Analyst -->
+                    <div class="career-card">
+                        <h3 class="career-card__title">Business Intelligence Analyst</h3>
+                        <span class="career-card__label">Purpose:</span>
+                        <p class="career-card__text">Generate financial statements that accurately reflect businesses' position. Work in banking, advising, insurance companies, and pension funds. Assess quality of receivable accounts, payable accounts, investments, and spending.</p>
+                        <span class="career-card__label">Skills:</span>
+                        <p class="career-card__text">Must communicate complex financial concepts to encourage informed business decisions. Utilize visualization software to inform stakeholders on investments, spending, performance, and bonds.</p>
+                    </div>
+
+                    <!-- Credit Analyst -->
+                    <div class="career-card">
+                        <h3 class="career-card__title">Credit Analyst</h3>
+                        <span class="career-card__label">Purpose:</span>
+                        <p class="career-card__text">Evaluate financial reliability of individuals or companies. Collect financial details from clients including income and previous repayment records to gauge capacity to meet financial commitments.</p>
+                        <span class="career-card__label">Skills:</span>
+                        <p class="career-card__text">Focus on capacity, collateral, covenants, and character. Requires bachelor's degree in finance, accounting, or related field. Extensive knowledge of financial analysis and credit risk assessment.</p>
+                    </div>
+
+                    <!-- Marketing Analyst -->
+                    <div class="career-card">
+                        <h3 class="career-card__title">Marketing Analyst</h3>
+                        <span class="career-card__label">Purpose:</span>
+                        <p class="career-card__text">Perform complex tasks to help companies gauge competitive positions. Understand consumers' wants and needs and reflect trends in business practices. Advise companies on how to best position themselves in the market.</p>
+                        <span class="career-card__label">Skills:</span>
+                        <p class="career-card__text">Recommended degrees in statistics, mathematics, marketing, or social sciences. Proficient with Microsoft Excel, Access, and PowerPoint. Knowledge of analytical software including SAS, SPSS, and Google Analytics.</p>
+                    </div>
+
+                    <!-- Data Visualization Analyst -->
+                    <div class="career-card">
+                        <h3 class="career-card__title">Data Visualization Analyst</h3>
+                        <span class="career-card__label">Purpose:</span>
+                        <p class="career-card__text">Create visual representations of data intended for data professionals and organizational leaders. Convey extensive information, especially big data, in formats that are comprehensible and valuable for spotting patterns and irregularities.</p>
+                        <span class="career-card__label">Skills:</span>
+                        <p class="career-card__text">Proficiency in data visualization tools like Tableau, Power BI. Essential technical skills including Excel, programming languages like R or Python, statistical knowledge, and proficiency in SQL.</p>
+                    </div>
+
+                    <!-- Fraud Analyst -->
+                    <div class="career-card">
+                        <h3 class="career-card__title">Fraud Analyst</h3>
+                        <span class="career-card__label">Purpose:</span>
+                        <p class="career-card__text">Hold pivotal position in protecting organizations against financial losses from fraudulent activities. Duties encompass identification and examination of suspicious transactions, scrutiny of data to identify fraud patterns, and creates strategies to prevent fraud.</p>
+                        <span class="career-card__label">Skills:</span>
+                        <p class="career-card__text">Strong analytical abilities, pattern recognition, data mining expertise. Technical skills including Excel, Python or R, statistical analysis, and SQL proficiency.</p>
+                    </div>
+
+                    <!-- Real Estate Analyst -->
+                    <div class="career-card">
+                        <h3 class="career-card__title">Real Estate Analyst</h3>
+                        <span class="career-card__label">Purpose:</span>
+                        <p class="career-card__text">Analyze real estate market trends, property values, and investment opportunities. Provide data-driven insights for real estate investment decisions.</p>
+                        <span class="career-card__label">Skills:</span>
+                        <p class="career-card__text">Strong analytical abilities, financial modeling, market research skills, and proficiency in data analysis tools and software.</p>
+                    </div>
+
+                    <!-- Risk Analyst -->
+                    <div class="career-card">
+                        <h3 class="career-card__title">Risk Analyst</h3>
+                        <span class="career-card__label">Purpose:</span>
+                        <p class="career-card__text">Assess company's investment portfolios and evaluate risk associated with decisions related to those investments. Employ analytical abilities to anticipate potential losses and provide suggestions for decreasing risk by diversification, currency exchanges, and various investment tactics.</p>
+                        <span class="career-card__label">Skills:</span>
+                        <p class="career-card__text">Strong analytical abilities for data evaluation, pattern recognition, and risk assessment. Solid grasp of financial concepts such as risk management, portfolio analysis, and financial modeling. Proficiency in mathematical and statistical methods.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section id="certifications" class="analytics-section">
+            <div class="container">
+                <div class="analytics-section__header">
+                    <h2 class="analytics-section__title">Data Analytics Certifications</h2>
+                    <p class="analytics-section__subtitle">Build your technical skills with industry-recognized credentials</p>
+                </div>
+
+                <div class="cert-cards">
+                    <div class="cert-card">
+                        <h3 class="cert-card__title">SQL for Data Analysis</h3>
+                        <p class="cert-card__description">Structured Query Language (SQL) is a programming language for data reconfiguration. Learn to manage and rearrange data with various functions. Free for ACU students through LinkedIn Learning.</p>
+                        <a href="https://www.linkedin.com/learning/sql-for-data-analysis-22645200" target="_blank" class="cert-card__btn">Get Certified →</a>
+                    </div>
+
+                    <div class="cert-card">
+                        <h3 class="cert-card__title">Excel: Pivot Tables & Reports</h3>
+                        <p class="cert-card__description">Pivot tables are essential in Microsoft Excel for generating reports and summaries instantly. Create mini databases from pivot tables. Free for ACU students through LinkedIn Learning.</p>
+                        <a href="https://www.linkedin.com/learning/excel-mastering-pivot-table-dashboards-and-reports" target="_blank" class="cert-card__btn">Get Certified →</a>
+                    </div>
+
+                    <div class="cert-card">
+                        <h3 class="cert-card__title">Google Data Analytics</h3>
+                        <p class="cert-card__description">Introduction to R programming, Python, SQL, and Tableau. Learn to clean, organize, and present data. Great overview of skills data analysts use day-to-day.</p>
+                        <a href="https://www.coursera.org/professional-certificates/google-data-analytics" target="_blank" class="cert-card__btn">Get Certified →</a>
+                    </div>
+
+                    <div class="cert-card">
+                        <h3 class="cert-card__title">Microsoft Power BI Associate</h3>
+                        <p class="cert-card__description">Power BI is part of the Microsoft Power platform. Visualize data and track key performance indicators to help make strategic business decisions.</p>
+                        <a href="https://learn.microsoft.com/en-us/credentials/certifications/data-analyst-associate/" target="_blank" class="cert-card__btn">Get Certified →</a>
+                    </div>
+
+                    <div class="cert-card">
+                        <h3 class="cert-card__title">Tableau Business Intelligence</h3>
+                        <p class="cert-card__description">Tableau is a business intelligence software that focuses on data visualization. Features live connections to other data sources like SQL.</p>
+                        <a href="https://www.coursera.org/professional-certificates/tableau-business-intelligence-analyst" target="_blank" class="cert-card__btn">Get Certified →</a>
+                    </div>
+                </div>
+
+                <div class="highlight-box" style="margin-top: 50px;">
+                    <strong>Career Development Center Resource</strong>
+                    <p>Visit ACU's Career Development Center for Labor Market Insights! Enter a job title into the search bar and it will generate core responsibilities, top companies to work for, average salaries, technical skills, and more. <a href="https://careerdevelopment.acu.edu/labor-market-insights/" target="_blank" style="color: #4B2E83; font-weight: 600;">Explore Labor Market Insights →</a></p>
+                </div>
+
+                <div class="cta-section">
+                    <h3>Ready to Launch Your Data Analytics Career?</h3>
+                    <p>Explore all our resources including resume guides, interview prep, and technical skills development</p>
+                    <a href="resources-all.html" class="btn">View All Resources →</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__section">
+                    <h4>COBA Professional Development</h4>
+                    <p>Empowering ACU business students to achieve their career goals</p>
+                </div>
+                <div class="footer__section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../index.html#about">About COBA</a></li>
+                        <li><a href="data-analytics.html">Data Analytics Major</a></li>
+                        <li><a href="resources-all.html">Resources</a></li>
+                        <li><a href="../index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer__section">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="https://www.instagram.com/advicewitherin" target="_blank">Instagram: @advicewitherin</a></li>
+                        <li><a href="https://www.tiktok.com/@advicewitherin" target="_blank">TikTok: @advicewitherin</a></li>
+                        <li><a href="https://www.acu.edu/coba" target="_blank">ACU COBA Website</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; 2024 Abilene Christian University - College of Business Administration. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#main-content" class="back-to-top" id="backToTop">↑</a>
+
+    <!-- JavaScript -->
+    <script src="../js/main.js"></script>
+    <script>
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
+            }
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerOffset = 160;
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        const sections = document.querySelectorAll('.analytics-section');
+        const navLinks = document.querySelectorAll('.section-nav__link');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (window.pageYOffset >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.style.background = '#4B2E83';
+                    link.style.color = 'white';
+                } else {
+                    link.style.background = '#f5f5f5';
+                    link.style.color = '#4B2E83';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
