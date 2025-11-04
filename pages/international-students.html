@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Resources for international students at ACU COBA - H1B sponsorship, visa information, and companies hiring international students">
+    <meta name="keywords" content="ACU, COBA, international students, H1B sponsorship, visa, work authorization">
+    <meta name="author" content="ACU COBA">
+    <title>International Students Resources | COBA | ACU</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../assets/images/favicon.png">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="../css/main.css">
+    
+    <style>
+        /* International Students Page Specific Styles */
+        .international-hero {
+            background: linear-gradient(135deg, #4B2E83 0%, #6B46A8 100%);
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .international-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"><path d="M0,0 L1200,0 L1200,60 Q900,100 600,60 T0,60 Z" fill="rgba(255,255,255,0.05)"/></svg>') repeat-x bottom;
+            opacity: 0.1;
+        }
+
+        .international-hero h1 {
+            font-size: 56px;
+            margin-bottom: 20px;
+            font-weight: 800;
+            position: relative;
+            z-index: 1;
+            color: #000;
+        }
+
+        .international-hero p {
+            font-size: 22px;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            opacity: 0.95;
+            position: relative;
+            z-index: 1;
+            color: white;
+        }
+
+        .international-hero__icon {
+            font-size: 80px;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .section-nav {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 70px;
+            z-index: 100;
+            padding: 20px 0;
+        }
+
+        .section-nav__list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .section-nav__link {
+            padding: 10px 20px;
+            background: #f5f5f5;
+            color: #4B2E83;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 14px;
+        }
+
+        .section-nav__link:hover {
+            background: #4B2E83;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .section-nav__link.active {
+            background: #4B2E83;
+            color: white;
+        }
+
+        .international-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .international-section:nth-child(even) {
+            background: #f9f9f9;
+        }
+
+        .international-section h2 {
+            text-align: center;
+            font-size: 42px;
+            color: #4B2E83;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        .international-section__intro {
+            text-align: center;
+            font-size: 18px;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto 50px;
+            line-height: 1.8;
+        }
+
+        /* H1B Info Box */
+        .h1b-info-box {
+            background: linear-gradient(135deg, #4B2E83 0%, #6B46A8 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(75, 46, 131, 0.2);
+        }
+
+        .h1b-info-box h3 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            font-weight: 700;
+            color: #FFB81C;
+        }
+
+        .h1b-info-box p {
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .h1b-info-box a {
+            color: #FFB81C;
+            text-decoration: underline;
+        }
+
+        .h1b-info-box .source {
+            font-style: italic;
+            opacity: 0.9;
+            margin-top: 15px;
+        }
+
+        /* Company Cards */
+        .company-category {
+            margin-bottom: 60px;
+        }
+
+        .company-category h3 {
+            font-size: 32px;
+            color: #4B2E83;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #FFB81C;
+        }
+
+        .company-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .company-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .company-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(75, 46, 131, 0.2);
+            border-color: #4B2E83;
+        }
+
+        .company-card h4 {
+            font-size: 18px;
+            color: #333;
+            font-weight: 600;
+        }
+
+        /* Resource Cards */
+        .resource-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .resource-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border-top: 4px solid #4B2E83;
+        }
+
+        .resource-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(75, 46, 131, 0.2);
+        }
+
+        .resource-card__icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .resource-card h4 {
+            font-size: 24px;
+            color: #4B2E83;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .resource-card p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .resource-card a {
+            display: inline-block;
+            background: #4B2E83;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .resource-card a:hover {
+            background: #6B46A8;
+            transform: translateX(5px);
+        }
+
+        /* Video Container */
+        .video-container {
+            margin: 30px 0;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .video-container iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+        }
+
+        /* Companies List Section */
+        .companies-list-section {
+            background: linear-gradient(135deg, #4B2E83 0%, #6B46A8 100%);
+            color: white;
+            padding: 60px;
+            border-radius: 15px;
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .companies-list-section h3 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #FFB81C;
+        }
+
+        .companies-list-section p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+
+        .companies-list-section .btn {
+            background: #FFB81C;
+            color: #4B2E83;
+            padding: 15px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 18px;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .companies-list-section .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(255, 184, 28, 0.3);
+        }
+
+        /* Back to Top */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #4B2E83;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            opacity: 0;
+            visibility: hidden;
+            z-index: 1000;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: #6B46A8;
+            transform: translateY(-5px);
+        }
+
+        @media (max-width: 768px) {
+            .international-hero h1 {
+                font-size: 36px;
+            }
+
+            .international-hero p {
+                font-size: 18px;
+            }
+
+            .international-section h2 {
+                font-size: 32px;
+            }
+
+            .company-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            }
+
+            .resource-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .video-container iframe {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header__content">
+                <!-- Logo -->
+                <div class="header__logo">
+                    <a href="../index.html">
+                        <span class="header__logo-text">COBA</span>
+                        <span class="header__logo-subtitle">Professional Development</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Toggle -->
+                <button class="header__menu-toggle" aria-label="Toggle menu" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <!-- Navigation -->
+                <nav class="header__nav" id="mainNav">
+                    <ul class="nav-list">
+                        <li><a href="../index.html" class="nav-list__link">Home</a></li>
+                        <li><a href="../index.html#about" class="nav-list__link">About</a></li>
+                        <li class="nav-list__item--dropdown">
+                            <a href="#" class="nav-list__link">Majors <span class="dropdown-arrow">▾</span></a>
+                            <ul class="nav-dropdown">
+                                <li><a href="finance.html">Finance</a></li>
+                                <li><a href="accounting.html">Accounting</a></li>
+                                <li><a href="marketing.html">Marketing</a></li>
+                                <li><a href="management.html">Management</a></li>
+                                <li><a href="information-systems.html">Information Systems</a></li>
+                                <li><a href="computer-science.html">Computer Science</a></li>
+                                <li><a href="digital-entertainment.html">Digital Entertainment Tech</a></li>
+                                <li><a href="data-analytics.html">Data Analytics</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="international-students.html" class="nav-list__link">International Students</a></li>
+                        <li><a href="resources-all.html" class="nav-list__link">Resources</a></li>
+                        <li><a href="../index.html#contact" class="nav-list__link nav-list__link--cta">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="international-hero">
+        <div class="container">
+            <div class="international-hero__icon">{ }</div>
+            <h1>Welcome International Students!</h1>
+            <p>Your comprehensive guide to H-1B sponsorship, work authorization, and career opportunities in the United States.</p>
+        </div>
+    </section>
+
+    <!-- Section Navigation -->
+    <nav class="section-nav">
+        <div class="container">
+            <ul class="section-nav__list">
+                <li><a href="#h1b-info" class="section-nav__link">H-1B Information</a></li>
+                <li><a href="#sponsoring-companies" class="section-nav__link">Sponsoring Companies</a></li>
+                <li><a href="#identify-sponsors" class="section-nav__link">Find Sponsors</a></li>
+                <li><a href="#companies-list" class="section-nav__link">1000+ Companies</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- H-1B Information Section -->
+    <section id="h1b-info" class="international-section">
+        <div class="container">
+            <h2>Understanding H-1B Sponsorship</h2>
+            <p class="international-section__intro">
+                As an international student at ACU COBA, understanding H-1B sponsorship is crucial for your career planning. Here's everything you need to know.
+            </p>
+
+            <div class="h1b-info-box">
+                <h3>What is H-1B?</h3>
+                <p>
+                    H1B sponsorship is a process whereby a U.S. employer or company hires a foreign professional to work in a specialty occupation that requires a bachelor's degree or equivalent. The employer files a visa petition and a labor condition application with the U.S. immigration and labor departments. If approved, the employee can work for the employer for up to six years, with a possibility of extension in some cases.
+                </p>
+                <p>
+                    <strong>Learn more:</strong> <a href="https://www.upcounsel.com/h1b-sponsorship" target="_blank">H1B Sponsorship Guide</a>
+                </p>
+                <p class="source">Source: "What is H-1B?" by Jonathan Canizili</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sponsoring Companies Section -->
+    <section id="sponsoring-companies" class="international-section">
+        <div class="container">
+            <h2>Companies That Sponsor H-1B Visas</h2>
+            <p class="international-section__intro">
+                These companies have a proven track record of sponsoring H-1B visas for international students across various industries.
+            </p>
+
+            <!-- Tech Companies -->
+            <div class="company-category">
+                <h3>Companies in Tech</h3>
+                <div class="company-grid">
+                    <div class="company-card"><h4>Google</h4></div>
+                    <div class="company-card"><h4>Microsoft</h4></div>
+                    <div class="company-card"><h4>Amazon</h4></div>
+                    <div class="company-card"><h4>Meta</h4></div>
+                    <div class="company-card"><h4>LinkedIn</h4></div>
+                    <div class="company-card"><h4>Morgan Stanley</h4></div>
+                    <div class="company-card"><h4>Jefferies</h4></div>
+                    <div class="company-card"><h4>Goldman Sachs</h4></div>
+                    <div class="company-card"><h4>Fox</h4></div>
+                    <div class="company-card"><h4>Dell Technologies</h4></div>
+                    <div class="company-card"><h4>Cognizant</h4></div>
+                    <div class="company-card"><h4>Loveramp</h4></div>
+                    <div class="company-card"><h4>Ernst Young (EY)</h4></div>
+                    <div class="company-card"><h4>Adobe</h4></div>
+                    <div class="company-card"><h4>Liberty Mutual</h4></div>
+                    <div class="company-card"><h4>Blackrock</h4></div>
+                    <div class="company-card"><h4>Oracle</h4></div>
+                    <div class="company-card"><h4>Tesla</h4></div>
+                    <div class="company-card"><h4>TikTok</h4></div>
+                    <div class="company-card"><h4>Infosys</h4></div>
+                    <div class="company-card"><h4>IBM</h4></div>
+                    <div class="company-card"><h4>Apple</h4></div>
+                    <div class="company-card"><h4>Cisco</h4></div>
+                    <div class="company-card"><h4>Accenture</h4></div>
+                    <div class="company-card"><h4>Deloitte</h4></div>
+                    <div class="company-card"><h4>Itron</h4></div>
+                    <div class="company-card"><h4>Cirrus Logic</h4></div>
+                    <div class="company-card"><h4>Cox Enterprises</h4></div>
+                    <div class="company-card"><h4>McKesson</h4></div>
+                    <div class="company-card"><h4>Copart</h4></div>
+                </div>
+            </div>
+
+            <!-- Finance Companies -->
+            <div class="company-category">
+                <h3>Companies in Finance</h3>
+                <div class="company-grid">
+                    <div class="company-card"><h4>Goldman Sachs</h4></div>
+                    <div class="company-card"><h4>JPMorgan Chase</h4></div>
+                    <div class="company-card"><h4>Morgan Stanley</h4></div>
+                    <div class="company-card"><h4>Bank of America Merrill Lynch</h4></div>
+                    <div class="company-card"><h4>Citigroup</h4></div>
+                    <div class="company-card"><h4>Wells Fargo</h4></div>
+                    <div class="company-card"><h4>Barclays</h4></div>
+                    <div class="company-card"><h4>Deutsche Bank</h4></div>
+                    <div class="company-card"><h4>UBS</h4></div>
+                    <div class="company-card"><h4>PricewaterhouseCoopers (PWC)</h4></div>
+                    <div class="company-card"><h4>Ernst & Young (EY)</h4></div>
+                    <div class="company-card"><h4>Deloitte</h4></div>
+                    <div class="company-card"><h4>KPMG</h4></div>
+                    <div class="company-card"><h4>Blackrock</h4></div>
+                    <div class="company-card"><h4>Fidelity Investments</h4></div>
+                </div>
+            </div>
+
+            <!-- Accounting Companies -->
+            <div class="company-category">
+                <h3>Companies in Accounting</h3>
+                <div class="company-grid">
+                    <div class="company-card"><h4>PricewaterhouseCoopers (PWC)</h4></div>
+                    <div class="company-card"><h4>Ernst & Young (EY)</h4></div>
+                    <div class="company-card"><h4>Deloitte</h4></div>
+                    <div class="company-card"><h4>KPMG</h4></div>
+                    <div class="company-card"><h4>Grant Thornton</h4></div>
+                    <div class="company-card"><h4>BDO USA LLP</h4></div>
+                    <div class="company-card"><h4>RSM US LLP</h4></div>
+                    <div class="company-card"><h4>Crowe LLP</h4></div>
+                    <div class="company-card"><h4>Baker Tilly</h4></div>
+                    <div class="company-card"><h4>Moss Adams LLP</h4></div>
+                    <div class="company-card"><h4>Plante Moran</h4></div>
+                    <div class="company-card"><h4>CBIZ</h4></div>
+                    <div class="company-card"><h4>Eisneramper</h4></div>
+                    <div class="company-card"><h4>CliftonLarsonAllen (CLA)</h4></div>
+                    <div class="company-card"><h4>Marcum LLP</h4></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources to Identify Sponsors Section -->
+    <section id="identify-sponsors" class="international-section">
+        <div class="container">
+            <h2>Resources to Identify H1B Sponsoring Companies</h2>
+            <p class="international-section__intro">
+                Use these powerful tools and databases to research companies that sponsor H-1B visas and plan your job search strategy.
+            </p>
+
+            <div class="resource-grid">
+                <!-- Resource 1 -->
+                <div class="resource-card">
+                    <span class="resource-card__icon">{ }</span>
+                    <h4>Ultimate H1B Sponsor Check</h4>
+                    <p>Chrome extension that helps you quickly identify which companies sponsor H-1B visas while browsing job listings.</p>
+                    <a href="https://chrome.google.com/webstore/detail/ultimate-h1b-sponsor-chec/gaafhpdcjnlehapjdngfoonljgeodfm?hl=en-us" target="_blank">Install Extension →</a>
+                </div>
+
+                <!-- Resource 2 -->
+                <div class="resource-card">
+                    <span class="resource-card__icon">{ }</span>
+                    <h4>MyVisaJobs</h4>
+                    <p>MyVisa.jobs offers a database of companies that sponsor H-1B visas, providing insights into industries and positions where international students are most likely to secure sponsorship.</p>
+                    <a href="http://myvisajobs.com/" target="_blank">Visit MyVisaJobs →</a>
+                    <a href="https://www.myvisajobs.com/reports/h1b/" target="_blank" style="margin-top: 10px; background: #6B46A8;">View H1B Reports →</a>
+                </div>
+
+                <!-- Resource 3 -->
+                <div class="resource-card">
+                    <span class="resource-card__icon">{ }</span>
+                    <h4>CareerOneStop</h4>
+                    <p>Sponsored by the U.S. Department of Labor, CareerOneStop provides detailed information on work visas, the application process, and employment rights for international students.</p>
+                    <a href="https://www.careeronestop.org/" target="_blank">Visit CareerOneStop →</a>
+                </div>
+
+                <!-- Resource 4 -->
+                <div class="resource-card">
+                    <span class="resource-card__icon">{ }</span>
+                    <h4>F1Hire</h4>
+                    <p>This Google extension gives you the ability to view companies on LinkedIn that sponsor H1B and their history for the past years.</p>
+                    <a href="https://www.f1hire.com/" target="_blank">Visit F1Hire →</a>
+                </div>
+
+                <!-- Resource 5 -->
+                <div class="resource-card">
+                    <span class="resource-card__icon">{ }</span>
+                    <h4>H1BGrader</h4>
+                    <p>Research and grade companies based on their H1B sponsorship history and success rates.</p>
+                    <a href="https://h1bgrader.com/h1b-sponsors/gradle-inc-nokpew6904" target="_blank">Visit H1BGrader →</a>
+                </div>
+            </div>
+
+            <!-- Video Tutorial -->
+            <div style="margin-top: 60px;">
+                <h3 style="text-align: center; color: #4B2E83; font-size: 32px; margin-bottom: 30px;">How to Use F1Hire</h3>
+                <div class="video-container">
+                    <iframe 
+                        src="https://www.youtube.com/embed/74ImaEPCVmM?si=jKbzbG33Qht64se0" 
+                        title="How to utilize F1 Hire to filter companies"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 1000+ Companies List Section -->
+    <section id="companies-list" class="international-section">
+        <div class="container">
+            <div class="companies-list-section">
+                <h3>1000+ US Companies That Hire International Students</h3>
+                <p>
+                    Access our comprehensive database of over 1,000 companies actively hiring international students across all industries and locations.
+                </p>
+                <p>
+                    This curated list includes company names, industries, locations, and H-1B sponsorship history to help you target your job search effectively.
+                </p>
+                <a href="#" class="btn">Access Full Companies List →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="international-section" style="background: #4B2E83; color: white;">
+        <div class="container" style="text-align: center;">
+            <h2 style="color: #FFB81C;">Need More Support?</h2>
+            <p class="international-section__intro" style="color: white; opacity: 0.95;">
+                Connect with our international student advisors for personalized guidance on work authorization, job search strategies, and career planning.
+            </p>
+            <a href="../index.html#contact" style="display: inline-block; background: #FFB81C; color: #4B2E83; padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: 700; font-size: 18px; margin-top: 20px;">Contact COBA Professional Development →</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <!-- Contact Info -->
+                <div class="footer__section">
+                    <h3 class="footer__title">Contact Us</h3>
+                    <p class="footer__text">
+                        <strong>COBA Professional Development</strong><br>
+                        Mabee Business Building, Room 132<br>
+                        Abilene Christian University<br>
+                        Abilene, TX 79699
+                    </p>
+                    <p class="footer__text">
+                        <strong>Email:</strong> coba.profdev@acu.edu<br>
+                        <strong>Phone:</strong> (325) 674-2427
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer__section">
+                    <h3 class="footer__title">Quick Links</h3>
+                    <ul class="footer__links">
+                        <li><a href="../index.html#about">About COBA</a></li>
+                        <li><a href="../index.html#majors">Majors</a></li>
+                        <li><a href="resources-all.html">Resources</a></li>
+                        <li><a href="international-students.html">International Students</a></li>
+                        <li><a href="https://acu.edu/coba" target="_blank">COBA Website</a></li>
+                    </ul>
+                </div>
+
+                <!-- Resources -->
+                <div class="footer__section">
+                    <h3 class="footer__title">Popular Resources</h3>
+                    <ul class="footer__links">
+                        <li><a href="resources-all.html#resume">Resume Builder</a></li>
+                        <li><a href="resources-all.html#interviews">Interview Prep</a></li>
+                        <li><a href="resources-all.html#job-tools">Job Search Tools</a></li>
+                        <li><a href="resources-all.html#experiential">Experiential Learning</a></li>
+                    </ul>
+                </div>
+
+                <!-- Social & Additional -->
+                <div class="footer__section">
+                    <h3 class="footer__title">Stay Connected</h3>
+                    <p class="footer__text footer__text--small">
+                        Follow helpful career advice for international students and daily tips.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer__bottom">
+                <p class="footer__copyright">
+                    &copy; 2024 Abilene Christian University - College of Business Administration. All rights reserved.
+                </p>
+                <p class="footer__tagline">
+                    Empowering Christian business leaders
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Menu Toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const mainNav = document.getElementById('mainNav');
+
+        menuToggle.addEventListener('click', () => {
+            mainNav.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+        });
+
+        // Smooth Scrolling for Section Nav
+        document.querySelectorAll('.section-nav__link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                const headerOffset = 160;
+                const elementPosition = targetSection.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+
+                // Update active state
+                document.querySelectorAll('.section-nav__link').forEach(l => l.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // Back to Top Button
+        const backToTop = document.getElementById('backToTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Highlight active section on scroll
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('.international-section');
+            const navLinks = document.querySelectorAll('.section-nav__link');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
