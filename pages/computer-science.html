@@ -1,0 +1,1297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Computer Science major resources at ACU COBA - career paths, internships, certifications, and technical interview prep">
+    <meta name="keywords" content="ACU, COBA, Computer Science major, software development, tech careers, coding, internships">
+    <meta name="author" content="ACU COBA">
+    <title>Computer Science Major Resources | COBA | ACU</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../assets/images/favicon.png">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="../css/main.css">
+    
+    <style>
+        /* Computer Science Page Specific Styles */
+        .cs-hero {
+            background: linear-gradient(135deg, #4B2E83 0%, #6B46A8 100%);
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cs-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"><path d="M0,0 L1200,0 L1200,60 Q900,100 600,60 T0,60 Z" fill="rgba(255,255,255,0.05)"/></svg>') repeat-x bottom;
+            opacity: 0.1;
+        }
+
+        .cs-hero h1 {
+            font-size: 56px;
+            margin-bottom: 20px;
+            font-weight: 800;
+            position: relative;
+            z-index: 1;
+            color: #2c2c2c;
+        }
+
+        .cs-hero p {
+            font-size: 22px;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            opacity: 0.95;
+            position: relative;
+            z-index: 1;
+            color: white;
+        }
+
+        .cs-hero__icon {
+            font-size: 80px;
+            margin-bottom: 20px;
+            display: block;
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            color: white;
+        }
+
+        .section-nav {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 70px;
+            z-index: 100;
+            padding: 20px 0;
+        }
+
+        .section-nav__list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .section-nav__link {
+            padding: 10px 20px;
+            background: #f5f5f5;
+            color: #4B2E83;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 14px;
+        }
+
+        .section-nav__link:hover {
+            background: #4B2E83;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .cs-section {
+            padding: 80px 0;
+        }
+
+        .cs-section:nth-child(even) {
+            background: #f9f9f9;
+        }
+
+        .cs-section__header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .cs-section__title {
+            font-size: 42px;
+            color: #4B2E83;
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+
+        .cs-section__subtitle {
+            font-size: 20px;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .career-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .career-card {
+            background: white;
+            border-radius: 12px;
+            padding: 35px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .career-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #4B2E83, #6B46A8);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .career-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .career-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(75, 46, 131, 0.2);
+            border-color: #4B2E83;
+        }
+
+        .career-card__icon {
+            font-size: 56px;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .career-card__title {
+            font-size: 26px;
+            color: #4B2E83;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .career-card__label {
+            font-weight: 700;
+            color: #4B2E83;
+            margin-top: 15px;
+            display: block;
+        }
+
+        .career-card__text {
+            color: #666;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        .cert-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .cert-card {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            text-align: center;
+            border: 2px solid transparent;
+        }
+
+        .cert-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(75, 46, 131, 0.15);
+            border-color: #FFB81C;
+        }
+
+        .cert-card__icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .cert-card__title {
+            font-size: 20px;
+            color: #4B2E83;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .cert-card__btn {
+            display: inline-block;
+            padding: 10px 25px;
+            background: #4B2E83;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-top: 15px;
+        }
+
+        .cert-card__btn:hover {
+            background: #6B46A8;
+            transform: scale(1.05);
+        }
+
+        .tech-hub-map {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            margin-top: 40px;
+        }
+
+        .tech-hub-region {
+            margin-bottom: 35px;
+        }
+
+        .tech-hub-region h3 {
+            color: #4B2E83;
+            font-size: 28px;
+            margin-bottom: 20px;
+            font-weight: 700;
+            padding-bottom: 10px;
+        }
+
+        .tech-hub-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 1200px) {
+            .tech-hub-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .tech-hub-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .tech-hub-item {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #4B2E83;
+            transition: all 0.3s ease;
+        }
+
+        .tech-hub-item:hover {
+            background: #f0f0f0;
+            border-left-color: #FFB81C;
+            transform: translateX(5px);
+        }
+
+        .tech-hub-item__city {
+            font-weight: 700;
+            color: #4B2E83;
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .tech-hub-item__jobs {
+            color: #666;
+            font-size: 15px;
+        }
+
+        .tech-hub-item__wage {
+            color: #FFB81C;
+            font-weight: 600;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+
+        .tech-hub-item__growth {
+            color: #28a745;
+            font-weight: 600;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+
+        .tool-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .tool-card {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            text-align: center;
+            border: 2px solid transparent;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(75, 46, 131, 0.15);
+            border-color: #4B2E83;
+        }
+
+        .tool-card__icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .tool-card__title {
+            font-size: 22px;
+            color: #4B2E83;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .tool-card__btn {
+            display: inline-block;
+            padding: 10px 25px;
+            background: #4B2E83;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .tool-card__btn:hover {
+            background: #6B46A8;
+            transform: scale(1.05);
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            max-width: 900px;
+            margin: 40px auto;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 12px;
+        }
+
+        .spreadsheet-embed {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            margin: 30px 0;
+        }
+
+        .spreadsheet-embed h3 {
+            color: #4B2E83;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        .spreadsheet-embed iframe {
+            width: 100%;
+            height: 500px;
+            border: none;
+            border-radius: 8px;
+        }
+
+        .content-box {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            margin-top: 40px;
+        }
+
+        .content-box h3 {
+            color: #4B2E83;
+            font-size: 28px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .content-box h4 {
+            color: #6B46A8;
+            font-size: 22px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .content-box ul {
+            margin-left: 25px;
+            line-height: 1.9;
+        }
+
+        .content-box ul li {
+            margin-bottom: 12px;
+            color: #666;
+        }
+
+        .content-box ul li strong {
+            color: #4B2E83;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #f8f4ff 0%, #fff9e6 100%);
+            border-left: 5px solid #FFB81C;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 25px 0;
+        }
+
+        .highlight-box strong {
+            color: #4B2E83;
+            font-size: 18px;
+        }
+
+        .highlight-box p {
+            color: #666;
+            line-height: 1.7;
+            margin-top: 10px;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #4B2E83 0%, #6B46A8 100%);
+            color: white;
+            padding: 60px;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .cta-section h3 {
+            font-size: 36px;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .cta-section p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 40px;
+            background: #FFB81C;
+            color: #4B2E83;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .btn:hover {
+            background: #ffc940;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: #4B2E83;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 24px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: #6B46A8;
+            transform: translateY(-5px);
+        }
+
+        @media (max-width: 768px) {
+            .cs-hero h1 {
+                font-size: 38px;
+            }
+
+            .cs-hero p {
+                font-size: 18px;
+            }
+
+            .cs-section__title {
+                font-size: 32px;
+            }
+
+            .career-cards,
+            .cert-cards,
+            .tool-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .section-nav {
+                top: 60px;
+            }
+
+            .section-nav__list {
+                gap: 10px;
+            }
+
+            .cta-section {
+                padding: 40px 20px;
+            }
+
+            .cta-section h3 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Skip to Main Content -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Header & Navigation -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header__content">
+                <!-- Logo -->
+                <div class="header__logo">
+                    <a href="../index.html">
+                        <span class="header__logo-text">COBA</span>
+                        <span class="header__logo-subtitle">Professional Development</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Toggle -->
+                <button class="header__menu-toggle" aria-label="Toggle menu" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <!-- Navigation -->
+                <nav class="header__nav" id="mainNav">
+                    <ul class="nav-list">
+                        <li><a href="../index.html#home" class="nav-list__link">Home</a></li>
+                        <li><a href="../index.html#about" class="nav-list__link">About</a></li>
+                        <li class="nav-list__item--dropdown">
+                            <a href="#" class="nav-list__link">Majors <span class="dropdown-arrow">▾</span></a>
+                            <ul class="nav-dropdown">
+                                <li><a href="finance.html">Finance</a></li>
+                                <li><a href="accounting.html">Accounting</a></li>
+                                <li><a href="marketing.html">Marketing</a></li>
+                                <li><a href="management.html">Management</a></li>
+                                <li><a href="computer-science.html">Computer Science</a></li>
+                                <li><a href="data-analytics.html">Data Analytics</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="../index.html#international" class="nav-list__link">International Students</a></li>
+                        <li><a href="resources-all.html" class="nav-list__link">Resources</a></li>
+                        <li><a href="../index.html#contact" class="nav-list__link nav-list__link--cta">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="cs-hero">
+            <div class="container">
+                <div class="cs-hero__icon">&lt;/&gt;</div>
+                <h1>Computer Science Major</h1>
+                <p>Explore tech careers, certifications, and coding interview prep. Discover the skills and resources that make ACU Computer Science students competitive in the professional workplace.</p>
+            </div>
+        </section>
+
+        <!-- Section Navigation -->
+        <nav class="section-nav">
+            <div class="container">
+                <ul class="section-nav__list">
+                    <li><a href="#overview" class="section-nav__link">Overview</a></li>
+                    <li><a href="#careers" class="section-nav__link">Career Paths</a></li>
+                    <li><a href="#tech-hubs" class="section-nav__link">Tech Hubs</a></li>
+                    <li><a href="#certifications" class="section-nav__link">Certifications</a></li>
+                    <li><a href="#interview-prep" class="section-nav__link">Interview Prep</a></li>
+                    <li><a href="#internships-jobs" class="section-nav__link">Internships & Jobs</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Overview Section with Video -->
+        <section id="overview" class="cs-section">
+            <div class="container">
+                <div class="cs-section__header">
+                    <h2 class="cs-section__title">What Can You Do With a CS Degree?</h2>
+                    <p class="cs-section__subtitle">Discover the exciting career opportunities available to Computer Science graduates</p>
+                </div>
+
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/GHCZeK5aw0Q" title="What Jobs Can You Get With a Computer Science degree?" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+
+                <div class="highlight-box">
+                    <strong>ACU Computer Science Advantage</strong>
+                    <p>ACU's Computer Science program combines rigorous technical training with Christian values, preparing you for impactful careers in technology. Our curriculum focuses on real-world problem-solving, collaborative projects, and hands-on experience with cutting-edge technologies.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Career Paths Section -->
+        <section id="careers" class="cs-section">
+            <div class="container">
+                <div class="cs-section__header">
+                    <h2 class="cs-section__title">Career Paths in Computer Science</h2>
+                    <p class="cs-section__subtitle">Explore the diverse opportunities available to CS majors</p>
+                </div>
+
+                <div class="career-cards">
+                    <!-- Backend Developer -->
+                    <div class="career-card">
+                        
+                        <h3 class="career-card__title">Backend Developer</h3>
+                        <p class="career-card__text">Build and maintain the server-side of web applications and software programs. Focus on logic, functionality, and data management that powers applications behind the scenes.</p>
+                        
+                        <span class="career-card__label">Key Responsibilities:</span>
+                        <ul class="career-card__text">
+                            <li>Server-side logic and application architecture</li>
+                            <li>Database management and optimization</li>
+                            <li>API development and integration</li>
+                            <li>Performance optimization</li>
+                            <li>Security and authentication implementation</li>
+                        </ul>
+                    </div>
+
+                    <!-- Software Engineer -->
+                    <div class="career-card">
+                        
+                        <h3 class="career-card__title">Software Engineer</h3>
+                        <p class="career-card__text">Design, develop, test, and maintain software applications. Work on the full software development lifecycle from conception to deployment.</p>
+                        
+                        <span class="career-card__label">Key Skills:</span>
+                        <ul class="career-card__text">
+                            <li>Programming languages (Java, Python, C++)</li>
+                            <li>Software design patterns</li>
+                            <li>Agile development methodologies</li>
+                            <li>Version control (Git)</li>
+                            <li>Problem-solving and debugging</li>
+                        </ul>
+                    </div>
+
+                    <!-- Frontend Developer -->
+                    <div class="career-card">
+                        
+                        <h3 class="career-card__title">Frontend Developer</h3>
+                        <p class="career-card__text">Create the user-facing side of websites and applications. Bring designs to life through code and ensure optimal user experience.</p>
+                        
+                        <span class="career-card__label">Technologies:</span>
+                        <ul class="career-card__text">
+                            <li>HTML, CSS, JavaScript</li>
+                            <li>React, Vue, or Angular frameworks</li>
+                            <li>Responsive design principles</li>
+                            <li>UI/UX best practices</li>
+                            <li>Web performance optimization</li>
+                        </ul>
+                    </div>
+
+                    <!-- Full Stack Developer -->
+                    <div class="career-card">
+                        
+                        <h3 class="career-card__title">Full Stack Developer</h3>
+                        <p class="career-card__text">Master both frontend and backend development. Handle everything from user interfaces to databases and server infrastructure.</p>
+                        
+                        <span class="career-card__label">Full Stack Skills:</span>
+                        <ul class="career-card__text">
+                            <li>Frontend and backend technologies</li>
+                            <li>Database design and management</li>
+                            <li>RESTful API development</li>
+                            <li>Cloud platforms (AWS, Azure, GCP)</li>
+                            <li>DevOps and deployment</li>
+                        </ul>
+                    </div>
+
+                    <!-- Data Scientist -->
+                    <div class="career-card">
+                        
+                        <h3 class="career-card__title">Data Scientist</h3>
+                        <p class="career-card__text">Extract insights from data using statistical analysis, machine learning, and data visualization. Turn complex data into actionable business decisions.</p>
+                        
+                        <span class="career-card__label">Core Competencies:</span>
+                        <ul class="career-card__text">
+                            <li>Python, R, SQL programming</li>
+                            <li>Machine learning algorithms</li>
+                            <li>Statistical analysis</li>
+                            <li>Data visualization tools</li>
+                            <li>Big data technologies</li>
+                        </ul>
+                    </div>
+
+                    <!-- Cybersecurity Specialist -->
+                    <div class="career-card">
+                        
+                        <h3 class="career-card__title">Cybersecurity Specialist</h3>
+                        <p class="career-card__text">Protect organizations from cyber threats and vulnerabilities. Implement security measures, monitor systems, and respond to security incidents.</p>
+                        
+                        <span class="career-card__label">Security Focus:</span>
+                        <ul class="career-card__text">
+                            <li>Network security</li>
+                            <li>Penetration testing</li>
+                            <li>Security auditing</li>
+                            <li>Incident response</li>
+                            <li>Compliance and risk management</li>
+                        </ul>
+                    </div>
+
+                    <!-- Cloud Engineer -->
+                    <div class="career-card">
+                        
+                        <h3 class="career-card__title">Cloud Engineer</h3>
+                        <p class="career-card__text">Design, implement, and manage cloud computing infrastructure. Help organizations migrate to and optimize cloud platforms.</p>
+                        
+                        <span class="career-card__label">Cloud Platforms:</span>
+                        <ul class="career-card__text">
+                            <li>AWS, Azure, Google Cloud</li>
+                            <li>Infrastructure as Code</li>
+                            <li>Container orchestration (Kubernetes)</li>
+                            <li>CI/CD pipelines</li>
+                            <li>Cloud security and compliance</li>
+                        </ul>
+                    </div>
+
+                    <!-- Mobile Developer -->
+                    <div class="career-card">
+                        
+                        <h3 class="career-card__title">Mobile Developer</h3>
+                        <p class="career-card__text">Create applications for iOS and Android devices. Build mobile experiences that are fast, responsive, and user-friendly.</p>
+                        
+                        <span class="career-card__label">Mobile Technologies:</span>
+                        <ul class="career-card__text">
+                            <li>iOS (Swift) or Android (Kotlin)</li>
+                            <li>React Native or Flutter</li>
+                            <li>Mobile UI/UX design</li>
+                            <li>App store deployment</li>
+                            <li>Mobile performance optimization</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tech Talent Hubs Section -->
+        <section id="tech-hubs" class="cs-section">
+            <div class="container">
+                <div class="cs-section__header">
+                    <h2 class="cs-section__title">Tech Talent Hubs Across North America</h2>
+                    <p class="cs-section__subtitle">Discover where the tech jobs are and what they pay</p>
+                </div>
+
+                <div class="tech-hub-map">
+                    <!-- West Coast -->
+                    <div class="tech-hub-region">
+                        <h3>West Coast Tech Hubs</h3>
+                        <div class="tech-hub-grid">
+                            <div class="tech-hub-item">
+                                <div class="tech-hub-item__city">San Francisco Bay Area</div>
+                                <div class="tech-hub-item__jobs">392,810 jobs</div>
+                                <div class="tech-hub-item__wage">Highest wage: $162,482/year</div>
+                            </div>
+                            <div class="tech-hub-item">
+                                <div class="tech-hub-item__city">Seattle</div>
+                                <div class="tech-hub-item__jobs">196,010 jobs</div>
+                            </div>
+                            <div class="tech-hub-item">
+                                <div class="tech-hub-item__city">Los Angeles</div>
+                                <div class="tech-hub-item__jobs">287,920 jobs</div>
+                            </div>
+                            <div class="tech-hub-item">
+                                <div class="tech-hub-item__city">San Diego</div>
+                                <div class="tech-hub-item__jobs">78,860 jobs</div>
+                            </div>
+                            <div class="tech-hub-item">
+                                <div class="tech-hub-item__city">Portland</div>
+                                <div class="tech-hub-item__jobs">69,678 jobs</div>
+                            </div>
+                            <div class="tech-hub-item">
+                                <div class="tech-hub-item__city">Sacramento</div>
+                                <div class="tech-hub-item__jobs">62,360 jobs</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Central Region -->
+                    <div class="tech-hub-region">
+                        <h3>Central U.S. Tech Hubs</h3>
+                        <div class="tech-hub-grid">
+                            <div class="tech-hub-item">
+                                <div class="tech-hub-item__city">Austin</div>
+                                <div class="tech-hub-item__jobs">99,010 jobs</div>
+                            </div>
+                            <div class="tech-hub-item">
+                                <div class="tech-hub-item__city">Dallas</div>
+                                <div class="tech-hub-item__jobs">205,920 jobs</div>
+                            </div>
+                            <div class="tech-hub-item">
+                                <div class="tech-hub-item__city">Denver</div>
+                                <div class="tech-hub-item__jobs">105,800 jobs</div>
+                            </div>
+                            <div class="tech-hub-item">
+                                <div class="tech-hub-item__city">Chicago</div>
+                                <div class="tech-hub-item__jobs">163,150 jobs</div>
+                            </div>
+                            <div class="tech-hub-item">
+                                <div class="tech-hub-item__city">Minneapolis</div>
+                                <div class="tech-hub-item__jobs">96,600 jobs</div>
+                            </div>
+                            <div class="tech-hub-item">
+                                <div class="tech-hub-item__city">St. Louis</div>
+                                <div class="tech-hub-item__jobs">57,070 jobs</div>
+                            </div>
+                            <div class="tech-hub-item">
+                                <div class="tech-hub-item__city">Kansas City</div>
+                                <div class="tech-hub-item__jobs">31,478 jobs</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- East Coast -->
+                    <div class="tech-hub-region">
+                        <h3>East Coast Tech Hubs</h3>
+                        <div class="tech-hub-grid">
+                            <div class="tech-hub-item">
+                                <div class="tech-hub-item__city">New York Metro</div>
+                                <div class="tech-hub-item__jobs">371,030 jobs</div>
+                            </div>
+                            <div class="tech-hub-item">
+                                <div class="tech-hub-item__city">Washington DC</div>
+                                <div class="tech-hub-item__jobs">285,920 jobs</div>
+                            </div>
+                            <div class="tech-hub-item">
+                                <div class="tech-hub-item__city">Boston</div>
+                                <div class="tech-hub-item__jobs">193,840 jobs</div>
+                            </div>
+                            <div class="tech-hub-item">
+                                <div class="tech-hub-item__city">Atlanta</div>
+                                <div class="tech-hub-item__jobs">163,150 jobs</div>
+                            </div>
+                            <div class="tech-hub-item">
+                                <div class="tech-hub-item__city">Philadelphia</div>
+                                <div class="tech-hub-item__jobs">108,638 jobs</div>
+                            </div>
+                            <div class="tech-hub-item">
+                                <div class="tech-hub-item__city">South Florida</div>
+                                <div class="tech-hub-item__jobs">77,700 jobs</div>
+                            </div>
+                            <div class="tech-hub-item">
+                                <div class="tech-hub-item__city">Raleigh-Durham</div>
+                                <div class="tech-hub-item__jobs">73,790 jobs</div>
+                            </div>
+                            <div class="tech-hub-item">
+                                <div class="tech-hub-item__city">Charlotte</div>
+                                <div class="tech-hub-item__jobs">61,420 jobs</div>
+                            </div>
+                            <div class="tech-hub-item">
+                                <div class="tech-hub-item__city">Tampa</div>
+                                <div class="tech-hub-item__jobs">55,970 jobs</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Canada -->
+                    <div class="tech-hub-region">
+                        <h3>Canadian Tech Hubs</h3>
+                        <div class="tech-hub-grid">
+                            <div class="tech-hub-item">
+                                <div class="tech-hub-item__city">Toronto</div>
+                                <div class="tech-hub-item__jobs">341,700 jobs</div>
+                            </div>
+                            <div class="tech-hub-item">
+                                <div class="tech-hub-item__city">Montreal</div>
+                                <div class="tech-hub-item__jobs">172,400 jobs</div>
+                                <div class="tech-hub-item__growth">+20% growth</div>
+                            </div>
+                            <div class="tech-hub-item">
+                                <div class="tech-hub-item__city">Vancouver</div>
+                                <div class="tech-hub-item__jobs">111,100 jobs</div>
+                            </div>
+                            <div class="tech-hub-item">
+                                <div class="tech-hub-item__city">Calgary</div>
+                                <div class="tech-hub-item__jobs">52,200 jobs</div>
+                                <div class="tech-hub-item__growth">+20% growth</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="highlight-box" style="margin-top: 40px;">
+                    <strong>Pro Tip: Geographic Flexibility</strong>
+                    <p>With remote work becoming more common in tech, you're not limited to relocating to these hubs. Many companies offer remote positions that allow you to work from anywhere while earning competitive salaries. However, these major tech hubs still offer the most opportunities for in-person networking, career growth, and specialized roles.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section id="certifications" class="cs-section">
+            <div class="container">
+                <div class="cs-section__header">
+                    <h2 class="cs-section__title">Certifications to Explore</h2>
+                    <p class="cs-section__subtitle">Boost your credentials with industry-recognized certifications</p>
+                </div>
+
+                <div class="cert-cards">
+                    <!-- Cloud Computing -->
+                    <div class="cert-card">
+                        
+                        <h3 class="cert-card__title">Cloud Computing</h3>
+                        <p class="career-card__text">Master cloud infrastructure and services with CompTIA Cloud+ or Google Cloud certifications.</p>
+                        <a href="https://www.comptia.org/certifications/cloud" target="_blank" class="cert-card__btn">Learn More →</a>
+                    </div>
+
+                    <!-- Google Data Analytics -->
+                    <div class="cert-card">
+                        
+                        <h3 class="cert-card__title">Google Data Analytics</h3>
+                        <p class="career-card__text">Learn data analysis fundamentals and gain hands-on experience with Google's professional certificate.</p>
+                        <a href="https://www.coursera.org/google-certificates/data-analytics-certificate" target="_blank" class="cert-card__btn">Learn More →</a>
+                    </div>
+
+                    <!-- Codepath -->
+                    <div class="cert-card">
+                        
+                        <h3 class="cert-card__title">Codepath Courses</h3>
+                        <p class="career-card__text">Free technical interview prep and software engineering courses designed for college students.</p>
+                        <a href="https://www.codepath.org/courses" target="_blank" class="cert-card__btn">Learn More →</a>
+                    </div>
+
+                    <!-- Cyber Security -->
+                    <div class="cert-card">
+                        
+                        <h3 class="cert-card__title">Cybersecurity</h3>
+                        <p class="career-card__text">Get CompTIA Security+ certified to demonstrate your knowledge of security concepts and best practices.</p>
+                        <a href="https://www.comptia.org/certifications/security" target="_blank" class="cert-card__btn">Learn More →</a>
+                    </div>
+
+                    <!-- Networking -->
+                    <div class="cert-card">
+                        
+                        <h3 class="cert-card__title">Networking</h3>
+                        <p class="career-card__text">Build foundational networking knowledge with CompTIA Network+ certification.</p>
+                        <a href="https://www.comptia.org/certifications/network" target="_blank" class="cert-card__btn">Learn More →</a>
+                    </div>
+
+                    <!-- UI/UX Design -->
+                    <div class="cert-card">
+                        
+                        <h3 class="cert-card__title">UI/UX Design</h3>
+                        <p class="career-card__text">Learn user experience design principles with Google's UX Design Professional Certificate.</p>
+                        <a href="https://www.coursera.org/google-certificates/ux-design" target="_blank" class="cert-card__btn">Learn More →</a>
+                    </div>
+                </div>
+
+                <div class="highlight-box" style="margin-top: 50px;">
+                    <strong>Certification Strategy</strong>
+                    <p>Start with foundational certifications (like CompTIA A+, Network+, or Security+) and progress to specialized certifications based on your career interests. Cloud certifications (AWS, Azure, GCP) are particularly valuable as companies continue migrating to cloud infrastructure. Many certifications offer student discounts!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Interview Prep Section -->
+        <section id="interview-prep" class="cs-section">
+            <div class="container">
+                <div class="cs-section__header">
+                    <h2 class="cs-section__title">Technical Interview Preparation</h2>
+                    <p class="cs-section__subtitle">Master coding interviews with these essential platforms</p>
+                </div>
+
+                <div class="tool-cards">
+                    <!-- CodeSignal -->
+                    <div class="tool-card">
+                        
+                        <h3 class="tool-card__title">CodeSignal</h3>
+                        <p class="career-card__text">Practice coding challenges and take assessments used by top tech companies in their hiring process.</p>
+                        <a href="https://codesignal.com/" target="_blank" class="tool-card__btn">Start Practicing →</a>
+                    </div>
+
+                    <!-- LeetCode -->
+                    <div class="tool-card">
+                        
+                        <h3 class="tool-card__title">LeetCode</h3>
+                        <p class="career-card__text">The gold standard for technical interview prep with thousands of coding problems used by FAANG companies.</p>
+                        <a href="https://leetcode.com/" target="_blank" class="tool-card__btn">Start Practicing →</a>
+                    </div>
+
+                    <!-- NeetCode -->
+                    <div class="tool-card">
+                        
+                        <h3 class="tool-card__title">NeetCode</h3>
+                        <p class="career-card__text">Curated list of the best LeetCode problems with video explanations and study roadmaps.</p>
+                        <a href="https://neetcode.io/" target="_blank" class="tool-card__btn">Start Practicing →</a>
+                    </div>
+
+                    <!-- HackerRank -->
+                    <div class="tool-card">
+                        
+                        <h3 class="tool-card__title">HackerRank</h3>
+                        <p class="career-card__text">Build your skills with coding challenges, compete in contests, and get discovered by top companies.</p>
+                        <a href="https://www.hackerrank.com/" target="_blank" class="tool-card__btn">Start Practicing →</a>
+                    </div>
+                </div>
+
+                <div class="content-box">
+                    <h3>Interview Preparation Strategy</h3>
+                    
+                    <h4>Timeline (Start 3-6 Months Before Recruiting)</h4>
+                    <ul>
+                        <li><strong>Months 1-2:</strong> Master data structures (arrays, linked lists, trees, graphs, hash tables)</li>
+                        <li><strong>Months 2-3:</strong> Learn algorithms (sorting, searching, dynamic programming, recursion)</li>
+                        <li><strong>Months 3-4:</strong> Practice easy and medium problems daily (2-3 problems)</li>
+                        <li><strong>Months 4-5:</strong> Tackle hard problems and system design basics</li>
+                        <li><strong>Month 6:</strong> Mock interviews and company-specific preparation</li>
+                    </ul>
+
+                    <h4>Essential Problem Patterns</h4>
+                    <ul>
+                        <li><strong>Two Pointers:</strong> Array manipulation, string problems</li>
+                        <li><strong>Sliding Window:</strong> Substring and subarray problems</li>
+                        <li><strong>Binary Search:</strong> Search in sorted arrays, optimization problems</li>
+                        <li><strong>Depth-First Search (DFS):</strong> Tree and graph traversal</li>
+                        <li><strong>Breadth-First Search (BFS):</strong> Shortest path, level-order problems</li>
+                        <li><strong>Dynamic Programming:</strong> Optimization problems with overlapping subproblems</li>
+                        <li><strong>Backtracking:</strong> Combination and permutation problems</li>
+                    </ul>
+
+                    <h4>Interview Day Tips</h4>
+                    <ul>
+                        <li><strong>Clarify the Problem:</strong> Ask questions about edge cases and constraints</li>
+                        <li><strong>Think Out Loud:</strong> Explain your thought process as you work</li>
+                        <li><strong>Start with Brute Force:</strong> Then optimize to better time/space complexity</li>
+                        <li><strong>Write Clean Code:</strong> Use meaningful variable names and proper formatting</li>
+                        <li><strong>Test Your Solution:</strong> Walk through examples including edge cases</li>
+                        <li><strong>Discuss Trade-offs:</strong> Explain time/space complexity and alternative approaches</li>
+                    </ul>
+                </div>
+
+                <div class="highlight-box" style="margin-top: 40px;">
+                    <strong>Pro Tip: Consistency Over Cramming</strong>
+                    <p>The key to technical interview success is consistent daily practice, not last-minute cramming. Aim to solve 1-2 problems every day rather than 20 problems once a week. This builds pattern recognition and problem-solving intuition that will serve you well in actual interviews.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Internships and Jobs Section -->
+        <section id="internships-jobs" class="cs-section">
+            <div class="container">
+                <div class="cs-section__header">
+                    <h2 class="cs-section__title">Internships & Jobs for CS Majors</h2>
+                    <p class="cs-section__subtitle">Curated opportunities and resources for your job search</p>
+                </div>
+
+                <!-- CS Internships Spreadsheet -->
+                <div class="spreadsheet-embed">
+                    <h3>Computer Science Internships</h3>
+                    <p style="color: #666; margin-bottom: 20px;">Comprehensive list of internship opportunities for CS majors</p>
+                    <iframe src="https://docs.google.com/spreadsheets/d/12tl9xmC3jsSDHA2oICBIeF7FY87W-TPzRMKSYeKTl6E/edit?usp=sharing&widget=true&headers=false"></iframe>
+                    <a href="https://docs.google.com/spreadsheets/d/12tl9xmC3jsSDHA2oICBIeF7FY87W-TPzRMKSYeKTl6E/" target="_blank" class="btn" style="margin-top: 20px;">Open Full Spreadsheet →</a>
+                </div>
+
+                <!-- Freshman/Sophomore Programs -->
+                <div class="spreadsheet-embed">
+                    <h3>Freshman & Sophomore Programs</h3>
+                    <p style="color: #666; margin-bottom: 20px;">Early career programs and pre-internships for underclassmen</p>
+                    <iframe src="https://docs.google.com/spreadsheets/d/177BAVaSJaz2XR1eoYEjJpqFYO1LMfyQtqJHUZpn6rmM/edit?usp=sharing&widget=true&headers=false"></iframe>
+                    <a href="https://docs.google.com/spreadsheets/d/177BAVaSJaz2XR1eoYEjJpqFYO1LMfyQtqJHUZpn6rmM/" target="_blank" class="btn" style="margin-top: 20px;">Open Full Spreadsheet →</a>
+                </div>
+
+                <!-- CS Jobs Spreadsheet -->
+                <div class="spreadsheet-embed">
+                    <h3>Full-Time CS Jobs</h3>
+                    <p style="color: #666; margin-bottom: 20px;">Job opportunities for graduating Computer Science students</p>
+                    <iframe src="https://docs.google.com/spreadsheets/d/1HacyrFhiZ1BecwR5DsnJIqBYAha-nzrt_FdMqbxmggc/edit?usp=sharing&widget=true&headers=false"></iframe>
+                    <a href="https://docs.google.com/spreadsheets/d/1HacyrFhiZ1BecwR5DsnJIqBYAha-nzrt_FdMqbxmggc/" target="_blank" class="btn" style="margin-top: 20px;">Open Full Spreadsheet →</a>
+                </div>
+
+                <!-- GitHub Repository -->
+                <div class="content-box">
+                    <h3>GitHub Internship Repository</h3>
+                    <p style="color: #666; line-height: 1.7; margin-bottom: 20px;">A continuously updated repository of CS internships for Summer 2026 and beyond, maintained by the community.</p>
+                    <a href="https://github.com/SimplifyJobs/Summer2026-Internships" target="_blank" class="btn">View GitHub Repository →</a>
+                </div>
+
+                <div class="content-box">
+                    <h3>Job Search Strategy for CS Students</h3>
+                    
+                    <h4>Timeline</h4>
+                    <ul>
+                        <li><strong>Sophomore Summer:</strong> Seek early career programs or research opportunities</li>
+                        <li><strong>Junior Fall:</strong> Start internship applications for next summer (August-October)</li>
+                        <li><strong>Junior Summer:</strong> Complete internship, potentially receive return offer</li>
+                        <li><strong>Senior Fall:</strong> Full-time job search if no return offer (August-December)</li>
+                    </ul>
+
+                    <h4>Application Strategy</h4>
+                    <ul>
+                        <li><strong>Apply Early:</strong> Many top tech companies recruit on a rolling basis</li>
+                        <li><strong>Cast a Wide Net:</strong> Apply to 50+ companies for internships, 100+ for full-time</li>
+                        <li><strong>Leverage Referrals:</strong> Employee referrals significantly increase interview chances</li>
+                        <li><strong>Target Company Size:</strong> Mix of big tech, mid-size, and startups for diverse opportunities</li>
+                        <li><strong>Geographic Flexibility:</strong> Be open to relocation for better opportunities</li>
+                    </ul>
+
+                    <h4>What Companies Look For</h4>
+                    <ul>
+                        <li><strong>Projects:</strong> Personal projects demonstrating initiative and technical skills</li>
+                        <li><strong>GitHub Profile:</strong> Active contributions showing code quality and collaboration</li>
+                        <li><strong>Data Structures & Algorithms:</strong> Strong fundamentals are essential</li>
+                        <li><strong>System Design:</strong> Understanding of scalable system architecture (for senior roles)</li>
+                        <li><strong>Communication:</strong> Ability to explain technical concepts clearly</li>
+                    </ul>
+                </div>
+
+                <div class="cta-section">
+                    <h3>Ready to Build Your Tech Career?</h3>
+                    <p>Explore all our resources including resume guides, interview prep, and networking strategies</p>
+                    <a href="resources-all.html" class="btn">View All Resources →</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__section">
+                    <h4>COBA Professional Development</h4>
+                    <p>Empowering ACU business students to achieve their career goals</p>
+                </div>
+                <div class="footer__section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../index.html#about">About COBA</a></li>
+                        <li><a href="computer-science.html">Computer Science Major</a></li>
+                        <li><a href="resources-all.html">Resources</a></li>
+                        <li><a href="../index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer__section">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="https://www.instagram.com/advicewitherin" target="_blank">Instagram: @advicewitherin</a></li>
+                        <li><a href="https://www.tiktok.com/@advicewitherin" target="_blank">TikTok: @advicewitherin</a></li>
+                        <li><a href="https://www.acu.edu/coba" target="_blank">ACU COBA Website</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; 2024 Abilene Christian University - College of Business Administration. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#main-content" class="back-to-top" id="backToTop">↑</a>
+
+    <!-- JavaScript -->
+    <script src="../js/main.js"></script>
+    <script>
+        // Back to Top Button
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
+            }
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerOffset = 160;
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Active section highlighting
+        const sections = document.querySelectorAll('.cs-section');
+        const navLinks = document.querySelectorAll('.section-nav__link');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.pageYOffset >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.style.background = '#4B2E83';
+                    link.style.color = 'white';
+                } else {
+                    link.style.background = '#f5f5f5';
+                    link.style.color = '#4B2E83';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
