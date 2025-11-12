@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Schedule a meeting with COBA Professional Development - Connect with Jasmine McCabe-Gossett">
+    <meta name="keywords" content="ACU, COBA, professional development, schedule meeting, career coaching">
+    <meta name="author" content="ACU COBA">
+    <title>Schedule a Meeting | COBA Professional Development | ACU</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../assets/images/favicon.png">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="../css/main.css">
+    
+    <style>
+        /* Contact Page Specific Styles */
+        .contact-hero {
+            background: linear-gradient(135deg, #4B2E83 0%, #6B46A8 100%);
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"><path d="M0,0 L1200,0 L1200,60 Q900,100 600,60 T0,60 Z" fill="rgba(255,255,255,0.05)"/></svg>') repeat-x bottom;
+            opacity: 0.1;
+        }
+
+        .contact-hero h1 {
+            font-size: 56px;
+            margin-bottom: 20px;
+            font-weight: 800;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-hero p {
+            font-size: 22px;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            opacity: 0.95;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .contact-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .director-card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+            margin-bottom: 60px;
+        }
+
+        .director-card__content {
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .director-card__image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .director-card__info {
+            padding: 40px 40px 40px 0;
+        }
+
+        .director-card__name {
+            font-size: 36px;
+            color: #4B2E83;
+            margin-bottom: 10px;
+            font-weight: 800;
+        }
+
+        .director-card__title {
+            font-size: 20px;
+            color: #666;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+
+        .director-card__details {
+            margin-bottom: 30px;
+        }
+
+        .director-card__detail {
+            display: flex;
+            align-items: start;
+            margin-bottom: 15px;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .director-card__detail strong {
+            color: #4B2E83;
+            min-width: 80px;
+            font-weight: 700;
+        }
+
+        .director-card__detail span {
+            color: #333;
+        }
+
+        .director-card__cta {
+            display: inline-block;
+            background: #4B2E83;
+            color: white;
+            padding: 18px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(75, 46, 131, 0.3);
+        }
+
+        .director-card__cta:hover {
+            background: #6B46A8;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(75, 46, 131, 0.4);
+        }
+
+        /* Contact Methods */
+        .contact-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .contact-method {
+            background: #f9f9f9;
+            padding: 40px 30px;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border-top: 4px solid #4B2E83;
+        }
+
+        .contact-method:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .contact-method h3 {
+            font-size: 24px;
+            color: #4B2E83;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .contact-method p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .contact-method a {
+            color: #4B2E83;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .contact-method a:hover {
+            color: #6B46A8;
+        }
+
+        /* Office Hours Section */
+        .office-hours {
+            background: linear-gradient(135deg, #4B2E83 0%, #6B46A8 100%);
+            color: white;
+            padding: 60px;
+            border-radius: 15px;
+            margin-top: 60px;
+            text-align: center;
+        }
+
+        .office-hours h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #FFB81C;
+        }
+
+        .office-hours p {
+            font-size: 20px;
+            line-height: 1.8;
+            opacity: 0.95;
+        }
+
+        /* Back to Top */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #4B2E83;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            opacity: 0;
+            visibility: hidden;
+            z-index: 1000;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: #6B46A8;
+            transform: translateY(-5px);
+        }
+
+        @media (max-width: 768px) {
+            .contact-hero h1 {
+                font-size: 36px;
+            }
+
+            .contact-hero p {
+                font-size: 18px;
+            }
+
+            .director-card__content {
+                grid-template-columns: 1fr;
+            }
+
+            .director-card__info {
+                padding: 30px;
+            }
+
+            .director-card__name {
+                font-size: 28px;
+            }
+
+            .contact-methods {
+                grid-template-columns: 1fr;
+            }
+
+            .office-hours {
+                padding: 40px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header__content">
+                <!-- Logo -->
+                <div class="header__logo">
+                    <a href="../index.html">
+                        <span class="header__logo-text">COBA</span>
+                        <span class="header__logo-subtitle">Professional Development</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Toggle -->
+                <button class="header__menu-toggle" aria-label="Toggle menu" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <!-- Navigation -->
+                <nav class="header__nav" id="mainNav">
+                    <ul class="nav-list">
+                        <li><a href="../index.html" class="nav-list__link">Home</a></li>
+                        <li><a href="../index.html#about" class="nav-list__link">About</a></li>
+                        <li class="nav-list__item--dropdown">
+                            <a href="#" class="nav-list__link">Majors <span class="dropdown-arrow">▾</span></a>
+                            <ul class="nav-dropdown">
+                                <li><a href="finance.html">Finance</a></li>
+                                <li><a href="accounting.html">Accounting</a></li>
+                                <li><a href="marketing.html">Marketing</a></li>
+                                <li><a href="management.html">Management</a></li>
+                                <li><a href="information-systems.html">Information Systems</a></li>
+                                <li><a href="computer-science.html">Computer Science</a></li>
+                                <li><a href="digital-entertainment.html">Digital Entertainment Tech</a></li>
+                                <li><a href="data-analytics.html">Data Analytics</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="international-students.html" class="nav-list__link">International Students</a></li>
+                        <li><a href="resources-all.html" class="nav-list__link">Resources</a></li>
+                        <li><a href="schedule-meeting.html" class="nav-list__link nav-list__link--cta">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="contact-hero">
+        <div class="container">
+            <h1>Schedule a Meeting</h1>
+            <p>Connect with our Professional Development team for personalized career guidance, internship support, and professional coaching.</p>
+        </div>
+    </section>
+
+    <!-- Main Contact Section -->
+    <section class="contact-section">
+        <div class="contact-container">
+            
+            <!-- Director Card -->
+            <div class="director-card">
+                <div class="director-card__content">
+                    <div>
+                        <img src="../assets/images/jasmine-mccabe.jpeg" alt="Jasmine McCabe-Gossett" class="director-card__image">
+                    </div>
+                    <div class="director-card__info">
+                        <h2 class="director-card__name">Jasmine McCabe-Gossett</h2>
+                        <p class="director-card__title">Professional Development & Internship Director</p>
+                        
+                        <div class="director-card__details">
+                            <div class="director-card__detail">
+                                <strong>University:</strong>
+                                <span>Abilene Christian University</span>
+                            </div>
+                            <div class="director-card__detail">
+                                <strong>College:</strong>
+                                <span>College of Business Administration</span>
+                            </div>
+                            <div class="director-card__detail">
+                                <strong>Office:</strong>
+                                <span>Mabee Business Building, Room 132</span>
+                            </div>
+                            <div class="director-card__detail">
+                                <strong>Phone:</strong>
+                                <span>325-674-2427</span>
+                            </div>
+                        </div>
+
+                        <a href="https://acu.12twenty.com/login?ReturnUrl=%2Fappointments" target="_blank" class="director-card__cta">Click Here for Coaching →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hailey Rotenberry Card -->
+            <div class="director-card">
+                <div class="director-card__content">
+                    <div>
+                        <img src="../assets/images/hailey-rotenberry.jpeg" alt="Hailey Rotenberry" class="director-card__image">
+                    </div>
+                    <div class="director-card__info">
+                        <h2 class="director-card__name">Hailey Rotenberry</h2>
+                        <p class="director-card__title">Professional Development Coordinator</p>
+                        
+                        <div class="director-card__details">
+                            <div class="director-card__detail">
+                                <strong>University:</strong>
+                                <span>Abilene Christian University</span>
+                            </div>
+                            <div class="director-card__detail">
+                                <strong>College:</strong>
+                                <span>College of Business Administration</span>
+                            </div>
+                            <div class="director-card__detail">
+                                <strong>Office:</strong>
+                                <span>325-674-2511</span>
+                            </div>
+                        </div>
+
+                        <a href="https://success.acu.edu/portal/hailey's_coaching" target="_blank" class="director-card__cta">Schedule a Coaching Session →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Methods -->
+            <h2 style="text-align: center; font-size: 42px; color: #4B2E83; margin-bottom: 40px; font-weight: 800;">Student Coaches</h2>
+            
+            <div class="contact-methods">
+                <!-- Schedule Coaching -->
+                <div class="contact-method">
+                    <h3>Schedule Coaching</h3>
+                    <p>Schedule a session with a student coach for your specific major for personalized career guidance and professional development support.</p>
+                    <a href="https://acu.12twenty.com/login?ReturnUrl=%2Fdashboard" target="_blank">Schedule Online →</a>
+                </div>
+            </div>
+
+            <!-- Office Hours -->
+            <div class="office-hours">
+                <h2>Office Hours & Location</h2>
+                <p><strong>Mabee Business Building, Room 132</strong></p>
+                <p style="margin-top: 10px;">Monday - Friday: 8:00 AM - 5:00 PM</p>
+                <p style="margin-top: 20px; font-size: 18px;">Stop by during office hours for walk-in support and resources, or schedule an appointment for guaranteed availability.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <!-- Contact Info -->
+                <div class="footer__section">
+                    <h3 class="footer__title">Contact Us</h3>
+                    <p class="footer__text">
+                        <strong>COBA Professional Development</strong><br>
+                        Mabee Business Building, Room 132<br>
+                        Abilene Christian University<br>
+                        Abilene, TX 79699
+                    </p>
+                    <p class="footer__text">
+                        <strong>Email:</strong> coba.profdev@acu.edu<br>
+                        <strong>Phone:</strong> (325) 674-2427
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer__section">
+                    <h3 class="footer__title">Quick Links</h3>
+                    <ul class="footer__links">
+                        <li><a href="../index.html#about">About COBA</a></li>
+                        <li><a href="../index.html#majors">Majors</a></li>
+                        <li><a href="resources-all.html">Resources</a></li>
+                        <li><a href="international-students.html">International Students</a></li>
+                        <li><a href="https://acu.edu/coba" target="_blank">COBA Website</a></li>
+                    </ul>
+                </div>
+
+                <!-- Resources -->
+                <div class="footer__section">
+                    <h3 class="footer__title">Popular Resources</h3>
+                    <ul class="footer__links">
+                        <li><a href="resources-all.html#resume">Resume Builder</a></li>
+                        <li><a href="resources-all.html#interviews">Interview Prep</a></li>
+                        <li><a href="resources-all.html#job-tools">Job Search Tools</a></li>
+                        <li><a href="resources-all.html#experiential">Experiential Learning</a></li>
+                    </ul>
+                </div>
+
+                <!-- Social & Additional -->
+                <div class="footer__section">
+                    <h3 class="footer__title">Stay Connected</h3>
+                    <p class="footer__text footer__text--small">
+                        Follow helpful career advice and stay updated with COBA professional development opportunities.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer__bottom">
+                <p class="footer__copyright">
+                    &copy; 2024 Abilene Christian University - College of Business Administration. All rights reserved.
+                </p>
+                <p class="footer__tagline">
+                    Empowering Christian business leaders
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Menu Toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const mainNav = document.getElementById('mainNav');
+
+        menuToggle.addEventListener('click', () => {
+            mainNav.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+        });
+
+        // Back to Top Button
+        const backToTop = document.getElementById('backToTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>

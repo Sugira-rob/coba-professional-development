@@ -321,15 +321,18 @@ a:hover {
     height: 100%;
     opacity: 0;
     visibility: hidden;
-    transition: opacity var(--transition-slow);
+    transition: opacity 1s ease-in-out, visibility 0s 1s;
     background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
     background-size: cover;
     background-position: center;
+    z-index: 1;
 }
 
 .hero-slider__slide--active {
     opacity: 1;
     visibility: visible;
+    transition: opacity 1s ease-in-out, visibility 0s 0s;
+    z-index: 2;
 }
 
 .hero-slider__overlay {
@@ -565,9 +568,47 @@ a:hover {
 
 .about__content {
     display: grid;
-    grid-template-columns: 1.5fr 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: var(--spacing-xl);
     align-items: center;
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+.about__image {
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-xl);
+}
+
+.about__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    display: block;
+}
+
+.about__text {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.about__title {
+    font-size: var(--font-size-4xl);
+    font-weight: 800;
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-md);
+}
+
+.about__description {
+    font-size: var(--font-size-lg);
+    color: var(--color-gray-700);
+    line-height: 1.8;
 }
 
 .about__paragraph {

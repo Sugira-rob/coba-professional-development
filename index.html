@@ -55,14 +55,14 @@
                                 <li><a href="pages/marketing.html">Marketing</a></li>
                                 <li><a href="pages/management.html">Management</a></li> 
                                 <li><a href="pages/information-systems.html">Information Systems</a></li>
-                                <li><a href="pages/computer-science.html" class="nav-list__link">Computer Science</a></li>
-                                 <li><a href="pages/digital-entertainment.html">Digital Entertainment Tech</a></li>
-                                 <li><a href="pages/data-analytics.html">Data Analytics</a></li>
+                                <li><a href="pages/computer-science.html">Computer Science</a></li>
+                                <li><a href="pages/digital-entertainment.html">Digital Entertainment Tech</a></li>
+                                <li><a href="pages/data-analytics.html">Data Analytics</a></li>
                             </ul>
                         </li>
                         <li><a href="pages/international-students.html" class="nav-list__link">International Students</a></li>
                         <li><a href="pages/resources-all.html" class="nav-list__link">Resources</a></li>
-                        <li><a href="#contact" class="nav-list__link nav-list__link--cta">Contact</a></li>
+                        <li><a href="pages/schedule-meeting.html" class="nav-list__link nav-list__link--cta">Contact</a></li>
                     </ul>
                 </nav>
             </div>
@@ -112,7 +112,7 @@
                     <div class="hero-slider__content">
                         <h1 class="hero-slider__title">Connect. Collaborate. Grow.</h1>
                         <p class="hero-slider__text">Join a network of students, alumni, and mentors who share your drive for excellence and impact.</p>
-                        <a href="#contact" class="btn btn--primary btn--large">Join the Network</a>
+                        <a href="pages/schedule-meeting.html" class="btn btn--primary btn--large">Join the Network</a>
                     </div>
                 </div>
 
@@ -136,16 +136,11 @@
         <section class="quick-links">
             <div class="container">
                 <div class="quick-links__grid">
-                    
-                    <!-- Quick Links Section - ONLY 1 CARD -->
-<a href="pages/finance.html#internships" class="quick-link-card">
-    <div class="quick-link-card__icon"></div>
-    <h3 class="quick-link-card__title">Internship Timeline</h3>
-    <p class="quick-link-card__text">Follow the path from freshman to senior year</p>
-</a>
-                    
-                    <a href="#resources" class="quick-link-card">
-                        <div class="quick-link-card__icon"></div>
+                    <a href="pages/finance.html#internships" class="quick-link-card">
+                        <h3 class="quick-link-card__title">Internship Timeline</h3>
+                        <p class="quick-link-card__text">Follow the path from freshman to senior year</p>
+                    </a>
+                    <a href="pages/resources-all.html" class="quick-link-card">
                         <h3 class="quick-link-card__title">Learning Resources</h3>
                         <p class="quick-link-card__text">Access guides, templates, and tools</p>
                     </a>
@@ -156,32 +151,32 @@
         <!-- About COBA Section -->
         <section class="about" id="about">
             <div class="container">
-                <div class="section-header">
-                    <h2 class="section-header__title">About COBA</h2>
-                    <div class="section-header__line"></div>
-                </div>
                 <div class="about__content">
                     <div class="about__text">
-                        <p class="about__paragraph">
-                            The Abilene Christian University College of Business Administration is committed to developing Christian business leaders who make a positive impact in their organizations and communities. Our professional development resources support this mission by providing students with the tools and knowledge needed for success.
+                        <h2 class="about__title">About COBA Professional Development</h2>
+                        <p class="about__description">
+                            The College of Business Administration's Professional Development program exists to empower COBA students with the skills, resources, and confidence to thrive in today's competitive business landscape.
                         </p>
-                        <p class="about__paragraph">
-                            Whether you're exploring career paths, seeking internships, or preparing for certifications, we're here to guide you every step of the way.
+                        <p class="about__description">
+                            From resume building and interview prep to internship placement and career coaching, we provide comprehensive support tailored to your major and career goals. Our mission is to bridge the gap between classroom learning and real-world success.
                         </p>
+                        <div class="about__stats">
+                            <div class="stat">
+                                <span class="stat__number">1000+</span>
+                                <span class="stat__label">Students Served Annually</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat__number">500+</span>
+                                <span class="stat__label">Employer Partners</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat__number">95%</span>
+                                <span class="stat__label">Job Placement Rate</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="about__stats">
-                        <div class="stat-card">
-                            <div class="stat-card__number">100+</div>
-                            <div class="stat-card__label">Resources</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-card__number">50+</div>
-                            <div class="stat-card__label">Certifications</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-card__number">9</div>
-                            <div class="stat-card__label">Major Areas</div>
-                        </div>
+                    <div class="about__image">
+                        <img src="assets/images/coba-students.jpg" alt="COBA Students" loading="lazy">
                     </div>
                 </div>
             </div>
@@ -190,162 +185,88 @@
         <!-- Majors Section -->
         <section class="majors" id="majors">
             <div class="container">
-                <div class="section-header">
-                    <h2 class="section-header__title">Explore Your Major</h2>
-                    <div class="section-header__line"></div>
-                    <p class="section-header__subtitle">Find resources tailored to your field of study</p>
-                </div>
-
+                <h2 class="majors__title">Explore Resources by Major</h2>
+                <p class="majors__subtitle">Tailored resources, career paths, and professional development guides for each COBA major</p>
+                
                 <div class="majors__grid">
                     <!-- Finance -->
-                    <div class="major-card" data-category="finance">
-                        <div class="major-card__icon">💰</div>
+                    <a href="pages/finance.html" class="major-card">
+                        <div class="major-card__icon"></div>
                         <h3 class="major-card__title">Finance</h3>
-                        <p class="major-card__description">Career paths, CFA prep, investment resources</p>
-                        <ul class="major-card__features">
-                            <li>Investment Banking</li>
-                            <li>Financial Analysis</li>
-                            <li>7 Certifications</li>
-                        </ul>
-                        <a href="pages/finance.html" class="major-card__link">Explore Finance →</a>
-                    </div>
+                        <p class="major-card__description">Investment banking, corporate finance, financial analysis, and wealth management career paths.</p>
+                        <span class="major-card__cta">Explore Finance →</span>
+                    </a>
 
                     <!-- Accounting -->
-                    <div class="major-card" data-category="accounting">
-                        <div class="major-card__icon">📊</div>
+                    <a href="pages/accounting.html" class="major-card">
+                        <div class="major-card__icon"></div>
                         <h3 class="major-card__title">Accounting</h3>
-                        <p class="major-card__description">CPA exam prep, MAcc program, Big 4 resources</p>
-                        <ul class="major-card__features">
-                            <li>CPA Preparation</li>
-                            <li>Big 4 Careers</li>
-                            <li>MAcc Program</li>
-                        </ul>
-                        <a href="pages/accounting.html" class="major-card__link">Explore Accounting →</a>
-                    </div>
+                        <p class="major-card__description">Big 4 firms, CPA prep, audit, tax, and forensic accounting opportunities.</p>
+                        <span class="major-card__cta">Explore Accounting →</span>
+                    </a>
 
                     <!-- Marketing -->
-                    <div class="major-card" data-category="marketing">
-                        <div class="major-card__icon">📱</div>
+                    <a href="pages/marketing.html" class="major-card">
+                        <div class="major-card__icon"></div>
                         <h3 class="major-card__title">Marketing</h3>
-                        <p class="major-card__description">Digital marketing, SEO, social media certifications</p>
-                        <ul class="major-card__features">
-                            <li>Google Analytics</li>
-                            <li>Social Media Marketing</li>
-                            <li>7 Certifications</li>
-                        </ul>
-                        <a href="pages/marketing.html" class="major-card__link">Explore Marketing →</a>
-                    </div>
+                        <p class="major-card__description">Digital marketing, social media, brand management, and marketing analytics careers.</p>
+                        <span class="major-card__cta">Explore Marketing →</span>
+                    </a>
 
                     <!-- Management -->
-                    <div class="major-card" data-category="management">
-                        <div class="major-card__icon">💼</div>
+                    <a href="pages/management.html" class="major-card">
+                        <div class="major-card__icon"></div>
                         <h3 class="major-card__title">Management</h3>
-                        <p class="major-card__description">Leadership skills, project management, HR resources</p>
-                        <ul class="major-card__features">
-                            <li>Project Management</li>
-                            <li>HR Management</li>
-                            <li>8 Certifications</li>
-                        </ul>
-                        <a href="pages/management.html" class="major-card__link">Explore Management →</a>
-                    </div>
+                        <p class="major-card__description">Project management, HR, operations, and leadership development paths.</p>
+                        <span class="major-card__cta">Explore Management →</span>
+                    </a>
 
                     <!-- Information Systems -->
-                    <div class="major-card" data-category="information-systems">
-                        <div class="major-card__icon">💻</div>
+                    <a href="pages/information-systems.html" class="major-card">
+                        <div class="major-card__icon"></div>
                         <h3 class="major-card__title">Information Systems</h3>
-                        <p class="major-card__description">IT certifications, network security, database management</p>
-                        <ul class="major-card__features">
-                            <li>CompTIA A+</li>
-                            <li>CCNA</li>
-                            <li>10 Certifications</li>
-                        </ul>
-                        <a href="pages/information-systems.html" class="major-card__link">Explore IS →</a>
-                    </div>
+                        <p class="major-card__description">IT consulting, systems analysis, cybersecurity, and business technology.</p>
+                        <span class="major-card__cta">Explore IS →</span>
+                    </a>
 
                     <!-- Computer Science -->
-                    <div class="major-card" data-category="computer-science">
-                        <div class="major-card__icon">🖥️</div>
+                    <a href="pages/computer-science.html" class="major-card">
+                        <div class="major-card__icon"></div>
                         <h3 class="major-card__title">Computer Science</h3>
-                        <p class="major-card__description">Coding interviews, internships, tech career paths</p>
-                        <ul class="major-card__features">
-                            <li>LeetCode Practice</li>
-                            <li>Tech Internships</li>
-                            <li>35+ Job Markets</li>
-                        </ul>
-                        <a href="pages/computer-science.html" class="major-card__link">Explore CS →</a>
-                    </div>
+                        <p class="major-card__description">Software engineering, web development, data science, and tech careers.</p>
+                        <span class="major-card__cta">Explore CS →</span>
+                    </a>
 
-                    <!-- Digital Entertainment Technology -->
-                    <div class="major-card" data-category="digital-entertainment">
-                        <div class="major-card__icon">🎮</div>
+                    <!-- Digital Entertainment Tech -->
+                    <a href="pages/digital-entertainment.html" class="major-card">
+                        <div class="major-card__icon"></div>
                         <h3 class="major-card__title">Digital Entertainment Tech</h3>
-                        <p class="major-card__description">Game development, Unity, Unreal Engine, 3D design</p>
-                        <ul class="major-card__features">
-                            <li>Unity Certified</li>
-                            <li>Game Design</li>
-                            <li>12 Certifications</li>
-                        </ul>
-                        <a href="pages/digital-entertainment.html" class="major-card__link">Explore DET →</a>
-                    </div>
+                        <p class="major-card__description">Game design, animation, Unity development, and interactive media.</p>
+                        <span class="major-card__cta">Explore DET →</span>
+                    </a>
 
                     <!-- Data Analytics -->
-                    <div class="major-card" data-category="data-analytics">
-                        <div class="major-card__icon">📈</div>
+                    <a href="pages/data-analytics.html" class="major-card">
+                        <div class="major-card__icon"></div>
                         <h3 class="major-card__title">Data Analytics</h3>
-                        <p class="major-card__description">SQL, Python, Tableau, data visualization</p>
-                        <ul class="major-card__features">
-                            <li>8 Career Paths</li>
-                            <li>Data Visualization</li>
-                            <li>5 Certifications</li>
-                        </ul>
-                        <a href="pages/data-analytics.html" class="major-card__link">Explore Analytics →</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- International Students Section -->
-        <section class="international" id="international">
-            <div class="container">
-                <div class="international__content">
-                    <div class="international__text">
-                        <h2 class="international__title">Resources for International Students</h2>
-                        <p class="international__description">
-                            Navigate your career journey in the U.S. with specialized resources for H-1B sponsorship, work authorization, and companies that hire international students.
-                        </p>
-                        <ul class="international__features">
-                            <li>H-1B Sponsorship Information</li>
-                            <li>Companies Hiring International Students</li>
-                            <li>Work Authorization Guidance</li>
-                            <li>Networking Resources</li>
-                        </ul>
-                        <a href="pages/international-students.html" class="btn btn--primary">Explore Resources →</a>
-                    </div>
-                    <div class="international__visual">
-                        <div class="stat-card stat-card--large">
-                            <div class="stat-card__icon">🌍</div>
-                            <div class="stat-card__number">1000+</div>
-                            <div class="stat-card__label">Companies Sponsoring H-1B</div>
-                        </div>
-                    </div>
+                        <p class="major-card__description">Business intelligence, predictive analytics, visualization, and data-driven decisions.</p>
+                        <span class="major-card__cta">Explore Analytics →</span>
+                    </a>
                 </div>
             </div>
         </section>
 
         <!-- Featured Resources Section -->
-        <section class="featured-resources" id="resources">
+        <section class="resources" id="resources">
             <div class="container">
-                <div class="section-header">
-                    <h2 class="section-header__title">Featured Resources</h2>
-                    <div class="section-header__line"></div>
-                    <p class="section-header__subtitle">Essential tools for every business and technology student</p>
-                </div>
-
+                <h2 class="resources__title">Featured Resources</h2>
+                <p class="resources__subtitle">Essential tools and guides for career success</p>
+                
                 <div class="resources__grid">
                     <!-- Resume Building -->
                     <div class="resource-card resource-card--featured">
                         <div class="resource-card__header">
-                            <span class="resource-card__icon">📝</span>
+                            <span class="resource-card__icon"></span>
                             <span class="resource-card__badge">Popular</span>
                         </div>
                         <h3 class="resource-card__title">Resume & Cover Letter Guide</h3>
@@ -358,7 +279,7 @@
                     <!-- Interview Prep -->
                     <div class="resource-card">
                         <div class="resource-card__header">
-                            <span class="resource-card__icon">🎤</span>
+                            <span class="resource-card__icon"></span>
                         </div>
                         <h3 class="resource-card__title">Interview Preparation</h3>
                         <p class="resource-card__description">
@@ -370,7 +291,7 @@
                     <!-- Job Search -->
                     <div class="resource-card">
                         <div class="resource-card__header">
-                            <span class="resource-card__icon">🔍</span>
+                            <span class="resource-card__icon"></span>
                         </div>
                         <h3 class="resource-card__title">Job Search Platforms</h3>
                         <p class="resource-card__description">
@@ -382,7 +303,7 @@
                     <!-- Professional Dress -->
                     <div class="resource-card">
                         <div class="resource-card__header">
-                            <span class="resource-card__icon">👔</span>
+                            <span class="resource-card__icon"></span>
                         </div>
                         <h3 class="resource-card__title">Professional Dress Guide</h3>
                         <p class="resource-card__description">
@@ -394,7 +315,7 @@
                     <!-- Experiential Learning -->
                     <div class="resource-card resource-card--wide">
                         <div class="resource-card__header">
-                            <span class="resource-card__icon">🌟</span>
+                            <span class="resource-card__icon"></span>
                         </div>
                         <h3 class="resource-card__title">Experiential Learning Opportunities</h3>
                         <p class="resource-card__description">
@@ -415,7 +336,7 @@
                         Connect with our professional development team for personalized guidance and support.
                     </p>
                     <div class="cta__buttons">
-                        <a href="#contact" class="btn btn--primary btn--large">Schedule a Meeting</a>
+                        <a href="pages/schedule-meeting.html" class="btn btn--primary btn--large">Schedule a Meeting</a>
                         <a href="pages/resources-all.html" class="btn btn--secondary btn--large">Browse All Resources</a>
                     </div>
                 </div>
@@ -450,7 +371,7 @@
                         <li><a href="#about">About COBA</a></li>
                         <li><a href="#majors">Majors</a></li>
                         <li><a href="#resources">Resources</a></li>
-                        <li><a href="#international">International Students</a></li>
+                        <li><a href="pages/international-students.html">International Students</a></li>
                         <li><a href="https://acu.edu/coba" target="_blank">COBA Website</a></li>
                     </ul>
                 </div>
@@ -470,7 +391,7 @@
                 <div class="footer__section">
                     <h3 class="footer__title">Stay Connected</h3>
                     <div class="footer__social">
-                        <a href="https://www.instagram.com/advicewitherin" target="_blank" class="footer__social-link" aria-label="Instagram">📱</a>
+                        <a href="https://www.instagram.com/advicewitherin" target="_blank" class="footer__social-link" aria-label="Instagram"></a>
                     </div>
                     <p class="footer__text footer__text--small">
                         Follow helpful career advice accounts for daily tips and inspiration.
@@ -484,7 +405,7 @@
                     &copy; 2024 Abilene Christian University - College of Business Administration. All rights reserved.
                 </p>
                 <p class="footer__tagline">
-                    Empowering Christian business leaders 💜
+                    Empowering Christian business leaders
                 </p>
             </div>
         </div>
