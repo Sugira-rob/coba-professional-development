@@ -1213,3 +1213,14 @@ a:hover {
     background-size: cover;
     background-position: center top;
 }
+
+/* Large screens - prevent over-zooming */
+@media (min-width: 1400px) {
+    #slide-1,
+    #slide-2,
+    #slide-3,
+    #slide-4 {
+        background-size: 100% auto;
+        background-position: center top;
+    }
+}
