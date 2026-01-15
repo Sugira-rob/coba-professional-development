@@ -297,19 +297,6 @@ a:hover {
     padding-left: calc(var(--spacing-sm) + 8px);
 }
 
-/* Sub-menu item styling for concentrations */
-.nav-dropdown a.sub-item {
-    padding-left: calc(var(--spacing-sm) + 20px);
-    font-size: 0.9rem;
-    color: #666;
-}
-
-.nav-dropdown a.sub-item:hover {
-    background: var(--color-gray-100);
-    color: var(--color-primary);
-    padding-left: calc(var(--spacing-sm) + 28px);
-}
-
 /* ============================================
    HERO SLIDER
    ============================================ */
@@ -1193,27 +1180,23 @@ a:hover {
 #slide-1 {
     background-image: url('../assets/images/hero-slide-1.png');
     background-size: cover;
-    background-position: center 20%;
-    background-repeat: no-repeat;
+    background-position: center top;
 }
 
 #slide-2 {
     background-image: url('../assets/images/hero-slide-2.png');
     background-size: cover;
-    background-position: center 20%;
-    background-repeat: no-repeat;
+    background-position: center top;
 }
 
 #slide-3 {
     background-image: url('../assets/images/hero-slide-3.jpg');
     background-size: cover;
-    background-position: center 20%;
-    background-repeat: no-repeat;
+    background-position: center top;
 }
 
 #slide-4 {
     background-image: url('../assets/images/hero-slide-4.png');
     background-size: cover;
-    background-position: center 20%;
-    background-repeat: no-repeat;
+    background-position: center top;
 }

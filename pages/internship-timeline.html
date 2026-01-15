@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Internship timeline for ACU COBA students - plan your path from freshman to senior year">
+    <meta name="keywords" content="ACU, COBA, internship timeline, career planning, professional development">
+    <meta name="author" content="ACU COBA">
+    <title>Internship Timeline | COBA | ACU</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../assets/images/favicon.png">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="../css/main.css">
+    
+    <style>
+        /* Internship Timeline Page Specific Styles */
+        .timeline-hero {
+            background: linear-gradient(135deg, #4B2E83 0%, #6B46A8 100%);
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .timeline-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"><path d="M0,0 L1200,0 L1200,60 Q900,100 600,60 T0,60 Z" fill="rgba(255,255,255,0.05)"/></svg>') repeat-x bottom;
+            opacity: 0.1;
+        }
+
+        .timeline-hero h1 {
+            font-size: 56px;
+            margin-bottom: 20px;
+            font-weight: 800;
+            position: relative;
+            z-index: 1;
+            color: white;
+        }
+
+        .timeline-hero p {
+            font-size: 22px;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            opacity: 0.95;
+            position: relative;
+            z-index: 1;
+            color: white;
+        }
+
+        .timeline-hero__icon {
+            font-size: 80px;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .section-nav {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 70px;
+            z-index: 100;
+            padding: 20px 0;
+        }
+
+        .section-nav__list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .section-nav__link {
+            padding: 10px 20px;
+            background: #f5f5f5;
+            color: #4B2E83;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 14px;
+        }
+
+        .section-nav__link:hover {
+            background: #4B2E83;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .timeline-section {
+            padding: 80px 0;
+        }
+
+        .timeline-section:nth-child(even) {
+            background: #f9f9f9;
+        }
+
+        .timeline-section__header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .timeline-section__title {
+            font-size: 42px;
+            color: #4B2E83;
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+
+        .timeline-section__subtitle {
+            font-size: 20px;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline {
+            max-width: 900px;
+            margin: 50px auto;
+            position: relative;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, #4B2E83, #6B46A8);
+        }
+
+        .timeline-item {
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(odd) {
+            padding-right: 50%;
+            text-align: right;
+        }
+
+        .timeline-item:nth-child(even) {
+            padding-left: 50%;
+            text-align: left;
+        }
+
+        .timeline-content {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            position: relative;
+        }
+
+        .timeline-year {
+            font-size: 24px;
+            font-weight: 800;
+            color: #4B2E83;
+            margin-bottom: 15px;
+        }
+
+        .timeline-semester {
+            font-size: 18px;
+            font-weight: 700;
+            color: #6B46A8;
+            margin-bottom: 10px;
+        }
+
+        .timeline-details {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .timeline-details ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+
+        .timeline-details li {
+            margin-bottom: 8px;
+        }
+
+        .timeline-marker {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 20px;
+            background: #FFB81C;
+            border: 4px solid white;
+            border-radius: 50%;
+            box-shadow: 0 0 0 4px #4B2E83;
+            z-index: 2;
+        }
+
+        .content-box {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            margin: 30px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .content-box h3 {
+            color: #4B2E83;
+            font-size: 28px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .content-box ul {
+            line-height: 1.8;
+            color: #555;
+            margin: 15px 0;
+            padding-left: 25px;
+        }
+
+        .content-box li {
+            margin-bottom: 12px;
+        }
+
+        .highlight-box {
+            background: #f0ebf8;
+            border-left: 4px solid #4B2E83;
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 4px;
+        }
+
+        .highlight-box strong {
+            color: #4B2E83;
+            display: block;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #4B2E83 0%, #6B46A8 100%);
+            color: white;
+            padding: 60px 40px;
+            border-radius: 12px;
+            text-align: center;
+            margin: 60px 0;
+        }
+
+        .cta-section h3 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .cta-section p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 40px;
+            background: #FFB81C;
+            color: #4B2E83;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .btn:hover {
+            background: white;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #4B2E83;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 24px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 1000;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+        }
+
+        .back-to-top:hover {
+            background: #6B46A8;
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 768px) {
+            .timeline-hero h1 {
+                font-size: 36px;
+            }
+
+            .timeline-section__title {
+                font-size: 32px;
+            }
+
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-item:nth-child(odd),
+            .timeline-item:nth-child(even) {
+                padding-left: 60px;
+                padding-right: 0;
+                text-align: left;
+            }
+
+            .timeline-marker {
+                left: 20px;
+                transform: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Skip to Main Content -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Header & Navigation -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header__content">
+                <!-- Logo -->
+                <div class="header__logo">
+                    <a href="../index.html">
+                        <span class="header__logo-text">COBA</span>
+                        <span class="header__logo-subtitle">Professional Development</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Toggle -->
+                <button class="header__menu-toggle" aria-label="Toggle menu" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <!-- Navigation -->
+           <nav class="header__nav" id="mainNav">
+                    <ul class="nav-list">
+                        <li><a href="../index.html#home" class="nav-list__link">Home</a></li>
+                        <li><a href="../index.html#about" class="nav-list__link">About</a></li>
+                        <li class="nav-list__item--dropdown">
+                            <a href="#" class="nav-list__link">Majors & Tracks <span class="dropdown-arrow">▾</span></a>
+                            <ul class="nav-dropdown">
+                                <li><a href="accounting.html">Accounting</a></li>
+                                <li><a href="computer-science.html">Computer Science</a></li>
+                                <li><a href="data-analytics.html">Data Analytics Track</a></li>
+                                <li><a href="digital-entertainment.html">Digital Entertainment Tech</a></li>
+                                <li><a href="finance.html">Finance</a></li>
+                                <li><a href="information-systems.html">Information Systems</a></li>
+                                <li><a href="management.html">Management</a></li>
+                                <li><a href="marketing.html">Marketing</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="international-students.html" class="nav-list__link">International Students</a></li>
+                        <li><a href="resources-all.html" class="nav-list__link">Resources</a></li>
+                        <li><a href="schedule-meeting.html" class="nav-list__link nav-list__link--cta">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- Main Content -->
+    <main id="main-content">
+        
+        <!-- Hero Section -->
+        <section class="timeline-hero">
+            <div class="container">
+                <span class="timeline-hero__icon">🎯</span>
+                <h1>Your Internship Timeline</h1>
+                <p>Plan your path from freshman year to landing your dream internship and career</p>
+            </div>
+        </section>
+
+        <!-- Section Navigation -->
+        <nav class="section-nav">
+            <div class="container">
+                <ul class="section-nav__list">
+                    <li><a href="#overview" class="section-nav__link">Overview</a></li>
+                    <li><a href="#freshman" class="section-nav__link">Freshman Year</a></li>
+                    <li><a href="#sophomore" class="section-nav__link">Sophomore Year</a></li>
+                    <li><a href="#junior" class="section-nav__link">Junior Year</a></li>
+                    <li><a href="#senior" class="section-nav__link">Senior Year</a></li>
+                    <li><a href="#resources" class="section-nav__link">Resources</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Internship Overview Section -->
+        <section id="overview" class="timeline-section">
+            <div class="container">
+                <div class="timeline-section__header">
+                    <h2 class="timeline-section__title">Internships: How to Find Them & When to Apply</h2>
+                    <p class="timeline-section__subtitle">Your roadmap to landing an internship in any business field</p>
+                </div>
+
+                <div class="content-box">
+                    <h3>What is an Internship?</h3>
+                    <p>An internship is a short-term work experience offered by companies and other organizations for people—usually students—to get some entry-level exposure to a particular industry or field.</p>
+
+                    <h3>Benefits of Internships</h3>
+                    <ul>
+                        <li><strong>Real-world experience:</strong> Apply classroom concepts to actual business problems and decision-making</li>
+                        <li><strong>Skill development:</strong> Gain proficiency in industry-specific software, tools, and professional skills</li>
+                        <li><strong>Career exploration:</strong> Confirm whether a particular career path is right for you</li>
+                        <li><strong>Professional network:</strong> Build relationships with mentors and colleagues who can help your career</li>
+                        <li><strong>Job offers:</strong> Many internships convert to full-time offers—some companies hire 50-80% of their interns</li>
+                        <li><strong>Resume builder:</strong> Internship experience makes you significantly more competitive for post-graduation roles</li>
+                        <li><strong>Competitive advantage:</strong> Students with internships receive more job offers and higher starting salaries</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-section__header" style="margin-top: 60px;">
+                    <h3 class="timeline-section__title" style="font-size: 36px;">Your Internship Timeline</h3>
+                    <p class="timeline-section__subtitle">Plan your path from freshman year to your dream internship</p>
+                </div>
+
+                <div class="timeline">
+                    <div id="freshman" class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-year">Freshman Year</div>
+                            <div class="timeline-semester">Fall Semester</div>
+                            <div class="timeline-details">
+                                <p><strong>Focus:</strong> Build foundation and explore</p>
+                                <ul>
+                                    <li>Complete 16 credit hours with strong GPA</li>
+                                    <li>Join major-specific clubs and organizations</li>
+                                    <li>Attend COBA career events and workshops</li>
+                                    <li>Start building LinkedIn profile</li>
+                                    <li>Meet with COBA Professional Development team</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-year">Freshman Year</div>
+                            <div class="timeline-semester">Spring Semester</div>
+                            <div class="timeline-details">
+                                <p><strong>Focus:</strong> Develop skills and start networking</p>
+                                <ul>
+                                    <li>Complete 16 credit hours, maintain strong GPA</li>
+                                    <li>Gain relevant certifications for your major</li>
+                                    <li>Attend career fair (practice for next year)</li>
+                                    <li>Build technical skills (Excel, software, etc.)</li>
+                                    <li>Connect with alumni on LinkedIn</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-year">Freshman Year</div>
+                            <div class="timeline-semester">Summer</div>
+                            <div class="timeline-details">
+                                <p><strong>Focus:</strong> Gain any experience</p>
+                                <ul>
+                                    <li>Work any job (shows work ethic and responsibility)</li>
+                                    <li>Take online courses relevant to your major</li>
+                                    <li>Read industry publications and books</li>
+                                    <li>Network with family/friends in your field</li>
+                                    <li>Volunteer for organizations related to your interests</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="sophomore" class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-year">Sophomore Year</div>
+                            <div class="timeline-semester">Fall Semester</div>
+                            <div class="timeline-details">
+                                <p><strong>Focus:</strong> Prepare for recruiting season</p>
+                                <ul>
+                                    <li>Complete 16 credit hours, keep GPA strong</li>
+                                    <li>Join major-specific organizations (Investment Fund, ENACTUS, etc.)</li>
+                                    <li>Perfect your resume with help from COBA team</li>
+                                    <li>Start researching companies and positions</li>
+                                    <li>Practice interview skills and elevator pitch</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-year">Sophomore Year</div>
+                            <div class="timeline-semester">Spring Semester</div>
+                            <div class="timeline-details">
+                                <p><strong>Focus:</strong> Apply aggressively</p>
+                                <ul>
+                                    <li>Complete 16 credit hours</li>
+                                    <li>Attend career fair - apply to 20+ companies</li>
+                                    <li>Apply online to 50+ internships</li>
+                                    <li>Network with alumni on LinkedIn</li>
+                                    <li>Practice interviews constantly</li>
+                                    <li>Follow up on all applications</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-year">Sophomore Year</div>
+                            <div class="timeline-semester">Summer</div>
+                            <div class="timeline-details">
+                                <p><strong>🎯 INTERNSHIP GOAL!</strong></p>
+                                <ul>
+                                    <li>Complete your first major-related internship</li>
+                                    <li>Excel in your role and exceed expectations</li>
+                                    <li>Build professional network</li>
+                                    <li>Secure strong recommendations</li>
+                                    <li>Position yourself for return offer or next opportunity</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="junior" class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-year">Junior Year</div>
+                            <div class="timeline-semester">Fall Semester</div>
+                            <div class="timeline-details">
+                                <p><strong>Focus:</strong> Junior year recruiting (most critical)</p>
+                                <ul>
+                                    <li>Complete 16 credit hours</li>
+                                    <li>Participate in leadership opportunities</li>
+                                    <li>Apply for JUNIOR summer internships early (many deadlines in fall!)</li>
+                                    <li>Network aggressively with target companies</li>
+                                    <li>Update resume with sophomore internship experience</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-year">Junior Year</div>
+                            <div class="timeline-semester">Spring Semester</div>
+                            <div class="timeline-details">
+                                <p><strong>Focus:</strong> Secure junior internship & continue applications</p>
+                                <ul>
+                                    <li>Complete 16 credit hours</li>
+                                    <li>Accept junior year internship offer</li>
+                                    <li>Continue pursuing additional certifications</li>
+                                    <li>Build advanced skills in your field</li>
+                                    <li>Maintain relationships with previous internship contacts</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-year">Junior Year</div>
+                            <div class="timeline-semester">Summer</div>
+                            <div class="timeline-details">
+                                <p><strong>🎯 CRITICAL INTERNSHIP!</strong></p>
+                                <ul>
+                                    <li>Excel in junior year internship</li>
+                                    <li>This often converts to full-time offer</li>
+                                    <li>Build relationships for references</li>
+                                    <li>Learn as much as possible</li>
+                                    <li>Position yourself for return offer</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="senior" class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-year">Senior Year</div>
+                            <div class="timeline-semester">Fall & Spring</div>
+                            <div class="timeline-details">
+                                <p><strong>Focus:</strong> Finish strong and transition to career</p>
+                                <ul>
+                                    <li>Complete remaining credit hours</li>
+                                    <li>Accept full-time offer (ideally from internship)</li>
+                                    <li>Complete any remaining certifications</li>
+                                    <li>Prepare for career start</li>
+                                    <li>Give back by mentoring underclassmen</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-year">Post-Graduation</div>
+                            <div class="timeline-semester">Career Launch!</div>
+                            <div class="timeline-details">
+                                <p><strong>🎉 Start your professional career!</strong></p>
+                                <ul>
+                                    <li>Begin full-time role</li>
+                                    <li>Continue learning and growing</li>
+                                    <li>Stay connected with ACU COBA network</li>
+                                    <li>Give back to future ACU students</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="highlight-box" style="margin-top: 50px;">
+                    <strong>Important Note:</strong>
+                    <p>Although you can have as many internship experiences as you'd like, many students will choose to pursue their internship the summer before their senior year (junior year summer). However, the more internships you complete, the more competitive you'll be. Many top students complete 2-3 internships before graduation.</p>
+                </div>
+
+                <div class="highlight-box">
+                    <strong>Application Timeline by Major:</strong>
+                    <p><strong>Finance/Accounting:</strong> Applications often open in August-September for the following summer</p>
+                    <p><strong>Tech/CS:</strong> Rolling applications throughout the year, peak in fall</p>
+                    <p><strong>Marketing:</strong> Spring recruiting is common, but apply year-round</p>
+                    <p><strong>Consulting/Management:</strong> Structured recruiting in fall for next summer</p>
+                </div>
+
+                <div id="resources" class="cta-section">
+                    <h3>Ready to Start Your Internship Search?</h3>
+                    <p>Visit our resources page for resume templates, cover letter guides, and job search platforms</p>
+                    <a href="resources-all.html" class="btn">View All Resources →</a>
+                </div>
+
+                <div class="cta-section" style="background: white; color: #4B2E83;">
+                    <h3 style="color: #4B2E83;">Need Personalized Guidance?</h3>
+                    <p style="color: #666;">Schedule a meeting with COBA Professional Development for help with your internship search</p>
+                    <a href="schedule-meeting.html" class="btn" style="background: #4B2E83; color: white;">Schedule a Meeting →</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__section">
+                    <h4>COBA Professional Development</h4>
+                    <p>Empowering ACU business students to achieve their career goals</p>
+                </div>
+                <div class="footer__section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../index.html#about">About COBA</a></li>
+                        <li><a href="resources-all.html">Resources</a></li>
+                        <li><a href="schedule-meeting.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer__section">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="https://www.instagram.com/advicewitherin" target="_blank">Instagram: @advicewitherin</a></li>
+                        <li><a href="https://www.tiktok.com/@advicewitherin" target="_blank">TikTok: @advicewitherin</a></li>
+                        <li><a href="https://www.acu.edu/coba" target="_blank">ACU COBA Website</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; 2024 Abilene Christian University - College of Business Administration. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#main-content" class="back-to-top" id="backToTop">↑</a>
+
+    <!-- JavaScript -->
+    <script src="../js/main.js"></script>
+    <script>
+        // Back to Top Button
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
+            }
+        });
+    </script>
+</body>
+</html>

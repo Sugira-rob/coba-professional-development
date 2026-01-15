@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Search results for COBA Professional Development">
+    <title>Search Results | COBA Professional Development</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../assets/images/favicon.png">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="../css/main.css">
+    
+    <style>
+        .search-results-hero {
+            background: linear-gradient(135deg, #4B2E83 0%, #6B46A8 100%);
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+        }
+
+        .search-results-hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: 800;
+            color: white;
+        }
+
+        .search-results-section {
+            padding: 80px 0;
+            min-height: 60vh;
+        }
+
+        .search-box-container {
+            max-width: 900px;
+            margin: 0 auto 60px;
+        }
+
+        .search-box {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 40px;
+        }
+
+        .search-box input {
+            flex: 1;
+            padding: 15px 20px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .search-box input:focus {
+            outline: none;
+            border-color: #4B2E83;
+        }
+
+        .search-box button {
+            padding: 15px 40px;
+            background: #4B2E83;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .search-box button:hover {
+            background: #6B46A8;
+        }
+
+        .search-results-list {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .search-result-item {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border-left: 4px solid #4B2E83;
+        }
+
+        .search-result-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(75, 46, 131, 0.15);
+        }
+
+        .search-result-title {
+            font-size: 24px;
+            color: #4B2E83;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .search-result-title a {
+            color: #4B2E83;
+            text-decoration: none;
+        }
+
+        .search-result-title a:hover {
+            color: #6B46A8;
+            text-decoration: underline;
+        }
+
+        .search-result-url {
+            font-size: 14px;
+            color: #28a745;
+            margin-bottom: 10px;
+        }
+
+        .search-result-excerpt {
+            color: #666;
+            line-height: 1.6;
+            font-size: 15px;
+        }
+
+        .search-result-highlight {
+            background: #fff3cd;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: 600;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .no-results h3 {
+            font-size: 28px;
+            color: #4B2E83;
+            margin-bottom: 15px;
+        }
+
+        .no-results p {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .results-count {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 40px;
+            font-size: 18px;
+            color: #666;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #4B2E83;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 24px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 1000;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+        }
+
+        .back-to-top:hover {
+            background: #6B46A8;
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header__content">
+                <!-- Logo -->
+                <div class="header__logo">
+                    <a href="../index.html">
+                        <span class="header__logo-text">COBA</span>
+                        <span class="header__logo-subtitle">Professional Development</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Toggle -->
+                <button class="header__menu-toggle" aria-label="Toggle menu" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <!-- Navigation -->
+               <nav class="header__nav" id="mainNav">
+                    <ul class="nav-list">
+                        <li><a href="../index.html#home" class="nav-list__link">Home</a></li>
+                        <li><a href="../index.html#about" class="nav-list__link">About</a></li>
+                        <li class="nav-list__item--dropdown">
+                            <a href="#" class="nav-list__link">Majors & Tracks <span class="dropdown-arrow">▾</span></a>
+                            <ul class="nav-dropdown">
+                                <li><a href="accounting.html">Accounting</a></li>
+                                <li><a href="computer-science.html">Computer Science</a></li>
+                                <li><a href="data-analytics.html">Data Analytics Track</a></li>
+                                <li><a href="digital-entertainment.html">Digital Entertainment Tech</a></li>
+                                <li><a href="finance.html">Finance</a></li>
+                                <li><a href="information-systems.html">Information Systems</a></li>
+                                <li><a href="management.html">Management</a></li>
+                                <li><a href="marketing.html">Marketing</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="international-students.html" class="nav-list__link">International Students</a></li>
+                        <li><a href="resources-all.html" class="nav-list__link">Resources</a></li>
+                        <li><a href="schedule-meeting.html" class="nav-list__link nav-list__link--cta">Contact</a></li>
+                    </ul>
+                    
+                    <!-- Search Bar -->
+                    <div class="header__search">
+                        <form action="search-results.html" method="get" class="search-form">
+                            <input type="text" name="q" class="search-input" placeholder="Search..." aria-label="Search">
+                            <button type="submit" class="search-button" aria-label="Submit search">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="11" cy="11" r="8"></circle>
+                                    <path d="m21 21-4.35-4.35"></path>
+                                </svg>
+                            </button>
+                        </form>
+                    </div>
+                </nav>
+
+                    
+                    <!-- Search Bar -->
+                    <div class="header__search">
+                        <form action="search-results.html" method="get" class="search-form">
+                            <input type="text" name="q" class="search-input" placeholder="Search..." aria-label="Search">
+                            <button type="submit" class="search-button" aria-label="Submit search">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="11" cy="11" r="8"></circle>
+                                    <path d="m21 21-4.35-4.35"></path>
+                                </svg>
+                            </button>
+                        </form>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="search-results-hero">
+        <div class="container">
+            <h1>Search Results</h1>
+            <p id="searchQuery" style="font-size: 20px; opacity: 0.95;"></p>
+        </div>
+    </section>
+
+    <!-- Search Results Section -->
+    <section class="search-results-section">
+        <div class="container">
+            <div class="search-box-container">
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="Search COBA Professional Development...">
+                    <button onclick="performSearch()">Search</button>
+                </div>
+                
+                <div id="resultsCount" class="results-count"></div>
+                <div id="searchResults" class="search-results-list">
+                    <div class="loading">Searching...</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__section">
+                    <h4>COBA Professional Development</h4>
+                    <p>Empowering ACU business students to achieve their career goals</p>
+                </div>
+                <div class="footer__section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../index.html#about">About COBA</a></li>
+                        <li><a href="resources-all.html">Resources</a></li>
+                        <li><a href="schedule-meeting.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; 2024 Abilene Christian University - College of Business Administration. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" id="backToTop">↑</a>
+
+    <!-- JavaScript -->
+    <script src="../js/main.js"></script>
+    <script>
+        // Define searchable pages and their content
+        const searchablePages = [
+            {
+                title: "Home - COBA Professional Development",
+                url: "../index.html",
+                keywords: "home welcome coba professional development abilene christian university business administration career internships certifications resources"
+            },
+            {
+                title: "Finance Major",
+                url: "finance.html",
+                keywords: "finance major financial analyst investment banking portfolio management stocks bonds trading cfa bloomberg internships career paths salary corporate finance mergers acquisitions"
+            },
+            {
+                title: "Accounting Major",
+                url: "accounting.html",
+                keywords: "accounting major cpa certified public accountant auditing tax preparation gaap financial statements bookkeeping quickbooks big four deloitte pwc ey kpmg forensic accounting"
+            },
+            {
+                title: "Marketing Major",
+                url: "marketing.html",
+                keywords: "marketing major digital marketing social media advertising brand management market research seo sem google analytics content strategy marketing campaign consumer behavior"
+            },
+            {
+                title: "Management Major",
+                url: "management.html",
+                keywords: "management major business management leadership organizational behavior human resources operations management project management strategic planning team building"
+            },
+            {
+                title: "Computer Science Major",
+                url: "computer-science.html",
+                keywords: "computer science major programming software development coding python java javascript web development mobile apps artificial intelligence machine learning data structures algorithms tech careers ux designer ux researcher"
+            },
+            {
+                title: "Information Systems Major",
+                url: "information-systems.html",
+                keywords: "information systems major mis management information systems database systems analysis cloud computing cybersecurity network administration it careers business technology"
+            },
+            {
+                title: "Data Analytics Track",
+                url: "data-analytics.html",
+                keywords: "data analytics data science business intelligence data visualization statistics python r sql tableau power bi predictive analytics big data machine learning"
+            },
+            {
+                title: "Digital Entertainment Technology",
+                url: "digital-entertainment.html",
+                keywords: "digital entertainment technology game development animation 3d modeling unity unreal engine video production multimedia interactive media virtual reality"
+            },
+            {
+                title: "International Students Resources",
+                url: "international-students.html",
+                keywords: "international students h1b visa sponsorship work authorization opt cpt companies hiring international students visa requirements immigration"
+            },
+            {
+                title: "Professional Development Resources",
+                url: "resources-all.html",
+                keywords: "resources resume building cover letter interview preparation linkedin networking job search career fair elevator pitch professional dress certifications experiential learning enactus shrm investment fund tutoring"
+            },
+            {
+                title: "Internship Timeline",
+                url: "internship-timeline.html",
+                keywords: "internships internship timeline freshman sophomore junior senior summer internship applications recruiting career development experiential learning work experience"
+            },
+            {
+                title: "Schedule a Meeting",
+                url: "schedule-meeting.html",
+                keywords: "schedule meeting career coaching professional development advisor jasmine mccabe gossett appointment advising career guidance"
+            }
+        ];
+
+        // Get search query from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        let query = urlParams.get('q') || '';
+        
+        if (query) {
+            document.getElementById('searchQuery').textContent = 'Results for: "' + query + '"';
+            document.getElementById('searchInput').value = query;
+            performSearchInternal(query);
+        } else {
+            document.getElementById('searchResults').innerHTML = '<div class="no-results"><h3>Enter a search term</h3><p>Type something in the search box above to find content on our site.</p></div>';
+        }
+
+        function performSearch() {
+            const searchTerm = document.getElementById('searchInput').value.trim();
+            if (searchTerm) {
+                window.location.href = 'search-results.html?q=' + encodeURIComponent(searchTerm);
+            }
+        }
+
+        function performSearchInternal(searchQuery) {
+            const query = searchQuery.toLowerCase().trim();
+            const results = [];
+
+            // Search through all pages
+            searchablePages.forEach(page => {
+                const content = (page.title + ' ' + page.keywords).toLowerCase();
+                const titleMatch = page.title.toLowerCase().includes(query);
+                const contentMatch = page.keywords.toLowerCase().includes(query);
+
+                if (titleMatch || contentMatch) {
+                    // Calculate relevance score
+                    let score = 0;
+                    if (titleMatch) score += 10;
+                    if (contentMatch) score += 1;
+                    
+                    // Count occurrences
+                    const occurrences = (content.match(new RegExp(query, 'g')) || []).length;
+                    score += occurrences;
+
+                    // Create excerpt
+                    const words = page.keywords.split(' ');
+                    const queryIndex = words.findIndex(word => word.toLowerCase().includes(query));
+                    const start = Math.max(0, queryIndex - 10);
+                    const end = Math.min(words.length, queryIndex + 10);
+                    let excerpt = words.slice(start, end).join(' ');
+                    
+                    if (start > 0) excerpt = '...' + excerpt;
+                    if (end < words.length) excerpt = excerpt + '...';
+
+                    // Highlight the search term
+                    const regex = new RegExp('(' + query + ')', 'gi');
+                    excerpt = excerpt.replace(regex, '<span class="search-result-highlight">$1</span>');
+
+                    results.push({
+                        title: page.title,
+                        url: page.url,
+                        excerpt: excerpt,
+                        score: score
+                    });
+                }
+            });
+
+            // Sort by relevance
+            results.sort((a, b) => b.score - a.score);
+
+            // Display results
+            displayResults(results, query);
+        }
+
+        function displayResults(results, query) {
+            const resultsContainer = document.getElementById('searchResults');
+            const resultsCount = document.getElementById('resultsCount');
+
+            if (results.length === 0) {
+                resultsCount.textContent = '';
+                resultsContainer.innerHTML = `
+                    <div class="no-results">
+                        <h3>No results found</h3>
+                        <p>We couldn't find any pages matching "${query}"</p>
+                        <p>Try different keywords or browse our main sections:</p>
+                        <ul style="list-style: none; padding: 0; margin-top: 20px;">
+                            <li style="margin: 10px 0;"><a href="../index.html" style="color: #4B2E83; font-weight: 600;">Home</a></li>
+                            <li style="margin: 10px 0;"><a href="resources-all.html" style="color: #4B2E83; font-weight: 600;">Resources</a></li>
+                            <li style="margin: 10px 0;"><a href="internship-timeline.html" style="color: #4B2E83; font-weight: 600;">Internship Timeline</a></li>
+                        </ul>
+                    </div>
+                `;
+                return;
+            }
+
+            resultsCount.textContent = `Found ${results.length} result${results.length !== 1 ? 's' : ''}`;
+
+            let html = '';
+            results.forEach(result => {
+                html += `
+                    <div class="search-result-item">
+                        <h3 class="search-result-title">
+                            <a href="${result.url}">${result.title}</a>
+                        </h3>
+                        <div class="search-result-url">${result.url}</div>
+                        <p class="search-result-excerpt">${result.excerpt}</p>
+                    </div>
+                `;
+            });
+
+            resultsContainer.innerHTML = html;
+        }
+
+        // Allow Enter key to submit
+        document.getElementById('searchInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                performSearch();
+            }
+        });
+
+        // Back to Top Button
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
+            }
+        });
+
+        backToTopButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>
