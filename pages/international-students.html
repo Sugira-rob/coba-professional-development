@@ -377,9 +377,30 @@
     </style>
 </head>
 <body>
+    <!-- Skip to Main Content -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <!-- Header & Navigation -->
-  <nav class="header__nav" id="mainNav">
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header__content">
+                <!-- Logo -->
+                <div class="header__logo">
+                    <a href="../index.html">
+                        <span class="header__logo-text">COBA</span>
+                        <span class="header__logo-subtitle">Professional Development</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Toggle -->
+                <button class="header__menu-toggle" aria-label="Toggle menu" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <!-- Navigation -->
+                <nav class="header__nav" id="mainNav">
                     <ul class="nav-list">
                         <li><a href="../index.html#home" class="nav-list__link">Home</a></li>
                         <li><a href="../index.html#about" class="nav-list__link">About</a></li>
@@ -400,22 +421,13 @@
                         <li><a href="resources-all.html" class="nav-list__link">Resources</a></li>
                         <li><a href="schedule-meeting.html" class="nav-list__link nav-list__link--cta">Contact</a></li>
                     </ul>
-                    
-                    <!-- Search Bar -->
-                    <div class="header__search">
-                        <form action="search-results.html" method="get" class="search-form">
-                            <input type="text" name="q" class="search-input" placeholder="Search..." aria-label="Search">
-                            <button type="submit" class="search-button" aria-label="Submit search">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <circle cx="11" cy="11" r="8"></circle>
-                                    <path d="m21 21-4.35-4.35"></path>
-                                </svg>
-                            </button>
-                        </form>
-                    </div>
                 </nav>
+            </div>
+        </div>
+    </header>
 
-
+    <!-- Main Content -->
+    <main id="main-content">
     <!-- Hero Section -->
     <section class="international-hero">
         <div class="container">
@@ -656,7 +668,7 @@
                         Abilene, TX 79699
                     </p>
                     <p class="footer__text">
-                        <strong>Email:</strong> coba.profdev@acu.edu<br>
+                        <strong>Email:</strong> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="563539343778262439303233201637352378333223">[email&#160;protected]</a><br>
                         <strong>Phone:</strong> (325) 674-2427
                     </p>
                 </div>
@@ -709,7 +721,7 @@
     <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
 
     <!-- JavaScript -->
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         // Mobile Menu Toggle
         const menuToggle = document.getElementById('menuToggle');
         const mainNav = document.getElementById('mainNav');
@@ -773,12 +785,3 @@
             });
 
             navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${current}`) {
-                    link.classList.add('active');
-                }
-            });
-        });
-    </script>
-</body>
-</html>
