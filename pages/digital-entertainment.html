@@ -381,7 +381,26 @@
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <!-- Header & Navigation -->
-  <nav class="header__nav" id="mainNav">
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header__content">
+                <!-- Logo -->
+                <div class="header__logo">
+                    <a href="../index.html">
+                        <span class="header__logo-text">COBA</span>
+                        <span class="header__logo-subtitle">Professional Development</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Toggle -->
+                <button class="header__menu-toggle" aria-label="Toggle menu" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <!-- Navigation -->
+                <nav class="header__nav" id="mainNav">
                     <ul class="nav-list">
                         <li><a href="../index.html#home" class="nav-list__link">Home</a></li>
                         <li><a href="../index.html#about" class="nav-list__link">About</a></li>
@@ -402,20 +421,10 @@
                         <li><a href="resources-all.html" class="nav-list__link">Resources</a></li>
                         <li><a href="schedule-meeting.html" class="nav-list__link nav-list__link--cta">Contact</a></li>
                     </ul>
-                    
-                    <!-- Search Bar -->
-                    <div class="header__search">
-                        <form action="search-results.html" method="get" class="search-form">
-                            <input type="text" name="q" class="search-input" placeholder="Search..." aria-label="Search">
-                            <button type="submit" class="search-button" aria-label="Submit search">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <circle cx="11" cy="11" r="8"></circle>
-                                    <path d="m21 21-4.35-4.35"></path>
-                                </svg>
-                            </button>
-                        </form>
-                    </div>
                 </nav>
+            </div>
+        </div>
+    </header>
 
 
     <!-- Main Content -->
@@ -437,6 +446,7 @@
                     <li><a href="#salaries" class="section-nav__link">Salaries</a></li>
                     <li><a href="#certifications" class="section-nav__link">Certifications</a></li>
                     <li><a href="#jobs-internships" class="section-nav__link">Jobs & Internships</a></li>
+                    <li><a href="https://docs.google.com/spreadsheets/d/1TI0qV7v27tFhobJ1jkX36jbwIYpEM7s0Q-s2wAdTrxk/edit?gid=0#gid=0" target="_blank" class="section-nav__link">Application Tracker</a></li>
                 </ul>
             </div>
         </nav>
