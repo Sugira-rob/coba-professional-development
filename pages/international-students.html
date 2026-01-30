@@ -147,24 +147,31 @@
             font-size: 32px;
             margin-bottom: 20px;
             font-weight: 700;
-            color: #FFB81C;
+            color: white;
         }
 
         .h1b-info-box p {
             font-size: 18px;
             line-height: 1.8;
             margin-bottom: 20px;
+            color: white;
         }
 
         .h1b-info-box a {
-            color: #FFB81C;
+            color: white;
             text-decoration: underline;
+            font-weight: 600;
+        }
+
+        .h1b-info-box a:hover {
+            opacity: 0.8;
         }
 
         .h1b-info-box .source {
             font-style: italic;
             opacity: 0.9;
             margin-top: 15px;
+            color: white;
         }
 
         /* Company Cards */
@@ -177,7 +184,7 @@
             color: #4B2E83;
             margin-bottom: 30px;
             padding-bottom: 15px;
-            border-bottom: 3px solid #FFB81C;
+            border-bottom: 3px solid #6B46A8;
         }
 
         .company-grid {
@@ -207,6 +214,97 @@
             font-size: 18px;
             color: #333;
             font-weight: 600;
+        }
+
+        /* Collapsible Company Dropdown */
+        .company-dropdown {
+            margin-bottom: 30px;
+        }
+
+        .company-dropdown-header {
+            background: #4B2E83;
+            color: white;
+            padding: 20px 30px;
+            border-radius: 10px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+            font-weight: 700;
+            font-size: 20px;
+        }
+
+        .company-dropdown-header:hover {
+            background: #6B46A8;
+        }
+
+        .company-dropdown-header .arrow {
+            transition: transform 0.3s ease;
+            font-size: 24px;
+        }
+
+        .company-dropdown-header.active .arrow {
+            transform: rotate(180deg);
+        }
+
+        .company-dropdown-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+
+        .company-dropdown-content.active {
+            max-height: 2000px;
+            padding-top: 20px;
+        }
+
+        .company-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        /* CPT Presentation Box */
+        .cpt-presentation {
+            background: linear-gradient(135deg, #6B46A8 0%, #4B2E83 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(75, 46, 131, 0.3);
+        }
+
+        .cpt-presentation h3 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .cpt-presentation p {
+            font-size: 18px;
+            margin-bottom: 25px;
+            color: white;
+            opacity: 0.95;
+        }
+
+        .cpt-presentation .btn {
+            background: white;
+            color: #4B2E83;
+            padding: 15px 35px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 18px;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .cpt-presentation .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(255, 255, 255, 0.3);
         }
 
         /* Resource Cards */
@@ -293,17 +391,18 @@
         .companies-list-section h3 {
             font-size: 36px;
             margin-bottom: 20px;
-            color: #FFB81C;
+            color: white;
         }
 
         .companies-list-section p {
             font-size: 20px;
             margin-bottom: 30px;
             line-height: 1.8;
+            color: white;
         }
 
         .companies-list-section .btn {
-            background: #FFB81C;
+            background: white;
             color: #4B2E83;
             padding: 15px 40px;
             border-radius: 30px;
@@ -316,7 +415,8 @@
 
         .companies-list-section .btn:hover {
             transform: scale(1.05);
-            box-shadow: 0 10px 30px rgba(255, 184, 28, 0.3);
+            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
+            background: #f0f0f0;
         }
 
         /* Back to Top */
@@ -442,7 +542,7 @@
         <div class="container">
             <ul class="section-nav__list">
                 <li><a href="#h1b-info" class="section-nav__link">H-1B Information</a></li>
-                <li><a href="#sponsoring-companies" class="section-nav__link">Sponsoring Companies</a></li>
+                <li><a href="#cpt-presentation" class="section-nav__link">CPT for Internships</a></li>
                 <li><a href="#identify-sponsors" class="section-nav__link">Find Sponsors</a></li>
                 <li><a href="#companies-list" class="section-nav__link">1000+ Companies</a></li>
             </ul>
@@ -470,93 +570,15 @@
         </div>
     </section>
 
-    <!-- Sponsoring Companies Section -->
-    <section id="sponsoring-companies" class="international-section">
+    <!-- CPT for Internships Section -->
+    <section id="cpt-presentation" class="international-section">
         <div class="container">
-            <h2>Companies That Sponsor H-1B Visas</h2>
-            <p class="international-section__intro">
-                These companies have a proven track record of sponsoring H-1B visas for international students across various industries.
-            </p>
-
-            <!-- Tech Companies -->
-            <div class="company-category">
-                <h3>Companies in Tech</h3>
-                <div class="company-grid">
-                    <div class="company-card"><h4>Google</h4></div>
-                    <div class="company-card"><h4>Microsoft</h4></div>
-                    <div class="company-card"><h4>Amazon</h4></div>
-                    <div class="company-card"><h4>Meta</h4></div>
-                    <div class="company-card"><h4>LinkedIn</h4></div>
-                    <div class="company-card"><h4>Morgan Stanley</h4></div>
-                    <div class="company-card"><h4>Jefferies</h4></div>
-                    <div class="company-card"><h4>Goldman Sachs</h4></div>
-                    <div class="company-card"><h4>Fox</h4></div>
-                    <div class="company-card"><h4>Dell Technologies</h4></div>
-                    <div class="company-card"><h4>Cognizant</h4></div>
-                    <div class="company-card"><h4>Loveramp</h4></div>
-                    <div class="company-card"><h4>Ernst Young (EY)</h4></div>
-                    <div class="company-card"><h4>Adobe</h4></div>
-                    <div class="company-card"><h4>Liberty Mutual</h4></div>
-                    <div class="company-card"><h4>Blackrock</h4></div>
-                    <div class="company-card"><h4>Oracle</h4></div>
-                    <div class="company-card"><h4>Tesla</h4></div>
-                    <div class="company-card"><h4>TikTok</h4></div>
-                    <div class="company-card"><h4>Infosys</h4></div>
-                    <div class="company-card"><h4>IBM</h4></div>
-                    <div class="company-card"><h4>Apple</h4></div>
-                    <div class="company-card"><h4>Cisco</h4></div>
-                    <div class="company-card"><h4>Accenture</h4></div>
-                    <div class="company-card"><h4>Deloitte</h4></div>
-                    <div class="company-card"><h4>Itron</h4></div>
-                    <div class="company-card"><h4>Cirrus Logic</h4></div>
-                    <div class="company-card"><h4>Cox Enterprises</h4></div>
-                    <div class="company-card"><h4>McKesson</h4></div>
-                    <div class="company-card"><h4>Copart</h4></div>
-                </div>
-            </div>
-
-            <!-- Finance Companies -->
-            <div class="company-category">
-                <h3>Companies in Finance</h3>
-                <div class="company-grid">
-                    <div class="company-card"><h4>Goldman Sachs</h4></div>
-                    <div class="company-card"><h4>JPMorgan Chase</h4></div>
-                    <div class="company-card"><h4>Morgan Stanley</h4></div>
-                    <div class="company-card"><h4>Bank of America Merrill Lynch</h4></div>
-                    <div class="company-card"><h4>Citigroup</h4></div>
-                    <div class="company-card"><h4>Wells Fargo</h4></div>
-                    <div class="company-card"><h4>Barclays</h4></div>
-                    <div class="company-card"><h4>Deutsche Bank</h4></div>
-                    <div class="company-card"><h4>UBS</h4></div>
-                    <div class="company-card"><h4>PricewaterhouseCoopers (PWC)</h4></div>
-                    <div class="company-card"><h4>Ernst & Young (EY)</h4></div>
-                    <div class="company-card"><h4>Deloitte</h4></div>
-                    <div class="company-card"><h4>KPMG</h4></div>
-                    <div class="company-card"><h4>Blackrock</h4></div>
-                    <div class="company-card"><h4>Fidelity Investments</h4></div>
-                </div>
-            </div>
-
-            <!-- Accounting Companies -->
-            <div class="company-category">
-                <h3>Companies in Accounting</h3>
-                <div class="company-grid">
-                    <div class="company-card"><h4>PricewaterhouseCoopers (PWC)</h4></div>
-                    <div class="company-card"><h4>Ernst & Young (EY)</h4></div>
-                    <div class="company-card"><h4>Deloitte</h4></div>
-                    <div class="company-card"><h4>KPMG</h4></div>
-                    <div class="company-card"><h4>Grant Thornton</h4></div>
-                    <div class="company-card"><h4>BDO USA LLP</h4></div>
-                    <div class="company-card"><h4>RSM US LLP</h4></div>
-                    <div class="company-card"><h4>Crowe LLP</h4></div>
-                    <div class="company-card"><h4>Baker Tilly</h4></div>
-                    <div class="company-card"><h4>Moss Adams LLP</h4></div>
-                    <div class="company-card"><h4>Plante Moran</h4></div>
-                    <div class="company-card"><h4>CBIZ</h4></div>
-                    <div class="company-card"><h4>Eisneramper</h4></div>
-                    <div class="company-card"><h4>CliftonLarsonAllen (CLA)</h4></div>
-                    <div class="company-card"><h4>Marcum LLP</h4></div>
-                </div>
+            <div class="cpt-presentation">
+                <h3>Internship CPT Presentation</h3>
+                <p>
+                    Learn everything you need to know about Curricular Practical Training (CPT) for internships. This comprehensive presentation covers eligibility requirements, application processes, and important guidelines for international students.
+                </p>
+                <a href="https://docs.google.com/presentation/d/16IO4WxbCMnq6xJRWDDzyF3Z7nK3ueETi/edit?slide=id.p1#slide=id.p1" target="_blank" class="btn">View CPT Presentation →</a>
             </div>
         </div>
     </section>
@@ -643,14 +665,36 @@
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="international-section" style="background: #4B2E83; color: white;">
-        <div class="container" style="text-align: center;">
-            <h2 style="color: #FFB81C;">Need More Support?</h2>
-            <p class="international-section__intro" style="color: white; opacity: 0.95;">
-                Connect with our international student advisors for personalized guidance on work authorization, job search strategies, and career planning.
-            </p>
-            <a href="../index.html#contact" style="display: inline-block; background: #FFB81C; color: #4B2E83; padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: 700; font-size: 18px; margin-top: 20px;">Contact COBA Professional Development →</a>
+    <!-- Support Section -->
+    <section class="international-section" style="padding: 60px 0;">
+        <div class="container">
+            <h2 style="text-align: center; color: #4B2E83; font-size: 42px; margin-bottom: 50px;">Need More Support?</h2>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto;">
+                
+                <!-- International Student Services Card -->
+                <div style="background: white; border: 3px solid #4B2E83; border-radius: 15px; padding: 40px; box-shadow: 0 10px 30px rgba(75, 46, 131, 0.15);">
+                    <h3 style="color: #4B2E83; font-size: 28px; margin-bottom: 20px; text-align: center;">🌍 International Student Services & Information</h3>
+                    <p style="color: #666; font-size: 16px; line-height: 1.6; margin-bottom: 30px; text-align: center;">
+                        Access comprehensive resources, immigration support, and student organization information through ACU's Office of International Students.
+                    </p>
+                    <div style="display: flex; flex-direction: column; gap: 15px;">
+                        <a href="https://acu.edu/office-of-international-students-and-visiting-scholars/immigration-information/" target="_blank" style="display: block; background: #4B2E83; color: white; padding: 15px 25px; border-radius: 30px; text-decoration: none; font-weight: 600; font-size: 16px; text-align: center; transition: all 0.3s ease;">Immigration Information</a>
+                        <a href="https://acu.edu/office-of-international-students-and-visiting-scholars/isa/" target="_blank" style="display: block; background: #4B2E83; color: white; padding: 15px 25px; border-radius: 30px; text-decoration: none; font-weight: 600; font-size: 16px; text-align: center; transition: all 0.3s ease;">International Student Organization</a>
+                        <a href="https://acu.edu/office-of-international-students-and-visiting-scholars/international-student-services" target="_blank" style="display: block; background: #4B2E83; color: white; padding: 15px 25px; border-radius: 30px; text-decoration: none; font-weight: 600; font-size: 16px; text-align: center; transition: all 0.3s ease;">General International Student Services</a>
+                    </div>
+                </div>
+
+                <!-- COBA Professional Development Card -->
+                <div style="background: linear-gradient(135deg, #4B2E83 0%, #6B46A8 100%); border-radius: 15px; padding: 40px; box-shadow: 0 10px 30px rgba(75, 46, 131, 0.3); display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+                    <h3 style="color: white; font-size: 28px; margin-bottom: 20px;">💼 COBA Career Support</h3>
+                    <p style="color: white; font-size: 16px; line-height: 1.6; margin-bottom: 30px; opacity: 0.95;">
+                        Connect with our international student advisors for personalized guidance on work authorization, job search strategies, and career planning.
+                    </p>
+                    <a href="../pages/schedule-meeting.html" style="display: inline-block; background: white; color: #4B2E83; padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: 700; font-size: 18px; transition: all 0.3s ease; box-shadow: 0 5px 15px rgba(0,0,0,0.2);">Schedule a Meeting →</a>
+                </div>
+                
+            </div>
         </div>
     </section>
 
@@ -784,4 +828,35 @@
                 }
             });
 
-            navLinks.forEach(link => {
+            navLinks.forEach(link => {                link.classList.remove('active');
+                if (link.getAttribute('href').substring(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Collapsible Company Dropdown Toggle
+        function toggleDropdown(header) {
+            const content = header.nextElementSibling;
+            const allHeaders = document.querySelectorAll('.company-dropdown-header');
+            const allContents = document.querySelectorAll('.company-dropdown-content');
+            
+            // Close all other dropdowns
+            allHeaders.forEach(h => {
+                if (h !== header) {
+                    h.classList.remove('active');
+                }
+            });
+            allContents.forEach(c => {
+                if (c !== content) {
+                    c.classList.remove('active');
+                }
+            });
+            
+            // Toggle current dropdown
+            header.classList.toggle('active');
+            content.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
