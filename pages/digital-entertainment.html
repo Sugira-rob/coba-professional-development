@@ -150,7 +150,7 @@
         .stat-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 12px 30px rgba(75, 46, 131, 0.2);
-            border-color: #FFB81C;
+            border-color: #6B46A8;
         }
 
         .stat-card__title {
@@ -162,7 +162,7 @@
 
         .stat-card__value {
             font-size: 42px;
-            color: #FFB81C;
+            color: #6B46A8;
             font-weight: 800;
             margin-bottom: 10px;
         }
@@ -185,7 +185,7 @@
             padding: 30px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.08);
             transition: all 0.3s ease;
-            border-left: 4px solid #FFB81C;
+            border-left: 4px solid #6B46A8;
         }
 
         .salary-card:hover {
@@ -202,7 +202,7 @@
 
         .salary-card__amount {
             font-size: 28px;
-            color: #FFB81C;
+            color: #6B46A8;
             font-weight: 800;
         }
 
@@ -226,7 +226,7 @@
         .cert-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 25px rgba(75, 46, 131, 0.15);
-            border-color: #FFB81C;
+            border-color: #6B46A8;
         }
 
         .cert-card__title {
@@ -258,8 +258,8 @@
         }
 
         .highlight-box {
-            background: linear-gradient(135deg, #f8f4ff 0%, #fff9e6 100%);
-            border-left: 5px solid #FFB81C;
+            background: linear-gradient(135deg, #f8f4ff 0%, #f0ebf8 100%);
+            border-left: 5px solid #6B46A8;
             padding: 25px;
             border-radius: 8px;
             margin: 25px 0;
@@ -300,8 +300,8 @@
         .btn {
             display: inline-block;
             padding: 15px 40px;
-            background: #FFB81C;
-            color: #4B2E83;
+            background: #4B2E83;
+            color: white;
             text-decoration: none;
             border-radius: 30px;
             font-weight: 700;
@@ -311,7 +311,7 @@
         }
 
         .btn:hover {
-            background: #ffc940;
+            background: #6B46A8;
             transform: translateY(-3px);
             box-shadow: 0 6px 20px rgba(0,0,0,0.3);
         }
@@ -432,9 +432,9 @@
         <!-- Hero Section -->
         <section class="det-hero">
             <div class="container">
-                <div class="det-hero__icon">{ }</div>
+                <div class="det-hero__icon">▶</div>
                 <h1>Digital Entertainment Technology</h1>
-                <p>Explore job titles in DET, learn about skills and certifications for game development, and discover internship opportunities in the gaming industry. GO WILDCATS!</p>
+                <p>Game development careers, certifications, and internship opportunities in the gaming industry.</p>
             </div>
         </section>
 
@@ -443,7 +443,6 @@
             <div class="container">
                 <ul class="section-nav__list">
                     <li><a href="#industry-stats" class="section-nav__link">Industry Stats</a></li>
-                    <li><a href="#salaries" class="section-nav__link">Salaries</a></li>
                     <li><a href="#certifications" class="section-nav__link">Certifications</a></li>
                     <li><a href="#jobs-internships" class="section-nav__link">Jobs & Internships</a></li>
                     <li><a href="https://docs.google.com/spreadsheets/d/1TI0qV7v27tFhobJ1jkX36jbwIYpEM7s0Q-s2wAdTrxk/edit?gid=0#gid=0" target="_blank" class="section-nav__link">Application Tracker</a></li>
@@ -456,7 +455,7 @@
             <div class="container">
                 <div class="det-section__header">
                     <h2 class="det-section__title">Gaming Industry Insights</h2>
-                    <p class="det-section__subtitle">The global games market is booming with unprecedented growth</p>
+                    <p class="det-section__subtitle">Global games market growth and statistics</p>
                 </div>
 
                 <div class="stat-cards">
@@ -494,40 +493,6 @@
                     <p><strong>Unity: 46%</strong> (Most Popular!) | In-House: 26% | Other: 16% | Unreal: 12%</p>
                     <p style="margin-top: 10px; font-size: 14px;">Source: Rounthall Investments (2022)</p>
                 </div>
-            </div>
-        </section>
-
-        <!-- Salaries Section -->
-        <section id="salaries" class="det-section">
-            <div class="container">
-                <div class="det-section__header">
-                    <h2 class="det-section__title">Game Development Salaries</h2>
-                    <p class="det-section__subtitle">Average compensation for game development roles</p>
-                </div>
-
-                <div class="salary-grid">
-                    <div class="salary-card">
-                        <h3 class="salary-card__title">Game Developer</h3>
-                        <div class="salary-card__amount">$118,967</div>
-                    </div>
-
-                    <div class="salary-card">
-                        <h3 class="salary-card__title">Game Designer</h3>
-                        <div class="salary-card__amount">$118,084</div>
-                    </div>
-
-                    <div class="salary-card">
-                        <h3 class="salary-card__title">Game Programmer</h3>
-                        <div class="salary-card__amount">$108,059</div>
-                    </div>
-
-                    <div class="salary-card">
-                        <h3 class="salary-card__title">Game Artist</h3>
-                        <div class="salary-card__amount">$91,875</div>
-                    </div>
-                </div>
-
-                <p style="text-align: center; color: #666; margin-top: 30px; font-size: 14px;">Source: Glassdoor (2022)</p>
             </div>
         </section>
 
@@ -631,34 +596,70 @@
     </main>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer" id="contact">
         <div class="container">
             <div class="footer__content">
+                <!-- Contact Info -->
                 <div class="footer__section">
-                    <h4>COBA Professional Development</h4>
-                    <p>Empowering ACU business students to achieve their career goals</p>
+                    <h3 class="footer__title">Contact Us</h3>
+                    <p class="footer__text">
+                        <strong>COBA Professional Development</strong><br>
+                        Mabee Business Building, Room 132<br>
+                        Abilene Christian University<br>
+                        Abilene, TX 79699
+                    </p>
+                    <p class="footer__text">
+                        <strong>Email:</strong> <a href="/cdn-cgi/l/email-protection#086b676a6948696b7d266d6c7d"><span class="__cf_email__" data-cfemail="8eede1ecefceefedfba0ebeafb">[email&#160;protected]</span></a><br>
+                        <strong>Phone:</strong> (325) 674-2427
+                    </p>
                 </div>
+
+                <!-- Quick Links -->
                 <div class="footer__section">
-                    <h4>Quick Links</h4>
-                    <ul>
+                    <h3 class="footer__title">Quick Links</h3>
+                    <ul class="footer__links">
                         <li><a href="../index.html">Home</a></li>
                         <li><a href="../index.html#about">About COBA</a></li>
-                        <li><a href="digital-entertainment.html">Digital Entertainment Tech</a></li>
+                        <li><a href="../index.html#majors">Majors & Tracks</a></li>
                         <li><a href="resources-all.html">Resources</a></li>
-                        <li><a href="../index.html#contact">Contact</a></li>
+                        <li><a href="international-students.html">International Students</a></li>
                     </ul>
                 </div>
+
+                <!-- Resources -->
                 <div class="footer__section">
-                    <h4>Connect</h4>
-                    <ul>
+                    <h3 class="footer__title">Popular Resources</h3>
+                    <ul class="footer__links">
+                        <li><a href="resources-all.html#resume">Resume Builder</a></li>
+                        <li><a href="resources-all.html#linkedin">LinkedIn Guide</a></li>
+                        <li><a href="resources-all.html#job-platforms">Job Search Tools</a></li>
+                        <li><a href="resources-all.html#experiential">Experiential Learning</a></li>
+                        <li><a href="internship-timeline.html">Internship Timeline</a></li>
+                    </ul>
+                </div>
+
+                <!-- Social & Additional -->
+                <div class="footer__section">
+                    <h3 class="footer__title">Stay Connected</h3>
+                    <ul class="footer__links">
                         <li><a href="https://www.instagram.com/advicewitherin" target="_blank">Instagram: @advicewitherin</a></li>
                         <li><a href="https://www.tiktok.com/@advicewitherin" target="_blank">TikTok: @advicewitherin</a></li>
-                        <li><a href="https://www.acu.edu/coba" target="_blank">ACU COBA Website</a></li>
+                        <li><a href="https://acu.edu/coba" target="_blank">COBA Website</a></li>
                     </ul>
+                    <p class="footer__text footer__text--small">
+                        Follow for daily career tips and professional development advice.
+                    </p>
                 </div>
             </div>
+
+            <!-- Footer Bottom -->
             <div class="footer__bottom">
-                <p>&copy; 2024 Abilene Christian University - College of Business Administration. All rights reserved.</p>
+                <p class="footer__copyright">
+                    &copy; 2024 Abilene Christian University - College of Business Administration. All rights reserved.
+                </p>
+                <p class="footer__tagline">
+                    Empowering Christian business leaders
+                </p>
             </div>
         </div>
     </footer>
@@ -667,7 +668,7 @@
     <a href="#main-content" class="back-to-top" id="backToTop">↑</a>
 
     <!-- JavaScript -->
-    <script src="../js/main.js"></script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="../js/main.js"></script>
     <script>
         const backToTopButton = document.getElementById('backToTop');
         
