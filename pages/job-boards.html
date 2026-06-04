@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Boards - COBA Professional Development</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            background: #f9f9f9;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .job-boards-hero {
+            background: linear-gradient(135deg, #4B2E83 0%, #6B46A8 100%);
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .job-boards-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><path d="M0,300 Q300,200 600,300 T1200,300 L1200,600 L0,600" fill="rgba(255,255,255,0.03)"/></svg>');
+            background-size: cover;
+        }
+
+        .job-boards-hero h1 {
+            font-size: 56px;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 1;
+            font-weight: 700;
+        }
+
+        .job-boards-hero p {
+            font-size: 22px;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            opacity: 0.95;
+            position: relative;
+            z-index: 1;
+        }
+
+        .job-boards-hero__icon {
+            font-size: 80px;
+            margin-bottom: 20px;
+            display: block;
+            color: white;
+        }
+
+        .section-nav {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 70px;
+            z-index: 100;
+            padding: 20px 0;
+        }
+
+        .section-nav__list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .section-nav__link {
+            padding: 10px 20px;
+            background: #f5f5f5;
+            color: #4B2E83;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 14px;
+        }
+
+        .section-nav__link:hover {
+            background: #4B2E83;
+            color: white;
+        }
+
+        main {
+            min-height: 60vh;
+        }
+
+        .job-boards-section {
+            background: white;
+            padding: 60px 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .job-boards-section__header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .job-boards-section__title {
+            font-size: 36px;
+            color: #4B2E83;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .job-boards-section__subtitle {
+            font-size: 18px;
+            color: #666;
+        }
+
+        .content-box {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+            border-left: 5px solid #6B46A8;
+        }
+
+        .content-box h3 {
+            font-size: 24px;
+            color: #4B2E83;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .content-box p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .content-box ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .content-box li {
+            color: #666;
+            line-height: 1.8;
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .content-box li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #6B46A8;
+            font-weight: bold;
+        }
+
+        .content-box a {
+            color: #4B2E83;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .content-box a:hover {
+            color: #6B46A8;
+            text-decoration: underline;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #f8f4ff 0%, #f0ebf8 100%);
+            border-left: 5px solid #6B46A8;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 25px 0;
+        }
+
+        .highlight-box strong {
+            color: #4B2E83;
+            font-size: 18px;
+        }
+
+        .highlight-box p {
+            color: #666;
+            line-height: 1.7;
+            margin-top: 10px;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #4B2E83 0%, #6B46A8 100%);
+            color: white;
+            padding: 60px;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .cta-section h3 {
+            font-size: 36px;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .cta-section p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 40px;
+            background: #4B2E83;
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .btn:hover {
+            background: #6B46A8;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #4B2E83;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            cursor: pointer;
+            opacity: 0;
+            transition: all 0.3s ease;
+            z-index: 50;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+        }
+
+        .back-to-top:hover {
+            background: #6B46A8;
+            transform: translateY(-5px);
+        }
+
+        .footer {
+            background: linear-gradient(135deg, #4B2E83 0%, #6B46A8 100%);
+            color: white;
+            padding: 60px 20px 30px;
+            margin-top: 80px;
+        }
+
+        .footer__content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .footer__section h3 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .footer__text {
+            font-size: 14px;
+            line-height: 1.8;
+            opacity: 0.95;
+            margin-bottom: 15px;
+        }
+
+        .footer__text a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .footer__text a:hover {
+            text-decoration: underline;
+        }
+
+        .footer__links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer__links li {
+            margin-bottom: 10px;
+        }
+
+        .footer__links a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            transition: opacity 0.3s ease;
+        }
+
+        .footer__links a:hover {
+            opacity: 0.8;
+            text-decoration: underline;
+        }
+
+        .footer__bottom {
+            border-top: 1px solid rgba(255,255,255,0.2);
+            padding-top: 30px;
+            text-align: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer__copyright {
+            font-size: 12px;
+            opacity: 0.9;
+            margin-bottom: 10px;
+        }
+
+        .footer__tagline {
+            font-size: 14px;
+            font-weight: 600;
+            opacity: 0.95;
+        }
+
+        @media (max-width: 768px) {
+            .job-boards-hero h1 {
+                font-size: 36px;
+            }
+
+            .job-boards-hero p {
+                font-size: 16px;
+            }
+
+            .content-box {
+                padding: 25px;
+            }
+
+            .cta-section {
+                padding: 40px 20px;
+            }
+
+            .cta-section h3 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="job-boards-hero">
+            <div class="container">
+                <div class="job-boards-hero__icon">🎯</div>
+                <h1>Job Boards & Opportunities</h1>
+                <p>Find the right platform for your career stage</p>
+            </div>
+        </section>
+
+        <!-- Big CTA Link -->
+        <section style="background: white; padding: 40px 20px; text-align: center; border-bottom: 3px solid #6B46A8;">
+            <div class="container">
+                <p style="font-size: 18px; color: #666; margin-bottom: 20px;">Browse all 70 job boards organized by career stage:</p>
+                <a href="https://www.theninthsemester.com/blog/50jobboardsforearlycareer" target="_blank" style="display: inline-block; padding: 20px 50px; background: #4B2E83; color: white; text-decoration: none; border-radius: 30px; font-weight: 700; font-size: 18px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">View Full 70 Job Boards List →</a>
+            </div>
+        </section>
+
+        <!-- Section Navigation -->
+        <nav class="section-nav">
+            <div class="container">
+                <ul class="section-nav__list">
+                    <li><a href="#no-experience" class="section-nav__link">No Experience</a></li>
+                    <li><a href="#internships" class="section-nav__link">Internships</a></li>
+                    <li><a href="#graduates" class="section-nav__link">Graduates</a></li>
+                    <li><a href="#specialized" class="section-nav__link">Specialized</a></li>
+                    <li><a href="#alternative" class="section-nav__link">Beyond Job Boards</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- No Experience Section -->
+        <section id="no-experience" class="job-boards-section">
+            <div class="container">
+                <div class="job-boards-section__header">
+                    <h2 class="job-boards-section__title">Starting From Scratch</h2>
+                    <p class="job-boards-section__subtitle">Build experience with no prior work history</p>
+                </div>
+
+                <div class="content-box">
+                    <ul>
+                        <li><a href="https://info.parkerdewey.com/create-your-own-micro-internships-ninth-semester-presentation" target="_blank">Parker Dewey</a></li>
+                        <li><a href="https://www.extern.com/" target="_blank">Extern</a></li>
+                        <li><a href="https://www.theforage.com/" target="_blank">The Forage</a></li>
+                        <li><a href="https://www.noexperiencejobs.io/" target="_blank">NoExperienceJobs</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Internships Section -->
+        <section id="internships" class="job-boards-section">
+            <div class="container">
+                <div class="job-boards-section__header">
+                    <h2 class="job-boards-section__title">Internships</h2>
+                </div>
+
+                <div class="content-box">
+                    <h3>Core Platforms (All Industries)</h3>
+                    <ul>
+                        <li><a href="https://app.joinhandshake.com/job-search?page=1&per_page=25" target="_blank">Handshake</a></li>
+                        <li><a href="https://www.wayup.com/member/jobs-listing" target="_blank">WayUp</a></li>
+                        <li><a href="https://www.intern-list.com/" target="_blank">Intern-List</a></li>
+                        <li><a href="https://internxl.org/" target="_blank">InternXL</a></li>
+                    </ul>
+                </div>
+
+                <div class="content-box">
+                    <h3>Health/Pre-Med Focus</h3>
+                    <ul>
+                        <li><a href="https://students-residents.aamc.org/phd-biomedical-science/summer-undergraduate-research-programs" target="_blank">AAMC</a></li>
+                        <li><a href="https://www.profellow.com/" target="_blank">ProFellow</a></li>
+                        <li><a href="https://www.postdocjobs.com/" target="_blank">PostdocJobs</a></li>
+                        <li><a href="https://jobs.probablygood.org/" target="_blank">Probably Good Job Board</a></li>
+                    </ul>
+                </div>
+
+                <div class="content-box">
+                    <h3>Campus Ambassador Programs</h3>
+                    <ul>
+                        <li><a href="https://app.evolvez.co/jobs?ref=jade" target="_blank">EvolveZ Agency</a></li>
+                        <li><a href="https://nextgen.team/" target="_blank">The Team</a></li>
+                        <li><a href="https://homefromcollege.com/" target="_blank">Home From College</a></li>
+                        <li><a href="https://youthmarketing.com/" target="_blank">Youth Marketing Connection</a></li>
+                        <li><a href="https://www.hercampusmedia.com/brands/ihc" target="_blank">Her Campus InfluenceHER Collective</a></li>
+                        <li><a href="https://www.internqueen.com/" target="_blank">Intern Queen</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Graduates Section -->
+        <section id="graduates" class="job-boards-section">
+            <div class="container">
+                <div class="job-boards-section__header">
+                    <h2 class="job-boards-section__title">Full-Time (Recent Graduates)</h2>
+                </div>
+
+                <div class="content-box">
+                    <ul>
+                        <li><a href="https://www.newgrad-jobs.com/" target="_blank">NewGrad Jobs</a></li>
+                        <li><a href="https://tallo.com/jade-walters/?utm_campaign=influencer_jwaltersli&utm_source=linkedin&utm_medium=social" target="_blank">Tallo</a></li>
+                        <li><a href="https://simplify.jobs/" target="_blank">Simplify.Jobs</a></li>
+                        <li><a href="https://www.barefootstudent.com/" target="_blank">Barefoot Student</a></li>
+                        <li><a href="https://www.glassdoor.com/index.htm" target="_blank">Glassdoor</a></li>
+                        <li><a href="https://www.indeed.com/" target="_blank">Indeed</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Specialized Section -->
+        <section id="specialized" class="job-boards-section">
+            <div class="container">
+                <div class="job-boards-section__header">
+                    <h2 class="job-boards-section__title">Specialized Opportunities</h2>
+                </div>
+
+                <div class="content-box">
+                    <h3>International & Global</h3>
+                    <ul>
+                        <li><a href="https://www.internationaljobs.com/" target="_blank">International Jobs</a></li>
+                        <li><a href="https://www.goabroad.com/" target="_blank">GoAbroad</a></li>
+                        <li><a href="https://seekpto.com/" target="_blank">SeekPTO</a></li>
+                        <li><a href="https://h1bvisajobs.com/" target="_blank">HIB Visa Jobs</a></li>
+                        <li><a href="https://globaljobs.org/" target="_blank">GlobalJobs.org</a></li>
+                        <li><a href="https://www.workingnomads.com/jobs" target="_blank">Working Nomads</a></li>
+                        <li><a href="https://www.myvisajobs.com/" target="_blank">MyVisaJobs</a></li>
+                        <li><a href="https://talentegg.ca/" target="_blank">TalentEgg (Canada)</a></li>
+                        <li><a href="https://www.interninsider.me/" target="_blank">Intern Insider</a></li>
+                        <li><a href="https://www.welcometothejungle.com/en" target="_blank">Welcome to the Jungle (Europe)</a></li>
+                    </ul>
+                </div>
+
+                <div class="content-box">
+                    <h3>Industry-Specific</h3>
+                    <ul>
+                        <li><a href="https://www.greenjobsboard.us/" target="_blank">Green Jobs Board (Sustainability)</a></li>
+                        <li><a href="https://www.idealist.org/en" target="_blank">Idealist (Nonprofits)</a></li>
+                        <li><a href="https://dribbble.com/" target="_blank">Dribble (Design)</a></li>
+                        <li><a href="https://www.behance.net/" target="_blank">Behance (Creative)</a></li>
+                    </ul>
+                </div>
+
+                <div class="content-box">
+                    <h3>Industry Professional Organizations</h3>
+                    <ul>
+                        <li><a href="https://jobs.ama.org/" target="_blank">American Marketing Association</a></li>
+                        <li><a href="https://www.apha.org/professional-development/public-health-careermart" target="_blank">American Public Health Association</a></li>
+                        <li><a href="https://jobs.prsa.org/" target="_blank">Public Relations Society of America</a></li>
+                        <li><a href="https://www.nspe.org/career-growth/career-center" target="_blank">National Society of Professional Engineers</a></li>
+                    </ul>
+                </div>
+
+                <div class="content-box">
+                    <h3>HBCU & HSI Students</h3>
+                    <ul>
+                        <li><a href="https://hbcuconnect.com/cgi-bin/jobs/index.cgi" target="_blank">HBCU Connect</a></li>
+                        <li><a href="https://theapplication.org/jobs?status=true" target="_blank">The Application</a></li>
+                        <li><a href="https://www.thehbcucareercenter.com/" target="_blank">HBCU Career Center</a></li>
+                        <li><a href="https://hacu.net/" target="_blank">Hispanic Association of Colleges and Universities (HACU)</a></li>
+                    </ul>
+                </div>
+
+                <div class="content-box">
+                    <h3>Remote Work</h3>
+                    <ul>
+                        <li><a href="https://www.skipthedrive.com/" target="_blank">SkipTheDrive</a></li>
+                        <li><a href="https://remote.io/" target="_blank">Remote.io</a></li>
+                        <li><a href="https://hiring.cafe/" target="_blank">Hiring Cafe</a></li>
+                        <li><a href="https://weworkremotely.com/" target="_blank">We Work Remotely</a></li>
+                        <li><a href="https://remotive.com/" target="_blank">Remotive</a></li>
+                        <li><a href="https://www.workingnomads.com/jobs" target="_blank">Working Nomads</a></li>
+                    </ul>
+                </div>
+
+                <div class="content-box">
+                    <h3>Tech & Startups</h3>
+                    <ul>
+                        <li><a href="https://wellfound.com/" target="_blank">Wellfound</a></li>
+                        <li><a href="https://builtin.com/" target="_blank">Built In</a></li>
+                        <li><a href="https://www.ycombinator.com/" target="_blank">Y Combinator</a></li>
+                        <li><a href="https://arc.dev/" target="_blank">Arc.dev</a></li>
+                    </ul>
+                </div>
+
+                <div class="content-box">
+                    <h3>Creative & Marketing</h3>
+                    <ul>
+                        <li><a href="https://www.wethemakers.club/" target="_blank">We The Makers</a></li>
+                        <li><a href="https://www.nyfa.org/jobs/?_page=1" target="_blank">NYFA Jobs</a></li>
+                        <li><a href="https://marketinghire.com/" target="_blank">MarketingHire</a></li>
+                        <li><a href="https://www.mediabistro.com/" target="_blank">Media bistro</a></li>
+                    </ul>
+                </div>
+
+                <div class="content-box">
+                    <h3>Transferable Skills</h3>
+                    <ul>
+                        <li><a href="https://generalist.world/" target="_blank">Generalist World</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Alternative Section -->
+        <section id="alternative" class="job-boards-section">
+            <div class="container">
+                <div class="job-boards-section__header">
+                    <h2 class="job-boards-section__title">Beyond Job Boards</h2>
+                    <p class="job-boards-section__subtitle">Not everything is posted online</p>
+                </div>
+
+                <div class="content-box">
+                    <h3>Your Network</h3>
+                    <ul>
+                        <li>Friends & Classmates</li>
+                        <li>Alumni</li>
+                        <li>Professors & Mentors</li>
+                    </ul>
+                </div>
+
+                <div class="content-box">
+                    <h3>University Resources</h3>
+                    <ul>
+                        <li>Career Center (exclusive roles & partnerships)</li>
+                        <li>Department-specific opportunities</li>
+                        <li>Recruiting timelines & guidance</li>
+                    </ul>
+                    <p style="color: #666; margin-top: 15px;"><strong>Example:</strong> <a href="https://careerdevelopment.princeton.edu/internships-jobs/recruiting-timelines" target="_blank">Princeton's Recruiting Timeline Guide</a> - helpful reference for understanding when companies hire</p>
+                </div>
+
+                <div class="highlight-box">
+                    <strong>ACU Resource</strong>
+                    <p>Visit ACU's Center for Career Development for exclusive opportunities and partnerships.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <div class="container">
+            <div class="cta-section">
+                <h3>Need Help With Your Application?</h3>
+                <p>Check out our resources for resumes, interview prep, and job search strategies</p>
+                <a href="resources-all.html" class="btn">View All Resources →</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer__content">
+                <!-- Contact Info -->
+                <div class="footer__section">
+                    <h3 class="footer__title">Contact Us</h3>
+                    <p class="footer__text">
+                        <strong>COBA Professional Development</strong><br>
+                        Mabee Business Building, Room 132<br>
+                        Abilene Christian University<br>
+                        Abilene, TX 79699
+                    </p>
+                    <p class="footer__text">
+                        <strong>Email:</strong> <a href="mailto:coba@acu.edu">coba@acu.edu</a><br>
+                        <strong>Phone:</strong> (325) 674-2427
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer__section">
+                    <h3 class="footer__title">Quick Links</h3>
+                    <ul class="footer__links">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../index.html#about">About COBA</a></li>
+                        <li><a href="../index.html#majors">Majors & Tracks</a></li>
+                        <li><a href="resources-all.html">Resources</a></li>
+                        <li><a href="international-students.html">International Students</a></li>
+                    </ul>
+                </div>
+
+                <!-- Resources -->
+                <div class="footer__section">
+                    <h3 class="footer__title">Popular Resources</h3>
+                    <ul class="footer__links">
+                        <li><a href="resources-all.html#resume">Resume Builder</a></li>
+                        <li><a href="resources-all.html#linkedin">LinkedIn Guide</a></li>
+                        <li><a href="job-boards.html">Job Boards</a></li>
+                        <li><a href="resources-all.html#experiential">Experiential Learning</a></li>
+                        <li><a href="internship-timeline.html">Internship Timeline</a></li>
+                    </ul>
+                </div>
+
+                <!-- Social & Additional -->
+                <div class="footer__section">
+                    <h3 class="footer__title">Stay Connected</h3>
+                    <ul class="footer__links">
+                        <li><a href="https://www.instagram.com/advicewitherin" target="_blank">Instagram: @advicewitherin</a></li>
+                        <li><a href="https://www.tiktok.com/@advicewitherin" target="_blank">TikTok: @advicewitherin</a></li>
+                        <li><a href="https://acu.edu/coba" target="_blank">COBA Website</a></li>
+                    </ul>
+                    <p class="footer__text footer__text--small">
+                        Follow for daily career tips and professional development advice.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer__bottom">
+                <p class="footer__copyright">
+                    &copy; 2024 Abilene Christian University - College of Business Administration. All rights reserved.
+                </p>
+                <p class="footer__tagline">
+                    Empowering Christian business leaders
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#main-content" class="back-to-top" id="backToTop">↑</a>
+
+    <!-- JavaScript -->
+    <script>
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
+            }
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerOffset = 160;
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        const sections = document.querySelectorAll('[id]');
+        const navLinks = document.querySelectorAll('.section-nav__link');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (window.pageYOffset >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.style.background = '#f5f5f5';
+                link.style.color = '#4B2E83';
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.style.background = '#4B2E83';
+                    link.style.color = 'white';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
