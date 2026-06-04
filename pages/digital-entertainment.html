@@ -172,40 +172,6 @@
             line-height: 1.7;
         }
 
-        .salary-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 25px;
-            margin-top: 40px;
-        }
-
-        .salary-card {
-            background: white;
-            border-radius: 10px;
-            padding: 30px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-            transition: all 0.3s ease;
-            border-left: 4px solid #6B46A8;
-        }
-
-        .salary-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(75, 46, 131, 0.15);
-        }
-
-        .salary-card__title {
-            font-size: 20px;
-            color: #4B2E83;
-            margin-bottom: 15px;
-            font-weight: 700;
-        }
-
-        .salary-card__amount {
-            font-size: 28px;
-            color: #6B46A8;
-            font-weight: 800;
-        }
-
         .cert-cards {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -274,6 +240,26 @@
             color: #666;
             line-height: 1.7;
             margin-top: 10px;
+        }
+
+        .highlight-box ul {
+            margin-left: 20px;
+            color: #666;
+        }
+
+        .highlight-box ul li {
+            margin-bottom: 8px;
+            line-height: 1.7;
+        }
+
+        .highlight-box a {
+            color: #4B2E83;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .highlight-box a:hover {
+            text-decoration: underline;
         }
 
         .cta-section {
@@ -361,7 +347,6 @@
             }
 
             .stat-cards,
-            .salary-grid,
             .cert-cards {
                 grid-template-columns: 1fr;
             }
@@ -569,6 +554,16 @@
                     <p class="det-section__subtitle">Find opportunities in the gaming industry</p>
                 </div>
 
+                <!-- LinkedIn Job Resources -->
+                <div class="highlight-box" style="margin-bottom: 40px;">
+                    <strong>LinkedIn Job Resources</strong>
+                    <p style="margin-top: 15px;">Discover curated job opportunities and resources from industry professionals:</p>
+                    <ul style="margin-left: 20px; margin-top: 15px;">
+                        <li><a href="https://www.linkedin.com/posts/communitywarriors-vfxjobs-animation-share-7395405156059840512-MLsy/?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAAaRKEMBjvDeia2cZRqCwENmQAN7IBzNg30" target="_blank">VFX & Animation Jobs Thread</a></li>
+                        <li style="margin-top: 10px;"><a href="https://www.linkedin.com/posts/alexanderrehm_video-game-jobs-resources-mega-thread-hi-share-7422228798974193664-2jOJ/?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAAaRKEMBjvDeia2cZRqCwENmQAN7IBzNg30" target="_blank">Video Game Jobs Resources Mega Thread</a></li>
+                    </ul>
+                </div>
+
                 <!-- DET Jobs Spreadsheet -->
                 <div class="spreadsheet-embed">
                     <h3>DET Jobs</h3>
@@ -609,7 +604,7 @@
                         Abilene, TX 79699
                     </p>
                     <p class="footer__text">
-                        <strong>Email:</strong> <a href="/cdn-cgi/l/email-protection#086b676a6948696b7d266d6c7d"><span class="__cf_email__" data-cfemail="8eede1ecefceefedfba0ebeafb">[email&#160;protected]</span></a><br>
+                        <strong>Email:</strong> <a href="mailto:coba@acu.edu">coba@acu.edu</a><br>
                         <strong>Phone:</strong> (325) 674-2427
                     </p>
                 </div>
@@ -668,7 +663,7 @@
     <a href="#main-content" class="back-to-top" id="backToTop">↑</a>
 
     <!-- JavaScript -->
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="../js/main.js"></script>
+    <script src="../js/main.js"></script>
     <script>
         const backToTopButton = document.getElementById('backToTop');
         
