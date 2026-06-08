@@ -110,6 +110,7 @@
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
             margin-top: 40px;
+            align-items: stretch;
         }
 
         .resource-card {
@@ -119,6 +120,8 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.08);
             transition: all 0.3s ease;
             border: 2px solid transparent;
+            box-sizing: border-box;
+            overflow: hidden;
         }
 
         .resource-card:hover {
