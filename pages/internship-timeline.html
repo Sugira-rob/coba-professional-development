@@ -9,7 +9,7 @@
     <title>Internship Timeline | COBA | ACU</title>
     
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="../assets/images/favicon.png">
+    <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="../css/main.css">
     
     <style>
-        /* Internship Timeline Page Specific Styles */
+/* Internship Timeline Page Specific Styles */
         .timeline-hero {
             background: linear-gradient(135deg, #4B2E83 0%, #6B46A8 100%);
             color: white;
@@ -30,7 +30,7 @@
             overflow: hidden;
         }
 
-        .timeline-hero::before {
+.timeline-hero::before {
             content: '';
             position: absolute;
             top: 0;
@@ -41,7 +41,7 @@
             opacity: 0.1;
         }
 
-        .timeline-hero h1 {
+.timeline-hero h1 {
             font-size: 56px;
             margin-bottom: 20px;
             font-weight: 800;
@@ -50,7 +50,7 @@
             color: white;
         }
 
-        .timeline-hero p {
+.timeline-hero p {
             font-size: 22px;
             max-width: 800px;
             margin: 0 auto 30px;
@@ -60,292 +60,49 @@
             color: white;
         }
 
-        .timeline-hero__icon {
+.timeline-hero__icon {
             font-size: 80px;
             margin-bottom: 20px;
             display: block;
         }
 
-        .section-nav {
-            background: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 70px;
-            z-index: 100;
-            padding: 20px 0;
-        }
-
-        .section-nav__list {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .section-nav__link {
-            padding: 10px 20px;
-            background: #f5f5f5;
-            color: #4B2E83;
-            text-decoration: none;
-            border-radius: 25px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            font-size: 14px;
-        }
-
-        .section-nav__link:hover {
-            background: #4B2E83;
-            color: white;
-            transform: translateY(-2px);
-        }
-
-        .timeline-section {
+.timeline-section {
             padding: 80px 0;
         }
 
-        .timeline-section:nth-child(even) {
+.timeline-section:nth-child(even) {
             background: #f9f9f9;
         }
 
-        .timeline-section__header {
+.timeline-section__header {
             text-align: center;
             margin-bottom: 60px;
         }
 
-        .timeline-section__title {
+.timeline-section__title {
             font-size: 42px;
             color: #4B2E83;
             margin-bottom: 15px;
             font-weight: 800;
         }
 
-        .timeline-section__subtitle {
+.timeline-section__subtitle {
             font-size: 20px;
             color: #666;
             max-width: 800px;
             margin: 0 auto;
         }
 
-        .timeline {
-            max-width: 900px;
-            margin: 50px auto;
-            position: relative;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 4px;
-            height: 100%;
-            background: linear-gradient(180deg, #4B2E83, #6B46A8);
-        }
-
-        .timeline-item {
-            margin-bottom: 50px;
-            position: relative;
-        }
-
-        .timeline-item:nth-child(odd) {
-            padding-right: 50%;
-            text-align: right;
-        }
-
-        .timeline-item:nth-child(even) {
-            padding-left: 50%;
-            text-align: left;
-        }
-
-        .timeline-content {
-            background: white;
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-            position: relative;
-        }
-
-        .timeline-year {
-            font-size: 24px;
-            font-weight: 800;
-            color: #4B2E83;
-            margin-bottom: 15px;
-        }
-
-        .timeline-semester {
-            font-size: 18px;
-            font-weight: 700;
-            color: #6B46A8;
-            margin-bottom: 10px;
-        }
-
-        .timeline-details {
-            color: #666;
-            line-height: 1.6;
-        }
-
-        .timeline-details ul {
-            margin: 10px 0;
-            padding-left: 20px;
-        }
-
-        .timeline-details li {
-            margin-bottom: 8px;
-        }
-
-        .timeline-marker {
-            position: absolute;
-            top: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 20px;
-            height: 20px;
-            background: #FFB81C;
-            border: 4px solid white;
-            border-radius: 50%;
-            box-shadow: 0 0 0 4px #4B2E83;
-            z-index: 2;
-        }
-
-        .content-box {
-            background: white;
-            border-radius: 12px;
-            padding: 40px;
-            margin: 30px 0;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-        }
-
-        .content-box h3 {
-            color: #4B2E83;
-            font-size: 28px;
-            margin-bottom: 20px;
-            font-weight: 700;
-        }
-
-        .content-box ul {
-            line-height: 1.8;
-            color: #555;
-            margin: 15px 0;
-            padding-left: 25px;
-        }
-
-        .content-box li {
-            margin-bottom: 12px;
-        }
-
-        .highlight-box {
-            background: #f0ebf8;
-            border-left: 4px solid #4B2E83;
-            padding: 25px;
-            margin: 25px 0;
-            border-radius: 4px;
-        }
-
-        .highlight-box strong {
-            color: #4B2E83;
-            display: block;
-            margin-bottom: 10px;
-            font-size: 18px;
-        }
-
-        .cta-section {
-            background: linear-gradient(135deg, #4B2E83 0%, #6B46A8 100%);
-            color: white;
-            padding: 60px 40px;
-            border-radius: 12px;
-            text-align: center;
-            margin: 60px 0;
-        }
-
-        .cta-section h3 {
-            font-size: 32px;
-            margin-bottom: 20px;
-            color: white;
-        }
-
-        .cta-section p {
-            font-size: 18px;
-            margin-bottom: 30px;
-            opacity: 0.95;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 15px 40px;
-            background: #FFB81C;
-            color: #4B2E83;
-            text-decoration: none;
-            border-radius: 30px;
-            font-weight: 700;
-            font-size: 16px;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-        }
-
-        .btn:hover {
-            background: white;
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-        }
-
-        .back-to-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: #4B2E83;
-            color: white;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            font-size: 24px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            z-index: 1000;
-        }
-
-        .back-to-top.visible {
-            opacity: 1;
-        }
-
-        .back-to-top:hover {
-            background: #6B46A8;
-            transform: translateY(-3px);
-        }
-
-        @media (max-width: 768px) {
-            .timeline-hero h1 {
+@media (max-width: 768px) {
+.timeline-hero h1 {
                 font-size: 36px;
             }
 
-            .timeline-section__title {
+.timeline-section__title {
                 font-size: 32px;
             }
-
-            .timeline::before {
-                left: 20px;
-            }
-
-            .timeline-item:nth-child(odd),
-            .timeline-item:nth-child(even) {
-                padding-left: 60px;
-                padding-right: 0;
-                text-align: left;
-            }
-
-            .timeline-marker {
-                left: 20px;
-                transform: none;
-            }
-        }
-    </style>
+}
+</style>
 </head>
 <body>
     <!-- Skip to Main Content -->
@@ -364,7 +121,7 @@
                 </div>
 
                 <!-- Mobile Menu Toggle -->
-                <button class="header__menu-toggle" aria-label="Toggle menu" id="menuToggle">
+                <button class="header__menu-toggle" aria-label="Toggle menu" aria-expanded="false" id="menuToggle">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -403,9 +160,16 @@
     <main id="main-content">
         
         <!-- Hero Section -->
-        <section class="timeline-hero">
+        <section class="page-hero timeline-hero">
             <div class="container">
-                <span class="timeline-hero__icon">🎯</span>
+                <!-- Target SVG icon -->
+                <span class="timeline-hero__icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="12" cy="12" r="10"/>
+                        <circle cx="12" cy="12" r="6"/>
+                        <circle cx="12" cy="12" r="2"/>
+                    </svg>
+                </span>
                 <h1>Your Internship Timeline</h1>
                 <p>Plan your path from freshman year to landing your dream internship and career</p>
             </div>
@@ -552,7 +316,7 @@
                             <div class="timeline-year">Sophomore Year</div>
                             <div class="timeline-semester">Summer</div>
                             <div class="timeline-details">
-                                <p><strong>🎯 INTERNSHIP GOAL!</strong></p>
+                                <p><strong>Internship Goal!</strong></p>
                                 <ul>
                                     <li>Complete your first major-related internship</li>
                                     <li>Excel in your role and exceed expectations</li>
@@ -606,7 +370,7 @@
                             <div class="timeline-year">Junior Year</div>
                             <div class="timeline-semester">Summer</div>
                             <div class="timeline-details">
-                                <p><strong>🎯 CRITICAL INTERNSHIP!</strong></p>
+                                <p><strong>Critical Internship!</strong></p>
                                 <ul>
                                     <li>Excel in junior year internship</li>
                                     <li>This often converts to full-time offer</li>
@@ -642,7 +406,7 @@
                             <div class="timeline-year">Post-Graduation</div>
                             <div class="timeline-semester">Career Launch!</div>
                             <div class="timeline-details">
-                                <p><strong>🎉 Start your professional career!</strong></p>
+                                <p><strong>Start your professional career!</strong></p>
                                 <ul>
                                     <li>Begin full-time role</li>
                                     <li>Continue learning and growing</li>
@@ -709,7 +473,7 @@
                         <li><a href="../index.html#majors">Majors & Tracks</a></li>
                         <li><a href="resources-all.html">Resources</a></li>
                         <li><a href="international-students.html">International Students</a></li>
-                        <li><a href="https://acu.edu/coba" target="_blank">COBA Website</a></li>
+                        <li><a href="https://acu.edu/coba" target="_blank" rel="noopener noreferrer">COBA Website</a></li>
                     </ul>
                 </div>
 
@@ -742,17 +506,5 @@
 
     <!-- JavaScript -->
     <script src="../js/main.js"></script>
-    <script>
-        // Back to Top Button
-        const backToTopButton = document.getElementById('backToTop');
-        
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                backToTopButton.classList.add('visible');
-            } else {
-                backToTopButton.classList.remove('visible');
-            }
-        });
-    </script>
 </body>
 </html>

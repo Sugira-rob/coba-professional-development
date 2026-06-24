@@ -7,7 +7,7 @@
     <title>Search Results | COBA Professional Development</title>
     
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="../assets/images/favicon.png">
+    <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -165,34 +165,6 @@
             color: #666;
         }
 
-        .back-to-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: #4B2E83;
-            color: white;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            font-size: 24px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            z-index: 1000;
-        }
-
-        .back-to-top.visible {
-            opacity: 1;
-        }
-
-        .back-to-top:hover {
-            background: #6B46A8;
-            transform: translateY(-3px);
-        }
     </style>
 </head>
 <body>
@@ -209,7 +181,7 @@
                 </div>
 
                 <!-- Mobile Menu Toggle -->
-                <button class="header__menu-toggle" aria-label="Toggle menu" id="menuToggle">
+                <button class="header__menu-toggle" aria-label="Toggle menu" aria-expanded="false" id="menuToggle">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -509,21 +481,6 @@
             }
         });
 
-        // Back to Top Button
-        const backToTopButton = document.getElementById('backToTop');
-        
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                backToTopButton.classList.add('visible');
-            } else {
-                backToTopButton.classList.remove('visible');
-            }
-        });
-
-        backToTopButton.addEventListener('click', function(e) {
-            e.preventDefault();
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
     </script>
 </body>
 </html>

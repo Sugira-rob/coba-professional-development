@@ -1,399 +1,304 @@
 /**
- * COBA Professional Development Website
- * Main JavaScript File
+ * COBA Professional Development — Main JavaScript
+ *
+ * Entry point: DOMContentLoaded fires initAll().
+ * Each feature is an isolated init function so a missing
+ * DOM element causes an early return, not a thrown error.
+ *
+ * Table of contents
+ *  1. initAll             — wires everything together
+ *  2. initHeroSlider      — auto-playing image carousel (index only)
+ *  3. initMobileMenu      — hamburger nav toggle
+ *  4. initDropdownMenus   — mobile accordion for the Majors dropdown
+ *  5. initSmoothScroll    — offset-aware anchor scrolling
+ *  6. initBackToTop       — floating scroll-to-top button
+ *  7. initHeaderScroll    — header shadow on scroll
+ *  8. initScrollAnimations— Intersection Observer fade-in for cards
+ *  9. initCopyrightYear   — auto-updates footer year
  */
 
-// ============================================
-// INITIALIZATION
-// ============================================
-document.addEventListener('DOMContentLoaded', function() {
-    // Initialize all components
+document.addEventListener('DOMContentLoaded', initAll);
+
+/* ============================================
+   1. INIT ALL
+   ============================================ */
+function initAll() {
     initHeroSlider();
     initMobileMenu();
+    initDropdownMenus();
     initSmoothScroll();
     initBackToTop();
     initHeaderScroll();
-    initDropdownMenus();
-    
-    console.log('✅ COBA Professional Development Website loaded successfully!');
-});
+    initCopyrightYear();
 
-// ============================================
-// HERO SLIDER
-// ============================================
+    /* Scroll animations wait for full load so images are sized */
+    window.addEventListener('load', initScrollAnimations);
+}
+
+/* ============================================
+   2. HERO SLIDER (index.html only)
+   Auto-advances every 8 s; pauses on hover
+   and supports mouse/touch swipe.
+   ============================================ */
 function initHeroSlider() {
-    const slider = document.querySelector('.hero-slider__container');
-    if (!slider) return;
-    
-    const slides = document.querySelectorAll('.hero-slider__slide');
-    const dots = document.querySelectorAll('.hero-slider__dot');
-    const prevBtn = document.querySelector('.hero-slider__arrow--prev');
-    const nextBtn = document.querySelector('.hero-slider__arrow--next');
-    
-    let currentSlide = 0;
-    const slideCount = slides.length;
-    let slideInterval;
-    
-    // Show specific slide
+    const container = document.querySelector('.hero-slider__container');
+    if (!container) return;
+
+    const slides   = document.querySelectorAll('.hero-slider__slide');
+    const dots     = document.querySelectorAll('.hero-slider__dot');
+    const prevBtn  = document.querySelector('.hero-slider__arrow--prev');
+    const nextBtn  = document.querySelector('.hero-slider__arrow--next');
+    let current    = 0;
+    let timer;
+
     function showSlide(index) {
-        // Remove active class from all slides and dots
-        slides.forEach(slide => {
-            slide.classList.remove('hero-slider__slide--active');
-        });
-        dots.forEach(dot => {
-            dot.classList.remove('hero-slider__dot--active');
-        });
-        
-        // Add active class to current slide and dot
-        slides[index].classList.add('hero-slider__slide--active');
-        dots[index].classList.add('hero-slider__dot--active');
-        
-        currentSlide = index;
+        slides[current].classList.remove('hero-slider__slide--active');
+        dots[current].classList.remove('hero-slider__dot--active');
+        current = index;
+        slides[current].classList.add('hero-slider__slide--active');
+        dots[current].classList.add('hero-slider__dot--active');
     }
-    
-    // Next slide
-    function nextSlide() {
-        let next = currentSlide + 1;
-        if (next >= slideCount) next = 0;
-        showSlide(next);
-    }
-    
-    // Previous slide
-    function prevSlide() {
-        let prev = currentSlide - 1;
-        if (prev < 0) prev = slideCount - 1;
-        showSlide(prev);
-    }
-    
-    // Auto play
-    function startAutoPlay() {
-        slideInterval = setInterval(nextSlide, 8000); // Changed from 5000ms (5s) to 8000ms (8s)
-    }
-    
-    function stopAutoPlay() {
-        clearInterval(slideInterval);
-    }
-    
-    // Event listeners
-    if (nextBtn) {
-        nextBtn.addEventListener('click', () => {
-            nextSlide();
-            stopAutoPlay();
-            startAutoPlay(); // Restart after manual change
-        });
-    }
-    
-    if (prevBtn) {
-        prevBtn.addEventListener('click', () => {
-            prevSlide();
-            stopAutoPlay();
-            startAutoPlay(); // Restart after manual change
-        });
-    }
-    
-    // Dot navigation
-    dots.forEach((dot, index) => {
-        dot.addEventListener('click', () => {
-            showSlide(index);
-            stopAutoPlay();
-            startAutoPlay(); // Restart after manual change
-        });
+
+    function next() { showSlide((current + 1) % slides.length); }
+    function prev() { showSlide((current - 1 + slides.length) % slides.length); }
+
+    function startAuto() { timer = setInterval(next, 8000); }
+    function stopAuto()  { clearInterval(timer); }
+
+    /* Restart the timer after any manual interaction */
+    function resetAuto() { stopAuto(); startAuto(); }
+
+    if (nextBtn) nextBtn.addEventListener('click', () => { next(); resetAuto(); });
+    if (prevBtn) prevBtn.addEventListener('click', () => { prev(); resetAuto(); });
+
+    dots.forEach((dot, i) =>
+        dot.addEventListener('click', () => { showSlide(i); resetAuto(); })
+    );
+
+    /* Pause while the user is hovering */
+    container.addEventListener('mouseenter', stopAuto);
+    container.addEventListener('mouseleave', startAuto);
+
+    /* Touch swipe support */
+    let touchX = 0;
+    container.addEventListener('touchstart', e => {
+        touchX = e.changedTouches[0].screenX;
+        stopAuto();
+    }, { passive: true });
+
+    container.addEventListener('touchend', e => {
+        const delta = e.changedTouches[0].screenX - touchX;
+        if (delta < -50) next();
+        if (delta >  50) prev();
+        startAuto();
     });
-    
-    // Pause on hover
-    slider.addEventListener('mouseenter', stopAutoPlay);
-    slider.addEventListener('mouseleave', startAutoPlay);
-    
-    // Touch support for mobile
-    let touchStartX = 0;
-    let touchEndX = 0;
-    
-    slider.addEventListener('touchstart', (e) => {
-        touchStartX = e.changedTouches[0].screenX;
-        stopAutoPlay();
-    });
-    
-    slider.addEventListener('touchend', (e) => {
-        touchEndX = e.changedTouches[0].screenX;
-        handleSwipe();
-        startAutoPlay();
-    });
-    
-    function handleSwipe() {
-        if (touchEndX < touchStartX - 50) {
-            nextSlide(); // Swipe left
-        }
-        if (touchEndX > touchStartX + 50) {
-            prevSlide(); // Swipe right
-        }
-    }
-    
-    // Start auto play
-    startAutoPlay();
-    
-    console.log('✅ Hero Slider initialized');
+
+    startAuto();
 }
 
-// ============================================
-// MOBILE MENU
-// ============================================
+/* ============================================
+   3. MOBILE MENU
+   Toggles the nav open/closed and animates
+   the hamburger icon into an X.
+   ============================================ */
 function initMobileMenu() {
-    const menuToggle = document.getElementById('menuToggle');
-    const mainNav = document.getElementById('mainNav');
-    
-    if (!menuToggle || !mainNav) return;
-    
-    menuToggle.addEventListener('click', () => {
-        mainNav.classList.toggle('active');
-        menuToggle.classList.toggle('active');
-        
-        // Animate hamburger icon
-        const spans = menuToggle.querySelectorAll('span');
-        if (menuToggle.classList.contains('active')) {
-            spans[0].style.transform = 'rotate(45deg) translateY(8px)';
-            spans[1].style.opacity = '0';
-            spans[2].style.transform = 'rotate(-45deg) translateY(-8px)';
+    const toggle = document.getElementById('menuToggle');
+    const nav    = document.getElementById('mainNav');
+    if (!toggle || !nav) return;
+
+    toggle.addEventListener('click', () => {
+        const open = nav.classList.toggle('active');
+        toggle.classList.toggle('active', open);
+        toggle.setAttribute('aria-expanded', open);
+
+        /* Animate hamburger lines into an X */
+        const [top, mid, bot] = toggle.querySelectorAll('span');
+        if (open) {
+            top.style.transform = 'rotate(45deg) translateY(8px)';
+            mid.style.opacity   = '0';
+            bot.style.transform = 'rotate(-45deg) translateY(-8px)';
         } else {
-            spans[0].style.transform = 'none';
-            spans[1].style.opacity = '1';
-            spans[2].style.transform = 'none';
+            top.style.transform = '';
+            mid.style.opacity   = '';
+            bot.style.transform = '';
         }
     });
-    
-    // Close menu when clicking a link
-    const navLinks = mainNav.querySelectorAll('a');
-    navLinks.forEach(link => {
+
+    /* Close on any nav link click when in mobile view */
+    nav.querySelectorAll('a').forEach(link =>
         link.addEventListener('click', () => {
-            if (window.innerWidth <= 768) {
-                mainNav.classList.remove('active');
-                menuToggle.classList.remove('active');
-                
-                const spans = menuToggle.querySelectorAll('span');
-                spans[0].style.transform = 'none';
-                spans[1].style.opacity = '1';
-                spans[2].style.transform = 'none';
-            }
-        });
-    });
-    
-    console.log('✅ Mobile Menu initialized');
-}
+            if (window.innerWidth > 768) return;
+            nav.classList.remove('active');
+            toggle.classList.remove('active');
+            toggle.setAttribute('aria-expanded', 'false');
+            const [top, mid, bot] = toggle.querySelectorAll('span');
+            top.style.transform = '';
+            mid.style.opacity   = '';
+            bot.style.transform = '';
+        })
+    );
 
-// ============================================
-// SMOOTH SCROLLING
-// ============================================
-function initSmoothScroll() {
-    // Smooth scroll for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            const href = this.getAttribute('href');
-            
-            // Don't prevent default for dropdown toggles
-            if (href === '#') return;
-            
-            e.preventDefault();
-            
-            const target = document.querySelector(href);
-            if (target) {
-                const headerHeight = document.querySelector('.header').offsetHeight;
-                const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
-                
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
-    
-    console.log('✅ Smooth Scrolling initialized');
-}
-
-// ============================================
-// BACK TO TOP BUTTON
-// ============================================
-function initBackToTop() {
-    const backToTopBtn = document.getElementById('backToTop');
-    if (!backToTopBtn) return;
-    
-    // Show/hide button based on scroll position
-    window.addEventListener('scroll', () => {
-        if (window.pageYOffset > 300) {
-            backToTopBtn.classList.add('visible');
-        } else {
-            backToTopBtn.classList.remove('visible');
+    /* Close on Escape key */
+    document.addEventListener('keydown', e => {
+        if (e.key === 'Escape' && nav.classList.contains('active')) {
+            nav.classList.remove('active');
+            toggle.classList.remove('active');
+            toggle.setAttribute('aria-expanded', 'false');
         }
     });
-    
-    // Scroll to top when clicked
-    backToTopBtn.addEventListener('click', () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    });
-    
-    console.log('✅ Back to Top button initialized');
 }
 
-// ============================================
-// HEADER SCROLL EFFECT
-// ============================================
+/* ============================================
+   4. DROPDOWN MENUS (mobile accordion)
+   On desktop the dropdown is CSS :hover-driven.
+   On mobile we toggle an .active class instead.
+
+   Listeners are attached once at init; a viewport
+   check inside the handler avoids running on desktop.
+   This prevents the event-stacking bug that occurred
+   when this function re-ran on every window resize.
+   ============================================ */
+function initDropdownMenus() {
+    document.querySelectorAll('.nav-list__item--dropdown').forEach(item => {
+        const link = item.querySelector('.nav-list__link');
+        link.addEventListener('click', e => {
+            if (window.innerWidth > 768) return; /* CSS handles desktop */
+            e.preventDefault();
+            item.classList.toggle('active');
+        });
+    });
+}
+
+/* ============================================
+   5. SMOOTH SCROLL
+   Intercepts all same-page anchor clicks and
+   accounts for the fixed header height.
+   ============================================ */
+function initSmoothScroll() {
+    const header = document.querySelector('.header');
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (href === '#') return; /* dropdown toggle links */
+
+            const target = document.querySelector(href);
+            if (!target) return;
+
+            e.preventDefault();
+            const offset = header ? header.offsetHeight : 70;
+            const top    = target.getBoundingClientRect().top + window.pageYOffset - offset;
+            window.scrollTo({ top, behavior: 'smooth' });
+        });
+    });
+}
+
+/* ============================================
+   6. BACK TO TOP BUTTON
+   ============================================ */
+function initBackToTop() {
+    const btn = document.getElementById('backToTop');
+    if (!btn) return;
+
+    window.addEventListener('scroll', () =>
+        btn.classList.toggle('visible', window.pageYOffset > 300)
+    , { passive: true });
+
+    btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+}
+
+/* ============================================
+   7. HEADER SCROLL EFFECT
+   Adds a slightly stronger shadow when the
+   user has scrolled down from the top.
+   ============================================ */
 function initHeaderScroll() {
     const header = document.getElementById('header');
     if (!header) return;
-    
-    let lastScroll = 0;
-    
+
     window.addEventListener('scroll', () => {
-        const currentScroll = window.pageYOffset;
-        
-        // Add shadow when scrolled
-        if (currentScroll > 0) {
-            header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
-        } else {
-            header.style.boxShadow = '0 2px 4px rgba(0, 0, 0, 0.05)';
-        }
-        
-        lastScroll = currentScroll;
-    });
-    
-    console.log('✅ Header Scroll Effect initialized');
+        header.style.boxShadow = window.pageYOffset > 0
+            ? '0 2px 10px rgba(0,0,0,0.1)'
+            : '0 2px 4px rgba(0,0,0,0.05)';
+    }, { passive: true });
 }
 
-// ============================================
-// DROPDOWN MENUS (Mobile)
-// ============================================
-function initDropdownMenus() {
-    const dropdownItems = document.querySelectorAll('.nav-list__item--dropdown');
-    
-    if (window.innerWidth <= 768) {
-        dropdownItems.forEach(item => {
-            const link = item.querySelector('.nav-list__link');
-            
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                item.classList.toggle('active');
-            });
-        });
-    }
-    
-    // Re-initialize on window resize
-    let resizeTimer;
-    window.addEventListener('resize', () => {
-        clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(() => {
-            initDropdownMenus();
-        }, 250);
-    });
-    
-    console.log('✅ Dropdown Menus initialized');
-}
-
-// ============================================
-// INTERSECTION OBSERVER (Animate on Scroll)
-// ============================================
+/* ============================================
+   8. SCROLL ANIMATIONS
+   Fades cards in as they enter the viewport.
+   Uses IntersectionObserver (no scroll jank).
+   ============================================ */
 function initScrollAnimations() {
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-    
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-            }
-        });
-    }, observerOptions);
-    
-    // Observe all cards
     const cards = document.querySelectorAll('.major-card, .resource-card, .quick-link-card');
+    if (!cards.length) return;
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            entry.target.style.opacity   = '1';
+            entry.target.style.transform = 'translateY(0)';
+            observer.unobserve(entry.target); /* animate once */
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
     cards.forEach(card => {
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(30px)';
+        card.style.opacity    = '0';
+        card.style.transform  = 'translateY(30px)';
         card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
         observer.observe(card);
     });
-    
-    console.log('✅ Scroll Animations initialized');
 }
 
-// Initialize scroll animations after page load
-window.addEventListener('load', initScrollAnimations);
-
-// ============================================
-// UTILITY FUNCTIONS
-// ============================================
-
-/**
- * Debounce function to limit function calls
- */
-function debounce(func, wait) {
-    let timeout;
-    return function executedFunction(...args) {
-        const later = () => {
-            clearTimeout(timeout);
-            func(...args);
-        };
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-    };
-}
-
-/**
- * Check if element is in viewport
- */
-function isInViewport(element) {
-    const rect = element.getBoundingClientRect();
-    return (
-        rect.top >= 0 &&
-        rect.left >= 0 &&
-        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-    );
-}
-
-/**
- * Add animation class to element
- */
-function animateElement(element, animationClass) {
-    element.classList.add(animationClass);
-}
-
-// ============================================
-// KEYBOARD NAVIGATION
-// ============================================
-document.addEventListener('keydown', (e) => {
-    // Escape key closes mobile menu
-    if (e.key === 'Escape') {
-        const mainNav = document.getElementById('mainNav');
-        const menuToggle = document.getElementById('menuToggle');
-        
-        if (mainNav && mainNav.classList.contains('active')) {
-            mainNav.classList.remove('active');
-            menuToggle.classList.remove('active');
-        }
-    }
-});
-
-// ============================================
-// PERFORMANCE MONITORING (Optional)
-// ============================================
-if (window.performance) {
-    window.addEventListener('load', () => {
-        setTimeout(() => {
-            const perfData = window.performance.timing;
-            const pageLoadTime = perfData.loadEventEnd - perfData.navigationStart;
-            console.log(`📊 Page Load Time: ${pageLoadTime}ms`);
-        }, 0);
+/* ============================================
+   9. COPYRIGHT YEAR
+   Replaces the static year in every footer
+   copyright line with the current year so it
+   never needs to be updated manually.
+   ============================================ */
+function initCopyrightYear() {
+    const year = new Date().getFullYear();
+    document.querySelectorAll('.footer__copyright').forEach(el => {
+        el.textContent = el.textContent.replace(/\d{4}/, year);
     });
 }
 
-// ============================================
-// CONSOLE WELCOME MESSAGE
-// ============================================
-console.log('%c💜 COBA Professional Development', 'color: #4B2E83; font-size: 24px; font-weight: bold;');
-console.log('%cEmpowering the next generation of Christian business leaders', 'color: #6B46A8; font-size: 14px;');
-console.log('%cBuilt with ❤️ for ACU students', 'color: #666; font-size: 12px;');
+/* ============================================
+   ACTIVE SECTION HIGHLIGHT (shared utility)
+   Called by individual pages that have a
+   sticky in-page .section-nav.  Pass the
+   CSS selector string for the page sections.
+
+   Usage (inline script on each page):
+     highlightActiveSection('.accounting-section');
+   ============================================ */
+function highlightActiveSection(sectionSelector) {
+    const sections = document.querySelectorAll(sectionSelector);
+    const links    = document.querySelectorAll('.section-nav__link');
+    if (!sections.length || !links.length) return;
+
+    window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach(sec => {
+            if (window.pageYOffset >= sec.offsetTop - 200) {
+                current = sec.getAttribute('id');
+            }
+        });
+
+        links.forEach(link => {
+            const isActive = link.getAttribute('href') === `#${current}`;
+            link.classList.toggle('active', isActive);
+        });
+    }, { passive: true });
+}
+
+/* ============================================
+   PAGE LOAD TIMING (non-blocking diagnostic)
+   Uses the modern PerformanceNavigationTiming
+   API; falls back gracefully if unsupported.
+   ============================================ */
+window.addEventListener('load', () => {
+    const [entry] = performance.getEntriesByType('navigation');
+    if (entry) {
+        console.log(`Page load: ${Math.round(entry.duration)}ms`);
+    }
+});

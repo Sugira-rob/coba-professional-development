@@ -9,7 +9,7 @@
     <title>COBA Professional Development | Abilene Christian University</title>
     
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -36,7 +36,7 @@
                 </div>
 
                 <!-- Mobile Menu Toggle -->
-                <button class="header__menu-toggle" aria-label="Toggle menu" id="menuToggle">
+                <button class="header__menu-toggle" aria-label="Toggle menu" aria-expanded="false" id="menuToggle">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -245,7 +245,13 @@
                     <!-- Resume Building -->
                     <div class="resource-card resource-card--featured">
                         <div class="resource-card__header">
-                            <span class="resource-card__icon">📝</span>
+                            <!-- Document icon -->
+                            <svg class="card-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <rect x="8" y="4" width="28" height="40" rx="3" stroke="#4B2E83" stroke-width="2.5"/>
+                                <line x1="14" y1="17" x2="34" y2="17" stroke="#4B2E83" stroke-width="2.5" stroke-linecap="round"/>
+                                <line x1="14" y1="24" x2="34" y2="24" stroke="#4B2E83" stroke-width="2.5" stroke-linecap="round"/>
+                                <line x1="14" y1="31" x2="26" y2="31" stroke="#4B2E83" stroke-width="2.5" stroke-linecap="round"/>
+                            </svg>
                             <span class="resource-card__badge">Popular</span>
                         </div>
                         <h3 class="resource-card__title">Resume & Cover Letter Guide</h3>
@@ -258,7 +264,12 @@
                     <!-- Interview Prep -->
                     <div class="resource-card">
                         <div class="resource-card__header">
-                            <span class="resource-card__icon">🎤</span>
+                            <!-- Speech bubble / interview icon -->
+                            <svg class="card-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path d="M8 8h32a2 2 0 0 1 2 2v20a2 2 0 0 1-2 2H16l-8 6V10a2 2 0 0 1 2-2z" stroke="#4B2E83" stroke-width="2.5" stroke-linejoin="round"/>
+                                <line x1="16" y1="20" x2="32" y2="20" stroke="#4B2E83" stroke-width="2.5" stroke-linecap="round"/>
+                                <line x1="16" y1="27" x2="26" y2="27" stroke="#4B2E83" stroke-width="2.5" stroke-linecap="round"/>
+                            </svg>
                         </div>
                         <h3 class="resource-card__title">Interview Preparation</h3>
                         <p class="resource-card__description">
@@ -270,19 +281,28 @@
                     <!-- Job Search -->
                     <div class="resource-card">
                         <div class="resource-card__header">
-                            <span class="resource-card__icon">🔍</span>
+                            <!-- Magnifying glass icon -->
+                            <svg class="card-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <circle cx="21" cy="21" r="13" stroke="#4B2E83" stroke-width="2.5"/>
+                                <line x1="30" y1="30" x2="42" y2="42" stroke="#4B2E83" stroke-width="2.5" stroke-linecap="round"/>
+                            </svg>
                         </div>
                         <h3 class="resource-card__title">Job Search Platforms</h3>
                         <p class="resource-card__description">
                             40+ platforms to find internships, jobs, and career opportunities.
                         </p>
-                        <a href="pages/resources-all.html#job-tools" class="resource-card__link">Explore Tools →</a>
+                        <a href="pages/job-boards.html" class="resource-card__link">Explore Tools →</a>
                     </div>
 
                     <!-- Professional Dress -->
                     <div class="resource-card">
                         <div class="resource-card__header">
-                            <span class="resource-card__icon">👔</span>
+                            <!-- Briefcase icon -->
+                            <svg class="card-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <rect x="6" y="18" width="36" height="24" rx="3" stroke="#4B2E83" stroke-width="2.5"/>
+                                <path d="M16 18v-4a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v4" stroke="#4B2E83" stroke-width="2.5"/>
+                                <line x1="6" y1="30" x2="42" y2="30" stroke="#4B2E83" stroke-width="2.5"/>
+                            </svg>
                         </div>
                         <h3 class="resource-card__title">Professional Dress Guide</h3>
                         <p class="resource-card__description">
@@ -294,7 +314,10 @@
                     <!-- Experiential Learning -->
                     <div class="resource-card resource-card--wide">
                         <div class="resource-card__header">
-                            <span class="resource-card__icon">🌟</span>
+                            <!-- Star icon -->
+                            <svg class="card-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <polygon points="24,4 29,17 44,17 32,26 37,40 24,32 11,40 16,26 4,17 19,17" stroke="#4B2E83" stroke-width="2.5" stroke-linejoin="round"/>
+                            </svg>
                         </div>
                         <h3 class="resource-card__title">Experiential Learning Opportunities</h3>
                         <p class="resource-card__description">
@@ -338,7 +361,7 @@
                         Abilene, TX 79699
                     </p>
                     <p class="footer__text">
-                        <strong>Email:</strong> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="c0a3afa2a1eeb0b2afa6a4a5b680a1a3b5eea5a4b5">[email&#160;protected]</a><br>
+                        <strong>Email:</strong> <a href="mailto:jcj05c@acu.edu">jcj05c@acu.edu</a><br>
                         <strong>Phone:</strong> (325) 674-2427
                     </p>
                 </div>
@@ -351,7 +374,7 @@
                         <li><a href="#majors">Majors & Tracks</a></li>
                         <li><a href="#resources">Resources</a></li>
                         <li><a href="pages/international-students.html">International Students</a></li>
-                        <li><a href="https://acu.edu/coba" target="_blank">COBA Website</a></li>
+                        <li><a href="https://acu.edu/coba" target="_blank" rel="noopener noreferrer">COBA Website</a></li>
                     </ul>
                 </div>
 
@@ -361,7 +384,7 @@
                     <ul class="footer__links">
                         <li><a href="pages/resources-all.html#resume">Resume Builder</a></li>
                         <li><a href="pages/resources-all.html#interviews">Interview Prep</a></li>
-                        <li><a href="pages/resources-all.html#job-tools">Job Search Tools</a></li>
+                        <li><a href="pages/resources-all.html#job-platforms">Job Search Tools</a></li>
                         <li><a href="pages/resources-all.html#experiential">Experiential Learning</a></li>
                     </ul>
                 </div>
@@ -380,4 +403,9 @@
     </footer>
 
     <!-- Back to Top Button -->
-    <button class="back-to-top" id="backT
+        <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>

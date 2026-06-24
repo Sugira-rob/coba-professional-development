@@ -7,102 +7,27 @@
     <meta name="keywords" content="ACU, COBA, Accounting major, CPA, MAcc, auditing, tax, accounting careers">
     <meta name="author" content="ACU COBA">
     <title>Accounting Major Resources | COBA | ACU</title>
-    
+
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="../assets/images/favicon.png">
-    
+    <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg">
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Stylesheet -->
+
+    <!-- Stylesheet — shared styles live in main.css; only page-unique rules go here -->
     <link rel="stylesheet" href="../css/main.css">
-    
+
     <style>
-        /* Accounting Page Specific Styles */
-        .accounting-hero {
-            background: linear-gradient(135deg, #4B2E83 0%, #6B46A8 100%);
-            color: white;
-            padding: 120px 0 80px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .accounting-hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"><path d="M0,0 L1200,0 L1200,60 Q900,100 600,60 T0,60 Z" fill="rgba(255,255,255,0.05)"/></svg>') repeat-x bottom;
-            opacity: 0.1;
-        }
-
-        .accounting-hero h1 {
-            font-size: 56px;
-            margin-bottom: 20px;
-            font-weight: 800;
-            position: relative;
-            z-index: 1;
-            color: #ffffff;
-        }
-
-        .accounting-hero p {
-            font-size: 22px;
-            max-width: 800px;
-            margin: 0 auto 30px;
-            opacity: 0.95;
-            position: relative;
-            z-index: 1;
-            color: white;
-        }
-
+        /* Accounting page — the "$" icon in the hero, section wrapper, and header classes */
         .accounting-hero__icon {
             font-size: 80px;
             margin-bottom: 20px;
             display: block;
             font-family: 'Courier New', monospace;
             font-weight: bold;
-            color: white;
-        }
-
-        .section-nav {
-            background: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 70px;
-            z-index: 100;
-            padding: 20px 0;
-        }
-
-        .section-nav__list {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .section-nav__link {
-            padding: 10px 20px;
-            background: #f5f5f5;
-            color: #4B2E83;
-            text-decoration: none;
-            border-radius: 25px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            font-size: 14px;
-        }
-
-        .section-nav__link:hover {
-            background: #4B2E83;
-            color: white;
-            transform: translateY(-2px);
+            color: var(--color-white);
         }
 
         .accounting-section {
@@ -110,7 +35,7 @@
         }
 
         .accounting-section:nth-child(even) {
-            background: #f9f9f9;
+            background: var(--color-gray-100);
         }
 
         .accounting-section__header {
@@ -119,396 +44,24 @@
         }
 
         .accounting-section__title {
-            font-size: 42px;
-            color: #4B2E83;
+            font-size: var(--font-size-4xl);
+            color: var(--color-primary);
             margin-bottom: 15px;
             font-weight: 800;
         }
 
         .accounting-section__subtitle {
-            font-size: 20px;
-            color: #666;
+            font-size: var(--font-size-xl);
+            color: var(--color-gray-600);
             max-width: 800px;
             margin: 0 auto;
         }
 
-        .career-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .career-card {
-            background: white;
-            border-radius: 12px;
-            padding: 35px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .career-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, #4B2E83, #6B46A8);
-            transform: scaleX(0);
-            transition: transform 0.3s ease;
-        }
-
-        .career-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .career-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 30px rgba(75, 46, 131, 0.2);
-            border-color: #4B2E83;
-        }
-
-        .career-card__title {
-            font-size: 26px;
-            color: #4B2E83;
-            margin-bottom: 20px;
-            font-weight: 700;
-        }
-
-        .career-card__label {
-            font-weight: 700;
-            color: #4B2E83;
-            margin-top: 15px;
-            display: block;
-        }
-
-        .career-card__text {
-            color: #666;
-            line-height: 1.7;
-            margin-bottom: 15px;
-        }
-
-        .cert-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .cert-card {
-            background: white;
-            border-radius: 12px;
-            padding: 35px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
-        }
-
-        .cert-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(75, 46, 131, 0.15);
-            border-color: #6B46A8;
-        }
-
-        .cert-card__title {
-            font-size: 24px;
-            color: #4B2E83;
-            margin-bottom: 15px;
-            font-weight: 700;
-        }
-
-        .cert-card__description {
-            color: #666;
-            line-height: 1.7;
-            margin-bottom: 20px;
-        }
-
-        .cert-card__btn {
-            display: inline-block;
-            padding: 12px 30px;
-            background: #4B2E83;
-            color: white;
-            text-decoration: none;
-            border-radius: 25px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-
-        .cert-card__btn:hover {
-            background: #6B46A8;
-            transform: scale(1.05);
-        }
-
-        .big4-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .big4-card {
-            background: white;
-            border-radius: 12px;
-            padding: 40px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-            transition: all 0.3s ease;
-            text-align: center;
-            border: 2px solid transparent;
-        }
-
-        .big4-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 30px rgba(75, 46, 131, 0.2);
-            border-color: #4B2E83;
-        }
-
-        .big4-card__title {
-            font-size: 32px;
-            color: #4B2E83;
-            margin-bottom: 20px;
-            font-weight: 800;
-        }
-
-        .big4-card__btn {
-            display: inline-block;
-            padding: 12px 35px;
-            background: #4B2E83;
-            color: white;
-            text-decoration: none;
-            border-radius: 25px;
-            font-weight: 700;
-            transition: all 0.3s ease;
-        }
-
-        .big4-card__btn:hover {
-            background: #ffc940;
-            transform: scale(1.05);
-        }
-
-        .video-container {
-            position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
-            overflow: hidden;
-            max-width: 900px;
-            margin: 40px auto;
-            border-radius: 12px;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
-        }
-
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border-radius: 12px;
-        }
-
-        .content-box {
-            background: white;
-            border-radius: 12px;
-            padding: 40px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-            margin-top: 40px;
-        }
-
-        .content-box h3 {
-            color: #4B2E83;
-            font-size: 28px;
-            margin-bottom: 20px;
-            font-weight: 700;
-        }
-
-        .content-box h4 {
-            color: #6B46A8;
-            font-size: 22px;
-            margin-top: 30px;
-            margin-bottom: 15px;
-            font-weight: 700;
-        }
-
-        .content-box ul {
-            margin-left: 25px;
-            line-height: 1.9;
-        }
-
-        .content-box ul li {
-            margin-bottom: 12px;
-            color: #666;
-        }
-
-        .content-box ul li strong {
-            color: #4B2E83;
-        }
-
-        .highlight-box {
-            background: linear-gradient(135deg, #f8f4ff 0%, #f0ebf8 100%);
-            border-left: 5px solid #6B46A8;
-            padding: 25px;
-            border-radius: 8px;
-            margin: 25px 0;
-        }
-
-        .highlight-box strong {
-            color: #4B2E83;
-            font-size: 18px;
-        }
-
-        .highlight-box p {
-            color: #666;
-            line-height: 1.7;
-            margin-top: 10px;
-        }
-
-        .macc-details {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin: 30px 0;
-        }
-
-        .macc-detail {
-            background: #f9f9f9;
-            padding: 25px;
-            border-radius: 8px;
-            text-align: center;
-            border-left: 4px solid #6B46A8;
-        }
-
-        .macc-detail__label {
-            font-size: 14px;
-            color: #666;
-            margin-bottom: 8px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .macc-detail__value {
-            font-size: 28px;
-            color: #4B2E83;
-            font-weight: 800;
-        }
-
-        .timeline {
-            position: relative;
-            max-width: 800px;
-            margin: 40px auto;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 4px;
-            height: 100%;
-            background: #4B2E83;
-        }
-
-        .timeline-item {
-            margin-bottom: 40px;
-            position: relative;
-        }
-
-        .timeline-item__content {
-            background: white;
-            padding: 25px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-            width: calc(50% - 30px);
-            position: relative;
-        }
-
-        .timeline-item:nth-child(odd) .timeline-item__content {
-            margin-left: auto;
-        }
-
-        .timeline-item__title {
-            color: #4B2E83;
-            font-weight: 700;
-            font-size: 18px;
+        /* Slight color override for the spreadsheet caption (not in main.css) */
+        .spreadsheet-embed p {
+            color: var(--color-gray-600);
+            font-size: var(--font-size-base);
             margin-bottom: 10px;
-        }
-
-        .timeline-item__text {
-            color: #666;
-            line-height: 1.6;
-        }
-
-        .cta-section {
-            background: linear-gradient(135deg, #4B2E83 0%, #6B46A8 100%);
-            color: white;
-            padding: 60px;
-            border-radius: 12px;
-            text-align: center;
-            margin-top: 60px;
-        }
-
-        .cta-section h3 {
-            font-size: 36px;
-            margin-bottom: 15px;
-            font-weight: 700;
-        }
-
-        .cta-section p {
-            font-size: 18px;
-            margin-bottom: 30px;
-            opacity: 0.95;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 15px 40px;
-            background: #4B2E83;
-            color: white;
-            text-decoration: none;
-            border-radius: 30px;
-            font-weight: 700;
-            font-size: 16px;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-        }
-
-        .btn:hover {
-            background: #ffc940;
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-        }
-
-        .back-to-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 50px;
-            height: 50px;
-            background: #4B2E83;
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            font-size: 24px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-            z-index: 1000;
-        }
-
-        .back-to-top.visible {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .back-to-top:hover {
-            background: #6B46A8;
-            transform: translateY(-5px);
         }
 
         @media (max-width: 1200px) {
@@ -518,39 +71,11 @@
         }
 
         @media (max-width: 768px) {
-            .accounting-hero h1 {
-                font-size: 38px;
-            }
-
-            .accounting-hero p {
-                font-size: 18px;
-            }
-
             .accounting-section__title {
-                font-size: 32px;
+                font-size: var(--font-size-3xl);
             }
 
-            .career-cards,
-            .cert-cards {
-                grid-template-columns: 1fr;
-            }
-
-            .section-nav {
-                top: 60px;
-            }
-
-            .section-nav__list {
-                gap: 10px;
-            }
-
-            .cta-section {
-                padding: 40px 20px;
-            }
-
-            .cta-section h3 {
-                font-size: 28px;
-            }
-
+            /* Stack timeline to the right of a left rail on mobile */
             .timeline::before {
                 left: 20px;
             }
@@ -564,66 +89,10 @@
                 grid-template-columns: 1fr;
             }
         }
-    
-        
-
-        .spreadsheet-embed p {
-            color: #666;
-            font-size: 16px;
-            margin-bottom: 10px;
-        }
-
-    
-        .cs-section {
-            padding: 80px 0;
-            background: #f9f9f9;
-        }
-
-        .cs-section__header {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .cs-section__title {
-            font-size: 42px;
-            color: #4B2E83;
-            margin-bottom: 15px;
-            font-weight: 800;
-        }
-
-        .cs-section__subtitle {
-            font-size: 20px;
-            color: #666;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .spreadsheet-embed {
-            margin: 60px 0;
-            background: white;
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-        }
-
-        .spreadsheet-embed h3 {
-            color: #4B2E83;
-            font-size: 28px;
-            margin-bottom: 10px;
-        }
-
-        .spreadsheet-embed iframe {
-            width: 100%;
-            height: 600px;
-            border: none;
-            border-radius: 10px;
-            margin-top: 20px;
-        }
-
     </style>
 </head>
 <body>
-    <!-- Skip to Main Content -->
+    <!-- Skip to Main Content (Accessibility) -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <!-- Header & Navigation -->
@@ -639,19 +108,19 @@
                 </div>
 
                 <!-- Mobile Menu Toggle -->
-                <button class="header__menu-toggle" aria-label="Toggle menu" id="menuToggle">
+                <button class="header__menu-toggle" aria-label="Toggle menu" aria-expanded="false" id="menuToggle">
                     <span></span>
                     <span></span>
                     <span></span>
                 </button>
 
                 <!-- Navigation -->
-            <nav class="header__nav" id="mainNav">
+                <nav class="header__nav" id="mainNav">
                     <ul class="nav-list">
                         <li><a href="../index.html#home" class="nav-list__link">Home</a></li>
                         <li><a href="../index.html#about" class="nav-list__link">About</a></li>
                         <li class="nav-list__item--dropdown">
-                            <a href="#" class="nav-list__link">Majors & Tracks <span class="dropdown-arrow">▾</span></a>
+                            <a href="#" class="nav-list__link">Majors &amp; Tracks <span class="dropdown-arrow">▾</span></a>
                             <ul class="nav-dropdown">
                                 <li><a href="accounting.html">Accounting</a></li>
                                 <li><a href="computer-science.html">Computer Science</a></li>
@@ -673,11 +142,11 @@
         </div>
     </header>
 
-
     <!-- Main Content -->
     <main id="main-content">
+
         <!-- Hero Section -->
-        <section class="accounting-hero">
+        <section class="page-hero accounting-hero">
             <div class="container">
                 <div class="accounting-hero__icon">$</div>
                 <h1>Accounting Major</h1>
@@ -686,7 +155,7 @@
         </section>
 
         <!-- Section Navigation -->
-        <nav class="section-nav">
+        <nav class="section-nav" aria-label="Accounting sections">
             <div class="container">
                 <ul class="section-nav__list">
                     <li><a href="#overview" class="section-nav__link">Overview</a></li>
@@ -695,8 +164,8 @@
                     <li><a href="#macc" class="section-nav__link">MAcc Program</a></li>
                     <li><a href="#cpa-exam" class="section-nav__link">CPA Exam</a></li>
                     <li><a href="#career-paths" class="section-nav__link">Career Paths</a></li>
-                    <li><a href="#jobs-internships" class="section-nav__link">Internships & Jobs</a></li>
-                    <li><a href="https://docs.google.com/spreadsheets/d/1TI0qV7v27tFhobJ1jkX36jbwIYpEM7s0Q-s2wAdTrxk/edit?gid=0#gid=0" target="_blank" class="section-nav__link">Application Tracker</a></li>
+                    <li><a href="#jobs-internships" class="section-nav__link">Internships &amp; Jobs</a></li>
+                    <li><a href="https://docs.google.com/spreadsheets/d/1TI0qV7v27tFhobJ1jkX36jbwIYpEM7s0Q-s2wAdTrxk/edit?gid=0#gid=0" target="_blank" rel="noopener noreferrer" class="section-nav__link">Application Tracker</a></li>
                 </ul>
             </div>
         </nav>
@@ -715,7 +184,7 @@
 
                 <div class="content-box">
                     <h3>Accounting at ACU</h3>
-                    <p style="color: #666; line-height: 1.8; margin-bottom: 20px;">
+                    <p style="color: var(--color-gray-600); line-height: 1.8; margin-bottom: 20px;">
                         ACU's Accounting program prepares you for success in public accounting, private industry, or government work through hands-on learning and real-world applications.
                     </p>
 
@@ -731,7 +200,7 @@
 
                 <div class="highlight-box">
                     <strong>Student Internship Experience</strong>
-                    <p>Hear about an Accounting student's internship experience and how it launched their career! <a href="https://blogs.acu.edu/coba/2022/05/" target="_blank" style="color: #4B2E83; font-weight: 600;">Read their story →</a></p>
+                    <p>Hear about an Accounting student's internship experience and how it launched their career! <a href="https://blogs.acu.edu/coba/2022/05/" target="_blank" rel="noopener noreferrer" style="color: var(--color-primary); font-weight: 600;">Read their story &rarr;</a></p>
                 </div>
             </div>
         </section>
@@ -751,7 +220,7 @@
                         <p class="cert-card__description">
                             The most recognized accounting credential. CPAs advise on financial planning, accounting, and tax matters for individuals and organizations.
                         </p>
-                        <a href="https://www.aicpa-cima.com/resources/toolkit/cpa-exam" target="_blank" class="cert-card__btn">Learn More About CPA →</a>
+                        <a href="https://www.aicpa-cima.com/resources/toolkit/cpa-exam" target="_blank" rel="noopener noreferrer" class="cert-card__btn">Learn More About CPA &rarr;</a>
                     </div>
 
                     <!-- CMA -->
@@ -760,7 +229,7 @@
                         <p class="cert-card__description">
                             Focuses on management accounting and finance. Covers management skills, corporate finance, and professional ethics.
                         </p>
-                        <a href="https://www.imanet.org/IMA-Certifications/CMA-Certification" target="_blank" class="cert-card__btn">Learn More About CMA →</a>
+                        <a href="https://www.imanet.org/IMA-Certifications/CMA-Certification" target="_blank" rel="noopener noreferrer" class="cert-card__btn">Learn More About CMA &rarr;</a>
                     </div>
 
                     <!-- CIA -->
@@ -769,7 +238,7 @@
                         <p class="cert-card__description">
                             The only globally-accepted certification for internal auditors. Essential credential for those pursuing audit careers.
                         </p>
-                        <a href="https://www.theiia.org/en/certifications/cia" target="_blank" class="cert-card__btn">Learn More About CIA →</a>
+                        <a href="https://www.theiia.org/en/certifications/cia" target="_blank" rel="noopener noreferrer" class="cert-card__btn">Learn More About CIA &rarr;</a>
                     </div>
                 </div>
 
@@ -791,26 +260,26 @@
                 <div class="big4-grid">
                     <div class="big4-card">
                         <h3 class="big4-card__title">Deloitte</h3>
-                        <p style="color: #666; margin-bottom: 25px;">The largest of the Big 4, offering audit, consulting, tax, and advisory services worldwide.</p>
-                        <a href="https://www.deloitte.com/us/en/careers/careers.html" target="_blank" class="big4-card__btn">Explore Careers →</a>
+                        <p style="color: var(--color-gray-600); margin-bottom: 25px;">The largest of the Big 4, offering audit, consulting, tax, and advisory services worldwide.</p>
+                        <a href="https://www.deloitte.com/us/en/careers/careers.html" target="_blank" rel="noopener noreferrer" class="big4-card__btn">Explore Careers &rarr;</a>
                     </div>
 
                     <div class="big4-card">
                         <h3 class="big4-card__title">PwC</h3>
-                        <p style="color: #666; margin-bottom: 25px;">PricewaterhouseCoopers provides assurance, tax, and advisory services to build trust and solve important problems.</p>
-                        <a href="https://www.pwc.com/us/en/careers.html" target="_blank" class="big4-card__btn">Explore Careers →</a>
+                        <p style="color: var(--color-gray-600); margin-bottom: 25px;">PricewaterhouseCoopers provides assurance, tax, and advisory services to build trust and solve important problems.</p>
+                        <a href="https://www.pwc.com/us/en/careers.html" target="_blank" rel="noopener noreferrer" class="big4-card__btn">Explore Careers &rarr;</a>
                     </div>
 
                     <div class="big4-card">
                         <h3 class="big4-card__title">EY</h3>
-                        <p style="color: #666; margin-bottom: 25px;">Ernst & Young is a global leader in assurance, tax, transaction, and advisory services.</p>
-                        <a href="https://usearlycareers.ey.com/" target="_blank" class="big4-card__btn">Explore Careers →</a>
+                        <p style="color: var(--color-gray-600); margin-bottom: 25px;">Ernst &amp; Young is a global leader in assurance, tax, transaction, and advisory services.</p>
+                        <a href="https://usearlycareers.ey.com/" target="_blank" rel="noopener noreferrer" class="big4-card__btn">Explore Careers &rarr;</a>
                     </div>
 
                     <div class="big4-card">
                         <h3 class="big4-card__title">KPMG</h3>
-                        <p style="color: #666; margin-bottom: 25px;">KPMG delivers audit, tax, and advisory services with a focus on quality and integrity.</p>
-                        <a href="https://www.kpmguscareers.com/early-career/" target="_blank" class="big4-card__btn">Explore Careers →</a>
+                        <p style="color: var(--color-gray-600); margin-bottom: 25px;">KPMG delivers audit, tax, and advisory services with a focus on quality and integrity.</p>
+                        <a href="https://www.kpmguscareers.com/early-career/" target="_blank" rel="noopener noreferrer" class="big4-card__btn">Explore Careers &rarr;</a>
                     </div>
                 </div>
 
@@ -830,7 +299,7 @@
                             <div class="macc-detail__value">??</div>
                         </div>
                     </div>
-                    <p style="color: #666; line-height: 1.8; margin-top: 20px;">
+                    <p style="color: var(--color-gray-600); line-height: 1.8; margin-top: 20px;">
                         While GPA is important, it's not the only factor. Strong internship experience, leadership activities, and networking can help you stand out. Start building your resume early!
                     </p>
                 </div>
@@ -846,7 +315,7 @@
                 </div>
 
                 <div class="content-box">
-                    <p style="color: #666; line-height: 1.8; margin-bottom: 30px;">
+                    <p style="color: var(--color-gray-600); line-height: 1.8; margin-bottom: 30px;">
                         The Master's Degree of Accountancy (MAcc) is a graduate program that the College of Business Administration offers for students wishing to enhance their education in the world of accounting. This program is designed to provide students with more in-depth concepts in accounting. Students wishing to obtain their CPA license are usually interested in obtaining their Master's Degree in Accountancy.
                     </p>
 
@@ -874,7 +343,7 @@
                         <li><strong>Financial Statement Analysis:</strong> In-depth analysis techniques for complex financial reporting</li>
                     </ul>
 
-                    <a href="https://acu.edu/academics/graduate/master-of-accountancy" target="_blank" class="btn" style="margin-top: 30px;">Learn More About MAcc Program →</a>
+                    <a href="https://acu.edu/academics/graduate/master-of-accountancy" target="_blank" rel="noopener noreferrer" class="btn" style="margin-top: 30px;">Learn More About MAcc Program &rarr;</a>
                 </div>
 
                 <div class="highlight-box" style="margin-top: 40px;">
@@ -894,7 +363,7 @@
 
                 <div class="content-box">
                     <h3>Do you wish to become a Certified Public Accountant?</h3>
-                    <p style="color: #666; line-height: 1.8; margin-bottom: 25px;">
+                    <p style="color: var(--color-gray-600); line-height: 1.8; margin-bottom: 25px;">
                         The CPA license is a certification available for those who wish to work as independent accountants. The following are some of the requirements to obtain the CPA in Texas:
                     </p>
 
@@ -915,12 +384,12 @@
                         <li><strong>Regulation (REG):</strong> Federal taxation, ethics, business law, and professional responsibilities</li>
                     </ul>
 
-                    <a href="https://www.accounting.com/resources/cpa-exam-guide/" target="_blank" class="btn" style="margin-top: 30px;">Complete CPA Exam Guide →</a>
+                    <a href="https://www.accounting.com/resources/cpa-exam-guide/" target="_blank" rel="noopener noreferrer" class="btn" style="margin-top: 30px;">Complete CPA Exam Guide &rarr;</a>
                 </div>
 
                 <div class="highlight-box" style="margin-top: 40px;">
                     <strong>CPA Exam Preparation</strong>
-                    <p>Most students begin studying for the CPA exam during their senior year or while completing their MAcc. ACU provides resources and support to help you prepare. Consider review courses like Becker, Wiley, or Roger CPA Review. Allow 300-400 hours of study time for all four sections.</p>
+                    <p>Most students begin studying for the CPA exam during their senior year or while completing their MAcc. ACU provides resources and support to help you prepare. Consider review courses like Becker, Wiley, or Roger CPA Review. Allow 300&ndash;400 hours of study time for all four sections.</p>
                 </div>
             </div>
         </section>
@@ -1018,7 +487,7 @@
                         <span class="career-card__label">Key Responsibilities:</span>
                         <ul class="career-card__text">
                             <li>Business valuation</li>
-                            <li>Mergers & acquisitions support</li>
+                            <li>Mergers &amp; acquisitions support</li>
                             <li>Financial due diligence</li>
                             <li>Restructuring services</li>
                         </ul>
@@ -1058,35 +527,33 @@
                 <div class="cta-section">
                     <h3>Ready to Launch Your Accounting Career?</h3>
                     <p>Explore all our resources including resume guides, interview prep, and job search strategies</p>
-                    <a href="resources-all.html" class="btn">View All Resources →</a>
+                    <a href="resources-all.html" class="btn">View All Resources &rarr;</a>
                 </div>
             </div>
         </section>
 
-
-    
         <!-- Internships & Jobs Section -->
         <section id="jobs-internships" class="cs-section">
             <div class="container">
                 <div class="cs-section__header">
-                    <h2 class="cs-section__title">Internships & Jobs for Accounting Majors</h2>
+                    <h2 class="cs-section__title">Internships &amp; Jobs for Accounting Majors</h2>
                     <p class="cs-section__subtitle">Curated opportunities including Big 4 positions, corporate roles, and government opportunities</p>
                 </div>
 
                 <!-- Accounting Internships Spreadsheet -->
                 <div class="spreadsheet-embed">
                     <h3>Accounting Internships</h3>
-                    <p style="color: #666; margin-bottom: 20px;">Current internship opportunities for accounting majors</p>
-                    <iframe src="https://docs.google.com/spreadsheets/d/1Sr_WpFQAgk8hOGAl7ejWiCS5cMuLGnWRPRko_XPX2vc/edit?usp=sharing&widget=true&headers=false"></iframe>
-                    <a href="https://docs.google.com/spreadsheets/d/1Sr_WpFQAgk8hOGAl7ejWiCS5cMuLGnWRPRko_XPX2vc/" target="_blank" class="btn" style="margin-top: 20px;">Open Full Spreadsheet →</a>
+                    <p>Current internship opportunities for accounting majors</p>
+                    <iframe src="https://docs.google.com/spreadsheets/d/1Sr_WpFQAgk8hOGAl7ejWiCS5cMuLGnWRPRko_XPX2vc/edit?usp=sharing&widget=true&headers=false" title="Accounting Internships Spreadsheet"></iframe>
+                    <a href="https://docs.google.com/spreadsheets/d/1Sr_WpFQAgk8hOGAl7ejWiCS5cMuLGnWRPRko_XPX2vc/" target="_blank" rel="noopener noreferrer" class="btn" style="margin-top: 20px;">Open Full Spreadsheet &rarr;</a>
                 </div>
 
                 <!-- Accounting Jobs Spreadsheet -->
                 <div class="spreadsheet-embed">
                     <h3>Accounting Jobs</h3>
-                    <p style="color: #666; margin-bottom: 20px;">Full-time accounting positions and opportunities</p>
-                    <iframe src="https://docs.google.com/spreadsheets/d/1dK5_3arpqeD9KI2Vv_UOnDQANhx6OsUCGe3sOpchH2E/edit?usp=sharing&widget=true&headers=false"></iframe>
-                    <a href="https://docs.google.com/spreadsheets/d/1dK5_3arpqeD9KI2Vv_UOnDQANhx6OsUCGe3sOpchH2E/" target="_blank" class="btn" style="margin-top: 20px;">Open Full Spreadsheet →</a>
+                    <p>Full-time accounting positions and opportunities</p>
+                    <iframe src="https://docs.google.com/spreadsheets/d/1dK5_3arpqeD9KI2Vv_UOnDQANhx6OsUCGe3sOpchH2E/edit?usp=sharing&widget=true&headers=false" title="Accounting Jobs Spreadsheet"></iframe>
+                    <a href="https://docs.google.com/spreadsheets/d/1dK5_3arpqeD9KI2Vv_UOnDQANhx6OsUCGe3sOpchH2E/" target="_blank" rel="noopener noreferrer" class="btn" style="margin-top: 20px;">Open Full Spreadsheet &rarr;</a>
                 </div>
             </div>
         </section>
@@ -1107,7 +574,7 @@
                         Abilene, TX 79699
                     </p>
                     <p class="footer__text">
-                        <strong>Email:</strong> jcj05c@acu.edu<br>
+                        <strong>Email:</strong> <a href="mailto:jcj05c@acu.edu">jcj05c@acu.edu</a><br>
                         <strong>Phone:</strong> (325) 674-2427
                     </p>
                 </div>
@@ -1117,10 +584,10 @@
                     <h3 class="footer__title">Quick Links</h3>
                     <ul class="footer__links">
                         <li><a href="../index.html#about">About COBA</a></li>
-                        <li><a href="../index.html#majors">Majors & Tracks</a></li>
+                        <li><a href="../index.html#majors">Majors &amp; Tracks</a></li>
                         <li><a href="resources-all.html">Resources</a></li>
                         <li><a href="international-students.html">International Students</a></li>
-                        <li><a href="https://acu.edu/coba" target="_blank">COBA Website</a></li>
+                        <li><a href="https://acu.edu/coba" target="_blank" rel="noopener noreferrer">COBA Website</a></li>
                     </ul>
                 </div>
 
@@ -1149,65 +616,13 @@
     </footer>
 
     <!-- Back to Top Button -->
-    <a href="#main-content" class="back-to-top" id="backToTop">↑</a>
+    <a href="#main-content" class="back-to-top" id="backToTop" aria-label="Back to top">&#8593;</a>
 
     <!-- JavaScript -->
     <script src="../js/main.js"></script>
     <script>
-        // Back to Top Button
-        const backToTopButton = document.getElementById('backToTop');
-        
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                backToTopButton.classList.add('visible');
-            } else {
-                backToTopButton.classList.remove('visible');
-            }
-        });
-
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    const headerOffset = 160;
-                    const elementPosition = target.getBoundingClientRect().top;
-                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-                    window.scrollTo({
-                        top: offsetPosition,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-
-        // Active section highlighting
-        const sections = document.querySelectorAll('.accounting-section');
-        const navLinks = document.querySelectorAll('.section-nav__link');
-
-        window.addEventListener('scroll', () => {
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (window.pageYOffset >= (sectionTop - 200)) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${current}`) {
-                    link.style.background = '#4B2E83';
-                    link.style.color = 'white';
-                } else {
-                    link.style.background = '#f5f5f5';
-                    link.style.color = '#4B2E83';
-                }
-            });
-        });
+        /* Highlight active section in the sticky quick-nav */
+        highlightActiveSection('.accounting-section');
     </script>
 </body>
 </html>
