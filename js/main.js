@@ -6,15 +6,16 @@
  * DOM element causes an early return, not a thrown error.
  *
  * Table of contents
- *  1. initAll             — wires everything together
- *  2. initHeroSlider      — auto-playing image carousel (index only)
- *  3. initMobileMenu      — hamburger nav toggle
- *  4. initDropdownMenus   — mobile accordion for the Majors dropdown
- *  5. initSmoothScroll    — offset-aware anchor scrolling
- *  6. initBackToTop       — floating scroll-to-top button
- *  7. initHeaderScroll    — header shadow on scroll
- *  8. initScrollAnimations— Intersection Observer fade-in for cards
- *  9. initCopyrightYear   — auto-updates footer year
+ *  1. initAll              — wires everything together
+ *  2. initHeroSlider       — auto-playing image carousel (index only)
+ *  3. initMobileMenu       — hamburger nav toggle
+ *  4. initDropdownMenus    — mobile accordion for the Majors dropdown
+ *  5. initSmoothScroll     — offset-aware anchor scrolling (header + section-nav)
+ *  6. initBackToTop        — floating scroll-to-top button
+ *  7. initHeaderScroll     — header shadow on scroll
+ *  8. initScrollAnimations — Intersection Observer fade-in for cards
+ *  9. initCopyrightYear    — auto-updates footer year
+ * 10. initActiveNavLink    — highlights the current page in the top nav
  */
 
 document.addEventListener('DOMContentLoaded', initAll);
@@ -30,6 +31,7 @@ function initAll() {
     initBackToTop();
     initHeaderScroll();
     initCopyrightYear();
+    initActiveNavLink();
 
     /* Scroll animations wait for full load so images are sized */
     window.addEventListener('load', initScrollAnimations);
@@ -172,7 +174,9 @@ function initDropdownMenus() {
 /* ============================================
    5. SMOOTH SCROLL
    Intercepts all same-page anchor clicks and
-   accounts for the fixed header height.
+   accounts for both the fixed header AND the
+   sticky section-nav so content never lands
+   hidden under either bar.
    ============================================ */
 function initSmoothScroll() {
     const header = document.querySelector('.header');
@@ -186,8 +190,13 @@ function initSmoothScroll() {
             if (!target) return;
 
             e.preventDefault();
-            const offset = header ? header.offsetHeight : 70;
-            const top    = target.getBoundingClientRect().top + window.pageYOffset - offset;
+
+            /* Add section-nav height when it is present and sticky */
+            const sectionNav = document.querySelector('.section-nav');
+            const offset = (header ? header.offsetHeight : 70)
+                         + (sectionNav ? sectionNav.offsetHeight : 0);
+
+            const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
             window.scrollTo({ top, behavior: 'smooth' });
         });
     });
@@ -272,14 +281,23 @@ function initCopyrightYear() {
      highlightActiveSection('.accounting-section');
    ============================================ */
 function highlightActiveSection(sectionSelector) {
-    const sections = document.querySelectorAll(sectionSelector);
-    const links    = document.querySelectorAll('.section-nav__link');
+    const sections   = document.querySelectorAll(sectionSelector);
+    const links      = document.querySelectorAll('.section-nav__link');
     if (!sections.length || !links.length) return;
 
+    const header     = document.querySelector('.header');
+    const sectionNav = document.querySelector('.section-nav');
+
     window.addEventListener('scroll', () => {
+        /* Compute threshold dynamically so it stays accurate if the
+           header or section-nav height ever changes (e.g. on resize). */
+        const threshold = (header?.offsetHeight || 70)
+                        + (sectionNav?.offsetHeight || 70)
+                        + 20; /* 20px breathing room */
+
         let current = '';
         sections.forEach(sec => {
-            if (window.pageYOffset >= sec.offsetTop - 200) {
+            if (window.pageYOffset >= sec.offsetTop - threshold) {
                 current = sec.getAttribute('id');
             }
         });
@@ -289,6 +307,22 @@ function highlightActiveSection(sectionSelector) {
             link.classList.toggle('active', isActive);
         });
     }, { passive: true });
+}
+
+/* ============================================
+  10. ACTIVE NAV LINK
+   Compares each top-nav link's href to the
+   current page URL and marks the match active
+   so users always know which page they're on.
+   ============================================ */
+function initActiveNavLink() {
+    const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('.nav-list__link, .nav-dropdown a').forEach(link => {
+        const linkPath = link.getAttribute('href').split('/').pop().split('#')[0];
+        if (linkPath && linkPath === currentPath) {
+            link.classList.add('nav-list__link--active');
+        }
+    });
 }
 
 /* ============================================

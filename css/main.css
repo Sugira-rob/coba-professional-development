@@ -92,6 +92,9 @@
 html {
     scroll-behavior: smooth;
     font-size: 16px;
+    /* Ensure browser-native anchor jumps (e.g. page load with #hash)
+       clear the fixed header. JS smooth scroll adds section-nav on top. */
+    scroll-padding-top: 75px;
 }
 
 body {
@@ -236,6 +239,13 @@ a:hover {
 .nav-list__link:hover {
     color: var(--color-primary);
     background: var(--color-gray-100);
+}
+
+/* Current page indicator — set by initActiveNavLink() in main.js */
+.nav-list__link--active {
+    color: var(--color-primary);
+    font-weight: 700;
+    border-bottom: 2px solid var(--color-primary);
 }
 
 .nav-list__link--cta {
@@ -2175,11 +2185,11 @@ a.back-to-top {
 
 @media (max-width: 768px) {
     .page-hero {
-        padding: 90px 0 60px;
+        padding: 60px 20px 45px;
     }
 
     .page-hero h1 {
-        font-size: var(--font-size-4xl);
+        font-size: 2rem;
     }
 
     .page-hero p {
@@ -2195,13 +2205,25 @@ a.back-to-top {
         grid-template-columns: 1fr;
     }
 
-    /* Sub-nav wraps to 2 columns on small screens */
     .section-nav {
         top: 60px;
     }
 
     .section-nav__list {
-        gap: 0.625rem;
+        gap: 0.5rem;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        padding-bottom: 4px;
+    }
+
+    .section-nav__list::-webkit-scrollbar {
+        display: none;
+    }
+
+    .section-nav__link {
+        white-space: nowrap;
     }
 
     .cta-section {

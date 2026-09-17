@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Schedule a meeting with COBA Professional Development - Connect with Jasmine McCabe-Gossett">
+    <meta name="description" content="Schedule a meeting with COBA Professional Development - Connect with Lauren Boyles, Director of Professional Development">
     <meta name="keywords" content="ACU, COBA, professional development, schedule meeting, career coaching">
     <meta name="author" content="ACU COBA">
     <title>Schedule a Meeting | COBA Professional Development | ACU</title>
@@ -42,6 +42,55 @@
 
         .director-card__detail span {
             color: var(--color-gray-800);
+        }
+
+        .director-card__detail a {
+            color: var(--color-primary);
+            text-decoration: none;
+        }
+
+        .director-card__detail a:hover {
+            text-decoration: underline;
+        }
+
+        /* Initials placeholder used until a real headshot is available */
+        .director-card__image-placeholder {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 64px;
+            font-weight: 800;
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: -2px;
+        }
+
+        /* Circular avatar placeholder for student coach cards */
+        .contact-method__avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            font-weight: 800;
+            font-family: 'Montserrat', sans-serif;
+            margin: 0 auto 15px;
+        }
+
+        .contact-method__role {
+            font-size: var(--font-size-sm);
+            color: var(--color-primary);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 10px;
         }
 
         /* Heading for the Student Coaches section */
@@ -137,66 +186,33 @@
         <section class="contact-section">
             <div class="contact-container">
 
-                <!-- Jasmine McCabe-Gossett -->
+                <!-- Lauren Boyles — Director of Professional Development -->
                 <div class="director-card">
                     <div class="director-card__content">
                         <div class="director-card__image-wrap">
-                            <img src="../assets/images/jasmine-mccabe.jpg" alt="Jasmine McCabe-Gossett" class="director-card__image">
+                            <!-- Replace with lauren-boyles.jpg once headshot is available -->
+                            <div class="director-card__image-placeholder" aria-label="Photo coming soon">LB</div>
                         </div>
                         <div class="director-card__info">
-                            <h2 class="director-card__name">Jasmine McCabe-Gossett</h2>
-                            <p class="director-card__title-label">Professional Development &amp; Internship Director</p>
+                            <h2 class="director-card__name">Lauren Boyles, MA, LPC, CPRW</h2>
+                            <p class="director-card__title-label">Director of Professional Development</p>
 
                             <div class="director-card__details">
                                 <div class="director-card__detail">
-                                    <strong>University:</strong>
-                                    <span>Abilene Christian University</span>
-                                </div>
-                                <div class="director-card__detail">
-                                    <strong>College:</strong>
-                                    <span>College of Business Administration</span>
-                                </div>
-                                <div class="director-card__detail">
-                                    <strong>Office:</strong>
-                                    <span>Mabee Business Building, Room 132</span>
-                                </div>
-                                <div class="director-card__detail">
-                                    <strong>Phone:</strong>
-                                    <span>325-674-2427</span>
-                                </div>
-                            </div>
-
-                            <a href="https://acu.12twenty.com/login?ReturnUrl=%2Fappointments" target="_blank" rel="noopener noreferrer" class="director-card__cta">Click Here for Coaching &rarr;</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Hailey Rotenberry -->
-                <div class="director-card">
-                    <div class="director-card__content">
-                        <div class="director-card__image-wrap">
-                            <img src="../assets/images/hailey-rotenberry.jpeg" alt="Hailey Rotenberry" class="director-card__image">
-                        </div>
-                        <div class="director-card__info">
-                            <h2 class="director-card__name">Hailey Rotenberry</h2>
-                            <p class="director-card__title-label">Professional Development Coordinator</p>
-
-                            <div class="director-card__details">
-                                <div class="director-card__detail">
-                                    <strong>University:</strong>
-                                    <span>Abilene Christian University</span>
-                                </div>
-                                <div class="director-card__detail">
-                                    <strong>College:</strong>
-                                    <span>College of Business Administration</span>
+                                    <strong>Email:</strong>
+                                    <span><a href="mailto:lauren.boyles@acu.edu">lauren.boyles@acu.edu</a></span>
                                 </div>
                                 <div class="director-card__detail">
                                     <strong>Phone:</strong>
                                     <span>325-674-2511</span>
                                 </div>
+                                <div class="director-card__detail">
+                                    <strong>Office:</strong>
+                                    <span>Mabee Business Building, Room 231</span>
+                                </div>
                             </div>
 
-                            <a href="https://success.acu.edu/portal/hailey's_coaching" target="_blank" rel="noopener noreferrer" class="director-card__cta">Schedule a Coaching Session &rarr;</a>
+                            <a href="https://acu.12twenty.com/appointments" target="_blank" rel="noopener noreferrer" class="director-card__cta">Schedule an Appointment &rarr;</a>
                         </div>
                     </div>
                 </div>
@@ -205,19 +221,25 @@
                 <h2 class="coaches-heading">Student Coaches</h2>
 
                 <div class="contact-methods">
-                    <div class="contact-method">
-                        <h3>Schedule Coaching</h3>
-                        <p>Schedule a session with a student coach for your specific major for personalized career guidance and professional development support.</p>
-                        <a href="https://acu.12twenty.com/login?ReturnUrl=%2Fdashboard" target="_blank" rel="noopener noreferrer">Schedule Online &rarr;</a>
-                    </div>
-                </div>
 
-                <!-- Office Hours -->
-                <div class="office-hours">
-                    <h2>Office Hours &amp; Location</h2>
-                    <p><strong>Mabee Business Building, Room 132</strong></p>
-                    <p style="margin-top: 10px;">Monday &ndash; Friday: 8:00 AM &ndash; 5:00 PM</p>
-                    <p style="margin-top: 20px; font-size: var(--font-size-lg);">Stop by during office hours for walk-in support and resources, or schedule an appointment for guaranteed availability.</p>
+                    <!-- Abby Deatherage — replace avatar with real headshot when available -->
+                    <div class="contact-method">
+                        <div class="contact-method__avatar" aria-label="Photo coming soon">AD</div>
+                        <h3>Abby Deatherage</h3>
+                        <p class="contact-method__role">Student Worker</p>
+                        <p>Available for career coaching sessions, resume reviews, and professional development support.</p>
+                        <a href="https://acu.12twenty.com/appointments" target="_blank" rel="noopener noreferrer">Schedule Online &rarr;</a>
+                    </div>
+
+                    <!-- Roberto Sugira — replace avatar with real headshot when available -->
+                    <div class="contact-method">
+                        <div class="contact-method__avatar" aria-label="Photo coming soon">RS</div>
+                        <h3>Roberto Sugira</h3>
+                        <p class="contact-method__role">Student Worker</p>
+                        <p>Available for career coaching sessions, resume reviews, and professional development support.</p>
+                        <a href="https://acu.12twenty.com/appointments" target="_blank" rel="noopener noreferrer">Schedule Online &rarr;</a>
+                    </div>
+
                 </div>
 
             </div>
@@ -234,13 +256,13 @@
                     <h3 class="footer__title">Contact Us</h3>
                     <p class="footer__text">
                         <strong>COBA Professional Development</strong><br>
-                        Mabee Business Building, Room 132<br>
+                        Mabee Business Building, Room 231<br>
                         Abilene Christian University<br>
                         Abilene, TX 79699
                     </p>
                     <p class="footer__text">
-                        <strong>Email:</strong> <a href="mailto:jcj05c@acu.edu">jcj05c@acu.edu</a><br>
-                        <strong>Phone:</strong> (325) 674-2427
+                        <strong>Email:</strong> <a href="mailto:lauren.boyles@acu.edu">lauren.boyles@acu.edu</a><br>
+                        <strong>Phone:</strong> (325) 674-2511
                     </p>
                 </div>
 
@@ -271,7 +293,7 @@
             <!-- Footer Bottom -->
             <div class="footer__bottom">
                 <p class="footer__copyright">
-                    &copy; 2024 Abilene Christian University - College of Business Administration. All rights reserved.
+                    &copy; 2026 Abilene Christian University - College of Business Administration. All rights reserved.
                 </p>
                 <p class="footer__tagline">
                     Empowering Christian business leaders
