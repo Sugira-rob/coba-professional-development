@@ -238,23 +238,29 @@ function initHeaderScroll() {
    Uses IntersectionObserver (no scroll jank).
    ============================================ */
 function initScrollAnimations() {
-    const cards = document.querySelectorAll('.major-card, .resource-card, .quick-link-card');
-    if (!cards.length) return;
+    const targets = document.querySelectorAll(
+        '.major-card, .resource-card, .quick-link-card, ' +
+        '.about__text, .about__image, ' +
+        '.about__title, .about__description, ' +
+        '.section__title, .section__subtitle, ' +
+        '.platform-card, .content-box, .director-card, .contact-method'
+    );
+    if (!targets.length) return;
 
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
             if (!entry.isIntersecting) return;
             entry.target.style.opacity   = '1';
             entry.target.style.transform = 'translateY(0)';
-            observer.unobserve(entry.target); /* animate once */
+            observer.unobserve(entry.target);
         });
     }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
-    cards.forEach(card => {
-        card.style.opacity    = '0';
-        card.style.transform  = 'translateY(30px)';
-        card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(card);
+    targets.forEach((el, i) => {
+        el.style.opacity    = '0';
+        el.style.transform  = 'translateY(30px)';
+        el.style.transition = `opacity 0.6s ease ${i * 0.05}s, transform 0.6s ease ${i * 0.05}s`;
+        observer.observe(el);
     });
 }
 
