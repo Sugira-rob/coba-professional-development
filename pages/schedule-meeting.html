@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta name="description" content="Schedule a meeting with COBA Professional Development - Connect with Lauren Boyles, Director of Professional Development">
     <meta name="keywords" content="ACU, COBA, professional development, schedule meeting, career coaching">
     <meta name="author" content="ACU COBA">
@@ -68,11 +69,12 @@
             letter-spacing: -2px;
         }
 
-        /* Circular avatar placeholder for student coach cards */
+        /* Circular avatar placeholder / photo for student coach cards */
         .contact-method__avatar {
             width: 80px;
             height: 80px;
             border-radius: 50%;
+            object-fit: cover;
             background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
             display: flex;
             align-items: center;
@@ -190,8 +192,7 @@
                 <div class="director-card">
                     <div class="director-card__content">
                         <div class="director-card__image-wrap">
-                            <!-- Replace with lauren-boyles.jpg once headshot is available -->
-                            <div class="director-card__image-placeholder" aria-label="Photo coming soon">LB</div>
+                            <img src="../assets/images/lauren-boyles.jpg" alt="Lauren Boyles" class="director-card__image" loading="lazy">
                         </div>
                         <div class="director-card__info">
                             <h2 class="director-card__name">Lauren Boyles</h2>
@@ -208,7 +209,7 @@
                                 </div>
                                 <div class="director-card__detail">
                                     <strong>Office:</strong>
-                                    <span>Mabee Business Building, Room 231</span>
+                                    <span>Mabee Business Building, MBB 231</span>
                                 </div>
                             </div>
 
@@ -222,9 +223,9 @@
 
                 <div class="contact-methods">
 
-                    <!-- Abby Deatherage — replace avatar with real headshot when available -->
+                    <!-- Abby Deatherage -->
                     <div class="contact-method">
-                        <div class="contact-method__avatar" aria-label="Photo coming soon">AD</div>
+                        <img src="../assets/images/abby-deatherage.jpg" alt="Abby Deatherage" class="contact-method__avatar" loading="lazy">
                         <h3>Abby Deatherage</h3>
                         <p class="contact-method__role">Student Worker</p>
                         <p>Available for career coaching sessions, resume reviews, and professional development support.</p>
@@ -241,6 +242,41 @@
                     </div>
 
                 </div>
+                
+                <!-- COBA Career Closet Appointment Section -->
+                <div class="career-closet-card" id="career-closet" style="margin-top: 60px;">
+                    <div class="career-closet-card__grid">
+                        <div class="career-closet-card__image-wrap">
+                            <img src="../assets/images/coba-career-closet.png" alt="COBA Career Closet Flyer - Workwear for Wildcats" class="career-closet-card__img" loading="lazy">
+                        </div>
+                        <div class="career-closet-card__info">
+                            <span class="career-closet-badge">Free Student Wardrobe Rental</span>
+                            <h2 class="career-closet-title">COBA Career Closet</h2>
+                            <p class="career-closet-subtitle">Workwear for Wildcats</p>
+                            <p class="career-closet-text">
+                                Need an outfit for an interview, career fair, or class presentation? The COBA Career Closet offers <strong>FREE professional workwear rentals</strong> for students! Pick out your outfit, look sharp, and return it when you're finished.
+                            </p>
+                            <div class="career-closet-steps">
+                                <div class="career-closet-step">
+                                    <span class="step-num">1</span>
+                                    <span><strong>Book:</strong> Schedule a fitting slot with a coach or scan the QR code</span>
+                                </div>
+                                <div class="career-closet-step">
+                                    <span class="step-num">2</span>
+                                    <span><strong>Select:</strong> Try on professional suits, blazers, and shirts</span>
+                                </div>
+                                <div class="career-closet-step">
+                                    <span class="step-num">3</span>
+                                    <span><strong>Return:</strong> Bring it back clean after your interview</span>
+                                </div>
+                            </div>
+                            <div class="career-closet-actions">
+                                <a href="https://acu.12twenty.com/appointments" target="_blank" rel="noopener noreferrer" class="director-card__cta" style="margin: 0;">Schedule Outfit Fitting &rarr;</a>
+                                <a href="../assets/images/coba-career-closet.png" target="_blank" rel="noopener noreferrer" class="btn btn--secondary" style="padding: 14px 24px; font-size: var(--font-size-sm); border: 2px solid var(--color-primary); color: var(--color-primary); border-radius: var(--radius-full); text-decoration: none; font-weight: 600;">Scan / View Flyer</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
             </div>
         </section>
@@ -256,7 +292,7 @@
                     <h3 class="footer__title">Contact Us</h3>
                     <p class="footer__text">
                         <strong>COBA Professional Development</strong><br>
-                        Mabee Business Building, Room 231<br>
+                        Mabee Business Building, MBB 231<br>
                         Abilene Christian University<br>
                         Abilene, TX 79699
                     </p>

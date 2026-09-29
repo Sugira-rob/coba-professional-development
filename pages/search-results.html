@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta name="description" content="Search results for COBA Professional Development">
     <title>Search Results | COBA Professional Development</title>
     
@@ -332,7 +333,7 @@
             {
                 title: "Professional Development Resources",
                 url: "resources-all.html",
-                keywords: "resources resume building cover letter interview preparation linkedin networking job search career fair elevator pitch professional dress certifications experiential learning enactus shrm investment fund tutoring"
+                keywords: "resources resume building cover letter interview preparation linkedin networking job search career fair elevator pitch professional dress coba career closet workwear for wildcats outfit rental suit blazer clothes attire certifications experiential learning enactus shrm investment fund tutoring"
             },
             {
                 title: "Internship Timeline",
@@ -342,9 +343,26 @@
             {
                 title: "Schedule a Meeting",
                 url: "schedule-meeting.html",
-                keywords: "schedule meeting career coaching professional development advisor lauren boyles appointment advising career guidance student workers abby deatherage roberto sugira"
+                keywords: "schedule meeting career coaching professional development advisor lauren boyles appointment advising career guidance student workers abby deatherage roberto sugira career closet fitting suit outfit rental"
             }
         ];
+
+        // Security helper: Escape HTML to prevent DOM XSS
+        function escapeHTML(str) {
+            if (!str) return '';
+            return String(str).replace(/[&<>'"]/g, char => ({
+                '&': '&amp;',
+                '<': '&lt;',
+                '>': '&gt;',
+                "'": '&#39;',
+                '"': '&quot;'
+            }[char] || char));
+        }
+
+        // Security helper: Escape regex special characters to prevent ReDoS / syntax errors
+        function escapeRegex(str) {
+            return String(str).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        }
 
         // Get search query from URL
         const urlParams = new URLSearchParams(window.location.search);
@@ -359,7 +377,8 @@
         }
 
         function performSearch() {
-            const searchTerm = document.getElementById('searchInput').value.trim();
+            const searchInput = document.getElementById('searchInput');
+            const searchTerm = searchInput ? searchInput.value.trim() : '';
             if (searchTerm) {
                 window.location.href = 'search-results.html?q=' + encodeURIComponent(searchTerm);
             }
@@ -368,6 +387,7 @@
         function performSearchInternal(searchQuery) {
             const query = searchQuery.toLowerCase().trim();
             const results = [];
+            const safeQueryRegex = escapeRegex(query);
 
             // Search through all pages
             searchablePages.forEach(page => {
@@ -381,8 +401,13 @@
                     if (titleMatch) score += 10;
                     if (contentMatch) score += 1;
                     
-                    // Count occurrences
-                    const occurrences = (content.match(new RegExp(query, 'g')) || []).length;
+                    // Count occurrences safely without unescaped regex errors
+                    let occurrences = 0;
+                    try {
+                        occurrences = (content.match(new RegExp(safeQueryRegex, 'g')) || []).length;
+                    } catch (e) {
+                        occurrences = 0;
+                    }
                     score += occurrences;
 
                     // Create excerpt
@@ -395,14 +420,19 @@
                     if (start > 0) excerpt = '...' + excerpt;
                     if (end < words.length) excerpt = excerpt + '...';
 
-                    // Highlight the search term
-                    const regex = new RegExp('(' + query + ')', 'gi');
-                    excerpt = excerpt.replace(regex, '<span class="search-result-highlight">$1</span>');
+                    // HTML escape excerpt before highlighting
+                    let safeExcerpt = escapeHTML(excerpt);
+                    try {
+                        const regex = new RegExp('(' + safeQueryRegex + ')', 'gi');
+                        safeExcerpt = safeExcerpt.replace(regex, '<span class="search-result-highlight">$1</span>');
+                    } catch (e) {
+                        // Fallback without regex highlight
+                    }
 
                     results.push({
                         title: page.title,
                         url: page.url,
-                        excerpt: excerpt,
+                        excerpt: safeExcerpt,
                         score: score
                     });
                 }
@@ -418,13 +448,14 @@
         function displayResults(results, query) {
             const resultsContainer = document.getElementById('searchResults');
             const resultsCount = document.getElementById('resultsCount');
+            const safeQuery = escapeHTML(query);
 
             if (results.length === 0) {
                 resultsCount.textContent = '';
                 resultsContainer.innerHTML = `
                     <div class="no-results">
                         <h3>No results found</h3>
-                        <p>We couldn't find any pages matching "${query}"</p>
+                        <p>We couldn't find any pages matching "${safeQuery}"</p>
                         <p>Try different keywords or browse our main sections:</p>
                         <ul style="list-style: none; padding: 0; margin-top: 20px;">
                             <li style="margin: 10px 0;"><a href="../index.html" style="color: #4B2E83; font-weight: 600;">Home</a></li>
@@ -440,12 +471,14 @@
 
             let html = '';
             results.forEach(result => {
+                const safeTitle = escapeHTML(result.title);
+                const safeUrl = encodeURI(result.url);
                 html += `
                     <div class="search-result-item">
                         <h3 class="search-result-title">
-                            <a href="${result.url}">${result.title}</a>
+                            <a href="${safeUrl}">${safeTitle}</a>
                         </h3>
-                        <div class="search-result-url">${result.url}</div>
+                        <div class="search-result-url">${safeUrl}</div>
                         <p class="search-result-excerpt">${result.excerpt}</p>
                     </div>
                 `;
@@ -455,11 +488,14 @@
         }
 
         // Allow Enter key to submit
-        document.getElementById('searchInput').addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                performSearch();
-            }
-        });
+        const searchInputEl = document.getElementById('searchInput');
+        if (searchInputEl) {
+            searchInputEl.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    performSearch();
+                }
+            });
+        }
 
     </script>
 </body>

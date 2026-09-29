@@ -1186,7 +1186,7 @@ Link: [TO BE ADDED LATER - embedded Google Sheet]
 **Icon**: 🔍
 
 #### Resource 2: MyVisaJobs
-**Link**: http://myvisajobs.com/
+**Link**: https://www.myvisajobs.com/
 **Additional Link**: https://www.myvisajobs.com/reports/h1b/
 **Description**: "Why it's Helpful: MyVisa.jobs offers a database of companies that sponsor H-1B visas, providing insights into industries and positions where international students are most likely to secure sponsorship."
 **Icon**: 💼
@@ -1525,9 +1525,9 @@ Description: "This tool gives you a chance to create an easy to read resume with
 2. Upwork - https://www.upwork.com/
 3. Solid Gigs - https://solidgigs.com
 4. Snagajob - https://www.snagajob.com/
-5. LinkedIn - http://www.linkedin.com/
+5. LinkedIn - https://www.linkedin.com/
 6. ServiceScape - https://lnkd.in/dg-5Q-WK
-7. Craigslist - http://www.craigslist.org/
+7. Craigslist - https://www.craigslist.org/
 8. CoolWorks - https://www.coolworks.com/
 9. Contena - https://www.contena.co
 10. Fiverr - https://www.fiverr.com/
@@ -1550,7 +1550,7 @@ Description: "This tool gives you a chance to create an easy to read resume with
 
 #### Top Job Search Platforms:
 1. ZipRecruiter - https://www.ziprecruiter.com/
-2. LinkedIn - http://www.linkedin.com/
+2. LinkedIn - https://www.linkedin.com/
 3. USAJobs - https://www.usajobs.gov/
 4. Handshake - https://acu.joinhandshake.com/stu
 5. Careerflow.ai - https://www.careerflow.ai/

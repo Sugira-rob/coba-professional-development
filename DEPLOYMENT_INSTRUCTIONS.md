@@ -126,15 +126,16 @@ You now have a complete, production-ready website:
    - Request web hosting for COBA Professional Development site
    - Mention it's for the library/COBA department
 
-2. **Get FTP Credentials**
+2. **Get Secure SFTP Credentials**
+   - Request secure SFTP (SSH File Transfer Protocol) or FTPS (FTP over TLS). *Avoid unencrypted plain FTP as it transmits passwords in cleartext.*
    - ACU IT will provide:
-     - FTP server address
+     - SFTP server host/address and port (usually port 22)
      - Username
-     - Password
-     - Directory path
+     - Secure password or SSH key
+     - Remote directory path
 
-3. **Upload Files**
-   - Use FileZilla or similar FTP client
+3. **Upload Files Securely**
+   - Use FileZilla, Cyberduck, or an SSH/SFTP client configured for **SFTP**
    - Upload all files to the provided directory
    - Structure should be:
      ```
