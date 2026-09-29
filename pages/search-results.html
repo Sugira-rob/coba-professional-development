@@ -164,6 +164,9 @@
     </style>
 </head>
 <body>
+    <!-- Skip to Main Content (Accessibility) -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
     <!-- Header & Navigation -->
     <header class="header" id="header">
         <div class="container">
@@ -184,12 +187,12 @@
                 </button>
 
                 <!-- Navigation -->
-               <nav class="header__nav" id="mainNav">
+                <nav class="header__nav" id="mainNav">
                     <ul class="nav-list">
                         <li><a href="../index.html#home" class="nav-list__link">Home</a></li>
                         <li><a href="../index.html#about" class="nav-list__link">About</a></li>
                         <li class="nav-list__item--dropdown">
-                            <a href="#" class="nav-list__link">Majors & Tracks <span class="dropdown-arrow">▾</span></a>
+                            <a href="#" class="nav-list__link">Majors &amp; Tracks <span class="dropdown-arrow">▾</span></a>
                             <ul class="nav-dropdown">
                                 <li><a href="accounting.html">Accounting</a></li>
                                 <li><a href="computer-science.html">Computer Science</a></li>
@@ -202,78 +205,103 @@
                             </ul>
                         </li>
                         <li><a href="international-students.html" class="nav-list__link">International Students</a></li>
+                        <li><a href="job-boards.html" class="nav-list__link">Job Boards</a></li>
                         <li><a href="resources-all.html" class="nav-list__link">Resources</a></li>
                         <li><a href="schedule-meeting.html" class="nav-list__link nav-list__link--cta">Contact</a></li>
                     </ul>
-
-                    <!-- Search Bar -->
-                    <div class="header__search">
-                        <form action="search-results.html" method="get" class="search-form">
-                            <input type="text" name="q" class="search-input" placeholder="Search..." aria-label="Search">
-                            <button type="submit" class="search-button" aria-label="Submit search">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <circle cx="11" cy="11" r="8"></circle>
-                                    <path d="m21 21-4.35-4.35"></path>
-                                </svg>
-                            </button>
-                        </form>
-                    </div>
                 </nav>
             </div>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="page-hero search-results-hero">
-        <div class="container">
-            <h1>Search Results</h1>
-            <p id="searchQuery" style="font-size: 20px; opacity: 0.95;"></p>
-        </div>
-    </section>
+    <!-- Main Content -->
+    <main id="main-content">
 
-    <!-- Search Results Section -->
-    <section class="search-results-section">
-        <div class="container">
-            <div class="search-box-container">
-                <div class="search-box">
-                    <input type="text" id="searchInput" placeholder="Search COBA Professional Development...">
-                    <button onclick="performSearch()">Search</button>
-                </div>
-                
-                <div id="resultsCount" class="results-count"></div>
-                <div id="searchResults" class="search-results-list">
-                    <div class="loading">Searching...</div>
+        <!-- Hero Section -->
+        <section class="page-hero search-results-hero">
+            <div class="container">
+                <h1>Search Results</h1>
+                <p id="searchQuery" style="font-size: 20px; opacity: 0.95;"></p>
+            </div>
+        </section>
+
+        <!-- Search Results Section -->
+        <section class="search-results-section">
+            <div class="container">
+                <div class="search-box-container">
+                    <div class="search-box">
+                        <input type="text" id="searchInput" placeholder="Search COBA Professional Development...">
+                        <button onclick="performSearch()">Search</button>
+                    </div>
+                    
+                    <div id="resultsCount" class="results-count"></div>
+                    <div id="searchResults" class="search-results-list">
+                        <div class="loading">Searching...</div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+    </main>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer" id="contact">
         <div class="container">
             <div class="footer__content">
+                <!-- Contact Info -->
                 <div class="footer__section">
-                    <h4>COBA Professional Development</h4>
-                    <p>Empowering ACU business students to achieve their career goals</p>
+                    <h3 class="footer__title">Contact Us</h3>
+                    <p class="footer__text">
+                        <strong>COBA Professional Development</strong><br>
+                        Mabee Business Building, MBB 231<br>
+                        Abilene Christian University<br>
+                        Abilene, TX 79699
+                    </p>
+                    <p class="footer__text">
+                        <strong>Email:</strong> <a href="mailto:jcj05c@acu.edu">jcj05c@acu.edu</a><br>
+                        <strong>Phone:</strong> (325) 674-2427
+                    </p>
                 </div>
+
+                <!-- Quick Links -->
                 <div class="footer__section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="../index.html">Home</a></li>
+                    <h3 class="footer__title">Quick Links</h3>
+                    <ul class="footer__links">
                         <li><a href="../index.html#about">About COBA</a></li>
+                        <li><a href="../index.html#majors">Majors &amp; Tracks</a></li>
                         <li><a href="resources-all.html">Resources</a></li>
-                        <li><a href="schedule-meeting.html">Contact</a></li>
+                        <li><a href="international-students.html">International Students</a></li>
+                        <li><a href="job-boards.html">Job Boards</a></li>
+                        <li><a href="https://acu.edu/coba" target="_blank" rel="noopener noreferrer">COBA Website</a></li>
+                    </ul>
+                </div>
+
+                <!-- Resources -->
+                <div class="footer__section">
+                    <h3 class="footer__title">Popular Resources</h3>
+                    <ul class="footer__links">
+                        <li><a href="resources-all.html#resume">Resume Builder</a></li>
+                        <li><a href="resources-all.html#interviews">Interview Prep</a></li>
+                        <li><a href="job-boards.html">Job Boards</a></li>
+                        <li><a href="resources-all.html#experiential">Experiential Learning</a></li>
                     </ul>
                 </div>
             </div>
+
+            <!-- Footer Bottom -->
             <div class="footer__bottom">
-                <p>&copy; 2026 Abilene Christian University - College of Business Administration. All rights reserved.</p>
+                <p class="footer__copyright">
+                    &copy; 2026 Abilene Christian University - College of Business Administration. All rights reserved.
+                </p>
+                <p class="footer__tagline">
+                    Empowering Christian business leaders
+                </p>
             </div>
         </div>
     </footer>
 
     <!-- Back to Top Button -->
-    <a href="#" class="back-to-top" id="backToTop">↑</a>
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
 
     <!-- JavaScript -->
     <script src="../js/main.js"></script>
