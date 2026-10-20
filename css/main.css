@@ -313,31 +313,32 @@ a:hover {
 /* ============================================
    HERO SLIDER
    ============================================ */
+/*
+ * Each slide = the full, uncropped photo on top + a purple text band below.
+ * Photos are 5:4 and 3:2, so all of them sit in one frame of fixed height
+ * and use object-fit: contain; any leftover space shows the purple frame.
+ * The frame's height is capped so the text band stays on the first screen.
+ */
 .hero-slider {
+    --hero-media-h: min(70vh, calc(100vw * 2 / 3));
     position: relative;
-    height: 600px;
     margin-top: 45px; /* Account for fixed header */
     overflow: hidden;
+    background: var(--color-primary);
 }
 
+/* Stack all slides in one grid cell so the slider is as tall as the tallest slide */
 .hero-slider__container {
-    position: relative;
-    width: 100%;
-    height: 100%;
+    display: grid;
 }
 
 .hero-slider__slide {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    grid-area: 1 / 1;
+    display: flex;
+    flex-direction: column;
     opacity: 0;
     visibility: hidden;
     transition: opacity 1s ease-in-out, visibility 0s 1s;
-    background: var(--color-primary-dark);
-    background-size: cover;
-    background-position: center;
     z-index: 1;
 }
 
@@ -348,50 +349,51 @@ a:hover {
     z-index: 2;
 }
 
-.hero-slider__overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(26, 16, 46, 0.45); /* flat scrim so white text stays readable on photos */
+.hero-slider__media {
+    height: var(--hero-media-h);
+    background: var(--color-primary-dark);
+}
+
+.hero-slider__media img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* show the whole photo, never crop */
 }
 
 .hero-slider__content {
-    position: relative;
-    z-index: 2;
+    flex: 1;
+    width: 100%;
     max-width: var(--container-max-width);
     margin: 0 auto;
-    padding: 0 80px; /* clears the prev/next arrows */
-    height: 100%;
+    padding: var(--spacing-md) var(--spacing-sm) var(--spacing-lg);
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
+    flex-wrap: wrap;
+    align-items: center;
+    column-gap: var(--spacing-lg);
 }
 
 .hero-slider__title {
-    font-size: var(--font-size-5xl);
+    flex-basis: 100%;
+    font-size: var(--font-size-4xl);
     font-weight: 800;
     color: var(--color-white);
-    margin-bottom: var(--spacing-md);
-    max-width: 700px;
+    margin-bottom: var(--spacing-xs);
     animation: slideInUp var(--transition-slow);
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
 }
 
 .hero-slider__text {
-    font-size: var(--font-size-xl);
-    color: rgba(255, 255, 255, 0.95);
-    margin-bottom: var(--spacing-lg);
-    max-width: 600px;
+    flex: 1 1 420px;
+    font-size: var(--font-size-lg);
+    color: rgba(255, 255, 255, 0.92);
+    margin-bottom: var(--spacing-sm);
+    max-width: 720px;
     animation: slideInUp 0.6s ease;
-    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.7);
 }
 
 .hero-slider__controls {
     position: absolute;
-    top: 50%;
+    top: calc(var(--hero-media-h) / 2);
     left: 0;
     right: 0;
     transform: translateY(-50%);
@@ -424,12 +426,15 @@ a:hover {
 
 .hero-slider__dots {
     position: absolute;
-    bottom: 30px;
+    top: calc(var(--hero-media-h) - 40px);
     left: 50%;
     transform: translateX(-50%);
     display: flex;
     gap: var(--spacing-sm);
     z-index: 3;
+    padding: 8px 12px;
+    background: rgba(0, 0, 0, 0.45); /* keeps dots visible over light photos */
+    border-radius: var(--radius-full);
 }
 
 .hero-slider__dot {
@@ -1056,16 +1061,8 @@ a:hover {
         max-height: 500px;
     }
     
-    .hero-slider {
-        height: 500px;
-    }
-
-    .hero-slider__content {
-        padding: 0 60px;
-    }
-    
     .hero-slider__title {
-        font-size: var(--font-size-4xl);
+        font-size: var(--font-size-3xl);
     }
     
     .hero-slider__text {
@@ -1095,10 +1092,6 @@ a:hover {
 }
 
 @media (max-width: 480px) {
-    .hero-slider {
-        height: 400px;
-    }
-    
     .hero-slider__arrow {
         width: 40px;
         height: 40px;
@@ -1130,39 +1123,6 @@ a:hover {
     a {
         text-decoration: underline;
     }
-}
-
-/* ============================================
-   HERO SLIDER BACKGROUND IMAGES
-   ============================================ */
-#slide-team {
-    background-image: url('../assets/images/hero-slide-team.jpg');
-    background-size: cover;
-    background-position: center 30%;
-}
-
-#slide-1 {
-    background-image: url('../assets/images/hero-slide-1.png');
-    background-size: cover;
-    background-position: center top;
-}
-
-#slide-2 {
-    background-image: url('../assets/images/hero-slide-2.png');
-    background-size: cover;
-    background-position: center top;
-}
-
-#slide-3 {
-    background-image: url('../assets/images/hero-slide-3.jpg');
-    background-size: cover;
-    background-position: center top;
-}
-
-#slide-4 {
-    background-image: url('../assets/images/hero-slide-4.png');
-    background-size: cover;
-    background-position: center top;
 }
 
 /* ============================================
