@@ -314,134 +314,114 @@ a:hover {
    HERO SLIDER
    ============================================ */
 /*
- * Each slide = the full, uncropped photo on top + a purple text band below.
- * Photos are 5:4 and 3:2, so all of them sit in one frame of fixed height
- * and use object-fit: contain; any leftover space shows the purple frame.
- * The frame's height is capped so the text band stays on the first screen.
+ * Split hero: text on the left, photo on the right at its natural
+ * shape (never cropped). All slides share one grid cell, so the
+ * slider is as tall as its tallest slide and doesn't jump.
  */
 .hero-slider {
-    --hero-media-h: min(70vh, calc(100vw * 2 / 3));
-    position: relative;
     margin-top: 45px; /* Account for fixed header */
-    overflow: hidden;
     background: var(--color-primary);
+    overflow: hidden;
 }
 
-/* Stack all slides in one grid cell so the slider is as tall as the tallest slide */
 .hero-slider__container {
+    position: relative;
     display: grid;
+    max-width: var(--container-max-width);
+    margin: 0 auto;
 }
 
 .hero-slider__slide {
     grid-area: 1 / 1;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 5fr 7fr;
+    gap: var(--spacing-lg);
+    align-items: center;
+    padding: var(--spacing-lg) var(--spacing-sm);
     opacity: 0;
     visibility: hidden;
-    transition: opacity 1s ease-in-out, visibility 0s 1s;
-    z-index: 1;
+    transition: opacity 0.8s ease-in-out, visibility 0s 0.8s;
 }
 
 .hero-slider__slide--active {
     opacity: 1;
     visibility: visible;
-    transition: opacity 1s ease-in-out, visibility 0s 0s;
+    transition: opacity 0.8s ease-in-out, visibility 0s 0s;
     z-index: 2;
 }
 
 .hero-slider__media {
-    height: var(--hero-media-h);
-    background: var(--color-primary-dark);
+    order: 2;
 }
 
 .hero-slider__media img {
     display: block;
     width: 100%;
-    height: 100%;
-    object-fit: contain; /* show the whole photo, never crop */
+    height: auto; /* natural proportions: the whole photo, no cropping */
+    border-radius: var(--radius-lg);
 }
 
 .hero-slider__content {
-    flex: 1;
-    width: 100%;
-    max-width: var(--container-max-width);
-    margin: 0 auto;
-    padding: var(--spacing-md) var(--spacing-sm) var(--spacing-lg);
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    column-gap: var(--spacing-lg);
+    order: 1;
+    padding-bottom: 72px; /* room for the slider controls below the text */
 }
 
 .hero-slider__title {
-    flex-basis: 100%;
-    font-size: var(--font-size-4xl);
+    font-size: var(--font-size-5xl);
     font-weight: 800;
     color: var(--color-white);
-    margin-bottom: var(--spacing-xs);
+    margin-bottom: var(--spacing-md);
     animation: slideInUp var(--transition-slow);
 }
 
 .hero-slider__text {
-    flex: 1 1 420px;
     font-size: var(--font-size-lg);
     color: rgba(255, 255, 255, 0.92);
-    margin-bottom: var(--spacing-sm);
-    max-width: 720px;
+    margin-bottom: var(--spacing-md);
     animation: slideInUp 0.6s ease;
 }
 
-.hero-slider__controls {
+/* Arrows + dots in one row, under the text column */
+.hero-slider__nav {
     position: absolute;
-    top: calc(var(--hero-media-h) / 2);
-    left: 0;
-    right: 0;
-    transform: translateY(-50%);
+    left: var(--spacing-sm);
+    bottom: var(--spacing-lg);
     display: flex;
-    justify-content: space-between;
-    padding: 0 var(--spacing-sm);
-    pointer-events: none;
+    align-items: center;
+    gap: var(--spacing-sm);
     z-index: 3;
 }
 
 .hero-slider__arrow {
-    pointer-events: all;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     border-radius: var(--radius-full);
-    background: rgba(0, 0, 0, 0.4);
-    border: 2px solid rgba(255, 255, 255, 0.6);
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.7);
     color: var(--color-white);
-    font-size: var(--font-size-3xl);
+    font-size: var(--font-size-2xl);
+    line-height: 1;
     cursor: pointer;
-    transition: all var(--transition-base);
+    transition: background var(--transition-fast);
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .hero-slider__arrow:hover {
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(255, 255, 255, 0.15);
 }
 
 .hero-slider__dots {
-    position: absolute;
-    top: calc(var(--hero-media-h) - 40px);
-    left: 50%;
-    transform: translateX(-50%);
     display: flex;
-    gap: var(--spacing-sm);
-    z-index: 3;
-    padding: 8px 12px;
-    background: rgba(0, 0, 0, 0.45); /* keeps dots visible over light photos */
-    border-radius: var(--radius-full);
+    gap: 10px;
 }
 
 .hero-slider__dot {
-    width: 12px;
-    height: 12px;
+    width: 10px;
+    height: 10px;
     border-radius: var(--radius-full);
-    background: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.45);
     border: none;
     cursor: pointer;
     transition: all var(--transition-base);
@@ -449,7 +429,7 @@ a:hover {
 
 .hero-slider__dot--active {
     background: var(--color-white);
-    width: 30px;
+    width: 28px;
 }
 
 .hero-slider__dot:hover {
@@ -1061,6 +1041,27 @@ a:hover {
         max-height: 500px;
     }
     
+    /* Stack: photo on top, text and controls below */
+    .hero-slider__slide {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+        align-items: start;
+        padding: var(--spacing-md) var(--spacing-sm);
+    }
+
+    .hero-slider__media {
+        order: 1;
+    }
+
+    .hero-slider__content {
+        order: 2;
+        padding-bottom: 56px;
+    }
+
+    .hero-slider__nav {
+        bottom: var(--spacing-md);
+    }
+
     .hero-slider__title {
         font-size: var(--font-size-3xl);
     }
@@ -1092,12 +1093,6 @@ a:hover {
 }
 
 @media (max-width: 480px) {
-    .hero-slider__arrow {
-        width: 40px;
-        height: 40px;
-        font-size: var(--font-size-2xl);
-    }
-    
     .btn {
         width: 100%;
         max-width: 300px;
@@ -1109,8 +1104,7 @@ a:hover {
    ============================================ */
 @media print {
     .header,
-    .hero-slider__controls,
-    .hero-slider__dots,
+    .hero-slider__nav,
     .back-to-top,
     .footer {
         display: none;
