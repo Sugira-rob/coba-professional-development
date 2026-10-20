@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="referrer" content="strict-origin-when-cross-origin">
-    <meta name="description" content="Curated job boards for ACU COBA students — organized by career stage from no-experience to full-time roles">
+    <meta name="description" content="Job boards for ACU COBA students, organized by career stage from no-experience to full-time roles">
     <meta name="keywords" content="ACU, COBA, job boards, internships, career search, entry-level jobs, finance jobs">
     <meta name="author" content="ACU COBA">
     <title>Job Boards | COBA Professional Development | ACU</title>
@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="../css/main.css">
     
     <style>
-        /* Job Boards page — page-hero in main.css handles all hero base styles */
+        /* Job Boards page - page-hero in main.css handles all hero base styles */
 
         .job-boards-hero h1 {
             font-size: var(--font-size-5xl);
@@ -41,10 +41,6 @@
             z-index: 1;
         }
 
-        .job-boards-hero__icon {
-            margin-bottom: 20px;
-            display: block;
-        }
 
         .job-boards-section {
             background: var(--color-white);
@@ -102,7 +98,7 @@
             text-decoration: underline;
         }
 
-        /* Featured platform cards — 12twenty and LinkedIn */
+        /* Featured platform cards - 12twenty and LinkedIn */
         .featured-platforms {
             background: var(--color-gray-100, #f9f9f9);
             padding: 60px 20px;
@@ -128,22 +124,16 @@
 
         .platform-card {
             background: white;
-            border-radius: 16px;
+            border-radius: var(--radius-md);
             padding: 40px;
-            box-shadow: 0 4px 25px rgba(0,0,0,0.08);
             margin-bottom: 30px;
-            border: 2px solid #eee;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid var(--color-border);
         }
 
-        .platform-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 35px rgba(75,46,131,0.15);
-        }
-
+        /* 12twenty leads: tinted panel, since every ACU student already has an account */
         .platform-card--primary {
             border-color: var(--color-primary);
-            background: linear-gradient(135deg, #faf8ff 0%, white 100%);
+            background: var(--color-primary-tint);
         }
 
         .platform-card__header {
@@ -162,18 +152,11 @@
             object-fit: contain;
         }
 
+        /* Plain-text descriptor next to the logo (not a pill) */
         .platform-card__badge {
-            display: inline-block;
-            background: var(--color-primary);
-            color: white;
-            padding: 5px 16px;
-            border-radius: 20px;
-            font-size: 13px;
-            font-weight: 700;
-        }
-
-        .platform-card__badge--blue {
-            background: #0077B5;
+            color: var(--color-gray-700);
+            font-size: var(--font-size-base);
+            font-weight: 600;
         }
 
         .platform-card__title {
@@ -298,14 +281,6 @@
         <!-- Hero Section -->
         <section class="page-hero job-boards-hero">
             <div class="container">
-                <!-- Target SVG icon -->
-                <div class="job-boards-hero__icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                        <circle cx="12" cy="12" r="10"/>
-                        <circle cx="12" cy="12" r="6"/>
-                        <circle cx="12" cy="12" r="2"/>
-                    </svg>
-                </div>
                 <h1>Job Boards & Opportunities</h1>
                 <p>Find the right platform for your career stage</p>
             </div>
@@ -325,25 +300,25 @@
             </div>
         </nav>
 
-        <!-- Featured Platforms — 12twenty & LinkedIn -->
+        <!-- Featured Platforms - 12twenty & LinkedIn -->
         <section id="featured" class="featured-platforms job-boards-section">
             <div class="container">
 
                 <div class="featured-platforms__header">
                     <h2 class="featured-platforms__title">Start Here</h2>
-                    <p class="featured-platforms__subtitle">ACU's official career platform and the world's top professional network — your two most important job search tools</p>
+                    <p class="featured-platforms__subtitle">ACU's official career platform and LinkedIn. Most students should start with these two.</p>
                 </div>
 
-                <!-- 12twenty — primary featured platform -->
+                <!-- 12twenty - primary featured platform -->
                 <div class="platform-card platform-card--primary">
                     <div class="platform-card__header">
                         <img src="../assets/images/12twenty-logo.png" alt="12twenty" class="platform-card__logo">
-                        <span class="platform-card__badge">ACU's Official Platform</span>
+                        <span class="platform-card__badge">ACU's official platform</span>
                     </div>
                     <h3 class="platform-card__title">12twenty</h3>
-                    <p class="platform-card__desc">ACU's official career management platform — every ACU student already has an account. Find internships and full-time jobs, schedule one-on-one coaching appointments, and access employer partnerships that are exclusive to ACU students.</p>
+                    <p class="platform-card__desc">ACU's official career management platform. Every ACU student already has an account. Find internships and full-time jobs, schedule one-on-one coaching appointments, and access employer partnerships that are exclusive to ACU students.</p>
                     <ul class="platform-card__highlights">
-                        <li>Log in instantly with your ACU SSO — no new account needed</li>
+                        <li>Log in with your ACU SSO, no new account needed</li>
                         <li>Schedule coaching appointments with COBA advisors</li>
                         <li>Browse jobs and internships posted directly to ACU</li>
                         <li>Access exclusive employer partnerships and on-campus recruiting events</li>
@@ -361,7 +336,7 @@
                             <rect x="0" y="0" width="72" height="72" rx="8" ry="8" fill="#0077B5"/>
                             <path d="M26 20.6c0 2.5-1.9 4.4-4.4 4.4-2.5 0-4.4-1.9-4.4-4.4 0-2.5 1.9-4.4 4.4-4.4 2.4 0 4.4 2 4.4 4.4zm0 8.2H17.3V57H26V28.8zM55 57V41.3c0-8.7-4.7-12.8-11-12.8-5.1 0-7.4 2.8-8.6 4.7v-4h-8.7c.1 2.4 0 28.3 0 28.3h8.7V41.6c0-.8.1-1.6.3-2.1.6-1.6 2.1-3.3 4.6-3.3 3.2 0 4.5 2.4 4.5 6V57H55z" fill="white"/>
                         </svg>
-                        <span class="platform-card__badge platform-card__badge--blue">Professional Network</span>
+                        <span class="platform-card__badge">Professional network</span>
                     </div>
                     <h3 class="platform-card__title">LinkedIn</h3>
                     <p class="platform-card__desc">The world's largest professional network with over 1 billion members. Build your professional profile, connect with ACU alumni and recruiters, research companies before interviews, and search millions of job and internship listings across every industry.</p>
@@ -375,9 +350,9 @@
                     </div>
                 </div>
 
-                <!-- Secondary CTA linking to the 70 job boards list -->
+                <!-- Secondary CTA linking to an external job boards list -->
                 <p style="text-align:center; margin-top: 10px; color: var(--color-gray-600);">
-                    Looking for more? <a href="https://www.theninthsemester.com/blog/50jobboardsforearlycareer" target="_blank" rel="noopener noreferrer" style="color: var(--color-primary); font-weight: 600;">Browse the full 70 job boards list &rarr;</a>
+                    Looking for more? <a href="https://www.theninthsemester.com/blog/50jobboardsforearlycareer" target="_blank" rel="noopener noreferrer" style="color: var(--color-primary); font-weight: 600;">Browse The Ninth Semester's list of early-career job boards &rarr;</a>
                 </p>
 
             </div>
@@ -489,7 +464,7 @@
                 <div class="content-box">
                     <h3>Industry-Specific</h3>
                     <ul>
-                        <li><a href="https://www.teamworkonline.com/jobs-in-sports?employment_opportunity_search%5Bsort_by%5D=most_recent&employment_opportunity_search%5Bcareer_level_ids%5D%5B%5D=97" target="_blank" rel="noopener noreferrer">TeamWork Online (Sports Industry — Full-Time &amp; Internships)</a></li>
+                        <li><a href="https://www.teamworkonline.com/jobs-in-sports?employment_opportunity_search%5Bsort_by%5D=most_recent&employment_opportunity_search%5Bcareer_level_ids%5D%5B%5D=97" target="_blank" rel="noopener noreferrer">TeamWork Online (Sports Industry: Full-Time &amp; Internships)</a></li>
                         <li><a href="https://www.greenjobsboard.us/" target="_blank" rel="noopener noreferrer">Green Jobs Board (Sustainability)</a></li>
                         <li><a href="https://www.idealist.org/en" target="_blank" rel="noopener noreferrer">Idealist (Nonprofits)</a></li>
                         <li><a href="https://dribbble.com/" target="_blank" rel="noopener noreferrer">Dribble (Design)</a></li>

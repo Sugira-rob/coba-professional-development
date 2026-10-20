@@ -22,7 +22,7 @@
     
     <style>
 /* DET Page Specific Styles */
-        /* .det-hero — all base styles inherited from .page-hero in main.css */
+        /* .det-hero - all base styles inherited from .page-hero in main.css */
 
 /* .det-hero::before wave provided by .page-hero::before */
 
@@ -45,12 +45,6 @@
             color: white;
         }
 
-.det-hero__icon {
-            font-size: 80px;
-            margin-bottom: 20px;
-            display: block;
-            color: white;
-        }
 
 .det-section {
             padding: 80px 0;
@@ -79,46 +73,38 @@
             margin: 0 auto;
         }
 
+/* Sourced industry figures as a divided list: label, figure, then context */
 .stat-cards {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(2, 1fr);
+            column-gap: 48px;
             margin-top: 40px;
+            border-top: 1px solid var(--color-border);
         }
 
 .stat-card {
-            background: white;
-            border-radius: 12px;
-            padding: 35px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
-            text-align: center;
-        }
-
-.stat-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 30px rgba(75, 46, 131, 0.2);
-            border-color: #6B46A8;
+            padding: 24px 0;
+            border-bottom: 1px solid var(--color-border);
         }
 
 .stat-card__title {
-            font-size: 24px;
-            color: #4B2E83;
-            margin-bottom: 20px;
+            font-size: var(--font-size-lg);
+            color: var(--color-gray-900);
+            margin-bottom: 4px;
             font-weight: 700;
         }
 
 .stat-card__value {
-            font-size: 42px;
-            color: #6B46A8;
-            font-weight: 800;
-            margin-bottom: 10px;
+            font-size: var(--font-size-3xl);
+            color: var(--color-primary);
+            font-weight: 700;
+            margin-bottom: 8px;
         }
 
 .stat-card__description {
-            color: #666;
-            line-height: 1.7;
+            color: var(--color-gray-700);
+            line-height: 1.6;
+            margin-bottom: 0;
         }
 
 .cert-card__title {
@@ -205,7 +191,6 @@
         <!-- Hero Section -->
         <section class="page-hero det-hero">
             <div class="container">
-                <div class="det-hero__icon">▶</div>
                 <h1>Digital Entertainment Technology</h1>
                 <p>Game development careers, certifications, and internship opportunities in the gaming industry.</p>
             </div>
@@ -263,7 +248,7 @@
 
                 <div class="highlight-box" style="margin-top: 50px;">
                     <strong>Steam Game Engine Popularity</strong>
-                    <p><strong>Unity: 46%</strong> (Most Popular!) | In-House: 26% | Other: 16% | Unreal: 12%</p>
+                    <p><strong>Unity: 46%</strong> (most used) | In-House: 26% | Other: 16% | Unreal: 12%</p>
                     <p style="margin-top: 10px; font-size: 14px;">Source: Rounthall Investments (2022)</p>
                 </div>
             </div>
@@ -369,8 +354,8 @@
                 </div>
 
                 <div class="cta-section">
-                    <h3>Ready to Launch Your Game Dev Career?</h3>
-                    <p>Explore all our resources including resume guides, portfolio tips, and networking strategies</p>
+                    <h3>Get Your Resume and Interviews Ready</h3>
+                    <p>The Resources page has resume guides, portfolio tips, and networking strategies.</p>
                     <a href="resources-all.html" class="btn">View All Resources →</a>
                 </div>
             </div>

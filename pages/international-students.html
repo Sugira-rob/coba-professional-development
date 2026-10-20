@@ -22,7 +22,7 @@
     
     <style>
 /* International Students Page Specific Styles */
-        /* .international-hero — all base styles inherited from .page-hero in main.css */
+        /* .international-hero - all base styles inherited from .page-hero in main.css */
 
 /* .international-hero::before wave provided by .page-hero::before */
 
@@ -45,11 +45,6 @@
             color: white;
         }
 
-.international-hero__icon {
-            font-size: 80px;
-            margin-bottom: 20px;
-            display: block;
-        }
 
 .international-section {
             padding: 80px 0;
@@ -79,12 +74,11 @@
 
 /* H1B Info Box */
         .h1b-info-box {
-            background: linear-gradient(135deg, #4B2E83 0%, #6B46A8 100%);
+            background: var(--color-primary);
             color: white;
             padding: 40px;
-            border-radius: 15px;
+            border-radius: var(--radius-md);
             margin: 40px 0;
-            box-shadow: 0 10px 30px rgba(75, 46, 131, 0.2);
         }
 
 .h1b-info-box h3 {
@@ -168,33 +162,30 @@
 
 /* CPT Presentation Box */
         .cpt-presentation {
-            background: linear-gradient(135deg, #6B46A8 0%, #4B2E83 100%);
-            color: white;
+            background: var(--color-primary-tint);
             padding: 40px;
-            border-radius: 15px;
+            border-radius: var(--radius-md);
             margin: 40px 0;
             text-align: center;
-            box-shadow: 0 10px 30px rgba(75, 46, 131, 0.3);
         }
 
 .cpt-presentation h3 {
             font-size: 32px;
             margin-bottom: 20px;
-            color: white;
+            color: var(--color-primary);
         }
 
 .cpt-presentation p {
             font-size: 18px;
             margin-bottom: 25px;
-            color: white;
-            opacity: 0.95;
+            color: var(--color-gray-700);
         }
 
 .cpt-presentation .btn {
-            background: white;
-            color: #4B2E83;
+            background: var(--color-primary);
+            color: white;
             padding: 15px 35px;
-            border-radius: 30px;
+            border-radius: var(--radius-md);
             text-decoration: none;
             font-weight: 700;
             font-size: 18px;
@@ -203,8 +194,8 @@
         }
 
 .cpt-presentation .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(255, 255, 255, 0.3);
+            background: var(--color-primary-dark);
+            color: white;
         }
 
 /* Resource Cards */
@@ -218,22 +209,10 @@
 .resource-card {
             background: white;
             padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-            border-top: 4px solid #4B2E83;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--color-border);
         }
 
-.resource-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(75, 46, 131, 0.2);
-        }
-
-.resource-card__icon {
-            font-size: 48px;
-            margin-bottom: 20px;
-            display: block;
-        }
 
 .resource-card h4 {
             font-size: 24px;
@@ -253,15 +232,15 @@
             background: #4B2E83;
             color: white;
             padding: 12px 30px;
-            border-radius: 25px;
+            border-radius: var(--radius-md);
             text-decoration: none;
             font-weight: 600;
             transition: all 0.3s ease;
         }
 
 .resource-card a:hover {
-            background: #6B46A8;
-            transform: translateX(5px);
+            background: var(--color-primary-dark);
+            color: white;
         }
 
 /* Video Container */
@@ -274,10 +253,9 @@
 
 /* Companies List Section */
         .companies-list-section {
-            background: linear-gradient(135deg, #4B2E83 0%, #6B46A8 100%);
-            color: white;
-            padding: 60px;
-            border-radius: 15px;
+            border-top: 1px solid var(--color-border);
+            border-bottom: 1px solid var(--color-border);
+            padding: 60px 0;
             text-align: center;
             margin: 40px 0;
         }
@@ -285,21 +263,24 @@
 .companies-list-section h3 {
             font-size: 36px;
             margin-bottom: 20px;
-            color: white;
+            color: var(--color-primary);
         }
 
 .companies-list-section p {
             font-size: 20px;
             margin-bottom: 30px;
             line-height: 1.8;
-            color: white;
+            color: var(--color-gray-700);
+            max-width: 760px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
 .companies-list-section .btn {
-            background: white;
-            color: #4B2E83;
+            background: var(--color-primary);
+            color: white;
             padding: 15px 40px;
-            border-radius: 30px;
+            border-radius: var(--radius-md);
             text-decoration: none;
             font-weight: 700;
             font-size: 18px;
@@ -308,9 +289,8 @@
         }
 
 .companies-list-section .btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
-            background: #f0f0f0;
+            background: var(--color-primary-dark);
+            color: white;
         }
 
 /* Back to Top */
@@ -409,7 +389,7 @@
     <section class="page-hero international-hero">
         <div class="container">
             <h1>Welcome International Students!</h1>
-            <p>Your comprehensive guide to H-1B sponsorship, work authorization, and career opportunities in the United States.</p>
+            <p>How H-1B sponsorship and CPT work, and where to find U.S. employers that hire international students.</p>
         </div>
     </section>
 
@@ -420,7 +400,7 @@
                 <li><a href="#h1b-info" class="section-nav__link">H-1B Information</a></li>
                 <li><a href="#cpt-presentation" class="section-nav__link">CPT for Internships</a></li>
                 <li><a href="#identify-sponsors" class="section-nav__link">Find Sponsors</a></li>
-                <li><a href="#companies-list" class="section-nav__link">1000+ Companies</a></li>
+                <li><a href="#companies-list" class="section-nav__link">Companies List</a></li>
             </ul>
         </div>
     </nav>
@@ -452,7 +432,7 @@
             <div class="cpt-presentation">
                 <h3>Internship CPT Presentation</h3>
                 <p>
-                    Learn everything you need to know about Curricular Practical Training (CPT) for internships. This comprehensive presentation covers eligibility requirements, application processes, and important guidelines for international students.
+                    Learn everything you need to know about Curricular Practical Training (CPT) for internships. The presentation covers eligibility requirements, application processes, and important guidelines for international students.
                 </p>
                 <a href="https://docs.google.com/presentation/d/16IO4WxbCMnq6xJRWDDzyF3Z7nK3ueETi/edit?slide=id.p1#slide=id.p1" target="_blank" rel="noopener noreferrer" class="btn">View CPT Presentation →</a>
             </div>
@@ -464,13 +444,12 @@
         <div class="container">
             <h2>Resources to Identify H1B Sponsoring Companies</h2>
             <p class="international-section__intro">
-                Use these powerful tools and databases to research companies that sponsor H-1B visas and plan your job search strategy.
+                Use these tools and databases to research companies that sponsor H-1B visas and plan your job search strategy.
             </p>
 
             <div class="resource-grid">
                 <!-- Resource 1 -->
                 <div class="resource-card">
-                    <span class="resource-card__icon"></span>
                     <h4>Ultimate H1B Sponsor Check</h4>
                     <p>Chrome extension that helps you quickly identify which companies sponsor H-1B visas while browsing job listings.</p>
                     <a href="https://chrome.google.com/webstore/detail/ultimate-h1b-sponsor-chec/gaafhpdcjnlehapjdngfoonljgeodfm?hl=en-us" target="_blank" rel="noopener noreferrer">Install Extension →</a>
@@ -478,16 +457,14 @@
 
                 <!-- Resource 2 -->
                 <div class="resource-card">
-                    <span class="resource-card__icon"></span>
                     <h4>MyVisaJobs</h4>
                     <p>MyVisa.jobs offers a database of companies that sponsor H-1B visas, providing insights into industries and positions where international students are most likely to secure sponsorship.</p>
                     <a href="https://www.myvisajobs.com/" target="_blank" rel="noopener noreferrer">Visit MyVisaJobs →</a>
-                    <a href="https://www.myvisajobs.com/reports/h1b/" target="_blank" rel="noopener noreferrer" style="margin-top: 10px; background: #6B46A8;">View H1B Reports →</a>
+                    <a href="https://www.myvisajobs.com/reports/h1b/" target="_blank" rel="noopener noreferrer" style="margin-top: 10px; background: var(--color-primary-dark);">View H1B Reports →</a>
                 </div>
 
                 <!-- Resource 3 -->
                 <div class="resource-card">
-                    <span class="resource-card__icon"></span>
                     <h4>CareerOneStop</h4>
                     <p>Sponsored by the U.S. Department of Labor, CareerOneStop provides detailed information on work visas, the application process, and employment rights for international students.</p>
                     <a href="https://www.careeronestop.org/" target="_blank" rel="noopener noreferrer">Visit CareerOneStop →</a>
@@ -495,7 +472,6 @@
 
                 <!-- Resource 4 -->
                 <div class="resource-card">
-                    <span class="resource-card__icon"></span>
                     <h4>F1Hire</h4>
                     <p>This Google extension gives you the ability to view companies on LinkedIn that sponsor H1B and their history for the past years.</p>
                     <a href="https://www.f1hire.com/" target="_blank" rel="noopener noreferrer">Visit F1Hire →</a>
@@ -503,7 +479,6 @@
 
                 <!-- Resource 5 -->
                 <div class="resource-card">
-                    <span class="resource-card__icon"></span>
                     <h4>H1BGrader</h4>
                     <p>Research and grade companies based on their H1B sponsorship history and success rates.</p>
                     <a href="https://h1bgrader.com/h1b-sponsors/gradle-inc-nokpew6904" target="_blank" rel="noopener noreferrer">Visit H1BGrader →</a>
@@ -528,16 +503,16 @@
         </div>
     </section>
 
-    <!-- 1000+ Companies List Section -->
+    <!-- Companies List Section -->
     <section id="companies-list" class="international-section">
         <div class="container">
             <div class="companies-list-section">
-                <h3>1000+ US Companies That Hire International Students</h3>
+                <h3>U.S. Companies That Hire International Students</h3>
                 <p>
-                    Access our comprehensive database of over 1,000 companies actively hiring international students across all industries and locations.
+                    A list of U.S. companies that hire international students, across industries and locations.
                 </p>
                 <p>
-                    This curated list includes company names, industries, locations, and H-1B sponsorship history to help you target your job search effectively.
+                    It includes company names, industries, locations, and H-1B sponsorship history so you can focus your applications on employers that sponsor.
                 </p>
                 <a href="#" class="btn">Access Full Companies List →</a>
             </div>
@@ -549,13 +524,13 @@
         <div class="container">
             <h2 style="text-align: center; color: #4B2E83; font-size: 42px; margin-bottom: 50px;">Need More Support?</h2>
             
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 450px), 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto;">
                 
                 <!-- International Student Services Card -->
-                <div style="background: white; border: 3px solid #4B2E83; border-radius: 15px; padding: 40px; box-shadow: 0 10px 30px rgba(75, 46, 131, 0.15);">
+                <div style="background: white; border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 40px;">
                     <h3 style="color: #4B2E83; font-size: 28px; margin-bottom: 20px; text-align: center;">International Student Services &amp; Information</h3>
                     <p style="color: #666; font-size: 16px; line-height: 1.6; margin-bottom: 30px; text-align: center;">
-                        Access comprehensive resources, immigration support, and student organization information through ACU's Office of International Students.
+                        Immigration information, the international student organization, and general support from ACU's Office of International Students.
                     </p>
                     <div style="display: flex; flex-direction: column; gap: 15px;">
                         <a href="https://acu.edu/office-of-international-students-and-visiting-scholars/immigration-information/" target="_blank" rel="noopener noreferrer" style="display: block; background: #4B2E83; color: white; padding: 15px 25px; border-radius: 30px; text-decoration: none; font-weight: 600; font-size: 16px; text-align: center; transition: all 0.3s ease;">Immigration Information</a>
@@ -565,12 +540,12 @@
                 </div>
 
                 <!-- COBA Professional Development Card -->
-                <div style="background: linear-gradient(135deg, #4B2E83 0%, #6B46A8 100%); border-radius: 15px; padding: 40px; box-shadow: 0 10px 30px rgba(75, 46, 131, 0.3); display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+                <div style="background: var(--color-primary); border-radius: var(--radius-md); padding: 40px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
                     <h3 style="color: white; font-size: 28px; margin-bottom: 20px;">COBA Career Support</h3>
                     <p style="color: white; font-size: 16px; line-height: 1.6; margin-bottom: 30px; opacity: 0.95;">
                         Connect with our international student advisors for personalized guidance on work authorization, job search strategies, and career planning.
                     </p>
-                    <a href="../pages/schedule-meeting.html" style="display: inline-block; background: white; color: #4B2E83; padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: 700; font-size: 18px; transition: all 0.3s ease; box-shadow: 0 5px 15px rgba(0,0,0,0.2);">Schedule a Meeting →</a>
+                    <a href="../pages/schedule-meeting.html" style="display: inline-block; background: white; color: #4B2E83; padding: 15px 40px; border-radius: var(--radius-md); text-decoration: none; font-weight: 700; font-size: 18px;">Schedule a Meeting →</a>
                 </div>
                 
             </div>

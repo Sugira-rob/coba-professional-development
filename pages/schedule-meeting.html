@@ -17,11 +17,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 
-    <!-- Stylesheet — shared styles live in main.css; only page-unique rules go here -->
+    <!-- Stylesheet - shared styles live in main.css; only page-unique rules go here -->
     <link rel="stylesheet" href="../css/main.css">
 
     <style>
-        /* director-card details row — not in main.css */
+        /* director-card details row - not in main.css */
         .director-card__details {
             margin-bottom: 30px;
         }
@@ -58,7 +58,7 @@
         .director-card__image-placeholder {
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+            background: var(--color-primary);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -75,7 +75,7 @@
             height: 80px;
             border-radius: 50%;
             object-fit: cover;
-            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+            background: var(--color-primary);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -180,7 +180,7 @@
         <section class="page-hero">
             <div class="container">
                 <h1>Schedule a Meeting</h1>
-                <p>Connect with our Professional Development team for personalized career guidance, internship support, and professional coaching.</p>
+                <p>Book a meeting with the Director of Professional Development or a student coach for resume reviews, mock interviews, and internship planning.</p>
             </div>
         </section>
 
@@ -188,7 +188,7 @@
         <section class="contact-section">
             <div class="contact-container">
 
-                <!-- Lauren Boyles — Director of Professional Development -->
+                <!-- Lauren Boyles - Director of Professional Development -->
                 <div class="director-card">
                     <div class="director-card__content">
                         <div class="director-card__image-wrap">
@@ -232,10 +232,37 @@
                         <a href="https://acu.12twenty.com/appointments" target="_blank" rel="noopener noreferrer">Schedule Online &rarr;</a>
                     </div>
 
-                    <!-- Roberto Sugira — replace avatar with real headshot when available -->
+                    <!-- Roberto Sugira -->
                     <div class="contact-method">
-                        <div class="contact-method__avatar" aria-label="Photo coming soon">RS</div>
+                        <img src="../assets/images/roberto-sugira-headshot.jpg" alt="Roberto Sugira" class="contact-method__avatar" loading="lazy">
                         <h3>Roberto Sugira</h3>
+                        <p class="contact-method__role">Student Worker</p>
+                        <p>Available for career coaching sessions, resume reviews, and professional development support.</p>
+                        <a href="https://acu.12twenty.com/appointments" target="_blank" rel="noopener noreferrer">Schedule Online &rarr;</a>
+                    </div>
+
+                    <!-- Dylan Parrish -->
+                    <div class="contact-method">
+                        <img src="../assets/images/dylan-parrish-headshot.jpg" alt="Dylan Parrish" class="contact-method__avatar" loading="lazy">
+                        <h3>Dylan Parrish</h3>
+                        <p class="contact-method__role">Student Worker</p>
+                        <p>Available for career coaching sessions, resume reviews, and professional development support.</p>
+                        <a href="https://acu.12twenty.com/appointments" target="_blank" rel="noopener noreferrer">Schedule Online &rarr;</a>
+                    </div>
+
+                    <!-- Ethan Carnes -->
+                    <div class="contact-method">
+                        <img src="../assets/images/ethan-headshot.jpg" alt="Ethan Carnes" class="contact-method__avatar" loading="lazy">
+                        <h3>Ethan Carnes</h3>
+                        <p class="contact-method__role">Student Worker</p>
+                        <p>Available for career coaching sessions, resume reviews, and professional development support.</p>
+                        <a href="https://acu.12twenty.com/appointments" target="_blank" rel="noopener noreferrer">Schedule Online &rarr;</a>
+                    </div>
+
+                    <!-- Henry McCuiston -->
+                    <div class="contact-method">
+                        <img src="../assets/images/henry-headshot.jpg" alt="Henry McCuiston" class="contact-method__avatar" loading="lazy">
+                        <h3>Henry McCuiston</h3>
                         <p class="contact-method__role">Student Worker</p>
                         <p>Available for career coaching sessions, resume reviews, and professional development support.</p>
                         <a href="https://acu.12twenty.com/appointments" target="_blank" rel="noopener noreferrer">Schedule Online &rarr;</a>
@@ -250,7 +277,7 @@
                             <img src="../assets/images/coba-career-closet.png" alt="COBA Career Closet Flyer - Workwear for Wildcats" class="career-closet-card__img" loading="lazy">
                         </div>
                         <div class="career-closet-card__info">
-                            <span class="career-closet-badge">Free Student Wardrobe Rental</span>
+                            <span class="career-closet-badge">Free wardrobe rental for students</span>
                             <h2 class="career-closet-title">COBA Career Closet</h2>
                             <p class="career-closet-subtitle">Workwear for Wildcats</p>
                             <p class="career-closet-text">

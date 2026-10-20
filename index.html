@@ -78,43 +78,53 @@
         <section class="hero-slider" id="home">
             <div class="hero-slider__container">
                 
-                <!-- Slide 1 -->
-                <div class="hero-slider__slide hero-slider__slide--active" id="slide-1">
+                <!-- Slide 1: Team Photo -->
+                <div class="hero-slider__slide hero-slider__slide--active" id="slide-team">
                     <div class="hero-slider__overlay"></div>
                     <div class="hero-slider__content">
-                        <h1 class="hero-slider__title">Welcome to COBA Professional Development</h1>
-                        <p class="hero-slider__text">Your hub for career growth, leadership development, and lifelong success in business.</p>
-                        <a href="#resources" class="btn btn--primary btn--large">Explore Opportunities</a>
+                        <h1 class="hero-slider__title">Meet Your Professional Development Team</h1>
+                        <p class="hero-slider__text">Our director and student coaches review resumes, run mock interviews, and help you find internships. Stop by MBB 231 or book a time online.</p>
+                        <a href="pages/schedule-meeting.html" class="btn btn--primary btn--large">Meet the Team</a>
                     </div>
                 </div>
 
                 <!-- Slide 2 -->
-                <div class="hero-slider__slide" id="slide-2">
+                <div class="hero-slider__slide" id="slide-1">
                     <div class="hero-slider__overlay"></div>
                     <div class="hero-slider__content">
-                        <h1 class="hero-slider__title">Build Your Career with Purpose</h1>
-                        <p class="hero-slider__text">Access exclusive internships, certifications, and employer connections designed to launch your future.</p>
-                        <a href="#majors" class="btn btn--primary btn--large">Start Building</a>
+                        <h1 class="hero-slider__title">Welcome to COBA Professional Development</h1>
+                        <p class="hero-slider__text">Career guides, job boards, and coaching for students in ACU's College of Business Administration.</p>
+                        <a href="#resources" class="btn btn--primary btn--large">See Resources</a>
                     </div>
                 </div>
 
                 <!-- Slide 3 -->
-                <div class="hero-slider__slide" id="slide-3">
+                <div class="hero-slider__slide" id="slide-2">
                     <div class="hero-slider__overlay"></div>
                     <div class="hero-slider__content">
-                        <h1 class="hero-slider__title">Learn the Skills That Get You Hired</h1>
-                        <p class="hero-slider__text">From Excel to AI, Finance to Analytics — master real-world tools that employers want today.</p>
-                        <a href="#resources" class="btn btn--primary btn--large">Start Learning</a>
+                        <h1 class="hero-slider__title">Find the Path for Your Major</h1>
+                        <p class="hero-slider__text">Each COBA major has its own page of career paths, certifications, and internship listings.</p>
+                        <a href="#majors" class="btn btn--primary btn--large">Browse Majors</a>
                     </div>
                 </div>
 
                 <!-- Slide 4 -->
+                <div class="hero-slider__slide" id="slide-3">
+                    <div class="hero-slider__overlay"></div>
+                    <div class="hero-slider__content">
+                        <h1 class="hero-slider__title">Learn the Skills That Get You Hired</h1>
+                        <p class="hero-slider__text">Excel, financial modeling, analytics, and other certifications employers ask for, with links to where you can earn them.</p>
+                        <a href="#resources" class="btn btn--primary btn--large">Find Certifications</a>
+                    </div>
+                </div>
+
+                <!-- Slide 5 -->
                 <div class="hero-slider__slide" id="slide-4">
                     <div class="hero-slider__overlay"></div>
                     <div class="hero-slider__content">
-                        <h1 class="hero-slider__title">Connect. Collaborate. Grow.</h1>
-                        <p class="hero-slider__text">Join a network of students, alumni, and mentors who share your drive for excellence and impact.</p>
-                        <a href="pages/schedule-meeting.html" class="btn btn--primary btn--large">Join the Network</a>
+                        <h1 class="hero-slider__title">Talk to Someone About Your Career</h1>
+                        <p class="hero-slider__text">Book a one-on-one meeting with the Director of Professional Development or a student coach.</p>
+                        <a href="pages/schedule-meeting.html" class="btn btn--primary btn--large">Schedule a Meeting</a>
                     </div>
                 </div>
 
@@ -130,6 +140,7 @@
                     <button class="hero-slider__dot" data-slide="1" aria-label="Go to slide 2"></button>
                     <button class="hero-slider__dot" data-slide="2" aria-label="Go to slide 3"></button>
                     <button class="hero-slider__dot" data-slide="3" aria-label="Go to slide 4"></button>
+                    <button class="hero-slider__dot" data-slide="4" aria-label="Go to slide 5"></button>
                 </div>
             </div>
         </section>
@@ -157,10 +168,10 @@
                     <div class="about__text">
                         <h2 class="about__title">About COBA Professional Development</h2>
                         <p class="about__description">
-                            The College of Business Administration's Professional Development program empowers COBA students with the skills, resources, and confidence to thrive in today's competitive business landscape.
+                            COBA Professional Development helps business students at Abilene Christian University get ready for internships and jobs.
                         </p>
                         <p class="about__description">
-                            We provide comprehensive support tailored to your major and career goals—from resume building and interview prep to internship placement and career coaching.
+                            We review resumes, run mock interviews, help you find internships, and meet one-on-one to plan your career around your major.
                         </p>
                     </div>
                     <div class="about__image">
@@ -174,7 +185,7 @@
         <section class="majors" id="majors">
             <div class="container">
                 <h2 class="majors__title">Explore Resources by Major</h2>
-                <p class="majors__subtitle">Tailored resources, career paths, and professional development guides for each COBA major</p>
+                <p class="majors__subtitle">Career paths, certifications, and internship listings for each COBA major</p>
                 
                 <div class="majors__grid">
                     <!-- Finance -->
@@ -240,92 +251,55 @@
         <section class="resources" id="resources">
             <div class="container">
                 <h2 class="resources__title">Featured Resources</h2>
-                <p class="resources__subtitle">Essential tools and guides for career success</p>
+                <p class="resources__subtitle">The guides students use most, starting with the resume</p>
                 
                 <div class="resources__grid">
-                    <!-- Resume Building -->
+                    <!-- Resume guide leads: it is the resource students ask for most -->
                     <div class="resource-card resource-card--featured">
-                        <div class="resource-card__header">
-                            <!-- Document icon -->
-                            <svg class="card-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                <rect x="8" y="4" width="28" height="40" rx="3" stroke="#4B2E83" stroke-width="2.5"/>
-                                <line x1="14" y1="17" x2="34" y2="17" stroke="#4B2E83" stroke-width="2.5" stroke-linecap="round"/>
-                                <line x1="14" y1="24" x2="34" y2="24" stroke="#4B2E83" stroke-width="2.5" stroke-linecap="round"/>
-                                <line x1="14" y1="31" x2="26" y2="31" stroke="#4B2E83" stroke-width="2.5" stroke-linecap="round"/>
-                            </svg>
-                            <span class="resource-card__badge">Popular</span>
-                        </div>
-                        <h3 class="resource-card__title">Resume & Cover Letter Guide</h3>
+                        <h3 class="resource-card__title">Resume &amp; Cover Letter Guide</h3>
                         <p class="resource-card__description">
-                            Complete guide to creating professional resumes, cover letters, and LinkedIn profiles. Includes templates and examples.
+                            The COBA Resume Building Guide walks you through a one-page resume built on four sections: education, professional experience, leadership and activities, and skills and certifications. It also explains how applicant tracking systems screen resumes. Cover letter and LinkedIn tips are on the Resources page.
                         </p>
-                        <a href="pages/resources-all.html#resume" class="resource-card__link">Start Building →</a>
+                        <div class="resource-card__links">
+                            <a href="assets/pdfs/COBA_Resume_Building_Guide.pdf" target="_blank" rel="noopener noreferrer" class="resource-card__link">Download the Resume Guide (PDF) →</a>
+                            <a href="pages/resources-all.html#resume" class="resource-card__link">Resume, cover letter &amp; LinkedIn tips →</a>
+                        </div>
                     </div>
 
                     <!-- Interview Prep -->
                     <div class="resource-card">
-                        <div class="resource-card__header">
-                            <!-- Speech bubble / interview icon -->
-                            <svg class="card-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                <path d="M8 8h32a2 2 0 0 1 2 2v20a2 2 0 0 1-2 2H16l-8 6V10a2 2 0 0 1 2-2z" stroke="#4B2E83" stroke-width="2.5" stroke-linejoin="round"/>
-                                <line x1="16" y1="20" x2="32" y2="20" stroke="#4B2E83" stroke-width="2.5" stroke-linecap="round"/>
-                                <line x1="16" y1="27" x2="26" y2="27" stroke="#4B2E83" stroke-width="2.5" stroke-linecap="round"/>
-                            </svg>
-                        </div>
                         <h3 class="resource-card__title">Interview Preparation</h3>
                         <p class="resource-card__description">
-                            Practice tools, common questions, and strategies to ace your interviews.
+                            Common interview questions, how to research a company beforehand, and mock interviews you can book through 12twenty.
                         </p>
-                        <a href="pages/resources-all.html#interviews" class="resource-card__link">Prepare Now →</a>
+                        <a href="pages/resources-all.html#interviews" class="resource-card__link">Prepare for an interview →</a>
                     </div>
 
                     <!-- Job Search -->
                     <div class="resource-card">
-                        <div class="resource-card__header">
-                            <!-- Magnifying glass icon -->
-                            <svg class="card-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                <circle cx="21" cy="21" r="13" stroke="#4B2E83" stroke-width="2.5"/>
-                                <line x1="30" y1="30" x2="42" y2="42" stroke="#4B2E83" stroke-width="2.5" stroke-linecap="round"/>
-                            </svg>
-                        </div>
                         <h3 class="resource-card__title">Job Search Platforms</h3>
                         <p class="resource-card__description">
-                            40+ platforms to find internships, jobs, and career opportunities.
+                            More than 60 job boards sorted by career stage, from first internships to full-time roles, plus remote and industry-specific sites.
                         </p>
-                        <a href="pages/job-boards.html" class="resource-card__link">Explore Tools →</a>
+                        <a href="pages/job-boards.html" class="resource-card__link">Browse job boards →</a>
                     </div>
 
                     <!-- Professional Dress & Career Closet -->
                     <div class="resource-card">
-                        <div class="resource-card__header">
-                            <!-- Briefcase icon -->
-                            <svg class="card-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                <rect x="6" y="18" width="36" height="24" rx="3" stroke="#4B2E83" stroke-width="2.5"/>
-                                <path d="M16 18v-4a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v4" stroke="#4B2E83" stroke-width="2.5"/>
-                                <line x1="6" y1="30" x2="42" y2="30" stroke="#4B2E83" stroke-width="2.5"/>
-                            </svg>
-                            <span class="resource-card__badge">Free Rentals</span>
-                        </div>
                         <h3 class="resource-card__title">Professional Dress &amp; Career Closet</h3>
                         <p class="resource-card__description">
-                            Learn what to wear for interviews and access the COBA Career Closet for free professional workwear rentals.
+                            What to wear for interviews and career fairs. The COBA Career Closet lends professional workwear to students for free.
                         </p>
-                        <a href="pages/resources-all.html#dress" class="resource-card__link">View Guide &amp; Closet →</a>
+                        <a href="pages/resources-all.html#dress" class="resource-card__link">See the dress guide and closet →</a>
                     </div>
 
                     <!-- Experiential Learning -->
-                    <div class="resource-card resource-card--wide">
-                        <div class="resource-card__header">
-                            <!-- Star icon -->
-                            <svg class="card-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                <polygon points="24,4 29,17 44,17 32,26 37,40 24,32 11,40 16,26 4,17 19,17" stroke="#4B2E83" stroke-width="2.5" stroke-linejoin="round"/>
-                            </svg>
-                        </div>
-                        <h3 class="resource-card__title">Experiential Learning Opportunities</h3>
+                    <div class="resource-card">
+                        <h3 class="resource-card__title">Experiential Learning</h3>
                         <p class="resource-card__description">
-                            Study abroad, leadership summit, STAR program, internships, and more hands-on experiences.
+                            Student organizations like ENACTUS, SHRM, and the ACU Investment Fund, plus case competitions and paid peer tutoring.
                         </p>
-                        <a href="pages/resources-all.html#experiential" class="resource-card__link">Discover Opportunities →</a>
+                        <a href="pages/resources-all.html#experiential" class="resource-card__link">See the programs →</a>
                     </div>
                 </div>
             </div>
@@ -335,9 +309,9 @@
         <section class="cta">
             <div class="container">
                 <div class="cta__content">
-                    <h2 class="cta__title">Ready to Launch Your Career?</h2>
+                    <h2 class="cta__title">Want Help With Your Job Search?</h2>
                     <p class="cta__text">
-                        Connect with our professional development team for personalized guidance and support.
+                        Meet with our team to review your resume, practice for an interview, or plan your internship search.
                     </p>
                     <div class="cta__buttons">
                         <a href="pages/schedule-meeting.html" class="btn btn--primary btn--large">Schedule a Meeting</a>

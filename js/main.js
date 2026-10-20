@@ -1,21 +1,21 @@
 /**
- * COBA Professional Development — Main JavaScript
+ * COBA Professional Development - Main JavaScript
  *
  * Entry point: DOMContentLoaded fires initAll().
  * Each feature is an isolated init function so a missing
  * DOM element causes an early return, not a thrown error.
  *
  * Table of contents
- *  1. initAll              — wires everything together
- *  2. initHeroSlider       — auto-playing image carousel (index only)
- *  3. initMobileMenu       — hamburger nav toggle
- *  4. initDropdownMenus    — mobile accordion for the Majors dropdown
- *  5. initSmoothScroll     — offset-aware anchor scrolling (header + section-nav)
- *  6. initBackToTop        — floating scroll-to-top button
- *  7. initHeaderScroll     — header shadow on scroll
- *  8. initScrollAnimations — Intersection Observer fade-in for cards
- *  9. initCopyrightYear    — auto-updates footer year
- * 10. initActiveNavLink    — highlights the current page in the top nav
+ *  1. initAll              - wires everything together
+ *  2. initHeroSlider       - auto-playing image carousel (index only)
+ *  3. initMobileMenu       - hamburger nav toggle
+ *  4. initDropdownMenus    - mobile accordion for the Majors dropdown
+ *  5. initSmoothScroll     - offset-aware anchor scrolling (header + section-nav)
+ *  6. initBackToTop        - floating scroll-to-top button
+ *  7. initHeaderScroll     - header shadow on scroll
+ *  8. initScrollAnimations - Intersection Observer fade-in for cards
+ *  9. initCopyrightYear    - auto-updates footer year
+ * 10. initActiveNavLink    - highlights the current page in the top nav
  */
 
 document.addEventListener('DOMContentLoaded', initAll);

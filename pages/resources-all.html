@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="referrer" content="strict-origin-when-cross-origin">
-    <meta name="description" content="Comprehensive professional development resources for ACU COBA students - resumes, cover letters, LinkedIn, interviews, and more">
+    <meta name="description" content="Professional development resources for ACU COBA students - resumes, cover letters, LinkedIn, interviews, and more">
     <meta name="keywords" content="ACU, COBA, career resources, resume guide, cover letter, LinkedIn, interview prep, job search">
     <meta name="author" content="ACU COBA">
     <title>Professional Development Resources | COBA | ACU</title>
@@ -17,11 +17,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 
-    <!-- Stylesheet — shared styles live in main.css; only page-unique rules go here -->
+    <!-- Stylesheet - shared styles live in main.css; only page-unique rules go here -->
     <link rel="stylesheet" href="../css/main.css">
 
     <style>
-        /* Resources page — section alternating background */
+        /* Resources page - section alternating background */
         .resource-section {
             padding: 80px 0;
         }
@@ -60,23 +60,13 @@
 
         .resource-card {
             background: var(--color-white);
-            border-radius: var(--radius-lg);
+            border-radius: var(--radius-md);
             padding: 25px;
-            box-shadow: var(--shadow-md);
-            transition: all var(--transition-base);
-            border: 2px solid transparent;
+            border: 1px solid var(--color-border);
+            /* reset the homepage list-item styles from main.css */
+            border-top: 1px solid var(--color-border);
         }
 
-        .resource-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-xl);
-            border-color: var(--color-primary);
-        }
-
-        .resource-card__icon {
-            display: block;
-            margin-bottom: 15px;
-        }
 
         .resource-card__title {
             font-size: var(--font-size-xl);
@@ -98,15 +88,15 @@
             background: var(--color-primary);
             color: var(--color-white);
             text-decoration: none;
-            border-radius: var(--radius-full);
+            border-radius: var(--radius-md);
             font-weight: 600;
-            transition: all var(--transition-base);
+            transition: background var(--transition-fast);
         }
 
         .resource-card__link:hover {
-            background: var(--color-primary-light);
-            transform: translateX(5px);
+            background: var(--color-primary-dark);
             color: var(--color-white);
+            text-decoration: none;
         }
 
         /* Sticky quick-nav alias (reuses .section-nav from main.css) */
@@ -221,7 +211,7 @@
         <section class="page-hero resources-hero">
             <div class="container">
                 <h1>Professional Development Resources</h1>
-                <p>Everything you need to succeed in your career journey — from building your resume to landing your dream job</p>
+                <p>Guides for resumes, cover letters, LinkedIn, interviews, professional dress, and finding a job</p>
             </div>
         </section>
 
@@ -324,7 +314,7 @@
                     <h4>Profile Checklist</h4>
                     <ul class="checklist">
                         <li>Professional headshot (no filters, good lighting, plain background)</li>
-                        <li>Compelling headline — more than just your job title</li>
+                        <li>A headline that says what you do or want to do, not just your job title</li>
                         <li>Summary that tells your story in 3–5 sentences</li>
                         <li>All relevant experience with bullet-point accomplishments</li>
                         <li>Education section with activities and societies</li>
@@ -370,13 +360,13 @@
 
                     <div class="highlight-box">
                         <strong>Research Before Every Interview</strong>
-                        <p>Read the company's mission, recent news, and the job description thoroughly. Prepare 3–5 thoughtful questions to ask at the end — interviewers remember candidates who ask good questions.</p>
+                        <p>Read the company's mission, recent news, and the job description thoroughly. Prepare 3–5 thoughtful questions to ask at the end. Interviewers remember candidates who ask good questions.</p>
                     </div>
 
                     <h4>Practice Resources</h4>
                     <ul>
-                        <li><a href="https://acu.12twenty.com/login?ReturnUrl=%2Fappointments" target="_blank" rel="noopener noreferrer">Mock interview coaching — book a session through 12Twenty</a></li>
-                        <li><a href="https://www.big-interview.com/" target="_blank" rel="noopener noreferrer">Big Interview — AI-powered practice platform</a></li>
+                        <li><a href="https://acu.12twenty.com/login?ReturnUrl=%2Fappointments" target="_blank" rel="noopener noreferrer">Mock interview coaching: book a session through 12Twenty</a></li>
+                        <li><a href="https://www.big-interview.com/" target="_blank" rel="noopener noreferrer">Big Interview: practice answering interview questions on video</a></li>
                     </ul>
                 </div>
             </div>
@@ -430,7 +420,7 @@
                             <img src="../assets/images/coba-career-closet.png" alt="COBA Career Closet Flyer - Workwear for Wildcats" class="career-closet-card__img" loading="lazy">
                         </div>
                         <div class="career-closet-card__info">
-                            <span class="career-closet-badge">Free Student Service</span>
+                            <span class="career-closet-badge">Free for COBA students</span>
                             <h3 class="career-closet-title">COBA Career Closet</h3>
                             <p class="career-closet-subtitle">Workwear for Wildcats</p>
                             <p class="career-closet-text">
@@ -529,7 +519,7 @@
                     <div class="resource-card">
                         <h3 class="resource-card__title">Case Competitions</h3>
                         <p class="resource-card__description">
-                            <strong>What it is:</strong> Team-based competitions where students solve real business problems presented by companies — local, regional, national, or international.<br><br>
+                            <strong>What it is:</strong> Team-based competitions where students solve real business problems presented by companies, at local, regional, national, or international levels.<br><br>
                             <strong>Time Commitment:</strong> Intensive but short-term (1–2 weeks of preparation)<br>
                             <strong>Best For:</strong> All years, all majors<br>
                             <strong>Why Participate:</strong> Strong resume builder, networking, potential prize money
@@ -548,7 +538,7 @@
                 </div>
                 <div class="content-box" style="text-align: center; padding: 40px;">
                     <p style="font-size: var(--font-size-lg); color: var(--color-gray-700); margin-bottom: 25px;">
-                        We have put together a comprehensive Job Boards page with 70+ platforms organized by category — from entry-level and internships to full-time roles, remote work, and industry-specific opportunities.
+                        Our Job Boards page lists more than 60 sites by category: entry-level and internships, full-time roles, remote work, and industry-specific boards.
                     </p>
                     <a href="job-boards.html" class="cert-card__btn">View All Job Boards →</a>
                 </div>
