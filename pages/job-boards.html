@@ -152,6 +152,19 @@
             object-fit: contain;
         }
 
+        /* Primary buttons sit on light cards here, so make them solid purple */
+        .platform-card .btn--primary {
+            background: var(--color-primary);
+            border-color: var(--color-primary);
+            color: var(--color-white);
+        }
+
+        .platform-card .btn--primary:hover {
+            background: var(--color-primary-dark);
+            border-color: var(--color-primary-dark);
+            color: var(--color-white);
+        }
+
         /* Plain-text descriptor next to the logo (not a pill) */
         .platform-card__badge {
             color: var(--color-gray-700);
@@ -300,13 +313,13 @@
             </div>
         </nav>
 
-        <!-- Featured Platforms - 12twenty & LinkedIn -->
+        <!-- Featured Platforms - 12twenty, ACU Career Development & LinkedIn -->
         <section id="featured" class="featured-platforms job-boards-section">
             <div class="container">
 
                 <div class="featured-platforms__header">
                     <h2 class="featured-platforms__title">Start Here</h2>
-                    <p class="featured-platforms__subtitle">ACU's official career platform and LinkedIn. Most students should start with these two.</p>
+                    <p class="featured-platforms__subtitle">ACU's official career platform, the university career center, and LinkedIn. Most students should start with these three.</p>
                 </div>
 
                 <!-- 12twenty - primary featured platform -->
@@ -326,6 +339,18 @@
                     <div class="platform-card__actions">
                         <a href="https://acu.12twenty.com/Login" target="_blank" rel="noopener noreferrer" class="btn btn--primary">Login to 12twenty &rarr;</a>
                         <a href="../assets/pdfs/12twenty-getting-started.pdf" target="_blank" rel="noopener noreferrer" class="btn btn--secondary">Download Getting Started Guide</a>
+                    </div>
+                </div>
+
+                <!-- ACU Career Development - university career center -->
+                <div class="platform-card">
+                    <div class="platform-card__header">
+                        <span class="platform-card__badge">ACU's university career center</span>
+                    </div>
+                    <h3 class="platform-card__title">ACU Academic Advising &amp; Career Development</h3>
+                    <p class="platform-card__desc">ACU's campus-wide career office. Its website has guides for building a résumé and cover letter, preparing for interviews and career fairs, negotiating an offer, and applying to graduate school, plus on-campus student jobs and a "What can I do with this major?" tool.</p>
+                    <div class="platform-card__actions">
+                        <a href="https://careerdevelopment.acu.edu/" target="_blank" rel="noopener noreferrer" class="btn btn--primary">Visit ACU Career Development &rarr;</a>
                     </div>
                 </div>
 
@@ -591,8 +616,8 @@
                         Abilene, TX 79699
                     </p>
                     <p class="footer__text">
-                        <strong>Email:</strong> <a href="mailto:coba@acu.edu">coba@acu.edu</a><br>
-                        <strong>Phone:</strong> (325) 674-2427
+                        <strong>Email:</strong> <a href="mailto:lauren.boyles@acu.edu">lauren.boyles@acu.edu</a><br>
+                        <strong>Phone:</strong> (325) 674-2511
                     </p>
                 </div>
 
