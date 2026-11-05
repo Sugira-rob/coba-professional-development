@@ -17,42 +17,22 @@ You now have a complete, production-ready website:
 
 ---
 
-## 🌐 Deployment Options
+## 🌐 Current Hosting: Vercel
 
-### Option 1: Netlify (EASIEST & FREE) ⭐ Recommended
+The site is hosted on **Vercel** and is live at
+**https://coba-professional-development.vercel.app**.
 
-**Why Netlify?**
-- ✅ Completely FREE
-- ✅ Super easy drag-and-drop
-- ✅ Automatic HTTPS
-- ✅ Fast global CDN
-- ✅ Custom domain support
+- Vercel is connected to the GitHub repository `Sugira-rob/coba-professional-development`.
+- Every push to the `main` branch deploys automatically, usually within a minute or two.
+- After a deploy, hard-refresh the browser (Cmd+Shift+R / Ctrl+Shift+R) to see changes.
 
-**Steps:**
-
-1. **Create Netlify Account**
-   - Go to [netlify.com](https://netlify.com)
-   - Sign up with GitHub, GitLab, or email (FREE)
-
-2. **Deploy Your Site**
-   - Click "Add new site" → "Deploy manually"
-   - **Drag and drop your entire project folder** into the browser
-   - Netlify uploads and deploys automatically!
-
-3. **Your Site is Live!**
-   - Netlify gives you a URL like: `your-site-name.netlify.app`
-   - It's live immediately!
-
-4. **Optional: Add Custom Domain**
-   - Site settings → Domain management
-   - Add your custom domain (like `coba-dev.acu.edu`)
-   - Update DNS settings (Netlify shows you exactly how)
-
-**Time: 5 minutes!**
+The project does not use Netlify.
 
 ---
 
-### Option 2: GitHub Pages (FREE)
+## 🧭 Other Hosting Options (not in use)
+
+### Option A: GitHub Pages (FREE)
 
 **Why GitHub Pages?**
 - ✅ FREE hosting
@@ -87,7 +67,7 @@ You now have a complete, production-ready website:
 
 ---
 
-### Option 3: Vercel (FREE & FAST)
+### Option B: Setting Up Vercel From Scratch (for reference)
 
 **Why Vercel?**
 - ✅ Lightning fast
@@ -112,7 +92,7 @@ You now have a complete, production-ready website:
 
 ---
 
-### Option 4: ACU IT Hosting
+### Option C: ACU IT Hosting
 
 **Why ACU IT?**
 - ✅ Official ACU domain
@@ -227,10 +207,6 @@ http-server
 
 ## 🔄 Updating Your Deployed Site
 
-### For Netlify:
-1. Drag and drop the updated files again
-2. Or connect to GitHub for automatic deployments
-
 ### For GitHub Pages:
 ```bash
 git add .
@@ -330,7 +306,6 @@ Vercel automatically redeploys!
 ## 📞 Getting Help
 
 ### Deployment Issues:
-- **Netlify**: [Netlify Support Docs](https://docs.netlify.com/)
 - **GitHub Pages**: [GitHub Pages Docs](https://docs.github.com/pages)
 - **Vercel**: [Vercel Docs](https://vercel.com/docs)
 
@@ -374,7 +349,7 @@ Once deployed, your website will be live and accessible to students!
    - Videos use YouTube (already optimized)
 
 4. **Enable Caching**
-   - Netlify/Vercel do this automatically
+   - Vercel does this automatically
    - For ACU hosting, ask IT about caching
 
 ---
